@@ -71,7 +71,7 @@ flowchart TD
 ### 【阶段 I：排版与前端构建】
 
 #### 第 1 步：文案与素材解析
-- 输入：`inputs/{作品}/` 下的 `script.txt`（文案）、`voice.wav`（配音）、`char_timestamps.json`（字级时间戳）。
+- 输入：外部已有工程文件夹（如 `c:\vibe测试\N0001\`）或 `projects/{作品}/` 下的 `script.txt`（文案）、`voice.wav`（配音）、`char_timestamps.json`（字级时间戳）。
 - 逻辑切分：依据文案语义段落与论点切分场景（每个论点 1 个场景），识别开场形态（钩子型/直奔主题/系列回顾）与结尾 CTA。
 
 #### 第 2 步：精确时间线提取
@@ -82,7 +82,7 @@ flowchart TD
 - **铁律**：所有场景边界、开场相位、关键数据强调点、音效触发点均来自字级时间戳，**严禁估算**。关键词打上业务标签（如 `3.5倍|数据`、`真相|重点`）可自动生成标准 `sfx.json`。
 
 #### 第 3 步：生成 HTML 动画页
-- 复制 [templates/skeleton.html](./templates/skeleton.html) 至 `output/{作品编号_作品名称}/{作品编号_作品名称}.html`。
+- 复制 [templates/skeleton.html](./templates/skeleton.html) 至外部输入工程目录（就地赋能）或 `projects/{作品编号}_{作品名称}/{作品编号}_{作品名称}.html`。
 - 将文案、时间戳数组、场景列表内联入 JavaScript，并在中区构建多波次入场（`wIn`, `w2`, `w3`）的场景节点与 SVG 图示。
 - **排版硬性约束**：
   - **画面顶部纯粹作品标题（Clean & Striking Header）**：画面顶部可显示区域**只显示作品标题**，严禁堆叠分镜头胶囊、小节标签或左上角 HUD 微标；文字较少（短标题，≤12字）显示成 1 行（4.0~4.5cqw），文字较多（长标题，>12字）根据语义自然断句显示成 2 行（主标题 3.8~4.2cqw + 副标题 3.2~3.6cqw）；采用文字发光微渐变与轻透悬浮拟态底衬包装，确保视觉美观、清晰、醒目；
@@ -99,40 +99,48 @@ flowchart TD
 #### 第 4 步：本地播放、边界 QA 与全维度质量复核门禁
 - 执行播放与场景推进检测：
   ```bash
-  python vibe.py check output/{作品}/{作品}.html
+  python vibe.py check <工程目录或HTML路径>
   ```
 - 执行全维度质量复核与图数碰撞检测门禁（必跑）：
   ```bash
-  python vibe.py audit output/{作品}/{作品}.html
+  python vibe.py audit <工程目录或HTML路径>
   ```
 - **复核自愈闭环**：
   - `audit` 自动审查：图数与图文物理重叠碰撞（0 穿透）、四边安全区（0 越界）、移动端字号可读性（正文 ≥ 2.8cqw）、竖屏垂直堆叠排版、开场黄金 3 秒高频爆点。
   - **若复核存在任何报错，严禁交付给用户！** 必须自动修复代码并重新执行 `audit`，直至 100% 绿灯（0 违规）后方可交付。
 
-> **🌟 模式 A（轻量模式）交付节点**：
-> 到此步骤即完成模式 A。向用户汇报 QA 通过结果，输出 `.html` 文件的完整路径，提供浏览器即时预览指引，并附带转视频的备选命令。
+> **🌟 模式 A（轻量模式）交付节点（推荐）**：
+> 到此步骤即完成模式 A。
+> 1. **独立工程包归集**：确保该作品独立文件夹（外部输入目录，或 `projects/{作品编号}_{作品名称}/`）内，完整齐备 5 核心文件：
+>    - 核心网页：`{作品}.html`
+>    - 主配音：`{作品}.wav` 或 `voice.wav`
+>    - 时间戳：`*_char_timestamps.json`
+>    - 文案脚本：`*.txt` 或 `script.txt`
+>    - 音效配置：`sfx.json`
+> 2. 向用户汇报 QA 通过结果，输出独立工程目录路径；
+> 3. 用户可将此独立工程文件夹直接拖拽入 **WeMediaForge 桌面端【基础工具箱 - 网页处理】**，调用本地 GPU 硬件加速极速生成 MP4，无需在命令行中启动繁重的无头录制。
 
 ---
 
 ### 【阶段 II：算力录制与视频封装】（模式 B 或后续渲染触发）
 
 #### 第 5 步：Playwright 逐帧录制
-- 启动逐帧截图（默认 20fps，输出到该作品的 `_work/frames/`）：
+- 启动逐帧截图（默认 20fps，过程帧强制隔离输出至 `temp/frames/{作品}/`）：
   ```bash
-  python vibe.py render output/{作品}/{作品}.html output/{作品}/_work/frames <时长秒> --fps 20
+  python vibe.py render <工程目录/HTML路径> temp/frames/{作品} <时长秒> --fps 20
   ```
 - 若时长 >5 分钟，支持通过 `--start` 和 `--stop` 分段渲染与断点续跑。
 
 #### 第 6 步：FFmpeg 合成与交付验证
 - 合成 MP4（人声配音 + 独立音效轨 amix 混音，缺省 `--sfx` 时自动从 HTML 解析场景挂载音效）：
   ```bash
-  python vibe.py mux output/{作品}/_work/frames inputs/{作品}/voice.wav output/{作品}/{作品}.mp4 <时长秒> [--sfx <音效表json>]
+  python vibe.py mux temp/frames/{作品} <配音WAV路径> <输出MP4路径> <时长秒> [--sfx <音效表json>]
   ```
 - 媒体规格与音量探针校验：
   ```bash
-  python vibe.py verify output/{作品}/{作品}.mp4 --frames output/{作品}/_work/frames
+  python vibe.py verify <输出MP4路径> --frames temp/frames/{作品}
   ```
-- 交付最终成品：`output/{作品编号_作品名称}/` 目录下的 `.html` 与 `.mp4` 文件。
+- 交付最终成品：工程目录下的 `.html` 与 `.mp4` 文件。
 
 ---
 
@@ -141,12 +149,9 @@ flowchart TD
 ### 模式 A 交付范例：
 ```markdown
 ✅ **HTML 动画页已制作完成并通过安全区 QA！**
-- **文件路径**：`[点击打开](file:///D:/vibe-video-studio/output/N0002_xxx/N0002_xxx.html)`
+- **工程目录路径**：`[点击打开工程目录](file:///D:/vibe-video-studio/projects/N0002_xxx/)`
+- **网页文件**：`N0002_xxx.html`
 - **即时预览**：可在浏览器中双击直接打开，支持全屏播放与逐字高亮卡点检查。
-- **后续操作建议**：
-  1. 如需微调文案或版式，可直接告知我修改；
-  2. 如需在本地将此网页合成为 MP4 视频，随时可执行：
-     `python vibe.py render output/N0002_xxx/N0002_xxx.html output/N0002_xxx/_work/frames 42.5 --fps 20`
-     `python vibe.py mux output/N0002_xxx/_work/frames inputs/xxx/voice.wav output/N0002_xxx/N0002_xxx.mp4 42.5`
-  3. 或将此 HTML 页面导入外部本地渲染小工具批量处理。
+- **后续极速出片建议**：
+  直接将整个工程文件夹拖入 **WeMediaForge【基础工具箱 - 网页处理】**，调用本地 GPU 硬件加速秒级生成高清 MP4！
 ```

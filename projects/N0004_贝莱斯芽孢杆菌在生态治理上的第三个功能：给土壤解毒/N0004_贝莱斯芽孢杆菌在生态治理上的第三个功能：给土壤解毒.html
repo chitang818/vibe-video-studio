@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N0004_贝莱斯芽孢杆菌在生态治理上的第三个功能：给土壤解毒</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%23070d12'/><text x='12' y='17' font-size='13' font-weight='bold' text-anchor='middle' fill='%234ade80'>V</text></svg>">
+<style>
+  :root {
+    --bg: #070d12;
+    --panel: #0e1a22;
+    --panel-sub: rgba(16, 28, 38, 0.94);
+    --line: rgba(148, 163, 184, 0.18);
+    --ink: #e8f1ec;
+    --dim: #93a7a0;
+    --green: #4ade80;
+    --green2: #22c55e;
+    --amber: #fbbf24;
+    --cyan: #38bdf8;
+    --red: #f87171;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans SC", "Microsoft YaHei", -apple-system, system-ui, sans-serif;
+    overflow: hidden;
+  }
+
+  .stage {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    container-type: size;
+  }
+  #bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* 制作辅助 HUD（位于安全区外左上角盲区） */
+  #chapText {
+    position: fixed;
+    top: 3.2cqh;
+    left: 4cqw;
+    z-index: 10;
+    font-size: 2.2cqw;
+    font-weight: 600;
+    color: rgba(147, 167, 160, 0.75);
+    background: rgba(10, 20, 32, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 999px;
+    padding: 0.5cqw 2.4cqw;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+
+  /* 上区（顶部纯粹作品标题区） */
+  .head {
+    position: fixed;
+    top: 10cqh;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .head-pill {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 82cqw;
+    padding: 0.8cqw 3.6cqw 0.9cqw;
+    background: rgba(10, 18, 26, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.45),
+      0 0 25px rgba(74, 222, 128, 0.12),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+  .head-pill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.6), transparent);
+    border-radius: 999px;
+  }
+  .main-title {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+    gap: 0.35cqw;
+  }
+  .main-title .title-main {
+    font-size: 3.8cqw;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    background: linear-gradient(180deg, #ffffff 20%, #f1f5f9 70%, #d1fae5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 12px rgba(74, 222, 128, 0.25));
+  }
+  .main-title .title-sub {
+    font-size: 3.2cqw;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    background: linear-gradient(180deg, #86efac 10%, var(--green) 70%, var(--green2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 10px rgba(74, 222, 128, 0.3));
+  }
+
+  /* 中区（场景内容区） */
+  .scene {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .scene.active {
+    display: block;
+    opacity: 1;
+  }
+  .scene .inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 17cqh 9cqw 21cqh;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  /* 场景独立氛围光 */
+  .aura {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .aura .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(8cqw);
+  }
+
+  /* 波次入场动效系统 (w1 -> w4 stagger) */
+  .scene .w { opacity: 0; }
+  .scene.active .w { animation: wIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .scene.active .w2 { animation-delay: 0.12s; }
+  .scene.active .w3 { animation-delay: 0.24s; }
+  .scene.active .w4 { animation-delay: 0.36s; }
+
+  @keyframes wIn {
+    from { opacity: 0; transform: translateY(2.5cqw) scale(0.96); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* 通用徽标与字号 */
+  .badge {
+    font-size: 2.8cqw;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+    border-radius: 6cqw;
+    padding: 0.5cqw 2.8cqw;
+    background: rgba(74, 222, 128, 0.08);
+    display: inline-block;
+    margin-bottom: 1.5cqh;
+  }
+  .scene h2 {
+    font-size: 6.8cqw;
+    font-weight: 900;
+    margin: 1cqh 0 1.5cqh;
+    line-height: 1.25;
+    text-shadow: 0 0 4cqw rgba(74, 222, 128, 0.3);
+  }
+  .scene h2 em {
+    font-style: normal;
+    color: var(--green);
+  }
+  .scene .sub {
+    font-size: 3.2cqw;
+    color: var(--dim);
+    line-height: 1.6;
+    margin-bottom: 2cqh;
+    max-width: 80cqw;
+  }
+
+  /* 竖屏垂直优先卡片堆叠（card-stack） */
+  .card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6cqh;
+    width: 82cqw;
+    max-width: 82cqw;
+    box-sizing: border-box;
+  }
+  .stack-card {
+    background: linear-gradient(160deg, rgba(16, 28, 38, 0.95), rgba(10, 18, 26, 0.95));
+    border: 1px solid var(--line);
+    border-radius: 3.2cqw;
+    padding: 2.2cqh 3.6cqw;
+    display: flex;
+    align-items: center;
+    text-align: left;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    position: relative;
+    overflow: hidden;
+  }
+  .stack-card.highlight {
+    border-color: rgba(74, 222, 128, 0.45);
+    background: linear-gradient(160deg, rgba(20, 36, 48, 0.96), rgba(12, 22, 32, 0.96));
+  }
+  .stack-card.highlight::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: var(--green);
+    border-radius: 4px;
+  }
+  .stack-card .card-ico {
+    flex: none;
+    width: 9cqw;
+    height: 9cqw;
+    margin-right: 3.2cqw;
+    color: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .stack-card .card-ico svg {
+    width: 100%;
+    height: 100%;
+  }
+  .stack-card .card-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .stack-card .card-title {
+    font-size: 3.8cqw;
+    font-weight: 800;
+    color: var(--ink);
+    margin-bottom: 0.6cqh;
+    display: flex;
+    align-items: center;
+    gap: 1.5cqw;
+  }
+  .stack-card.highlight .card-title {
+    color: var(--green);
+  }
+  .stack-card .card-desc {
+    font-size: 2.9cqw;
+    color: var(--dim);
+    line-height: 1.55;
+  }
+  .stack-card .card-desc em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* S1 开场黄金 3 秒组件 */
+  .phs {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 17cqh 9cqw 21cqh;
+  }
+  #s-open[data-phase="1"] .phs-1 { opacity: 1; pointer-events: auto; }
+  #s-open[data-phase="2"] .phs-2 { opacity: 1; pointer-events: auto; }
+
+  .radar-ripple {
+    position: absolute;
+    width: 50cqw;
+    height: 50cqw;
+    border-radius: 50%;
+    border: 2px solid rgba(248, 113, 113, 0.4);
+    animation: radarWave 2s cubic-bezier(0.2, 0.8, 0.4, 1) infinite;
+    pointer-events: none;
+  }
+  .radar-ripple:nth-child(2) {
+    animation-delay: 0.6s;
+    border-color: rgba(74, 222, 128, 0.3);
+  }
+  @keyframes radarWave {
+    0% { transform: scale(0.6); opacity: 1; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+
+  .hook-title {
+    font-size: 8.8cqw;
+    font-weight: 900;
+    line-height: 1.25;
+    color: #ffffff;
+    text-shadow: 0 0 5cqw rgba(248, 113, 113, 0.5);
+    margin-bottom: 2cqh;
+    animation: punchIn 0.6s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .hook-title em {
+    font-style: normal;
+    color: var(--red);
+  }
+  .hook-graphic {
+    width: 26cqw;
+    height: 26cqw;
+    margin: 1.5cqh auto;
+    position: relative;
+  }
+  .hook-graphic svg {
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 20px rgba(74, 222, 128, 0.5));
+  }
+
+  /* 环形图与数据解耦 (Donut Ring + External Info) */
+  .ring-stat-panel {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 82cqw;
+    background: linear-gradient(160deg, rgba(16, 28, 38, 0.95), rgba(10, 18, 26, 0.95));
+    border: 1px solid var(--line);
+    border-radius: 3.6cqw;
+    padding: 2.2cqh 3.6cqw;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    margin-bottom: 1.8cqh;
+  }
+  .ring-svg-wrap {
+    position: relative;
+    width: 28cqw;
+    height: 28cqw;
+    flex: none;
+  }
+  .ring-svg-wrap svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  .ring-svg-wrap .center-txt {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .ring-svg-wrap .center-txt .c-val {
+    font-size: 5.2cqw;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(180deg, #86efac, #22c55e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+  .ring-info {
+    flex: 1;
+    margin-left: 3.5cqw;
+    text-align: left;
+  }
+  .ring-info .t {
+    font-size: 4.0cqw;
+    font-weight: 800;
+    color: var(--green);
+    margin-bottom: 0.6cqh;
+  }
+  .ring-info .d {
+    font-size: 2.9cqw;
+    color: var(--dim);
+    line-height: 1.55;
+  }
+  .ring-info .d em {
+    font-style: normal;
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* CTA 脉冲动效 */
+  .cta-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2cqh;
+    width: 82cqw;
+  }
+  .cta-icon-hero {
+    width: 24cqw;
+    height: 24cqw;
+    color: var(--green);
+    animation: floatBreathe 2.5s ease-in-out infinite;
+  }
+  .cta-btn {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #ffffff;
+    font-size: 3.8cqw;
+    font-weight: 800;
+    padding: 1.4cqh 6cqw;
+    border-radius: 999px;
+    box-shadow: 0 0 30px rgba(34, 197, 94, 0.45);
+    animation: ctaPulse 1.8s ease-in-out infinite;
+    letter-spacing: 0.08em;
+  }
+  @keyframes ctaPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.06); }
+  }
+  @keyframes floatBreathe {
+    0%, 100% { transform: translateY(0) scale(1); }
+    50% { transform: translateY(-1.2cqw) scale(1.04); }
+  }
+  @keyframes punchIn {
+    0% { opacity: 0; transform: scale(0.85); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  /* 下区（卡拉OK字幕区） */
+  .subtitle {
+    position: fixed;
+    bottom: 14%;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 6;
+    pointer-events: none;
+    display: flex;
+    justify-content: center;
+  }
+  .sub-inner {
+    max-width: 84cqw;
+    padding: 1.2cqw 3.6cqw 1.4cqw;
+    background: rgba(10, 18, 26, 0.85);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+  }
+  #sentence {
+    font-size: 4.0cqw;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    line-height: 1.4;
+    white-space: nowrap;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+  }
+  #sentence .w { color: rgba(232, 241, 236, 0.45); transition: color 0.08s ease; }
+  #sentence .w.read { color: #e8f1ec; }
+  #sentence .w.curr {
+    color: var(--green);
+    text-shadow: 0 0 16px rgba(74, 222, 128, 0.9), 0 0 24px rgba(74, 222, 128, 0.5);
+  }
+
+  /* 隐藏媒体播放与控制 */
+  #btnPlay {
+    position: fixed;
+    bottom: 2cqh;
+    right: 3cqw;
+    z-index: 100;
+    background: rgba(74, 222, 128, 0.2);
+    border: 1px solid var(--green);
+    color: var(--green);
+    padding: 0.6cqw 2cqw;
+    border-radius: 999px;
+    font-size: 1.8cqw;
+    cursor: pointer;
+    backdrop-filter: blur(4px);
+  }
+  audio { display: none; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- 制作辅助 HUD（安全区外左上角） -->
+  <div id="chapText">第 1 / 8 节 · 核心主题引言</div>
+
+  <!-- 上区：顶部纯粹作品标题 -->
+  <div class="head">
+    <div class="head-pill">
+      <h1 class="main-title is-double">
+        <span class="title-line title-main">贝莱斯芽孢杆菌</span>
+        <span class="title-line title-sub">生态治理 · 给土壤解毒</span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- 场景 1：开场黄金 3 秒高频爆点 -->
+  <div id="s-open" class="scene active" data-phase="1">
+    <div class="inner">
+      <div class="aura">
+        <div class="glow" style="width:100cqw;height:100cqw;left:50%;top:20%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,0.14),transparent 65%);"></div>
+      </div>
+
+      <!-- Phase 1: 0~1.6s 痛点悬念与雷达扫描 -->
+      <div class="phs phs-1">
+        <div class="radar-ripple"></div>
+        <div class="radar-ripple"></div>
+        <span class="badge" style="color:var(--red);border-color:rgba(248,113,113,0.4);background:rgba(248,113,113,0.08);">生态治理新维度</span>
+        <h2 class="hook-title">农用菌还能<br><em>给土壤解毒？</em></h2>
+        <div class="hook-graphic">
+          <svg viewBox="0 0 100 100" fill="none">
+            <polygon points="50,10 88,32 88,68 50,90 12,68 12,32" stroke="#f87171" stroke-width="4" stroke-dasharray="6,4" fill="rgba(248,113,113,0.12)"/>
+            <path d="M50,28 L50,56 M50,68 L50,74" stroke="#f87171" stroke-width="6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <p class="sub">重金属残留与化学污染危机</p>
+      </div>
+
+      <!-- Phase 2: 1.6~7.6s 主角震撼亮相 -->
+      <div class="phs phs-2">
+        <span class="badge w w1">核心机理科普</span>
+        <h2 class="w w2">第三个功能<br><em>给土壤解毒</em></h2>
+        <div class="hook-graphic w w3">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="42" stroke="var(--green)" stroke-width="3" stroke-dasharray="8,4" fill="rgba(74,222,128,0.1)"/>
+            <path d="M50 20 L76 35 V65 L50 80 L24 65 V35 Z" fill="rgba(74,222,128,0.25)" stroke="var(--green)" stroke-width="4"/>
+            <path d="M40 50 L47 57 L62 42" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <p class="sub w w4">多效生物活性酶 · 天然生态净化尖兵</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 场景 2：生态治理潜力展开 -->
+  <div id="s-eco-intro" class="scene">
+    <div class="inner">
+      <div class="aura">
+        <div class="glow" style="width:110cqw;height:110cqw;left:-10%;top:30%;background:radial-gradient(circle,rgba(56,189,248,0.12),transparent 65%);"></div>
+      </div>
+      <span class="badge w w1">应用蓝海拓展</span>
+      <h2 class="w w2">生态治理<em>展现潜力</em></h2>
+      <p class="sub w w3">打破传统农用界限 · 迈向环境工程</p>
+      <div class="card-stack w w4">
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">传统功能 · 种养作物</div>
+            <div class="card-desc">促生壮苗、拮抗病原、提高作物品质与产量</div>
+          </div>
+        </div>
+        <div class="stack-card highlight">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">全新维度 · 生态治理</div>
+            <div class="card-desc"><em>重金属钝化</em>、<em>有机物降解</em>与<em>微生态重建</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 场景 3：功能一 · 重金属钝化吸附 -->
+  <div id="s-heavy-metal" class="scene">
+    <div class="inner">
+      <div class="aura">
+        <div class="glow" style="width:120cqw;height:120cqw;left:50%;top:10%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,0.15),transparent 65%);"></div>
+      </div>
+      <span class="badge w w1">功能一 · 核心突破</span>
+      <h2 class="w w2">重金属<em>钝化吸附</em></h2>
+      <p class="sub w w3">对镉等重金属产生高效吸附与形态转化</p>
+      <div class="card-stack w w4">
+        <div class="stack-card highlight">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <path d="M8 12h8M12 8v8"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">吸附与转化作用</div>
+            <div class="card-desc">胞外聚合物螯合土壤中的<em>镉等部分重金属</em></div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 3v18M3 12h18M6 6l12 12"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">阻隔作物根系吸收</div>
+            <div class="card-desc">降低重金属生物有效性，<em>守护粮食安全底线</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 场景 4：降低镉积累 11.45% 与有机物降解 -->
+  <div id="s-cadmium-data" class="scene">
+    <div class="inner">
+      <div class="aura">
+        <div class="glow" style="width:110cqw;height:110cqw;right:-10%;top:25%;background:radial-gradient(circle,rgba(56,189,248,0.12),transparent 65%);"></div>
+      </div>
+      <span class="badge w w1">科研实证与功能二</span>
+      <h2 class="w w2">科研数据<em>实证突破</em></h2>
+      
+      <!-- 环形图与文字解耦 -->
+      <div class="ring-stat-panel w w3">
+        <div class="ring-svg-wrap">
+          <svg viewBox="0 0 100 100">
+            <circle cx="50" cy="50" r="40" stroke="rgba(148,163,184,0.15)" stroke-width="10" fill="none"/>
+            <circle cx="50" cy="50" r="40" stroke="var(--green)" stroke-width="10" stroke-linecap="round" stroke-dasharray="251.2" stroke-dashoffset="180" fill="none"/>
+          </svg>
+          <div class="center-txt">
+            <div class="c-val">11.45%</div>
+          </div>
+        </div>
+        <div class="ring-info">
+          <div class="t">降低镉积累率</div>
+          <div class="d">科研数据显示：可显著降低作物对<em>重金属镉</em>的积累</div>
+        </div>
+      </div>
+
+      <div class="card-stack w w4">
+        <div class="stack-card highlight">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">二、有机污染物降解</div>
+            <div class="card-desc">降解水体与土壤有机物，<em>污水处理</em>前景广阔</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 场景 5：功能三 · 改善土壤微生态 -->
+  <div id="s-micro-eco" class="scene">
+    <div class="inner">
+      <div class="aura">
+        <div class="glow" style="width:120cqw;height:120cqw;left:50%;top:15%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,0.14),transparent 65%);"></div>
+      </div>
+      <span class="badge w w1">功能三 · 根基改善</span>
+      <h2 class="w w2">改善土壤<em>微生态</em></h2>
+      <p class="sub w w3">产酶调控群落 · 重构健康土壤微生境</p>
+      <div class="card-stack w w4">
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">产酶与微生物调控</div>
+            <div class="card-desc">优化根际菌群结构，有效<em>缓解作物连作障碍</em></div>
+          </div>
+        </div>
+        <div class="stack-card highlight">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="3"/>
+              <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">促进土壤团粒结构</div>
+            <div class="card-desc">多孔沃土海绵重构，<em>恢复土壤保水透气性</em></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 场景 6：三大核心功能圆满复盘 -->
+  <div id="s-summary" class="scene">
+    <div class="inner">
+      <div class="aura">
+        <div class="glow" style="width:110cqw;height:110cqw;left:50%;top:10%;transform:translateX(-50%);background:radial-gradient(circle,rgba(251,191,36,0.12),transparent 65%);"></div>
+      </div>
+      <span class="badge w w1" style="color:var(--amber);border-color:rgba(251,191,36,0.4);background:rgba(251,191,36,0.08);">全系列收官盘点</span>
+      <h2 class="w w2">三大核心功能<br><em>全部讲解完毕</em></h2>
+      <div class="card-stack w w3">
+        <div class="stack-card">
+          <div class="card-ico" style="color:var(--green);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">① 生物促生</div>
+            <div class="card-desc">分泌植物生长素 · 促进根系发达高抗逆</div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico" style="color:var(--cyan);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">② 生物防病</div>
+            <div class="card-desc">广谱抗菌脂肽 · 诱导作物产生系统抗性</div>
+          </div>
+        </div>
+        <div class="stack-card highlight">
+          <div class="card-ico" style="color:var(--amber);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+              <polyline points="22 4 12 14.01 9 11.01"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title" style="color:var(--amber);">③ 生态解毒</div>
+            <div class="card-desc">重金属钝化 · 降解污染物 · 重构微生态</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 场景 7：后续进阶内容重磅预告 -->
+  <div id="s-outlook" class="scene">
+    <div class="inner">
+      <div class="aura">
+        <div class="glow" style="width:110cqw;height:110cqw;right:10%;top:20%;background:radial-gradient(circle,rgba(56,189,248,0.14),transparent 65%);"></div>
+      </div>
+      <span class="badge w w1">重磅进阶预告</span>
+      <h2 class="w w2">后面我们将<em>继续讲解</em></h2>
+      <div class="card-stack w w3">
+        <div class="stack-card">
+          <div class="card-ico" style="color:var(--cyan);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">人工驯化与工程改造</div>
+            <div class="card-desc">分子选育诱变 · 高抗逆高活性菌株突破</div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico" style="color:var(--amber);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">国际经典明星菌株</div>
+            <div class="card-desc">解码全球标杆菌株的技术参数与机理</div>
+          </div>
+        </div>
+        <div class="stack-card highlight">
+          <div class="card-ico" style="color:var(--green);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="12" y1="1" x2="12" y2="23"/>
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">中国商业化新势力菌株</div>
+            <div class="card-desc">本土自主研发登记 · 田间突围商业化版图</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 场景 8：互动收束下期见 -->
+  <div id="s-cta" class="scene">
+    <div class="inner">
+      <div class="aura">
+        <div class="glow" style="width:110cqw;height:110cqw;left:50%;top:20%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,0.18),transparent 65%);"></div>
+      </div>
+      <div class="cta-box w w1">
+        <div class="cta-icon-hero">
+          <svg viewBox="0 0 100 100" fill="none">
+            <circle cx="50" cy="50" r="44" stroke="var(--green)" stroke-width="3" stroke-dasharray="6,4" fill="rgba(74,222,128,0.08)"/>
+            <polygon points="50,18 78,34 78,66 50,82 22,66 22,34" fill="rgba(74,222,128,0.2)" stroke="var(--green)" stroke-width="3"/>
+            <path d="M40 50 L47 57 L62 42" stroke="#ffffff" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <span class="badge" style="margin-bottom:0;">感谢聆听</span>
+        <h2 style="margin:1cqh 0;">欢迎收听收看<br><em>我们下期见</em></h2>
+        <div class="cta-btn">👍 点赞 · 关注 · 收藏</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 下区：卡拉OK逐字高亮字幕 -->
+  <div class="subtitle">
+    <div class="sub-inner">
+      <div id="sentence"></div>
+    </div>
+  </div>
+
+  <button id="btnPlay">▶ 播放</button>
+  <audio id="voice" preload="auto" src="../../inputs/N0004_贝莱斯芽孢杆菌在生态治理上的第三个功能：给土壤解毒/voice.wav"></audio>
+</div>
+
+<script>
+var CHARS = ["这", "一", "期", "给", "大", "家", "简", "短", "讲", "一", "下", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "在", "生", "态", "治", "理", "上", "的", "第", "三", "个", "功", "能", "。", "给", "土", "壤", "解", "毒", "。", "除", "了", "种", "养", "作", "物", "，", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "还", "在", "生", "态", "治", "理", "上", "展", "现", "出", "潜", "力", "。", "一", "、", "重", "金", "属", "钝", "化", "吸", "附", "。", "对", "土", "壤", "中", "的", "镉", "等", "部", "分", "重", "金", "属", "，", "具", "有", "吸", "附", "和", "转", "化", "作", "用", "，", "可", "降", "低", "作", "物", "对", "重", "金", "属", "的", "吸", "收", "。", "研", "究", "显", "示", "，", "可", "降", "低", "镉", "积", "累", "1", "1", ".", "4", "5", "%", "。", "二", "、", "有", "机", "污", "染", "物", "降", "解", "。", "部", "分", "菌", "株", "可", "降", "解", "水", "体", "和", "土", "壤", "中", "的", "部", "分", "有", "机", "污", "染", "物", "，", "在", "污", "水", "处", "理", "中", "展", "现", "应", "用", "前", "景", "。", "三", "、", "改", "善", "土", "壤", "微", "生", "态", "。", "通", "过", "产", "酶", "和", "调", "节", "微", "生", "物", "群", "落", "结", "构", "，", "缓", "解", "连", "作", "障", "碍", "，", "促", "进", "土", "壤", "团", "粒", "结", "构", "形", "成", "。", "到", "这", "，", "关", "于", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "的", "三", "大", "核", "心", "功", "能", "就", "全", "部", "讲", "完", "了", "。", "不", "知", "道", "我", "们", "讲", "解", "的", "内", "容", "，", "对", "各", "位", "朋", "友", "有", "没", "有", "价", "值", "和", "帮", "助", "。", "后", "面", "我", "们", "将", "继", "续", "讲", "解", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "这", "一", "菌", "株", "。", "像", "是", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "的", "人", "工", "驯", "化", "与", "改", "造", "，", "国", "际", "经", "典", "的", "明", "星", "菌", "株", "，", "和", "中", "国", "已", "商", "业", "化", "的", "新", "势", "力", "菌", "株", "。", "欢", "迎", "到", "时", "收", "听", "收", "看", "，", "我", "们", "下", "期", "见", "。"];
+var TIMES = [1.6, 1.72, 1.84, 1.96, 2.08, 2.16, 2.28, 2.44, 2.6, 2.8, 2.88, 3.04, 3.2, 3.36, 3.64, 3.8, 4.0, 4.12, 4.28, 4.48, 4.64, 4.76, 4.92, 5.04, 5.2, 5.36, 5.48, 5.6, 5.8, 5.96, 6.12, 6.32, 6.56, 6.72, 6.92, 7.16, 7.28, 7.6, 7.84, 8.08, 8.24, 8.48, 8.68, 8.8, 9.04, 9.2, 9.32, 9.52, 9.68, 9.88, 10.04, 10.24, 10.44, 10.6, 10.8, 10.96, 11.16, 11.32, 11.6, 11.8, 11.92, 12.16, 12.32, 12.48, 12.94, 13.26, 13.62, 13.86, 14.06, 14.34, 14.54, 14.94, 15.22, 15.26, 15.54, 15.78, 15.98, 16.1, 16.26, 16.5, 16.7, 16.94, 17.1, 17.26, 17.46, 17.62, 17.74, 17.82, 17.98, 18.14, 18.38, 18.54, 18.74, 18.9, 19.14, 19.3, 19.42, 19.54, 19.82, 20.02, 20.18, 20.38, 20.5, 20.7, 20.86, 21.02, 21.1, 21.3, 21.46, 21.62, 21.86, 22.02, 22.18, 22.38, 22.54, 22.58, 22.86, 23.02, 23.26, 23.46, 23.66, 23.82, 24.1, 24.38, 24.38, 24.66, 24.94, 24.94, 25.25, 25.49, 25.65, 25.93, 26.13, 26.29, 26.41, 26.65, 26.81, 26.97, 27.21, 27.37, 27.49, 27.73, 27.85, 28.09, 28.25, 28.41, 28.61, 28.81, 29.01, 29.17, 29.29, 29.45, 29.61, 29.73, 29.81, 30.05, 30.21, 30.37, 30.45, 30.65, 30.77, 31.01, 31.17, 31.37, 31.53, 31.65, 31.85, 32.05, 32.25, 32.41, 32.61, 32.81, 33.01, 33.25, 33.57, 33.65, 33.85, 34.01, 34.21, 34.37, 34.53, 34.69, 34.93, 35.09, 35.29, 35.45, 35.81, 36.01, 36.25, 36.53, 36.73, 36.93, 37.09, 37.21, 37.49, 37.65, 37.81, 37.97, 38.25, 38.37, 38.61, 38.81, 38.97, 39.13, 39.29, 39.41, 39.57, 39.73, 39.93, 40.13, 40.37, 40.49, 40.61, 40.77, 40.97, 41.13, 41.86, 42.1, 42.42, 42.46, 42.58, 42.78, 42.94, 43.1, 43.3, 43.42, 43.58, 43.74, 43.94, 44.26, 44.42, 44.58, 44.78, 44.9, 45.02, 45.14, 45.34, 45.46, 45.54, 45.7, 45.82, 45.98, 46.02, 46.22, 46.3, 46.38, 46.46, 46.58, 46.7, 46.78, 46.94, 47.02, 47.14, 47.14, 47.46, 47.58, 47.7, 47.86, 47.98, 48.1, 48.18, 48.34, 48.54, 48.66, 48.86, 49.02, 49.18, 49.3, 49.5, 49.62, 49.74, 49.86, 50.1, 50.26, 50.38, 50.58, 50.86, 51.02, 51.18, 51.38, 51.54, 51.7, 51.86, 51.98, 52.14, 52.34, 52.54, 52.58, 52.86, 53.02, 53.3, 53.46, 53.62, 53.82, 53.98, 54.14, 54.3, 54.42, 54.62, 54.78, 55.06, 55.18, 55.34, 55.54, 55.7, 55.86, 56.06, 56.26, 56.42, 56.62, 56.74, 56.94, 57.1, 57.34, 57.58, 57.62, 57.7, 57.98, 58.14, 58.3, 58.5, 58.66, 58.78, 58.94, 59.14, 59.3, 59.46, 59.7, 59.9, 59.94, 60.18, 60.34, 60.46, 60.66, 60.9, 61.02, 61.22, 61.38, 61.54, 61.54, 61.7, 61.78, 61.94, 62.06, 62.26];
+
+var SCENES = [
+  ['s-open', 0.0],
+  ['s-eco-intro', 7.60],
+  ['s-heavy-metal', 12.94],
+  ['s-cadmium-data', 21.86],
+  ['s-micro-eco', 33.25],
+  ['s-summary', 41.86],
+  ['s-outlook', 49.30],
+  ['s-cta', 60.18]
+];
+
+var CHAP_NAMES = [
+  '第 1 / 8 节 · 核心主题引言',
+  '第 2 / 8 节 · 生态治理新篇',
+  '第 3 / 8 节 · 重金属钝化吸附',
+  '第 4 / 8 节 · 有机物降解突破',
+  '第 5 / 8 节 · 改善土壤微生态',
+  '第 6 / 8 节 · 三大核心功能收官',
+  '第 7 / 8 节 · 进阶内容重磅预告',
+  '第 8 / 8 节 · 互动收束下期见'
+];
+
+/* ========================================================
+   VibeSound: 原生 Web Audio 高质音效引擎
+   ======================================================== */
+var VibeSound = (function() {
+  var ctx = null;
+
+  function getCtx() {
+    if (window.__RECORDING__) return null;
+    if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
+      try {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch (e) {
+        console.warn('AudioContext 初始化异常:', e);
+      }
+    }
+    if (ctx && ctx.state === 'suspended') {
+      ctx.resume().catch(function() {});
+    }
+    return ctx;
+  }
+
+  return {
+    play: function(id) {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+
+      if (id === 'whoosh') {
+        var osc = ac.createOscillator();
+        var g = ac.createGain();
+        var f = ac.createBiquadFilter();
+        f.type = 'lowpass';
+        f.frequency.setValueAtTime(600, now);
+
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(120, now);
+        osc.frequency.exponentialRampToValueAtTime(380, now + 0.15);
+        osc.frequency.exponentialRampToValueAtTime(80, now + 0.35);
+
+        g.gain.setValueAtTime(0.001, now);
+        g.gain.linearRampToValueAtTime(0.06, now + 0.1);
+        g.gain.exponentialRampToValueAtTime(0.0001, now + 0.35);
+
+        osc.connect(f);
+        f.connect(g);
+        g.connect(ac.destination);
+        osc.start(now);
+        osc.stop(now + 0.36);
+      } else if (id === 'pop') {
+        var osc = ac.createOscillator();
+        var g = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(320, now);
+        osc.frequency.exponentialRampToValueAtTime(540, now + 0.08);
+
+        g.gain.setValueAtTime(0.001, now);
+        g.gain.linearRampToValueAtTime(0.07, now + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+
+        osc.connect(g);
+        g.connect(ac.destination);
+        osc.start(now);
+        osc.stop(now + 0.13);
+      } else if (id === 'ding') {
+        var osc1 = ac.createOscillator();
+        var osc2 = ac.createOscillator();
+        var g = ac.createGain();
+        osc1.type = 'sine';
+        osc2.type = 'sine';
+        osc1.frequency.setValueAtTime(880, now);
+        osc2.frequency.setValueAtTime(1320, now);
+
+        g.gain.setValueAtTime(0.001, now);
+        g.gain.linearRampToValueAtTime(0.055, now + 0.02);
+        g.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+
+        osc1.connect(g);
+        osc2.connect(g);
+        g.connect(ac.destination);
+        osc1.start(now);
+        osc2.start(now);
+        osc1.stop(now + 0.46);
+        osc2.stop(now + 0.46);
+      } else if (id === 'chime') {
+        [523.25, 659.25, 783.99, 1046.50].forEach(function(freq, i) {
+          var o = ac.createOscillator();
+          var gn = ac.createGain();
+          o.type = 'sine';
+          o.frequency.setValueAtTime(freq, now + i * 0.08);
+
+          gn.gain.setValueAtTime(0.001, now + i * 0.08);
+          gn.gain.linearRampToValueAtTime(0.045, now + i * 0.08 + 0.04);
+          gn.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.08 + 0.8);
+
+          o.connect(gn);
+          gn.connect(ac.destination);
+          o.start(now + i * 0.08);
+          o.stop(now + i * 0.08 + 0.85);
+        });
+      }
+    }
+  };
+})();
+
+/* ========================================================
+   卡拉OK字幕分词与过滤引擎
+   ======================================================== */
+var UNITS = [];
+function buildUnits() {
+  var units = [], s = 0;
+  for (var i = 0; i < CHARS.length; i++) {
+    if ('。！？!?；;'.indexOf(CHARS[i]) >= 0) {
+      units.push([s, i]);
+      s = i + 1;
+    }
+  }
+  if (s < CHARS.length) units.push([s, CHARS.length - 1]);
+
+  var subUnits = [];
+  var SEP = '，、：:；;，,';
+  for (var u = 0; u < units.length; u++) {
+    var a = units[u][0], b = units[u][1];
+    var segA = a;
+    while (segA <= b) {
+      var pos = -1;
+      for (var i = segA; i <= b; i++) {
+        if (SEP.indexOf(CHARS[i]) >= 0) { pos = i; break; }
+      }
+      var segB = (pos >= 0) ? pos : b;
+      var len = segB - segA + 1;
+      if (len > 10) {
+        var cut = -1;
+        for (var i2 = Math.min(segB, segA + 10); i2 >= Math.max(segA, segA + 6); i2--) {
+          var l = i2 - segA + 1;
+          if (l >= 8 && l <= 10 && ('的的得'.indexOf(CHARS[i2]) >= 0 || SEP.indexOf(CHARS[i2]) >= 0)) {
+            cut = i2; break;
+          }
+        }
+        if (cut < 0 && len > 16) cut = segA + 9;
+        if (cut >= segA) {
+          subUnits.push([segA, cut]);
+          segA = cut + 1;
+          continue;
+        }
+      }
+      subUnits.push([segA, segB]);
+      segA = segB + 1;
+    }
+  }
+
+  var merged = [];
+  for (var k = 0; k < subUnits.length; k++) {
+    var ua = subUnits[k][0], ub = subUnits[k][1];
+    var tl = ub - ua + 1;
+    if (tl <= 0) continue;
+    if ('。！？!?；;，、：:，,'.indexOf(CHARS[ub]) >= 0) tl--;
+    if (tl < 4 && merged.length > 0) {
+      merged[merged.length - 1][1] = ub;
+    } else {
+      merged.push([ua, ub]);
+    }
+  }
+  UNITS = merged;
+}
+buildUnits();
+
+function escHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+var sentenceEl = document.getElementById('sentence');
+
+function renderUnit(uIdx, currCharIdx) {
+  var a = UNITS[uIdx][0], b = UNITS[uIdx][1];
+  var end = b;
+  if ('，、：:；;，,'.indexOf(CHARS[b]) >= 0) end = b - 1;
+
+  var html = '';
+  for (var i = a; i <= end; i++) {
+    var ch = escHtml(CHARS[i]);
+    var cls = 'w';
+    if (i < currCharIdx) cls += ' read';
+    else if (i === currCharIdx) cls += ' curr';
+    html += '<span class="' + cls + '">' + ch + '</span>';
+  }
+  sentenceEl.innerHTML = html;
+}
+
+function updateSubtitle(t) {
+  if (TIMES.length === 0 || UNITS.length === 0) return;
+  var lo = 0, hi = TIMES.length - 1, ans = 0;
+  while (lo <= hi) {
+    var mid = (lo + hi) >> 1;
+    if (TIMES[mid] <= t) { ans = mid; lo = mid + 1; }
+    else { hi = mid - 1; }
+  }
+
+  var uIdx = -1;
+  for (var u = 0; u < UNITS.length; u++) {
+    if (ans >= UNITS[u][0] && ans <= UNITS[u][1]) { uIdx = u; break; }
+  }
+
+  if (uIdx >= 0) {
+    renderUnit(uIdx, ans);
+  } else if (ans >= UNITS[UNITS.length - 1][1]) {
+    renderUnit(UNITS.length - 1, ans);
+  }
+}
+
+/* ========================================================
+   场景状态与开场相位控制
+   ======================================================== */
+var curScene = -1;
+var chapEl = document.getElementById('chapText');
+
+function setScene(idx) {
+  if (idx === curScene) return;
+  for (var i = 0; i < SCENES.length; i++) {
+    var el = document.getElementById(SCENES[i][0]);
+    if (el) el.classList.remove('active');
+  }
+  var target = document.getElementById(SCENES[idx][0]);
+  if (target) target.classList.add('active');
+  curScene = idx;
+
+  if (chapEl && CHAP_NAMES[idx]) {
+    chapEl.textContent = CHAP_NAMES[idx];
+  }
+
+  if (idx > 0 && idx < SCENES.length - 1) {
+    VibeSound.play('whoosh');
+  } else if (idx === SCENES.length - 1) {
+    VibeSound.play('chime');
+  }
+}
+
+function updateScene(t) {
+  var matched = 0;
+  for (var i = 0; i < SCENES.length; i++) {
+    if (t >= SCENES[i][1]) matched = i;
+  }
+  setScene(matched);
+}
+
+function updatePhase(t) {
+  var so = document.getElementById('s-open');
+  if (!so) return;
+  var curP = so.getAttribute('data-phase') || '1';
+  var nextP = '1';
+  if (t >= 1.6) nextP = '2';
+  if (curP !== nextP) {
+    so.setAttribute('data-phase', nextP);
+    if (nextP === '2') {
+      VibeSound.play('ding');
+    }
+  }
+}
+
+/* ========================================================
+   时钟与驱动系统
+   ======================================================== */
+var audioEl = document.getElementById('voice');
+var isPlaying = false;
+var animFrameId = null;
+
+function tick() {
+  if (!isPlaying) return;
+  var t = audioEl.currentTime;
+  updateScene(t);
+  updatePhase(t);
+  updateSubtitle(t);
+
+  if (t >= 62.3 || audioEl.ended) {
+    pausePlay();
+    return;
+  }
+  animFrameId = requestAnimationFrame(tick);
+}
+
+function startPlay() {
+  isPlaying = true;
+  document.getElementById('btnPlay').textContent = '❚❚ 暂停';
+  audioEl.play().catch(function() {});
+  animFrameId = requestAnimationFrame(tick);
+}
+
+function pausePlay() {
+  isPlaying = false;
+  document.getElementById('btnPlay').textContent = '▶ 播放';
+  audioEl.pause();
+  if (animFrameId) cancelAnimationFrame(animFrameId);
+}
+
+document.getElementById('btnPlay').addEventListener('click', function() {
+  if (isPlaying) pausePlay();
+  else startPlay();
+});
+
+// 键盘快捷键支持 (空格键播放/暂停)
+window.addEventListener('keydown', function(e) {
+  if (e.code === 'Space') {
+    e.preventDefault();
+    if (isPlaying) pausePlay();
+    else startPlay();
+  }
+});
+
+// 供 Playwright 逐帧精确同步 API
+window.syncTime = function(t) {
+  try { audioEl.currentTime = t; } catch(e) {}
+  updateScene(t);
+  updatePhase(t);
+  updateSubtitle(t);
+};
+
+/* ========================================================
+   背景动效引擎 (bio-bubbles 深海微生物细胞光斑)
+   ======================================================== */
+(function() {
+  var cv = document.getElementById('bg-canvas');
+  var ctx = cv.getContext('2d');
+  var W, H;
+  function resize() {
+    W = cv.width = window.innerWidth;
+    H = cv.height = window.innerHeight;
+  }
+  resize();
+  window.addEventListener('resize', resize);
+
+  var bubbles = [];
+  var count = 38;
+  for (var i = 0; i < count; i++) {
+    bubbles.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 22 + 4,
+      vy: -(Math.random() * 0.45 + 0.15),
+      vx: (Math.random() - 0.5) * 0.25,
+      a: Math.random() * 0.35 + 0.12,
+      pulse: Math.random() * Math.PI * 2
+    });
+  }
+
+  function drawBg() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < bubbles.length; i++) {
+      var b = bubbles[i];
+      b.y += b.vy;
+      b.x += b.vx;
+      b.pulse += 0.02;
+      if (b.y < -30) { b.y = H + 30; b.x = Math.random() * W; }
+      if (b.x < -30) b.x = W + 30;
+      if (b.x > W + 30) b.x = -30;
+
+      var currentR = b.r + Math.sin(b.pulse) * 2;
+      var grad = ctx.createRadialGradient(b.x, b.y, 0, b.x, b.y, currentR);
+      grad.addColorStop(0, 'rgba(74, 222, 128, ' + (b.a * 0.8) + ')');
+      grad.addColorStop(0.7, 'rgba(56, 189, 248, ' + (b.a * 0.35) + ')');
+      grad.addColorStop(1, 'rgba(56, 189, 248, 0)');
+
+      ctx.beginPath();
+      ctx.arc(b.x, b.y, currentR, 0, Math.PI * 2);
+      ctx.fillStyle = grad;
+      ctx.fill();
+    }
+    requestAnimationFrame(drawBg);
+  }
+  drawBg();
+})();
+
+// 初始化首屏
+window.syncTime(0);
+</script>
+</body>
+</html>

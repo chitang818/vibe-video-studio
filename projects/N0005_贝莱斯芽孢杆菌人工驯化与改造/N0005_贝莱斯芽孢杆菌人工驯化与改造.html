@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>N0005_贝莱斯芽孢杆菌人工驯化与改造</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%23070d12'/><text x='12' y='17' font-size='13' font-weight='bold' text-anchor='middle' fill='%234ade80'>V</text></svg>">
+<style>
+  /* ========================================================
+     1. 主题变量与全局基础
+     ======================================================== */
+  :root {
+    --bg: #070d12;
+    --panel: #0e1a22;
+    --panel-sub: rgba(16, 28, 38, 0.94);
+    --line: rgba(148, 163, 184, 0.18);
+    --line-active: rgba(74, 222, 128, 0.35);
+    --ink: #e8f1ec;
+    --dim: #93a7a0;
+    --green: #4ade80;
+    --green2: #22c55e;
+    --amber: #fbbf24;
+    --cyan: #38bdf8;
+    --red: #f87171;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans SC", "Microsoft YaHei", -apple-system, system-ui, sans-serif;
+    overflow: hidden;
+  }
+
+  /* 9:16 容器查询竖屏舞台 */
+  .stage {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    container-type: size;
+  }
+  #bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ========================================================
+     2. 上区（顶部纯粹作品标题区，100% 聚焦主题）
+     ======================================================== */
+  #chapText {
+    position: fixed;
+    top: 3.2cqh;
+    left: 4cqw;
+    z-index: 10;
+    font-size: 2.2cqw;
+    font-weight: 600;
+    color: rgba(147, 167, 160, 0.75);
+    background: rgba(10, 20, 32, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 999px;
+    padding: 0.5cqw 2.4cqw;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+  .head {
+    position: fixed;
+    top: 10cqh;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .head-pill {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 84cqw;
+    padding: 0.8cqw 3.6cqw 0.9cqw;
+    background: rgba(10, 18, 26, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.45),
+      0 0 25px rgba(74, 222, 128, 0.12),
+      inset 0 1px 0 rgba(255, 255, 255, 0.12);
+  }
+  .head-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    line-height: 1.25;
+  }
+  .head-title .title-main {
+    font-size: 4.0cqw;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    background: linear-gradient(180deg, #ffffff 15%, #bbf7d0 85%, #86efac 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.85));
+  }
+  .head-title .title-sub {
+    font-size: 3.2cqw;
+    font-weight: 700;
+    color: var(--cyan);
+    margin-top: 0.4cqw;
+    letter-spacing: 0.08em;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.8));
+  }
+
+  /* ========================================================
+     3. 中区（场景内容区）
+     ======================================================== */
+  .scene {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+  }
+  .scene.active {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .inner {
+    position: absolute;
+    top: 17cqh;
+    bottom: 23cqh;
+    left: 8cqw;
+    right: 8cqw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    z-index: 2;
+  }
+
+  /* 光晕氛围背景层 */
+  .aura {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+  }
+  .aura .glow {
+    position: absolute;
+    width: 90cqw;
+    height: 90cqw;
+    left: 50%;
+    top: 30%;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(74, 222, 128, 0.12), transparent 70%);
+    border-radius: 50%;
+    filter: blur(8cqw);
+  }
+
+  /* 波次入场动效 */
+  .scene .w { opacity: 0; }
+  .scene.active .w { animation: wIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .scene.active .w2 { animation-delay: 0.12s; }
+  .scene.active .w3 { animation-delay: 0.24s; }
+  .scene.active .w4 { animation-delay: 0.36s; }
+  @keyframes wIn {
+    from { opacity: 0; transform: translateY(2.5cqw) scale(0.97); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* 基础组件 */
+  .badge {
+    display: inline-block;
+    font-size: 2.8cqw;
+    font-weight: 800;
+    letter-spacing: 0.18em;
+    color: var(--green);
+    background: rgba(74, 222, 128, 0.1);
+    border: 1px solid rgba(74, 222, 128, 0.38);
+    border-radius: 999px;
+    padding: 0.7cqw 3cqw;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.3);
+  }
+  .badge.cyan {
+    color: var(--cyan);
+    background: rgba(56, 189, 248, 0.1);
+    border-color: rgba(56, 189, 248, 0.38);
+  }
+  .badge.amber {
+    color: var(--amber);
+    background: rgba(251, 191, 36, 0.1);
+    border-color: rgba(251, 191, 36, 0.38);
+  }
+
+  .scene h2 {
+    font-size: 5.6cqw;
+    font-weight: 900;
+    margin: 1.8cqw 0 1.2cqw;
+    line-height: 1.3;
+    letter-spacing: 0.02em;
+    background: linear-gradient(180deg, #ffffff, #e2e8f0);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.7);
+  }
+  .scene .sub {
+    font-size: 2.9cqw;
+    color: var(--dim);
+    line-height: 1.6;
+    margin-bottom: 2cqw;
+  }
+
+  /* 竖屏垂直优先：上下堆叠大卡片容器 */
+  .card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2.2cqw;
+    width: 82cqw;
+    align-items: stretch;
+  }
+  .stack-card {
+    background: linear-gradient(160deg, rgba(16, 28, 38, 0.94), rgba(10, 18, 26, 0.94));
+    border: 1px solid var(--line);
+    border-radius: 2.8cqw;
+    padding: 2.8cqw 3.6cqw;
+    text-align: left;
+    display: flex;
+    align-items: flex-start;
+    gap: 2.8cqw;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    position: relative;
+    overflow: hidden;
+  }
+  .stack-card::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 0.8cqw;
+    background: var(--green);
+    border-radius: 2.8cqw 0 0 2.8cqw;
+  }
+  .stack-card.cyan::before { background: var(--cyan); }
+  .stack-card.amber::before { background: var(--amber); }
+  .stack-card.red::before { background: var(--red); }
+
+  .stack-card .card-ico {
+    width: 6.8cqw;
+    height: 6.8cqw;
+    flex: none;
+    color: var(--green);
+    margin-top: 0.4cqw;
+  }
+  .stack-card.cyan .card-ico { color: var(--cyan); }
+  .stack-card.amber .card-ico { color: var(--amber); }
+  .stack-card.red .card-ico { color: var(--red); }
+  .stack-card .card-ico svg { width: 100%; height: 100%; }
+
+  .stack-card .card-body {
+    flex: 1;
+    min-width: 0;
+  }
+  .stack-card .card-title {
+    font-size: 3.8cqw;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .stack-card .card-desc {
+    font-size: 2.8cqw;
+    color: var(--dim);
+    line-height: 1.55;
+    margin-top: 0.8cqw;
+  }
+  .stack-card .card-desc b {
+    color: var(--ink);
+    font-weight: 700;
+  }
+
+  /* 2x2 规整功能矩阵 */
+  .grid-2x2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.2cqw;
+    width: 82cqw;
+  }
+  .grid-cell {
+    background: linear-gradient(160deg, rgba(16, 28, 38, 0.94), rgba(10, 18, 26, 0.94));
+    border: 1px solid var(--line);
+    border-radius: 2.4cqw;
+    padding: 2.4cqw 2cqw;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 4px 18px rgba(0, 0, 0, 0.3);
+  }
+  .grid-cell .num-tag {
+    font-size: 2.6cqw;
+    font-weight: 900;
+    color: var(--green);
+    background: rgba(74, 222, 128, 0.12);
+    border-radius: 999px;
+    padding: 0.3cqw 1.8cqw;
+    margin-bottom: 1.2cqw;
+  }
+  .grid-cell .cell-title {
+    font-size: 3.4cqw;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.35;
+  }
+  .grid-cell .cell-desc {
+    font-size: 2.6cqw;
+    color: var(--dim);
+    line-height: 1.45;
+    margin-top: 0.8cqw;
+  }
+
+  /* 图数解耦环形图组件 */
+  .ring-stat-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 82cqw;
+    margin-bottom: 2cqw;
+  }
+  .ring-stat-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+  }
+  .ring-svg-box {
+    width: 21cqw;
+    height: 21cqw;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ring-svg-box svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  .ring-svg-box .c-val {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4.8cqw;
+    font-weight: 900;
+    color: var(--green);
+    text-shadow: 0 0 12px rgba(74, 222, 128, 0.4);
+  }
+  .ring-stat-item .stat-lab {
+    font-size: 2.7cqw;
+    font-weight: 700;
+    color: var(--dim);
+    margin-top: 1cqw;
+  }
+
+  /* 对比数值行 */
+  .compare-box {
+    background: linear-gradient(160deg, rgba(16, 28, 38, 0.94), rgba(10, 18, 26, 0.94));
+    border: 1px solid var(--line);
+    border-radius: 2.8cqw;
+    padding: 3cqw 3.6cqw;
+    width: 82cqw;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  }
+  .compare-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .compare-item .tag {
+    font-size: 2.6cqw;
+    color: var(--dim);
+    margin-bottom: 0.8cqw;
+  }
+  .compare-item .val {
+    font-size: 6.8cqw;
+    font-weight: 900;
+    color: var(--green);
+    line-height: 1;
+  }
+  .compare-item.bad .val {
+    color: var(--red);
+  }
+  .compare-divider {
+    width: 1px;
+    height: 10cqw;
+    background: var(--line);
+  }
+
+  /* ========================================================
+     S1 开场黄金 3 秒高频爆点（4 阶段递进）
+     ======================================================== */
+  .phs {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .35s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  #s-open[data-phase="hook"] .phs-hook { opacity: 1; pointer-events: auto; }
+  #s-open[data-phase="topic"] .phs-topic { opacity: 1; pointer-events: auto; }
+  #s-open[data-phase="slam"] .phs-slam { opacity: 1; pointer-events: auto; }
+  #s-open[data-phase="preview"] .phs-preview { opacity: 1; pointer-events: auto; }
+
+  .radar-ripple {
+    position: absolute;
+    width: 48cqw;
+    height: 48cqw;
+    border-radius: 50%;
+    border: 2px solid rgba(251, 191, 36, 0.4);
+    animation: radarPulse 2s ease-out infinite;
+    pointer-events: none;
+  }
+  @keyframes radarPulse {
+    0% { transform: scale(0.6); opacity: 0.9; }
+    100% { transform: scale(1.6); opacity: 0; }
+  }
+  .hook-title {
+    font-size: 7.2cqw;
+    font-weight: 900;
+    line-height: 1.35;
+    color: #ffffff;
+    text-shadow: 0 0 25px rgba(251, 191, 36, 0.45);
+    margin-top: 2cqw;
+  }
+  .hook-title em {
+    font-style: normal;
+    color: var(--amber);
+  }
+  .topic-hero {
+    font-size: 8.4cqw;
+    font-weight: 900;
+    line-height: 1.25;
+    background: linear-gradient(180deg, #ffffff 20%, #86efac 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 35px rgba(74, 222, 128, 0.45);
+    margin-top: 1.8cqw;
+  }
+  .slam-card {
+    background: linear-gradient(160deg, rgba(16, 28, 38, 0.95), rgba(10, 18, 26, 0.95));
+    border: 1px solid rgba(74, 222, 128, 0.35);
+    border-radius: 3.2cqw;
+    padding: 4.5cqw 4cqw;
+    width: 80cqw;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5), 0 0 25px rgba(74, 222, 128, 0.15);
+  }
+  .slam-vs {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.8cqw;
+    margin-top: 2.2cqw;
+  }
+  .slam-vs .badge-box {
+    padding: 1.6cqw 3cqw;
+    border-radius: 2cqw;
+    font-size: 4cqw;
+    font-weight: 900;
+  }
+  .slam-vs .from {
+    background: rgba(148, 163, 184, 0.12);
+    color: var(--dim);
+    border: 1px solid var(--line);
+  }
+  .slam-vs .arr {
+    font-size: 4.8cqw;
+    color: var(--green);
+    font-weight: 900;
+  }
+  .slam-vs .to {
+    background: rgba(74, 222, 128, 0.18);
+    color: var(--green);
+    border: 1px solid rgba(74, 222, 128, 0.45);
+    box-shadow: 0 0 16px rgba(74, 222, 128, 0.3);
+  }
+
+  /* CTA 交互收束组件 */
+  .cta-row {
+    display: flex;
+    gap: 2.4cqw;
+    width: 80cqw;
+    margin-top: 3.2cqw;
+  }
+  .cta-btn {
+    flex: 1;
+    background: linear-gradient(160deg, rgba(16, 28, 38, 0.95), rgba(10, 18, 26, 0.95));
+    border: 1px solid rgba(74, 222, 128, 0.35);
+    border-radius: 2.4cqw;
+    padding: 2.4cqw 1cqw;
+    text-align: center;
+    font-size: 3.2cqw;
+    font-weight: 800;
+    color: var(--green);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    animation: ctaPulse 2s ease-in-out infinite;
+  }
+  .cta-btn:nth-child(2) { animation-delay: 0.3s; }
+  .cta-btn:nth-child(3) { animation-delay: 0.6s; }
+  .cta-btn:nth-child(4) { animation-delay: 0.9s; }
+  @keyframes ctaPulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.04); border-color: rgba(74, 222, 128, 0.6); }
+  }
+
+  /* ========================================================
+     4. 下区（字幕区 & 控制台）
+     ======================================================== */
+  .subtitle {
+    position: fixed;
+    bottom: 14cqh;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    min-height: 7cqw;
+  }
+  .sentence {
+    font-size: 4.2cqw;
+    font-weight: 800;
+    color: #ffffff;
+    text-align: center;
+    line-height: 1.4;
+    letter-spacing: 0.04em;
+    background: rgba(8, 16, 24, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    padding: 1.2cqw 3.6cqw;
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.55);
+    max-width: 84cqw;
+  }
+  .sentence .cur {
+    color: var(--green);
+    text-shadow: 0 0 10px rgba(74, 222, 128, 0.8);
+    font-weight: 900;
+  }
+  .sentence .done {
+    color: #ffffff;
+  }
+
+  .progress {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    z-index: 10;
+  }
+  .progress i {
+    display: block;
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--green), var(--cyan));
+    transition: width 0.1s linear;
+  }
+
+  /* 控制浮层与重播 */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(7, 13, 18, 0.92);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    transition: opacity 0.4s ease;
+  }
+  .overlay.hide {
+    opacity: 0;
+    pointer-events: none;
+  }
+  .o-title {
+    font-size: 5.6cqw;
+    font-weight: 900;
+    text-align: center;
+    max-width: 80cqw;
+    line-height: 1.35;
+    margin-bottom: 1.6cqw;
+  }
+  .o-title em { font-style: normal; color: var(--green); }
+  .o-sub {
+    font-size: 3.2cqw;
+    color: var(--dim);
+    margin-bottom: 5cqw;
+  }
+  .play-btn {
+    display: flex;
+    align-items: center;
+    gap: 2cqw;
+    font-size: 3.8cqw;
+    font-weight: 800;
+    color: #070d12;
+    background: var(--green);
+    border: none;
+    border-radius: 999px;
+    padding: 2.2cqw 6cqw;
+    cursor: pointer;
+    box-shadow: 0 0 25px rgba(74, 222, 128, 0.5);
+    transition: transform 0.2s;
+  }
+  .play-btn:hover { transform: scale(1.05); }
+  .play-btn svg { width: 4.5cqw; height: 4.5cqw; fill: currentColor; }
+
+  .replay-btn {
+    position: fixed;
+    bottom: 22cqh;
+    left: 50%;
+    transform: translateX(-50%) scale(0.9);
+    background: rgba(14, 26, 34, 0.9);
+    border: 1px solid var(--green);
+    color: var(--green);
+    font-size: 3.2cqw;
+    font-weight: 800;
+    border-radius: 999px;
+    padding: 1.6cqw 4.2cqw;
+    cursor: pointer;
+    z-index: 40;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 1.5cqw;
+  }
+  .replay-btn.show {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateX(-50%) scale(1);
+  }
+  .replay-btn svg { width: 3.6cqw; height: 3.6cqw; fill: currentColor; }
+
+  /* 转场闪白 */
+  .flash {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 30;
+  }
+  .flash.go {
+    animation: flashAnim 0.35s ease-out;
+  }
+  @keyframes flashAnim {
+    0% { opacity: 0.22; }
+    100% { opacity: 0; }
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- 制作辅助 HUD（置于安全区外左上角盲区） -->
+  <div id="chapText">第 1 / 17 节</div>
+
+  <!-- 顶部作品标题区（纯粹作品标题，双行语义切分） -->
+  <div class="head">
+    <div class="head-pill">
+      <div class="head-title">
+        <span class="title-main">贝莱斯芽孢杆菌 · 人工驯化与改造</span>
+        <span class="title-sub">从野生原菌到田间生防尖兵</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S1: 黄金 3 秒开场 ==================== -->
+  <div class="scene active" id="s-open" data-phase="hook">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <!-- Phase 1: 0~1.6s 警示悬念 -->
+      <div class="phs phs-hook">
+        <div class="radar-ripple"></div>
+        <div class="badge amber">生防瓶颈 · 警示思考</div>
+        <div class="hook-title">野生原菌<br>为何<em>难挑大梁</em>？！</div>
+      </div>
+      <!-- Phase 2: 1.6~5.7s 主角亮相 -->
+      <div class="phs phs-topic">
+        <div class="badge">人工驯化与改良</div>
+        <div class="topic-hero">贝莱斯芽孢杆菌</div>
+        <div class="sub">从自然实验室走向现代农业大田</div>
+      </div>
+      <!-- Phase 3: 5.7~8.1s 矛盾反差 -->
+      <div class="phs phs-slam">
+        <div class="slam-card">
+          <div class="badge cyan">核心跃迁之路</div>
+          <div class="slam-vs">
+            <span class="badge-box from">野生原菌</span>
+            <span class="arr">➔</span>
+            <span class="badge-box to">田间尖兵</span>
+          </div>
+        </div>
+      </div>
+      <!-- Phase 4: 8.1~11.8s 前瞻概览 -->
+      <div class="phs phs-preview">
+        <div class="badge">现代育种工程</div>
+        <div class="topic-hero">突破四大自然瓶颈</div>
+        <div class="sub">让一株菌真正具备抗击极端田间逆境的能力</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S2: 野生菌四大瓶颈 ==================== -->
+  <div class="scene" id="s-bottleneck">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge amber w">应用瓶颈</div>
+      <h2 class="w w2">野生原菌 · 四大实战短板</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card red">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">田间定植弱 · 抗菌产率低</div>
+            <div class="card-desc">在复杂多变的土壤微生物竞争中<b>容易被原住菌群排挤</b>，且内源抗菌脂肽分泌量有限。</div>
+          </div>
+        </div>
+        <div class="stack-card amber">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">货架期短暂 · 环境抗逆差</div>
+            <div class="card-desc">常温储存过程中芽孢活力衰减较快，耐受高温、高盐与化学农药胁迫的能力明显不足。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S3: 四大改良手段概览 ==================== -->
+  <div class="scene" id="s-overview">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">破局之道</div>
+      <h2 class="w w2">科研攻坚 · 四大驯化改良赛道</h2>
+      <div class="grid-2x2 w w3">
+        <div class="grid-cell">
+          <div class="num-tag">手段一</div>
+          <div class="cell-title">传统诱变育种</div>
+          <div class="cell-desc">物理·化学·复合诱变<br>法规友好商业主流</div>
+        </div>
+        <div class="grid-cell">
+          <div class="num-tag">手段二</div>
+          <div class="cell-title">基因组改组</div>
+          <div class="cell-desc">原生质体融合改组<br>逆境连续传代进化</div>
+        </div>
+        <div class="grid-cell">
+          <div class="num-tag">手段三</div>
+          <div class="cell-title">代谢工程编辑</div>
+          <div class="cell-desc">靶向敲除与过表达<br>合成群落协同配伍</div>
+        </div>
+        <div class="grid-cell">
+          <div class="num-tag">手段四</div>
+          <div class="cell-title">发酵制剂技术</div>
+          <div class="cell-desc">原料降本工艺优化<br>专有保护剂与新剂型</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S4: 手段一·物理诱变 ==================== -->
+  <div class="scene" id="s-mut-phys">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">手段一 · 诱变育种</div>
+      <h2 class="w w2">物理诱变：多源射线强力冲击</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">常规物理诱变体系</div>
+            <div class="card-desc">采用<b>紫外线诱变</b>与<b>微波诱变</b>，破坏DNA复制模板，高效激发菌体突变频率。</div>
+          </div>
+        </div>
+        <div class="stack-card cyan">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">前沿物理新技术：清华等离子</div>
+            <div class="card-desc">清华大学开发新型技术，通过<b>氦气常压室温等离子体射流</b>直接诱发DNA损伤，辅以航天空间诱变。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S5: 化学诱变手段 ==================== -->
+  <div class="scene" id="s-mut-chem">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge cyan w">化学诱变</div>
+      <h2 class="w w2">化学烷化：高效拓宽突变库</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card cyan">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 2v7.31L4.69 18.5a2 2 0 0 0 1.73 3h11.16a2 2 0 0 0 1.73-3L14 9.31V2"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">三大主流烷化诱变剂</div>
+            <div class="card-desc">广泛应用<b>亚硝基胍（NTG）</b>、<b>甲基磺酸乙酯（EMS）</b>和<b>硫酸二乙酯（DES）</b>等分子诱变剂。</div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">诱变机制与文库扩容</div>
+            <div class="card-desc">通过直接烷化鸟嘌呤等碱基，产生高丰度转换与颠换变异，快速建立高容量表型突变库。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S6: 复合诱变数据爆发 ==================== -->
+  <div class="scene" id="s-mut-comp">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">复合突破</div>
+      <h2 class="w w2">复合诱变：生防效能指数级飞跃</h2>
+      <!-- 图数解耦：纯数字居中环形图 -->
+      <div class="ring-stat-row w w3">
+        <div class="ring-stat-item">
+          <div class="ring-svg-box">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(148,163,184,0.18)" stroke-width="7"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#4ade80" stroke-width="7" stroke-dasharray="238.7" stroke-dashoffset="35" stroke-linecap="round"/>
+            </svg>
+            <div class="c-val">2.33x</div>
+          </div>
+          <div class="stat-lab">环脂肽产量</div>
+        </div>
+        <div class="ring-stat-item">
+          <div class="ring-svg-box">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(148,163,184,0.18)" stroke-width="7"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#38bdf8" stroke-width="7" stroke-dasharray="238.7" stroke-dashoffset="114" stroke-linecap="round"/>
+            </svg>
+            <div class="c-val" style="color:var(--cyan);">52.2%</div>
+          </div>
+          <div class="stat-lab">离体抑菌提升</div>
+        </div>
+        <div class="ring-stat-item">
+          <div class="ring-svg-box">
+            <svg viewBox="0 0 100 100">
+              <circle cx="50" cy="50" r="38" fill="none" stroke="rgba(148,163,184,0.18)" stroke-width="7"/>
+              <circle cx="50" cy="50" r="38" fill="none" stroke="#fbbf24" stroke-width="7" stroke-dasharray="238.7" stroke-dashoffset="10" stroke-linecap="round"/>
+            </svg>
+            <div class="c-val" style="color:var(--amber);">96.5%</div>
+          </div>
+          <div class="stat-lab">活体抑菌提升</div>
+        </div>
+      </div>
+      <div class="stack-card w w4" style="margin-top:1cqw;">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">实证案例：贝莱斯芽孢杆菌 G-1</div>
+          <div class="card-desc">科研实验证实：<b>化学结合物理的复合诱变</b>，能彻底打开抗菌物质合成代谢瓶颈，实现抗病活性全面倍增。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S7: 法规友好与国内主流 ==================== -->
+  <div class="scene" id="s-regulation">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">政策优势</div>
+      <h2 class="w w2">法规友好：国内企业绝对主流</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">非转基因审批监管</div>
+            <div class="card-desc">传统诱变培育出的突变株<b>不列入转基因生物管理范畴</b>，规避了漫长严苛的安全评价流程。</div>
+          </div>
+        </div>
+        <div class="stack-card cyan">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">商业化登记落地阻力小</div>
+            <div class="card-desc">农药与肥料登记通道顺畅、上市周期快，因而成为当前<b>国内农业生防企业育种的核心主力</b>。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S8: 手段二·基因组改组 ==================== -->
+  <div class="scene" id="s-shuffling">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge cyan w">手段二 · 基因改组</div>
+      <h2 class="w w2">原生质体融合：打破单一亲本</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card cyan">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">多轮原生质体融合改组</div>
+            <div class="card-desc">采用酶解去除细胞壁，促使多个优良亲本发生<b>全基因组级别的染色体杂交与重组</b>。</div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">多基因性状一键聚合</div>
+            <div class="card-desc">无需阐明复杂的微观调控网络，即可在单株菌中同步聚合<b>高产抗菌</b>与<b>极速扩繁</b>等多重优良性状。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S9: 极端胁迫适应性进化 ==================== -->
+  <div class="scene" id="s-adaptation">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge amber w">适应性进化</div>
+      <h2 class="w w2">定向胁迫传代：筛选根际尖兵</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card amber">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 14.76V3.5a2.5 2.5 0 0 0-5 0v11.26a4.5 4.5 0 1 0 5 0z"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">四大严苛胁迫连续传代</div>
+            <div class="card-desc">在<b>高温环境</b>、<b>高盐碱浓度</b>、<b>高农药残留</b>及<b>特定根系分泌物</b>等极限环境下长期连续继代筛选。</div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">根际强驯化株的诞生</div>
+            <div class="card-desc">显著强化菌株在复杂农田环境中的<b>定植竞争能力</b>与<b>抗逆稳定性</b>，确保下地能扎根、能扩繁。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S10: 手段三·精准基因编辑 ==================== -->
+  <div class="scene" id="s-crispr">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge cyan w">手段三 · 精准编辑</div>
+      <h2 class="w w2">代谢工程与编辑：分子手术刀</h2>
+      <div class="compare-box w w3">
+        <div class="compare-item">
+          <div class="tag">特定编辑工具建立</div>
+          <div class="val">96%</div>
+          <div class="tag" style="margin-top:0.8cqw;color:var(--green);font-weight:700;">单基因编辑效率</div>
+        </div>
+        <div class="compare-divider"></div>
+        <div class="compare-item">
+          <div class="tag">改良技术形态</div>
+          <div class="val" style="font-size:5cqw;color:var(--cyan);">靶向·理性</div>
+          <div class="tag" style="margin-top:0.8cqw;">告别传统育种盲盒</div>
+        </div>
+      </div>
+      <div class="stack-card cyan w w4" style="margin-top:2.2cqw;">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">精准重塑菌体代谢路径</div>
+          <div class="card-desc">随着CRISPR等特定工具在贝莱斯芽孢杆菌中建立，科研人员已能像编写代码般理性改造特定基因。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S11: 基因簇调控与代谢重导 ==================== -->
+  <div class="scene" id="s-cluster">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">代谢流重导</div>
+      <h2 class="w w2">基因簇重塑：抗菌与定植强化</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">过表达脂肽合成基因簇</div>
+            <div class="card-desc">通过强启动子过表达核心合成簇，并<b>敲除负调控基因与竞争支路</b>，将菌体代谢流全力导向脂肽合成。</div>
+          </div>
+        </div>
+        <div class="stack-card cyan">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">增强生物膜与定植基因</div>
+            <div class="card-desc">定向激活胞外多糖合成与鞭毛调控通路，大幅增强菌株在作物根系表面的<b>成膜锚定与根际定殖力</b>。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S12: 合成群落协同作战 ==================== -->
+  <div class="scene" id="s-consortia">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge cyan w">菌群协同</div>
+      <h2 class="w w2">合成群落构建：多兵种立体作战</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card cyan">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">贝莱斯 + 假单胞菌强强联合</div>
+            <div class="card-desc">将改造后的贝莱斯芽孢杆菌与<b>假单胞菌</b>等有益生防菌智能配伍，优势互补，打破单菌能力边界。</div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">复合生态群落协同制胜</div>
+            <div class="card-desc">不同功能菌在土壤微生态中形成稳固的互惠共生群落，实现<b>防病·促生·活化养分</b>多位一体协同防卫。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S13: 商业化现实与监管红线 ==================== -->
+  <div class="scene" id="s-gmo-law">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge amber w">监管现实</div>
+      <h2 class="w w2">转基因监管红线：商业化审慎</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card amber">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">严苛的转基因审批准则</div>
+            <div class="card-desc">基因工程菌在各国（尤其<b>欧盟与中国</b>）均按转基因严格监管，大田释放商业化审批门槛极高。</div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">现阶段商业主流判定</div>
+            <div class="card-desc">目前全球及国内生防农用市场的主力流通产品，<b>仍以非转基因诱变和生态筛选菌株为主</b>。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S14: 手段四·发酵工艺优化 ==================== -->
+  <div class="scene" id="s-ferment">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">手段四 · 产业驯化</div>
+      <h2 class="w w2">发酵工艺优化：工业端降本增效</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">廉价原料替代高价氮源</div>
+            <div class="card-desc">通过优化配方，以<b>菜粕</b>等低成本工农业废弃副产物替代酵母浸粉等昂贵氮源，大幅压缩发酵成本。</div>
+          </div>
+        </div>
+        <div class="stack-card cyan">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="1" y="4" width="22" height="16" rx="2" ry="2"/><line x1="1" y1="10" x2="23" y2="10"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">产业端规模化技术驯化</div>
+            <div class="card-desc">菌株之外，配套发酵溶氧、流加补料与温度梯级调控等<b>工艺级驯化手段</b>同样决定商业成败。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S15: 玉米须多糖保护剂突破 ==================== -->
+  <div class="scene" id="s-protectant">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">耐储突破</div>
+      <h2 class="w w2">复合保护剂：常温货架期革命</h2>
+      <div class="compare-box w w3">
+        <div class="compare-item">
+          <div class="tag">添加玉米须多糖保护剂</div>
+          <div class="val">7%</div>
+          <div class="tag" style="margin-top:0.8cqw;color:var(--green);font-weight:700;">3个月常温储存死亡率</div>
+        </div>
+        <div class="compare-divider"></div>
+        <div class="compare-item bad">
+          <div class="tag">未添加保护剂 (野生型)</div>
+          <div class="val">16%</div>
+          <div class="tag" style="margin-top:0.8cqw;color:var(--red);font-weight:700;">3个月常温储存死亡率</div>
+        </div>
+      </div>
+      <div class="stack-card w w4" style="margin-top:2.2cqw;">
+        <div class="card-ico">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <div class="card-body">
+          <div class="card-title">干粉剂储存存活率倍增</div>
+          <div class="card-desc">玉米须多糖在菌体芽孢表面形成高致密纳米级保护膜，<b>死亡率减半以上</b>，攻克农资渠道常温耐储顽疾。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S16: 多元化剂型与全场景适配 ==================== -->
+  <div class="scene" id="s-formulation">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge cyan w">剂型创新</div>
+      <h2 class="w w2">多元化剂型开发：全场景适配</h2>
+      <div class="card-stack w w3">
+        <div class="stack-card cyan">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">三大主流商业制剂体系</div>
+            <div class="card-desc">重点开发<b>悬浮剂（SC）</b>、<b>水分散粒剂（WDG）</b>与<b>可湿性粉剂（WP）</b>等标准化剂型。</div>
+          </div>
+        </div>
+        <div class="stack-card">
+          <div class="card-ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2.69l5.66 5.66a8 8 0 1 1-11.31 0z"/></svg>
+          </div>
+          <div class="card-body">
+            <div class="card-title">精准适配多维田间农艺</div>
+            <div class="card-desc">全面覆盖<b>拌种包衣</b>、<b>苗床灌根</b>、<b>无人机飞防喷雾</b>等多样化施用场景，发挥最大药效。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== S17: 总结收束与下期预告 ==================== -->
+  <div class="scene" id="s-end">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">下期预告</div>
+      <h2 class="w w2">中外明星商业化菌株大盘点</h2>
+      <div class="stack-card cyan w w3" style="text-align:center;align-items:center;">
+        <div class="card-body">
+          <div class="card-title" style="color:var(--green);font-size:4.2cqw;">下期视频重磅解析</div>
+          <div class="card-desc" style="font-size:3.1cqw;margin-top:1.2cqw;">
+            <b>国外明星菌株</b>（FZB42 · QST713 等）<br>
+            vs <b>中国商业化自主优势菌株</b> 深度对决与应用全景
+          </div>
+        </div>
+      </div>
+      <div class="sub w w3" style="margin-top:2cqw;color:var(--dim);font-weight:700;">
+        感兴趣的朋友 · 持续关注不迷路
+      </div>
+      <div class="cta-row w w4">
+        <div class="cta-btn">点赞</div>
+        <div class="cta-btn">关注</div>
+        <div class="cta-btn">收藏</div>
+        <div class="cta-btn">评论</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 底部字幕与控制层 -->
+  <div class="flash" id="flash"></div>
+  <div class="subtitle"><p class="sentence" id="sentence"></p></div>
+  <div class="progress"><i id="progFill"></i></div>
+
+  <div class="overlay" id="overlay">
+    <div class="o-title">从野生原菌到田间尖兵：<em>人工驯化与改造</em></div>
+    <div class="o-sub">184 秒 · 音画 100% 同步 · 建议佩戴耳机</div>
+    <button class="play-btn" id="btnPlay" type="button">
+      <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>开始播放
+    </button>
+  </div>
+  <button class="replay-btn" id="btnReplay" type="button">
+    <svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8z"/></svg>重播
+  </button>
+
+  <audio id="voice" src="../../inputs/N0005_贝莱斯芽孢杆菌人工驯化与改造/voice.wav" preload="auto"></audio>
+</div>
+
+<script>
+/* ========================================================
+   内联数据源：938 字级时间戳、场景时间轴与音效标定点
+   ======================================================== */
+const CHARS = ["今", "天", "这", "一", "期", "主", "要", "讲", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "的", "人", "工", "驯", "化", "与", "改", "造", "。", "我", "们", "是", "如", "何", "通", "过", "人", "工", "驯", "化", "与", "改", "造", "，", "让", "这", "株", "野", "生", "菌", "进", "化", "为", "田", "间", "尖", "兵", "。", "自", "然", "界", "分", "离", "的", "野", "生", "菌", "株", "，", "虽", "然", "功", "能", "多", "样", "，", "但", "在", "实", "际", "农", "业", "应", "用", "中", "，", "往", "往", "面", "临", "田", "间", "定", "植", "能", "力", "弱", "、", "抗", "菌", "物", "质", "产", "量", "低", "、", "货", "架", "期", "短", "、", "环", "境", "抗", "逆", "性", "不", "足", "等", "瓶", "颈", "。", "为", "此", "，", "科", "研", "人", "员", "通", "过", "多", "种", "技", "术", "手", "段", "，", "对", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "进", "行", "人", "工", "驯", "化", "和", "改", "良", "。", "那", "么", "都", "有", "哪", "些", "驯", "化", "与", "改", "良", "的", "手", "段", "呢", "？", "一", "、", "经", "典", "但", "不", "过", "时", "的", "传", "统", "诱", "变", "育", "种", "。", "包", "括", "物", "理", "诱", "变", "，", "紫", "外", "诱", "变", "、", "微", "波", "诱", "变", "、", "常", "压", "室", "温", "等", "离", "子", "体", "诱", "变", "，", "如", "清", "华", "大", "学", "开", "发", "的", "新", "型", "技", "术", "，", "通", "过", "氦", "气", "等", "离", "子", "体", "射", "流", "诱", "发", "D", "N", "A", "损", "伤", "，", "以", "及", "航", "天", "诱", "变", "等", "。", "化", "学", "诱", "变", "，", "利", "用", "亚", "硝", "基", "胍", "、", "甲", "基", "磺", "酸", "乙", "酯", "、", "硫", "酸", "二", "乙", "酯", "等", "进", "行", "化", "学", "诱", "变", "。", "复", "合", "诱", "变", "。", "研", "究", "表", "明", "，", "化", "学", "结", "合", "物", "理", "的", "复", "合", "诱", "变", "，", "可", "使", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "G", "杠", "一", "的", "环", "脂", "肽", "产", "量", "提", "升", "2", ".", "3", "3", "倍", "，", "离", "体", "抑", "菌", "活", "性", "提", "升", "5", "2", ".", "2", "%", "，", "活", "体", "抑", "菌", "活", "性", "提", "升", "9", "6", ".", "5", "5", "%", "。", "传", "统", "诱", "变", "的", "最", "大", "优", "势", "是", "法", "规", "友", "好", "，", "诱", "变", "菌", "株", "不", "按", "转", "基", "因", "管", "理", "，", "登", "记", "上", "市", "阻", "力", "小", "。", "因", "此", "是", "目", "前", "国", "内", "企", "业", "育", "种", "的", "主", "流", "手", "段", "。", "二", "、", "基", "因", "组", "改", "组", "与", "适", "应", "性", "进", "化", "。", "通", "过", "多", "轮", "原", "生", "质", "体", "融", "合", "，", "或", "长", "期", "在", "特", "定", "胁", "迫", "条", "件", "，", "如", "高", "温", "、", "高", "盐", "、", "高", "药", "、", "特", "定", "根", "系", "分", "泌", "物", "下", "连", "续", "传", "代", "，", "筛", "选", "适", "应", "性", "更", "强", "的", "根", "际", "驯", "化", "株", "，", "显", "著", "提", "升", "其", "在", "复", "杂", "土", "壤", "环", "境", "中", "的", "定", "植", "能", "力", "和", "稳", "定", "性", "。", "三", "、", "精", "准", "高", "效", "的", "代", "谢", "工", "程", "与", "基", "因", "编", "辑", "。", "随", "着", "特", "定", "基", "因", "编", "辑", "工", "具", "在", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "中", "建", "立", "，", "单", "基", "因", "编", "辑", "效", "率", "已", "达", "9", "6", "%", "。", "研", "究", "人", "员", "可", "以", "通", "过", "过", "表", "达", "脂", "肽", "合", "成", "基", "因", "簇", "、", "敲", "除", "负", "调", "控", "基", "因", "或", "竞", "争", "途", "径", "，", "将", "代", "谢", "流", "导", "向", "抗", "菌", "物", "质", "合", "成", "，", "增", "强", "生", "物", "膜", "与", "定", "植", "相", "关", "基", "因", "，", "提", "升", "根", "际", "定", "殖", "力", "，", "构", "建", "合", "成", "群", "落", "。", "如", "将", "改", "造", "后", "的", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "与", "其", "他", "有", "益", "菌", "，", "如", "假", "单", "胞", "菌", "组", "合", "，", "实", "现", "菌", "群", "协", "同", "作", "战", "。", "不", "过", "，", "基", "因", "工", "程", "菌", "株", "在", "各", "国", "，", "尤", "其", "欧", "盟", "和", "中", "国", "，", "按", "转", "基", "因", "监", "管", "，", "商", "业", "化", "审", "批", "仍", "较", "严", "格", "。", "目", "前", "市", "场", "主", "流", "仍", "为", "非", "转", "基", "因", "的", "诱", "变", "和", "筛", "选", "菌", "株", "。", "四", "、", "发", "酵", "工", "艺", "与", "制", "剂", "技", "术", "驯", "化", "。", "菌", "株", "之", "外", "，", "产", "业", "化", "端", "的", "驯", "化", "同", "样", "重", "要", "。", "那", "么", "产", "业", "化", "的", "驯", "化", "手", "段", "有", "哪", "些", "？", "一", "、", "通", "过", "培", "养", "基", "优", "化", "，", "如", "以", "菜", "粕", "等", "廉", "价", "原", "料", "替", "代", "高", "价", "氮", "源", "，", "降", "低", "成", "本", "。", "二", "、", "添", "加", "玉", "米", "须", "多", "糖", "等", "保", "护", "剂", "，", "使", "干", "粉", "剂", "常", "温", "储", "存", "3", "个", "月", "死", "亡", "率", "仅", "7", "%", "，", "对", "比", "野", "生", "型", "1", "6", "%", "。", "三", "、", "开", "发", "悬", "浮", "剂", "、", "水", "分", "散", "粒", "剂", "、", "可", "湿", "性", "粉", "剂", "等", "多", "元", "化", "剂", "型", "，", "适", "配", "拌", "种", "、", "灌", "根", "、", "喷", "雾", "等", "不", "同", "场", "景", "。", "以", "上", "就", "是", "人", "工", "驯", "化", "与", "改", "造", "的", "内", "容", "。", "下", "期", "我", "们", "将", "讲", "解", "国", "外", "明", "星", "菌", "株", "和", "中", "国", "商", "业", "化", "优", "势", "菌", "株", "。", "欢", "迎", "到", "时", "收", "看", "收", "听", "，", "拜", "拜", "。"];
+const TIMES = [1.63, 1.79, 1.87, 1.99, 2.07, 2.23, 2.35, 2.43, 2.75, 2.91, 3.07, 3.43, 3.63, 3.83, 3.95, 4.11, 4.31, 4.43, 4.71, 4.83, 4.99, 5.19, 5.39, 5.55, 5.71, 5.87, 5.99, 6.15, 6.31, 6.43, 6.63, 6.75, 6.99, 7.27, 7.39, 7.59, 7.75, 7.95, 8.11, 8.27, 8.47, 8.71, 8.91, 9.11, 9.35, 9.71, 9.91, 10.07, 10.31, 10.55, 10.99, 11.23, 11.27, 11.78, 11.9, 11.98, 12.18, 12.38, 12.46, 12.66, 12.78, 12.98, 13.22, 13.26, 13.42, 13.58, 13.7, 13.86, 14.02, 14.18, 14.42, 14.58, 14.78, 14.98, 15.14, 15.3, 15.5, 15.66, 15.78, 15.9, 16.14, 16.14, 16.3, 16.46, 16.62, 16.82, 17.02, 17.38, 17.62, 17.78, 17.94, 18.02, 18.26, 18.5, 18.74, 18.98, 19.14, 19.34, 19.46, 19.66, 19.9, 20.18, 20.38, 20.5, 20.74, 21.02, 21.18, 21.38, 21.54, 21.82, 21.98, 22.14, 22.3, 22.42, 22.66, 22.82, 22.9, 23.1, 23.3, 23.46, 23.58, 23.74, 23.9, 24.06, 24.22, 24.38, 24.5, 24.7, 24.86, 24.98, 25.14, 25.3, 25.42, 25.42, 26.05, 26.21, 26.37, 26.57, 26.73, 26.89, 27.09, 27.37, 27.53, 27.65, 27.85, 28.13, 28.25, 28.41, 28.61, 28.81, 28.93, 29.13, 29.29, 29.41, 29.57, 29.73, 29.89, 30.21, 30.37, 30.53, 30.77, 30.97, 31.09, 31.29, 31.49, 31.65, 31.89, 32.09, 32.41, 32.53, 32.73, 32.93, 33.13, 33.33, 33.49, 33.61, 33.85, 34.01, 34.29, 34.45, 34.69, 34.81, 34.97, 35.13, 35.29, 35.73, 35.93, 36.17, 36.29, 36.37, 36.65, 36.81, 37.09, 37.25, 37.29, 37.73, 37.89, 38.17, 38.33, 38.49, 38.85, 39.01, 39.41, 39.53, 39.81, 40.01, 40.13, 40.25, 40.49, 40.65, 40.73, 40.85, 41.09, 41.25, 41.41, 41.61, 41.77, 41.93, 42.05, 42.25, 42.41, 42.57, 42.69, 42.81, 43.01, 43.13, 43.37, 43.53, 43.81, 43.97, 44.09, 44.21, 44.49, 44.69, 44.93, 45.05, 45.33, 45.4, 45.46, 45.77, 45.97, 46.17, 46.41, 46.57, 46.77, 47.01, 47.33, 47.49, 47.65, 47.89, 48.05, 48.29, 48.49, 48.65, 48.73, 48.93, 49.09, 49.29, 49.53, 49.73, 49.97, 50.01, 50.25, 50.49, 50.69, 50.81, 51.05, 51.21, 51.25, 51.53, 51.69, 51.85, 52.13, 52.33, 52.49, 52.69, 52.81, 52.93, 53.13, 53.29, 53.45, 53.49, 53.73, 53.85, 54.05, 54.21, 54.25, 54.7, 54.86, 54.98, 55.18, 55.34, 55.38, 55.62, 55.78, 55.98, 56.14, 56.34, 56.42, 56.62, 56.74, 56.94, 57.1, 57.18, 57.46, 57.66, 57.9, 58.06, 58.26, 58.5, 58.7, 58.86, 59.02, 59.34, 59.54, 59.74, 59.94, 60.38, 60.58, 60.82, 60.98, 61.14, 61.34, 61.54, 61.7, 61.95, 61.95, 62.21, 62.46, 62.66, 62.82, 62.94, 63.14, 63.26, 63.54, 63.62, 63.82, 63.98, 64.14, 64.49, 64.83, 64.83, 65.18, 65.18, 65.34, 65.54, 65.82, 65.94, 66.1, 66.34, 66.54, 66.74, 66.94, 67.28, 67.62, 67.62, 67.96, 68.3, 68.3, 68.54, 68.74, 69.02, 69.22, 69.3, 69.5, 69.62, 69.78, 69.94, 70.06, 70.38, 70.58, 70.86, 71.02, 71.22, 71.42, 71.58, 71.74, 71.98, 72.14, 72.34, 72.58, 72.82, 73.02, 73.18, 73.34, 73.5, 73.62, 73.86, 74.02, 74.26, 74.42, 74.58, 74.74, 74.94, 75.2, 75.36, 75.52, 75.72, 75.88, 76.08, 76.28, 76.44, 76.68, 76.88, 77.0, 77.16, 77.36, 77.52, 77.64, 77.84, 77.96, 78.12, 78.4, 78.88, 79.08, 79.36, 79.56, 79.88, 80.08, 80.36, 80.56, 80.64, 80.92, 81.08, 81.28, 81.44, 81.6, 81.72, 81.92, 82.16, 82.36, 82.64, 82.76, 82.96, 83.16, 83.32, 83.4, 83.72, 83.96, 84.12, 84.44, 84.68, 85.0, 85.12, 85.36, 85.52, 85.68, 85.8, 86.08, 86.32, 86.56, 86.72, 87.08, 87.12, 87.4, 87.68, 87.88, 88.36, 88.52, 88.76, 88.96, 89.12, 89.28, 89.44, 89.64, 89.92, 90.12, 90.32, 90.52, 90.6, 90.96, 91.16, 91.36, 91.52, 91.64, 91.84, 92.04, 92.24, 92.48, 92.76, 93.04, 93.16, 93.44, 93.48, 93.96, 94.24, 94.44, 94.64, 94.8, 95.04, 95.24, 95.36, 95.52, 95.72, 95.96, 96.12, 96.24, 96.4, 96.6, 96.8, 96.96, 97.12, 97.2, 97.4, 97.6, 97.68, 97.88, 98.32, 98.56, 98.72, 98.92, 99.16, 99.36, 99.52, 99.72, 99.92, 100.08, 100.28, 100.4, 100.64, 100.84, 101.0, 101.2, 101.32, 101.52, 101.68, 101.84, 102.0, 102.2, 102.32, 102.48, 102.64, 102.8, 102.96, 103.12, 103.52, 103.68, 103.88, 104.08, 104.24, 104.44, 104.56, 104.68, 104.88, 105.04, 105.24, 105.48, 105.72, 105.92, 106.08, 106.24, 106.36, 106.52, 106.68, 106.84, 107.08, 107.46, 107.84, 107.84, 108.12, 108.28, 108.4, 108.56, 108.68, 108.84, 108.96, 109.12, 109.32, 109.6, 109.84, 110.12, 110.32, 110.52, 110.68, 110.88, 111.04, 111.32, 111.4, 111.88, 112.0, 112.36, 112.6, 112.84, 113.08, 113.24, 113.4, 113.68, 113.92, 114.12, 114.32, 114.44, 114.68, 114.92, 115.12, 115.28, 115.56, 115.72, 115.92, 116.12, 116.32, 116.52, 116.64, 116.8, 116.92, 117.37, 117.57, 117.85, 118.05, 118.25, 118.49, 118.81, 119.05, 119.25, 119.45, 119.61, 119.81, 120.01, 120.17, 120.41, 120.65, 120.97, 121.17, 121.41, 121.53, 121.77, 121.89, 122.13, 122.29, 122.49, 122.65, 122.89, 122.97, 123.17, 123.37, 123.61, 123.77, 123.89, 124.05, 124.21, 124.37, 124.57, 124.77, 124.93, 125.09, 125.25, 125.49, 125.73, 125.89, 125.97, 126.21, 126.33, 126.49, 126.73, 126.89, 127.09, 127.25, 127.41, 127.61, 127.81, 128.01, 128.21, 128.41, 128.69, 128.89, 129.25, 129.49, 129.69, 129.89, 130.05, 130.5, 130.66, 130.78, 130.86, 130.98, 131.14, 131.3, 131.54, 131.74, 131.9, 132.1, 132.3, 132.5, 132.74, 132.9, 133.1, 133.26, 133.46, 133.66, 133.82, 134.02, 134.06, 134.34, 134.62, 134.78, 134.9, 135.14, 135.3, 135.5, 135.7, 135.82, 136.06, 136.26, 136.54, 136.78, 137.02, 137.18, 137.34, 137.46, 137.62, 137.74, 137.9, 138.06, 138.26, 138.42, 138.62, 138.82, 139.1, 139.34, 139.5, 139.58, 139.86, 140.06, 140.26, 140.46, 140.66, 140.9, 141.14, 141.18, 141.7, 141.94, 142.06, 142.26, 142.5, 142.66, 142.82, 143.18, 143.38, 143.54, 143.7, 143.94, 144.06, 144.26, 144.78, 144.98, 145.14, 145.3, 145.46, 145.5, 145.7, 145.78, 145.98, 146.18, 146.42, 146.54, 146.82, 147.02, 147.18, 147.34, 147.5, 147.58, 147.74, 147.94, 148.14, 148.26, 148.42, 148.66, 148.78, 148.94, 149.1, 149.26, 149.42, 149.54, 149.74, 150.1, 150.38, 150.42, 150.58, 150.78, 150.94, 151.18, 151.34, 151.5, 151.66, 152.21, 152.41, 152.65, 152.93, 153.13, 153.37, 153.53, 153.73, 153.93, 154.17, 154.37, 154.53, 154.73, 155.05, 155.25, 155.29, 155.53, 155.73, 155.93, 156.09, 156.29, 156.57, 156.89, 156.97, 157.17, 157.41, 157.53, 157.73, 157.89, 158.05, 158.25, 158.45, 158.61, 158.73, 158.93, 159.17, 159.41, 159.61, 159.89, 160.09, 160.25, 160.45, 160.61, 160.77, 160.93, 161.05, 161.21, 161.37, 161.49, 161.65, 161.89, 162.53, 162.53, 162.69, 162.85, 163.01, 163.17, 163.33, 163.57, 163.93, 164.29, 164.29, 164.68, 164.92, 165.08, 165.32, 165.64, 165.92, 166.16, 166.28, 166.52, 166.8, 167.08, 167.32, 167.48, 167.6, 167.72, 167.96, 168.08, 168.24, 168.52, 168.68, 168.88, 169.08, 169.2, 169.52, 169.64, 169.8, 170.16, 170.32, 170.72, 170.88, 171.08, 171.32, 171.52, 171.68, 171.84, 172.08, 172.24, 172.48, 172.64, 172.76, 173.0, 173.12, 173.28, 173.4, 173.56, 173.68, 173.8, 174.0, 174.24, 174.36, 174.52, 174.72, 174.88, 175.0, 175.2, 175.32, 175.44, 175.79, 175.95, 176.07, 176.19, 176.31, 176.51, 176.71, 176.95, 177.19, 177.39, 177.55, 177.83, 178.03, 178.23, 178.47, 178.71, 178.87, 179.11, 179.23, 179.47, 179.67, 179.87, 180.11, 180.15, 180.39, 180.55, 180.67, 180.91, 181.15, 181.27, 181.47, 181.63, 181.83, 181.99, 182.23, 182.31];
+const SCENES = [["s-open", 0.0], ["s-bottleneck", 11.78], ["s-overview", 23.1], ["s-mut-phys", 32.09], ["s-mut-chem", 43.01], ["s-mut-comp", 53.73], ["s-regulation", 68.54], ["s-shuffling", 78.12], ["s-adaptation", 88.36], ["s-crispr", 98.32], ["s-cluster", 108.12], ["s-consortia", 120.17], ["s-gmo-law", 130.5], ["s-ferment", 141.7], ["s-protectant", 155.53], ["s-formulation", 164.68], ["s-end", 173.28]];
+const CHAP_NAMES = ["进化序幕", "野生菌四大瓶颈", "四大驯化手段概览", "手段一·物理诱变", "化学诱变与航天育种", "复合诱变·效力倍增", "法规友好·商业主流", "手段二·基因组改组", "极端胁迫·适应进化", "手段三·精准基因编辑", "基因簇定向改造", "构建合成群落", "监管红线与现实", "手段四·发酵降本优化", "保护剂·常温耐储突破", "多元剂型·全场景适配", "下期预告·互动收束"];
+const SFX_CUES = [{"t": 1.63, "sfx": "whoosh"}, {"t": 5.71, "sfx": "ding"}, {"t": 11.78, "sfx": "whoosh"}, {"t": 16.82, "sfx": "ding"}, {"t": 23.1, "sfx": "whoosh"}, {"t": 32.09, "sfx": "whoosh"}, {"t": 35.73, "sfx": "click"}, {"t": 48.05, "sfx": "click"}, {"t": 53.73, "sfx": "whoosh"}, {"t": 61.7, "sfx": "pop"}, {"t": 64.14, "sfx": "pop"}, {"t": 66.94, "sfx": "pop"}, {"t": 70.38, "sfx": "ding"}, {"t": 78.12, "sfx": "whoosh"}, {"t": 81.72, "sfx": "click"}, {"t": 86.08, "sfx": "ding"}, {"t": 98.32, "sfx": "whoosh"}, {"t": 107.08, "sfx": "pop"}, {"t": 110.12, "sfx": "click"}, {"t": 121.89, "sfx": "ding"}, {"t": 134.34, "sfx": "ding"}, {"t": 141.7, "sfx": "whoosh"}, {"t": 152.65, "sfx": "click"}, {"t": 161.89, "sfx": "pop"}, {"t": 163.57, "sfx": "pop"}, {"t": 165.64, "sfx": "click"}, {"t": 175.79, "sfx": "chime"}];
+
+var audio = document.getElementById('voice');
+var sentenceEl = document.getElementById('sentence');
+var btnPlay = document.getElementById('btnPlay');
+var btnReplay = document.getElementById('btnReplay');
+var overlay = document.getElementById('overlay');
+var progFill = document.getElementById('progFill');
+var flashEl = document.getElementById('flash');
+var chapTextEl = document.getElementById('chapText');
+var sOpenEl = document.getElementById('s-open');
+
+var curScene = -1;
+var curIdx = -1;
+var curUnit = -1;
+var state = 'idle';
+var rafId = 0;
+var lastCueTime = -0.5;
+
+function escHtml(s){
+  return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function findCharIndex(t){
+  var lo = 0, hi = TIMES.length - 1, ans = 0;
+  while(lo <= hi){
+    var mid = (lo + hi) >> 1;
+    if(TIMES[mid] <= t){ ans = mid; lo = mid + 1; }
+    else { hi = mid - 1; }
+  }
+  return ans;
+}
+
+/* 固定断句单元（整条常驻、逐字高亮、绝不滚动） */
+var UNITS = buildUnits();
+function buildUnits(){
+  var units = [], s = 0;
+  for(var i=0; i<CHARS.length; i++){
+    if('。！？!?；;'.indexOf(CHARS[i]) >= 0){ units.push([s, i]); s = i + 1; }
+  }
+  if(s < CHARS.length) units.push([s, CHARS.length - 1]);
+
+  var out = [];
+  for(var u=0; u<units.length; u++){
+    var a = units[u][0], b = units[u][1];
+    var segA = a;
+    while(segA <= b){
+      var pos = -1;
+      for(var i = segA; i <= b; i++){
+        if('，、'.indexOf(CHARS[i]) >= 0){ pos = i; break; }
+      }
+      var end = (pos >= 0) ? pos : b;
+      var len = end - segA + 1;
+      if(len > 10){
+        var cut = -1;
+        for(var i2 = end; i2 > segA; i2--){
+          var l = i2 - segA + 1;
+          if(l >= 8 && l <= 10 && ('的地得'.indexOf(CHARS[i2]) >= 0 || '。！？!?；;，,、 '.indexOf(CHARS[i2]) >= 0)){
+            cut = i2; break;
+          }
+        }
+        if(cut < 0){
+          if(end - segA + 1 <= 16){ out.push([segA, end]); segA = end + 1; continue; }
+          cut = segA + 9;
+        }
+        out.push([segA, cut]); segA = cut + 1;
+      } else {
+        out.push([segA, end]); segA = end + 1;
+      }
+    }
+  }
+
+  var merged = [];
+  for(var k=0; k<out.length; k++){
+    var ua = out[k][0], ub = out[k][1];
+    var tl = ub - ua + 1;
+    if('，、：。！？!?；;'.indexOf(CHARS[ub]) >= 0) tl--;
+    if(merged.length > 0 && tl < 4){ merged[merged.length - 1][1] = ub; }
+    else { merged.push([ua, ub]); }
+  }
+  return merged;
+}
+
+/* 字幕逐字高亮渲染：行末断句标点过滤不显示 */
+function renderSubtitle(idx){
+  if(curUnit < 0 || idx < UNITS[curUnit][0] || idx > UNITS[curUnit][1]){
+    var ui = 0;
+    while(ui < UNITS.length - 1 && idx > UNITS[ui][1]) ui++;
+    curUnit = ui;
+  }
+  var a = UNITS[curUnit][0], b = UNITS[curUnit][1];
+  var end = b;
+  if('，、：'.indexOf(CHARS[b]) >= 0) end = b - 1;
+
+  var h = '';
+  for(var i=a; i<=end; i++){
+    var ch = escHtml(CHARS[i]);
+    if(i === idx) h += '<span class="cur">' + ch + '</span>';
+    else if(i < idx) h += '<span class="done">' + ch + '</span>';
+    else h += ch;
+  }
+  sentenceEl.innerHTML = h;
+}
+
+function sceneAt(t){
+  var idx = 0;
+  for(var i=0; i<SCENES.length; i++){
+    if(t >= SCENES[i][1]) idx = i;
+  }
+  return idx;
+}
+
+function setScene(idx){
+  if(idx === curScene || idx < 0 || idx >= SCENES.length) return;
+  var prev = curScene;
+  if(prev >= 0 && prev < SCENES.length){
+    var prevEl = document.getElementById(SCENES[prev][0]);
+    if(prevEl) prevEl.classList.remove('active');
+  }
+  curScene = idx;
+  var el = document.getElementById(SCENES[idx][0]);
+  if(el) el.classList.add('active');
+
+  if(chapTextEl) chapTextEl.innerHTML = '第 ' + (idx + 1) + ' / ' + SCENES.length + ' 节';
+  if(idx > 0 && prev !== idx && flashEl){
+    flashEl.classList.remove('go');
+    void flashEl.offsetWidth;
+    flashEl.classList.add('go');
+  }
+}
+
+function checkSfxCues(t){
+  if(!window.VibeSound || window.__RECORDING__) return;
+  if(t < lastCueTime){ lastCueTime = t - 0.2; }
+  for(var i=0; i<SFX_CUES.length; i++){
+    var cue = SFX_CUES[i];
+    if(t >= cue.t && lastCueTime < cue.t && (t - cue.t) < 0.35){
+      VibeSound.play(cue.sfx);
+    }
+  }
+  lastCueTime = t;
+}
+
+function syncTime(t){
+  var sc = sceneAt(t);
+  if(sc !== curScene){
+    setScene(sc);
+  }
+
+  // 开场 4 阶段高频爆点状态机
+  if(sc === 0 && sOpenEl){
+    var phs = (t < 1.63) ? 'hook' : ((t < 5.71) ? 'topic' : ((t < 8.11) ? 'slam' : 'preview'));
+    if(sOpenEl.getAttribute('data-phase') !== phs){
+      sOpenEl.setAttribute('data-phase', phs);
+    }
+  }
+
+  var idx = findCharIndex(t);
+  if(idx !== curIdx){
+    curIdx = idx;
+    renderSubtitle(idx);
+  }
+
+  checkSfxCues(t);
+
+  var dur = (audio && audio.duration && !isNaN(audio.duration)) ? audio.duration : 184.04;
+  if(progFill) progFill.style.width = Math.min(100, (t / dur * 100)).toFixed(2) + '%';
+}
+
+window.syncTime = syncTime;
+window.SCENES = SCENES;
+window.CHAP_NAMES = CHAP_NAMES;
+
+function startPlay(){
+  if(state === 'playing') return;
+  if(window.VibeSound){
+    VibeSound.init();
+    VibeSound.play('whoosh');
+  }
+  overlay.classList.add('hide');
+  curScene = -1;
+  curIdx = -1;
+  lastCueTime = -0.5;
+  syncTime(0);
+  audio.currentTime = 0;
+  audio.play().then(function(){
+    state = 'playing';
+    if(!rafId) loop();
+  }).catch(function(e){
+    console.warn("Play warning:", e);
+  });
+}
+
+function endPlay(){
+  state = 'ended';
+  if(progFill) progFill.style.width = '100%';
+  btnReplay.classList.add('show');
+}
+
+function loop(){
+  if(state !== 'playing'){ rafId = 0; return; }
+  var t = audio.currentTime;
+  var dur = (audio && audio.duration && !isNaN(audio.duration)) ? audio.duration : 184.04;
+  if(audio.ended || t >= dur - 0.05){ endPlay(); rafId = 0; return; }
+  syncTime(t);
+  rafId = requestAnimationFrame(loop);
+}
+
+btnPlay.addEventListener('click', startPlay);
+btnReplay.addEventListener('click', function(){
+  btnReplay.classList.remove('show');
+  startPlay();
+});
+
+/* ========================================================
+   VibeSound 原生 Web Audio 即时音效引擎
+   ======================================================== */
+var VibeSound = (function(){
+  var ctx = null;
+  var noiseBuffer = null;
+
+  function getCtx(){
+    if(window.__RECORDING__) return null;
+    if(!ctx && (window.AudioContext || window.webkitAudioContext)){
+      try {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch(e){}
+    }
+    if(ctx && ctx.state === 'suspended') ctx.resume().catch(function(){});
+    return ctx;
+  }
+
+  function getNoiseBuffer(ac){
+    if(noiseBuffer) return noiseBuffer;
+    var dur = 0.5;
+    var buf = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate);
+    var data = buf.getChannelData(0);
+    var b0 = 0, b1 = 0, b2 = 0;
+    for (var i = 0; i < data.length; i++) {
+      var white = Math.random() * 2 - 1;
+      b0 = 0.99765 * b0 + white * 0.0990460;
+      b1 = 0.96300 * b1 + white * 0.2965164;
+      b2 = 0.57000 * b2 + white * 1.0526913;
+      data[i] = (b0 + b1 + b2 + white * 0.1848) * 0.45;
+    }
+    noiseBuffer = buf;
+    return noiseBuffer;
+  }
+
+  return {
+    init: function(){ getCtx(); },
+    pop: function(){
+      var ac = getCtx();
+      if(!ac) return;
+      var now = ac.currentTime;
+      var osc = ac.createOscillator();
+      var gain = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(560, now);
+      osc.frequency.exponentialRampToValueAtTime(240, now + 0.10);
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.24, now + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.10);
+      osc.connect(gain);
+      gain.connect(ac.destination);
+      osc.start(now);
+      osc.stop(now + 0.10);
+    },
+    whoosh: function(){
+      var ac = getCtx();
+      if(!ac) return;
+      var now = ac.currentTime;
+      var buf = getNoiseBuffer(ac);
+      var src = ac.createBufferSource();
+      src.buffer = buf;
+      var filter = ac.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.Q.value = 1.0;
+      filter.frequency.setValueAtTime(200, now);
+      filter.frequency.exponentialRampToValueAtTime(1100, now + 0.16);
+      filter.frequency.exponentialRampToValueAtTime(260, now + 0.42);
+      var gain = ac.createGain();
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.16, now + 0.14);
+      gain.gain.linearRampToValueAtTime(0.0001, now + 0.42);
+      src.connect(filter);
+      filter.connect(gain);
+      gain.connect(ac.destination);
+      src.start(now);
+      src.stop(now + 0.42);
+    },
+    ding: function(){
+      var ac = getCtx();
+      if(!ac) return;
+      var now = ac.currentTime;
+      var filter = ac.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 2200;
+      var masterGain = ac.createGain();
+      masterGain.gain.setValueAtTime(0.18, now);
+      filter.connect(masterGain);
+      masterGain.connect(ac.destination);
+      [1046.5, 1567.98].forEach(function(freq, i){
+        var osc = ac.createOscillator();
+        var gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        var vol = i === 0 ? 0.8 : 0.4;
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.linearRampToValueAtTime(vol, now + 0.005);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+        osc.connect(gain);
+        gain.connect(filter);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      });
+    },
+    chime: function(){
+      var ac = getCtx();
+      if(!ac) return;
+      var now = ac.currentTime;
+      var notes = [
+        { f: 523.25, d: 0.00, v: 0.16 },
+        { f: 659.25, d: 0.06, v: 0.14 },
+        { f: 783.99, d: 0.12, v: 0.12 },
+        { f: 1046.50, d: 0.18, v: 0.10 }
+      ];
+      notes.forEach(function(n){
+        var t = now + n.d;
+        var osc = ac.createOscillator();
+        var gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(n.f, t);
+        gain.gain.setValueAtTime(0.001, t);
+        gain.gain.linearRampToValueAtTime(n.v, t + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + 1.1);
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.start(t);
+        osc.stop(t + 1.1);
+      });
+    },
+    click: function(){
+      var ac = getCtx();
+      if(!ac) return;
+      var now = ac.currentTime;
+      var osc = ac.createOscillator();
+      var gain = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(880, now);
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.18, now + 0.003);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
+      osc.connect(gain);
+      gain.connect(ac.destination);
+      osc.start(now);
+      osc.stop(now + 0.05);
+    },
+    play: function(type){
+      try {
+        if(type === 'whoosh') this.whoosh();
+        else if(type === 'pop') this.pop();
+        else if(type === 'ding') this.ding();
+        else if(type === 'chime') this.chime();
+        else if(type === 'click') this.click();
+      } catch(err){}
+    }
+  };
+})();
+window.VibeSound = VibeSound;
+
+/* ========================================================
+   VibeBackgrounds 高品质深海细胞浮游光斑 (bio-bubbles)
+   ======================================================== */
+var VibeBackgrounds = (function(){
+  "use strict";
+  function parseColor(c, defaultColor){
+    if(!c) return defaultColor;
+    if(c.startsWith('#')){
+      var hex = c.replace('#','');
+      if(hex.length === 3) hex = hex[0]+hex[0]+hex[1]+hex[1]+hex[2]+hex[2];
+      var num = parseInt(hex, 16);
+      return { r: (num>>16)&255, g: (num>>8)&255, b: num&255 };
+    }
+    return defaultColor;
+  }
+
+  function presetBioBubbles(cv, ctx, opt){
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var col2 = parseColor(opt.color2, { r: 56, g: 189, b: 248 });
+    var count = Math.floor(45 * (opt.density || 1.0));
+    var speed = (opt.speed || 1.0);
+
+    var orbs = [];
+    for(var i=0; i<count; i++){
+      var layer = Math.random();
+      var r = layer < 0.6 ? (Math.random() * 4 + 1.5) : (Math.random() * 26 + 10);
+      var isCol2 = Math.random() < 0.35;
+      orbs.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: r,
+        baseR: r,
+        layer: layer,
+        color: isCol2 ? col2 : col,
+        vy: -(Math.random() * 0.45 + 0.15) * speed * (0.6 + layer * 0.8),
+        vx: (Math.random() - 0.5) * 0.25 * speed,
+        alpha: layer < 0.6 ? (Math.random() * 0.4 + 0.2) : (Math.random() * 0.18 + 0.08),
+        pulseSpeed: Math.random() * 0.03 + 0.015,
+        pulseOffset: Math.random() * Math.PI * 2
+      });
+    }
+
+    var frame = 0;
+    return function draw(){
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+      for(var i=0; i<orbs.length; i++){
+        var o = orbs[i];
+        o.y += o.vy;
+        o.x += o.vx + Math.sin(frame * 0.018 + o.pulseOffset) * 0.15;
+        if(o.y < -o.r * 2){ o.y = H + o.r * 2; o.x = Math.random() * W; }
+        if(o.x < -o.r * 2) o.x = W + o.r * 2;
+        if(o.x > W + o.r * 2) o.x = -o.r * 2;
+
+        var pulse = Math.sin(frame * o.pulseSpeed + o.pulseOffset) * 0.15 + 1.0;
+        var curR = o.baseR * pulse;
+
+        if(o.layer >= 0.6){
+          var grad = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, curR);
+          var a = o.alpha * pulse;
+          grad.addColorStop(0, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + a + ")");
+          grad.addColorStop(0.5, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + (a * 0.4) + ")");
+          grad.addColorStop(1, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + ", 0)");
+          ctx.beginPath();
+          ctx.arc(o.x, o.y, curR, 0, Math.PI * 2);
+          ctx.fillStyle = grad;
+          ctx.fill();
+        } else {
+          ctx.beginPath();
+          ctx.arc(o.x, o.y, curR, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + o.alpha + ")";
+          ctx.fill();
+        }
+      }
+    };
+  }
+
+  var currentAnimId = null;
+  var currentDrawFn = null;
+
+  return {
+    use: function(canvasId, presetName, options){
+      var cv = typeof canvasId === 'string' ? document.getElementById(canvasId) : canvasId;
+      if(!cv) return;
+      var ctx = cv.getContext('2d');
+      function resize(){
+        cv.width = window.innerWidth;
+        cv.height = window.innerHeight;
+      }
+      resize();
+      currentDrawFn = presetBioBubbles(cv, ctx, options || {});
+      if(currentAnimId) cancelAnimationFrame(currentAnimId);
+      function loop(){
+        if(currentDrawFn) currentDrawFn();
+        currentAnimId = requestAnimationFrame(loop);
+      }
+      loop();
+      window.addEventListener('resize', function(){
+        resize();
+        currentDrawFn = presetBioBubbles(cv, ctx, options || {});
+      });
+    }
+  };
+})();
+
+VibeBackgrounds.use('bg-canvas', 'bio-bubbles', {
+  color: '#4ade80',
+  color2: '#38bdf8',
+  density: 1.1,
+  speed: 1.0
+});
+
+// 默认首帧初始化
+syncTime(0);
+</script>
+</body>
+</html>

@@ -1,0 +1,2417 @@
+[
+  {
+    "Char": "这",
+    "StartSeconds": 1.6,
+    "EndSeconds": 1.72,
+    "DurationSeconds": 0.11999999999999988,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "一",
+    "StartSeconds": 1.72,
+    "EndSeconds": 1.84,
+    "DurationSeconds": 0.1200000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "期",
+    "StartSeconds": 1.84,
+    "EndSeconds": 1.96,
+    "DurationSeconds": 0.11999999999999988,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "给",
+    "StartSeconds": 1.96,
+    "EndSeconds": 2.08,
+    "DurationSeconds": 0.1200000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "大",
+    "StartSeconds": 2.08,
+    "EndSeconds": 2.16,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "家",
+    "StartSeconds": 2.16,
+    "EndSeconds": 2.28,
+    "DurationSeconds": 0.11999999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "简",
+    "StartSeconds": 2.28,
+    "EndSeconds": 2.44,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "短",
+    "StartSeconds": 2.44,
+    "EndSeconds": 2.6,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "讲",
+    "StartSeconds": 2.6,
+    "EndSeconds": 2.8,
+    "DurationSeconds": 0.19999999999999973,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "一",
+    "StartSeconds": 2.8,
+    "EndSeconds": 2.88,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "下",
+    "StartSeconds": 2.88,
+    "EndSeconds": 2.96,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "贝",
+    "StartSeconds": 3.04,
+    "EndSeconds": 3.12,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "莱",
+    "StartSeconds": 3.2,
+    "EndSeconds": 3.28,
+    "DurationSeconds": 0.07999999999999963,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "斯",
+    "StartSeconds": 3.36,
+    "EndSeconds": 3.44,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "芽",
+    "StartSeconds": 3.64,
+    "EndSeconds": 3.72,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "孢",
+    "StartSeconds": 3.8,
+    "EndSeconds": 3.84,
+    "DurationSeconds": 0.040000000000000036,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "杆",
+    "StartSeconds": 4,
+    "EndSeconds": 4.08,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 4.12,
+    "EndSeconds": 4.28,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "在",
+    "StartSeconds": 4.28,
+    "EndSeconds": 4.48,
+    "DurationSeconds": 0.20000000000000018,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "生",
+    "StartSeconds": 4.48,
+    "EndSeconds": 4.64,
+    "DurationSeconds": 0.15999999999999925,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "态",
+    "StartSeconds": 4.64,
+    "EndSeconds": 4.76,
+    "DurationSeconds": 0.1200000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "治",
+    "StartSeconds": 4.76,
+    "EndSeconds": 4.92,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "理",
+    "StartSeconds": 4.92,
+    "EndSeconds": 5.04,
+    "DurationSeconds": 0.1200000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "上",
+    "StartSeconds": 5.04,
+    "EndSeconds": 5.2,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 5.2,
+    "EndSeconds": 5.36,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "第",
+    "StartSeconds": 5.36,
+    "EndSeconds": 5.48,
+    "DurationSeconds": 0.1200000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "三",
+    "StartSeconds": 5.48,
+    "EndSeconds": 5.6,
+    "DurationSeconds": 0.11999999999999922,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "个",
+    "StartSeconds": 5.6,
+    "EndSeconds": 5.8,
+    "DurationSeconds": 0.20000000000000018,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "功",
+    "StartSeconds": 5.8,
+    "EndSeconds": 5.96,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "能",
+    "StartSeconds": 5.96,
+    "EndSeconds": 6.12,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 6.12,
+    "EndSeconds": 6.12,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "给",
+    "StartSeconds": 6.32,
+    "EndSeconds": 6.56,
+    "DurationSeconds": 0.23999999999999932,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "土",
+    "StartSeconds": 6.56,
+    "EndSeconds": 6.72,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "壤",
+    "StartSeconds": 6.72,
+    "EndSeconds": 6.84,
+    "DurationSeconds": 0.1200000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "解",
+    "StartSeconds": 6.92,
+    "EndSeconds": 7.12,
+    "DurationSeconds": 0.20000000000000018,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "毒",
+    "StartSeconds": 7.16,
+    "EndSeconds": 7.28,
+    "DurationSeconds": 0.1200000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 7.28,
+    "EndSeconds": 7.28,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "除",
+    "StartSeconds": 7.6,
+    "EndSeconds": 7.84,
+    "DurationSeconds": 0.2400000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "了",
+    "StartSeconds": 7.84,
+    "EndSeconds": 7.96,
+    "DurationSeconds": 0.1200000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "种",
+    "StartSeconds": 8.08,
+    "EndSeconds": 8.12,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "养",
+    "StartSeconds": 8.24,
+    "EndSeconds": 8.4,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "作",
+    "StartSeconds": 8.48,
+    "EndSeconds": 8.68,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "物",
+    "StartSeconds": 8.68,
+    "EndSeconds": 8.8,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 8.8,
+    "EndSeconds": 8.8,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "贝",
+    "StartSeconds": 9.04,
+    "EndSeconds": 9.12,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "莱",
+    "StartSeconds": 9.2,
+    "EndSeconds": 9.28,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "斯",
+    "StartSeconds": 9.32,
+    "EndSeconds": 9.4,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "芽",
+    "StartSeconds": 9.52,
+    "EndSeconds": 9.56,
+    "DurationSeconds": 0.040000000000000924,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "孢",
+    "StartSeconds": 9.68,
+    "EndSeconds": 9.72,
+    "DurationSeconds": 0.040000000000000924,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "杆",
+    "StartSeconds": 9.88,
+    "EndSeconds": 9.96,
+    "DurationSeconds": 0.08000000000000007,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 10.04,
+    "EndSeconds": 10.2,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "还",
+    "StartSeconds": 10.24,
+    "EndSeconds": 10.44,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "在",
+    "StartSeconds": 10.44,
+    "EndSeconds": 10.6,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "生",
+    "StartSeconds": 10.6,
+    "EndSeconds": 10.8,
+    "DurationSeconds": 0.20000000000000107,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "态",
+    "StartSeconds": 10.8,
+    "EndSeconds": 10.96,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "治",
+    "StartSeconds": 10.96,
+    "EndSeconds": 11.16,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "理",
+    "StartSeconds": 11.16,
+    "EndSeconds": 11.32,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "上",
+    "StartSeconds": 11.32,
+    "EndSeconds": 11.56,
+    "DurationSeconds": 0.2400000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "展",
+    "StartSeconds": 11.6,
+    "EndSeconds": 11.8,
+    "DurationSeconds": 0.20000000000000107,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "现",
+    "StartSeconds": 11.8,
+    "EndSeconds": 11.92,
+    "DurationSeconds": 0.11999999999999922,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "出",
+    "StartSeconds": 11.92,
+    "EndSeconds": 12.12,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "潜",
+    "StartSeconds": 12.16,
+    "EndSeconds": 12.32,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "力",
+    "StartSeconds": 12.32,
+    "EndSeconds": 12.48,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 12.48,
+    "EndSeconds": 12.48,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "一",
+    "StartSeconds": 12.94,
+    "EndSeconds": 13.26,
+    "DurationSeconds": 0.3200000000000003,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "、",
+    "StartSeconds": 13.26,
+    "EndSeconds": 13.26,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "重",
+    "StartSeconds": 13.62,
+    "EndSeconds": 13.86,
+    "DurationSeconds": 0.2400000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "金",
+    "StartSeconds": 13.86,
+    "EndSeconds": 14.06,
+    "DurationSeconds": 0.20000000000000107,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "属",
+    "StartSeconds": 14.06,
+    "EndSeconds": 14.18,
+    "DurationSeconds": 0.11999999999999922,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "钝",
+    "StartSeconds": 14.34,
+    "EndSeconds": 14.38,
+    "DurationSeconds": 0.040000000000000924,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "化",
+    "StartSeconds": 14.54,
+    "EndSeconds": 14.66,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "吸",
+    "StartSeconds": 14.94,
+    "EndSeconds": 15.14,
+    "DurationSeconds": 0.20000000000000107,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "附",
+    "StartSeconds": 15.22,
+    "EndSeconds": 15.26,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 15.26,
+    "EndSeconds": 15.26,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "对",
+    "StartSeconds": 15.54,
+    "EndSeconds": 15.78,
+    "DurationSeconds": 0.2400000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "土",
+    "StartSeconds": 15.78,
+    "EndSeconds": 15.98,
+    "DurationSeconds": 0.20000000000000107,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "壤",
+    "StartSeconds": 15.98,
+    "EndSeconds": 16.1,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "中",
+    "StartSeconds": 16.1,
+    "EndSeconds": 16.26,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 16.26,
+    "EndSeconds": 16.42,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "镉",
+    "StartSeconds": 16.5,
+    "EndSeconds": 16.54,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "等",
+    "StartSeconds": 16.7,
+    "EndSeconds": 16.94,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "部",
+    "StartSeconds": 16.94,
+    "EndSeconds": 17.1,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "分",
+    "StartSeconds": 17.1,
+    "EndSeconds": 17.22,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "重",
+    "StartSeconds": 17.26,
+    "EndSeconds": 17.46,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "金",
+    "StartSeconds": 17.46,
+    "EndSeconds": 17.62,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "属",
+    "StartSeconds": 17.62,
+    "EndSeconds": 17.74,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 17.74,
+    "EndSeconds": 17.74,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "具",
+    "StartSeconds": 17.82,
+    "EndSeconds": 17.98,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "有",
+    "StartSeconds": 17.98,
+    "EndSeconds": 18.14,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "吸",
+    "StartSeconds": 18.14,
+    "EndSeconds": 18.34,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "附",
+    "StartSeconds": 18.38,
+    "EndSeconds": 18.42,
+    "DurationSeconds": 0.0400000000000027,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "和",
+    "StartSeconds": 18.54,
+    "EndSeconds": 18.74,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "转",
+    "StartSeconds": 18.74,
+    "EndSeconds": 18.9,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "化",
+    "StartSeconds": 18.9,
+    "EndSeconds": 19.14,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "作",
+    "StartSeconds": 19.14,
+    "EndSeconds": 19.3,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "用",
+    "StartSeconds": 19.3,
+    "EndSeconds": 19.42,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 19.42,
+    "EndSeconds": 19.42,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "可",
+    "StartSeconds": 19.54,
+    "EndSeconds": 19.82,
+    "DurationSeconds": 0.28000000000000114,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "降",
+    "StartSeconds": 19.82,
+    "EndSeconds": 20.02,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "低",
+    "StartSeconds": 20.02,
+    "EndSeconds": 20.18,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "作",
+    "StartSeconds": 20.18,
+    "EndSeconds": 20.38,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "物",
+    "StartSeconds": 20.38,
+    "EndSeconds": 20.5,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "对",
+    "StartSeconds": 20.5,
+    "EndSeconds": 20.7,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "重",
+    "StartSeconds": 20.7,
+    "EndSeconds": 20.86,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "金",
+    "StartSeconds": 20.86,
+    "EndSeconds": 21.02,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "属",
+    "StartSeconds": 21.02,
+    "EndSeconds": 21.1,
+    "DurationSeconds": 0.08000000000000185,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 21.1,
+    "EndSeconds": 21.3,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "吸",
+    "StartSeconds": 21.3,
+    "EndSeconds": 21.46,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "收",
+    "StartSeconds": 21.46,
+    "EndSeconds": 21.62,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 21.62,
+    "EndSeconds": 21.62,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "研",
+    "StartSeconds": 21.86,
+    "EndSeconds": 22.02,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "究",
+    "StartSeconds": 22.02,
+    "EndSeconds": 22.18,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "显",
+    "StartSeconds": 22.18,
+    "EndSeconds": 22.38,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "示",
+    "StartSeconds": 22.38,
+    "EndSeconds": 22.54,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 22.54,
+    "EndSeconds": 22.54,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "可",
+    "StartSeconds": 22.58,
+    "EndSeconds": 22.82,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "降",
+    "StartSeconds": 22.86,
+    "EndSeconds": 23.02,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "低",
+    "StartSeconds": 23.02,
+    "EndSeconds": 23.14,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "镉",
+    "StartSeconds": 23.26,
+    "EndSeconds": 23.3,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "积",
+    "StartSeconds": 23.46,
+    "EndSeconds": 23.66,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "累",
+    "StartSeconds": 23.66,
+    "EndSeconds": 23.78,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "1",
+    "StartSeconds": 23.82,
+    "EndSeconds": 24.1,
+    "DurationSeconds": 0.28000000000000114,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "1",
+    "StartSeconds": 24.1,
+    "EndSeconds": 24.380001,
+    "DurationSeconds": 0.2800009999999986,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": ".",
+    "StartSeconds": 24.380001,
+    "EndSeconds": 24.380001,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "4",
+    "StartSeconds": 24.380001,
+    "EndSeconds": 24.66,
+    "DurationSeconds": 0.2799990000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "5",
+    "StartSeconds": 24.66,
+    "EndSeconds": 24.94,
+    "DurationSeconds": 0.28000000000000114,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "%",
+    "StartSeconds": 24.94,
+    "EndSeconds": 24.94,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 24.94,
+    "EndSeconds": 24.94,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "二",
+    "StartSeconds": 25.25,
+    "EndSeconds": 25.49,
+    "DurationSeconds": 0.23999999999999844,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "、",
+    "StartSeconds": 25.49,
+    "EndSeconds": 25.49,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "有",
+    "StartSeconds": 25.65,
+    "EndSeconds": 25.93,
+    "DurationSeconds": 0.28000000000000114,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "机",
+    "StartSeconds": 25.93,
+    "EndSeconds": 26.05,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "污",
+    "StartSeconds": 26.13,
+    "EndSeconds": 26.29,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "染",
+    "StartSeconds": 26.29,
+    "EndSeconds": 26.41,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "物",
+    "StartSeconds": 26.41,
+    "EndSeconds": 26.57,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "降",
+    "StartSeconds": 26.65,
+    "EndSeconds": 26.77,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "解",
+    "StartSeconds": 26.81,
+    "EndSeconds": 26.97,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 26.97,
+    "EndSeconds": 26.97,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "部",
+    "StartSeconds": 27.21,
+    "EndSeconds": 27.37,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "分",
+    "StartSeconds": 27.37,
+    "EndSeconds": 27.45,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 27.49,
+    "EndSeconds": 27.65,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "株",
+    "StartSeconds": 27.73,
+    "EndSeconds": 27.77,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "可",
+    "StartSeconds": 27.85,
+    "EndSeconds": 28.05,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "降",
+    "StartSeconds": 28.09,
+    "EndSeconds": 28.21,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "解",
+    "StartSeconds": 28.25,
+    "EndSeconds": 28.37,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "水",
+    "StartSeconds": 28.41,
+    "EndSeconds": 28.61,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "体",
+    "StartSeconds": 28.61,
+    "EndSeconds": 28.81,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "和",
+    "StartSeconds": 28.81,
+    "EndSeconds": 29.01,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "土",
+    "StartSeconds": 29.01,
+    "EndSeconds": 29.17,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "壤",
+    "StartSeconds": 29.17,
+    "EndSeconds": 29.29,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "中",
+    "StartSeconds": 29.29,
+    "EndSeconds": 29.45,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 29.45,
+    "EndSeconds": 29.61,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "部",
+    "StartSeconds": 29.61,
+    "EndSeconds": 29.73,
+    "DurationSeconds": 0.120000000000001,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "分",
+    "StartSeconds": 29.73,
+    "EndSeconds": 29.81,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "有",
+    "StartSeconds": 29.81,
+    "EndSeconds": 30.05,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "机",
+    "StartSeconds": 30.05,
+    "EndSeconds": 30.13,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "污",
+    "StartSeconds": 30.21,
+    "EndSeconds": 30.37,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "染",
+    "StartSeconds": 30.37,
+    "EndSeconds": 30.45,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "物",
+    "StartSeconds": 30.45,
+    "EndSeconds": 30.65,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 30.65,
+    "EndSeconds": 30.65,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "在",
+    "StartSeconds": 30.77,
+    "EndSeconds": 31.01,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "污",
+    "StartSeconds": 31.01,
+    "EndSeconds": 31.17,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "水",
+    "StartSeconds": 31.17,
+    "EndSeconds": 31.37,
+    "DurationSeconds": 0.1999999999999993,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "处",
+    "StartSeconds": 31.37,
+    "EndSeconds": 31.53,
+    "DurationSeconds": 0.16000000000000014,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "理",
+    "StartSeconds": 31.53,
+    "EndSeconds": 31.65,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "中",
+    "StartSeconds": 31.65,
+    "EndSeconds": 31.85,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "展",
+    "StartSeconds": 31.85,
+    "EndSeconds": 32.05,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "现",
+    "StartSeconds": 32.05,
+    "EndSeconds": 32.25,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "应",
+    "StartSeconds": 32.25,
+    "EndSeconds": 32.41,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "用",
+    "StartSeconds": 32.41,
+    "EndSeconds": 32.61,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "前",
+    "StartSeconds": 32.61,
+    "EndSeconds": 32.81,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "景",
+    "StartSeconds": 32.81,
+    "EndSeconds": 33.01,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 33.01,
+    "EndSeconds": 33.01,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "三",
+    "StartSeconds": 33.25,
+    "EndSeconds": 33.57,
+    "DurationSeconds": 0.3200000000000003,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "、",
+    "StartSeconds": 33.57,
+    "EndSeconds": 33.57,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "改",
+    "StartSeconds": 33.65,
+    "EndSeconds": 33.85,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "善",
+    "StartSeconds": 33.85,
+    "EndSeconds": 34.01,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "土",
+    "StartSeconds": 34.01,
+    "EndSeconds": 34.21,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "壤",
+    "StartSeconds": 34.21,
+    "EndSeconds": 34.33,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "微",
+    "StartSeconds": 34.37,
+    "EndSeconds": 34.53,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "生",
+    "StartSeconds": 34.53,
+    "EndSeconds": 34.69,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "态",
+    "StartSeconds": 34.69,
+    "EndSeconds": 34.93,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 34.93,
+    "EndSeconds": 34.93,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "通",
+    "StartSeconds": 35.09,
+    "EndSeconds": 35.29,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "过",
+    "StartSeconds": 35.29,
+    "EndSeconds": 35.41,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "产",
+    "StartSeconds": 35.45,
+    "EndSeconds": 35.69,
+    "DurationSeconds": 0.23999999999999488,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "酶",
+    "StartSeconds": 35.81,
+    "EndSeconds": 35.89,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "和",
+    "StartSeconds": 36.01,
+    "EndSeconds": 36.25,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "调",
+    "StartSeconds": 36.25,
+    "EndSeconds": 36.53,
+    "DurationSeconds": 0.28000000000000114,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "节",
+    "StartSeconds": 36.53,
+    "EndSeconds": 36.65,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "微",
+    "StartSeconds": 36.73,
+    "EndSeconds": 36.93,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "生",
+    "StartSeconds": 36.93,
+    "EndSeconds": 37.09,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "物",
+    "StartSeconds": 37.09,
+    "EndSeconds": 37.21,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "群",
+    "StartSeconds": 37.21,
+    "EndSeconds": 37.41,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "落",
+    "StartSeconds": 37.49,
+    "EndSeconds": 37.53,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "结",
+    "StartSeconds": 37.65,
+    "EndSeconds": 37.81,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "构",
+    "StartSeconds": 37.81,
+    "EndSeconds": 37.97,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 37.97,
+    "EndSeconds": 37.97,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "缓",
+    "StartSeconds": 38.25,
+    "EndSeconds": 38.33,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "解",
+    "StartSeconds": 38.37,
+    "EndSeconds": 38.53,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "连",
+    "StartSeconds": 38.61,
+    "EndSeconds": 38.69,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "作",
+    "StartSeconds": 38.81,
+    "EndSeconds": 38.85,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "障",
+    "StartSeconds": 38.97,
+    "EndSeconds": 39.13,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "碍",
+    "StartSeconds": 39.13,
+    "EndSeconds": 39.29,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 39.29,
+    "EndSeconds": 39.29,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "促",
+    "StartSeconds": 39.41,
+    "EndSeconds": 39.57,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "进",
+    "StartSeconds": 39.57,
+    "EndSeconds": 39.73,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "土",
+    "StartSeconds": 39.73,
+    "EndSeconds": 39.93,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "壤",
+    "StartSeconds": 39.93,
+    "EndSeconds": 40.05,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "团",
+    "StartSeconds": 40.13,
+    "EndSeconds": 40.29,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "粒",
+    "StartSeconds": 40.37,
+    "EndSeconds": 40.41,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "结",
+    "StartSeconds": 40.49,
+    "EndSeconds": 40.61,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "构",
+    "StartSeconds": 40.61,
+    "EndSeconds": 40.77,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "形",
+    "StartSeconds": 40.77,
+    "EndSeconds": 40.97,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "成",
+    "StartSeconds": 40.97,
+    "EndSeconds": 41.13,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 41.13,
+    "EndSeconds": 41.13,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "到",
+    "StartSeconds": 41.86,
+    "EndSeconds": 42.1,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "这",
+    "StartSeconds": 42.1,
+    "EndSeconds": 42.42,
+    "DurationSeconds": 0.3200000000000003,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 42.42,
+    "EndSeconds": 42.42,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "关",
+    "StartSeconds": 42.46,
+    "EndSeconds": 42.58,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "于",
+    "StartSeconds": 42.58,
+    "EndSeconds": 42.7,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "贝",
+    "StartSeconds": 42.78,
+    "EndSeconds": 42.86,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "莱",
+    "StartSeconds": 42.94,
+    "EndSeconds": 43.02,
+    "DurationSeconds": 0.0800000000000054,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "斯",
+    "StartSeconds": 43.1,
+    "EndSeconds": 43.18,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "芽",
+    "StartSeconds": 43.3,
+    "EndSeconds": 43.34,
+    "DurationSeconds": 0.04000000000000625,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "孢",
+    "StartSeconds": 43.42,
+    "EndSeconds": 43.46,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "杆",
+    "StartSeconds": 43.58,
+    "EndSeconds": 43.7,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 43.74,
+    "EndSeconds": 43.9,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 43.94,
+    "EndSeconds": 44.26,
+    "DurationSeconds": 0.3200000000000003,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "三",
+    "StartSeconds": 44.26,
+    "EndSeconds": 44.42,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "大",
+    "StartSeconds": 44.42,
+    "EndSeconds": 44.58,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "核",
+    "StartSeconds": 44.58,
+    "EndSeconds": 44.78,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "心",
+    "StartSeconds": 44.78,
+    "EndSeconds": 44.9,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "功",
+    "StartSeconds": 44.9,
+    "EndSeconds": 45.02,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "能",
+    "StartSeconds": 45.02,
+    "EndSeconds": 45.14,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "就",
+    "StartSeconds": 45.14,
+    "EndSeconds": 45.34,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "全",
+    "StartSeconds": 45.34,
+    "EndSeconds": 45.46,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "部",
+    "StartSeconds": 45.46,
+    "EndSeconds": 45.54,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "讲",
+    "StartSeconds": 45.54,
+    "EndSeconds": 45.7,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "完",
+    "StartSeconds": 45.7,
+    "EndSeconds": 45.82,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "了",
+    "StartSeconds": 45.82,
+    "EndSeconds": 45.98,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 45.98,
+    "EndSeconds": 45.98,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "不",
+    "StartSeconds": 46.02,
+    "EndSeconds": 46.22,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "知",
+    "StartSeconds": 46.22,
+    "EndSeconds": 46.3,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "道",
+    "StartSeconds": 46.3,
+    "EndSeconds": 46.38,
+    "DurationSeconds": 0.0800000000000054,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "我",
+    "StartSeconds": 46.38,
+    "EndSeconds": 46.46,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "们",
+    "StartSeconds": 46.46,
+    "EndSeconds": 46.58,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "讲",
+    "StartSeconds": 46.58,
+    "EndSeconds": 46.7,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "解",
+    "StartSeconds": 46.7,
+    "EndSeconds": 46.78,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 46.78,
+    "EndSeconds": 46.94,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "内",
+    "StartSeconds": 46.94,
+    "EndSeconds": 47.02,
+    "DurationSeconds": 0.0800000000000054,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "容",
+    "StartSeconds": 47.02,
+    "EndSeconds": 47.14,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 47.14,
+    "EndSeconds": 47.14,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "对",
+    "StartSeconds": 47.14,
+    "EndSeconds": 47.34,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "各",
+    "StartSeconds": 47.46,
+    "EndSeconds": 47.58,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "位",
+    "StartSeconds": 47.58,
+    "EndSeconds": 47.7,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "朋",
+    "StartSeconds": 47.7,
+    "EndSeconds": 47.86,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "友",
+    "StartSeconds": 47.86,
+    "EndSeconds": 47.98,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "有",
+    "StartSeconds": 47.98,
+    "EndSeconds": 48.1,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "没",
+    "StartSeconds": 48.1,
+    "EndSeconds": 48.18,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "有",
+    "StartSeconds": 48.18,
+    "EndSeconds": 48.34,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "价",
+    "StartSeconds": 48.34,
+    "EndSeconds": 48.54,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "值",
+    "StartSeconds": 48.54,
+    "EndSeconds": 48.66,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "和",
+    "StartSeconds": 48.66,
+    "EndSeconds": 48.86,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "帮",
+    "StartSeconds": 48.86,
+    "EndSeconds": 49.02,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "助",
+    "StartSeconds": 49.02,
+    "EndSeconds": 49.18,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 49.18,
+    "EndSeconds": 49.18,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "后",
+    "StartSeconds": 49.3,
+    "EndSeconds": 49.5,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "面",
+    "StartSeconds": 49.5,
+    "EndSeconds": 49.62,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "我",
+    "StartSeconds": 49.62,
+    "EndSeconds": 49.74,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "们",
+    "StartSeconds": 49.74,
+    "EndSeconds": 49.86,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "将",
+    "StartSeconds": 49.86,
+    "EndSeconds": 50.1,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "继",
+    "StartSeconds": 50.1,
+    "EndSeconds": 50.26,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "续",
+    "StartSeconds": 50.26,
+    "EndSeconds": 50.38,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "讲",
+    "StartSeconds": 50.38,
+    "EndSeconds": 50.58,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "解",
+    "StartSeconds": 50.58,
+    "EndSeconds": 50.74,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "贝",
+    "StartSeconds": 50.86,
+    "EndSeconds": 50.94,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "莱",
+    "StartSeconds": 51.02,
+    "EndSeconds": 51.14,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "斯",
+    "StartSeconds": 51.18,
+    "EndSeconds": 51.26,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "芽",
+    "StartSeconds": 51.38,
+    "EndSeconds": 51.46,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "孢",
+    "StartSeconds": 51.54,
+    "EndSeconds": 51.58,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "杆",
+    "StartSeconds": 51.7,
+    "EndSeconds": 51.78,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 51.86,
+    "EndSeconds": 51.98,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "这",
+    "StartSeconds": 51.98,
+    "EndSeconds": 52.14,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "一",
+    "StartSeconds": 52.14,
+    "EndSeconds": 52.3,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 52.34,
+    "EndSeconds": 52.46,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "株",
+    "StartSeconds": 52.54,
+    "EndSeconds": 52.58,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 52.58,
+    "EndSeconds": 52.58,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "像",
+    "StartSeconds": 52.86,
+    "EndSeconds": 52.9,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "是",
+    "StartSeconds": 53.02,
+    "EndSeconds": 53.14,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "贝",
+    "StartSeconds": 53.3,
+    "EndSeconds": 53.38,
+    "DurationSeconds": 0.0800000000000054,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "莱",
+    "StartSeconds": 53.46,
+    "EndSeconds": 53.58,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "斯",
+    "StartSeconds": 53.62,
+    "EndSeconds": 53.7,
+    "DurationSeconds": 0.0800000000000054,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "芽",
+    "StartSeconds": 53.82,
+    "EndSeconds": 53.86,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "孢",
+    "StartSeconds": 53.98,
+    "EndSeconds": 54.02,
+    "DurationSeconds": 0.04000000000000625,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "杆",
+    "StartSeconds": 54.14,
+    "EndSeconds": 54.22,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 54.3,
+    "EndSeconds": 54.42,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 54.42,
+    "EndSeconds": 54.62,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "人",
+    "StartSeconds": 54.62,
+    "EndSeconds": 54.78,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "工",
+    "StartSeconds": 54.78,
+    "EndSeconds": 54.94,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "驯",
+    "StartSeconds": 55.06,
+    "EndSeconds": 55.1,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "化",
+    "StartSeconds": 55.18,
+    "EndSeconds": 55.3,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "与",
+    "StartSeconds": 55.34,
+    "EndSeconds": 55.54,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "改",
+    "StartSeconds": 55.54,
+    "EndSeconds": 55.7,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "造",
+    "StartSeconds": 55.7,
+    "EndSeconds": 55.86,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 55.86,
+    "EndSeconds": 55.86,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "国",
+    "StartSeconds": 56.06,
+    "EndSeconds": 56.26,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "际",
+    "StartSeconds": 56.26,
+    "EndSeconds": 56.42,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "经",
+    "StartSeconds": 56.42,
+    "EndSeconds": 56.62,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "典",
+    "StartSeconds": 56.62,
+    "EndSeconds": 56.74,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 56.74,
+    "EndSeconds": 56.94,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "明",
+    "StartSeconds": 56.94,
+    "EndSeconds": 57.1,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "星",
+    "StartSeconds": 57.1,
+    "EndSeconds": 57.26,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 57.34,
+    "EndSeconds": 57.46,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "株",
+    "StartSeconds": 57.58,
+    "EndSeconds": 57.62,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 57.62,
+    "EndSeconds": 57.62,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "和",
+    "StartSeconds": 57.7,
+    "EndSeconds": 57.9,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "中",
+    "StartSeconds": 57.98,
+    "EndSeconds": 58.14,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "国",
+    "StartSeconds": 58.14,
+    "EndSeconds": 58.26,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "已",
+    "StartSeconds": 58.3,
+    "EndSeconds": 58.5,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "商",
+    "StartSeconds": 58.5,
+    "EndSeconds": 58.66,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "业",
+    "StartSeconds": 58.66,
+    "EndSeconds": 58.78,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "化",
+    "StartSeconds": 58.78,
+    "EndSeconds": 58.94,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "的",
+    "StartSeconds": 58.94,
+    "EndSeconds": 59.14,
+    "DurationSeconds": 0.20000000000000284,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "新",
+    "StartSeconds": 59.14,
+    "EndSeconds": 59.26,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "势",
+    "StartSeconds": 59.3,
+    "EndSeconds": 59.46,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "力",
+    "StartSeconds": 59.46,
+    "EndSeconds": 59.54,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "菌",
+    "StartSeconds": 59.7,
+    "EndSeconds": 59.74,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "株",
+    "StartSeconds": 59.9,
+    "EndSeconds": 59.94,
+    "DurationSeconds": 0.03999999999999915,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 59.94,
+    "EndSeconds": 59.94,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "欢",
+    "StartSeconds": 60.18,
+    "EndSeconds": 60.34,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "迎",
+    "StartSeconds": 60.34,
+    "EndSeconds": 60.46,
+    "DurationSeconds": 0.11999999999999744,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "到",
+    "StartSeconds": 60.46,
+    "EndSeconds": 60.66,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "时",
+    "StartSeconds": 60.66,
+    "EndSeconds": 60.9,
+    "DurationSeconds": 0.240000000000002,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "收",
+    "StartSeconds": 60.9,
+    "EndSeconds": 61.02,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "听",
+    "StartSeconds": 61.02,
+    "EndSeconds": 61.22,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "收",
+    "StartSeconds": 61.22,
+    "EndSeconds": 61.38,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "看",
+    "StartSeconds": 61.38,
+    "EndSeconds": 61.54,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "，",
+    "StartSeconds": 61.54,
+    "EndSeconds": 61.54,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "我",
+    "StartSeconds": 61.54,
+    "EndSeconds": 61.7,
+    "DurationSeconds": 0.1600000000000037,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "们",
+    "StartSeconds": 61.7,
+    "EndSeconds": 61.78,
+    "DurationSeconds": 0.0799999999999983,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "下",
+    "StartSeconds": 61.78,
+    "EndSeconds": 61.94,
+    "DurationSeconds": 0.1599999999999966,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "期",
+    "StartSeconds": 61.94,
+    "EndSeconds": 62.06,
+    "DurationSeconds": 0.12000000000000455,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "见",
+    "StartSeconds": 62.06,
+    "EndSeconds": 62.26,
+    "DurationSeconds": 0.19999999999999574,
+    "IsVadBoundary": false
+  },
+  {
+    "Char": "。",
+    "StartSeconds": 62.26,
+    "EndSeconds": 62.26,
+    "DurationSeconds": 0,
+    "IsVadBoundary": false
+  }
+]

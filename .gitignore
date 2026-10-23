@@ -18,16 +18,14 @@ pip-delete-this-directory.txt
 .DS_Store
 Thumbs.db
 
-# Video Studio Pipeline Outputs & Intermediate Caches
-output/*/_work/
-output/*/frames/
-output/*/*.mp4
-output/*/*.wav
-output/*/_*.txt
-output/*/_*.json
-**/_playcheck.txt
-**/_qa_bounds.txt
-**/_work/
+# Dedicated Temporary & Cache Directory (Cleanable anytime)
+temp/*
+!temp/.gitkeep
+!temp/README.md
+
+# Video Studio Projects - keep directory structure
+!projects/.gitkeep
+!projects/README.md
 
 # Root / Temporary artifacts
 _silent.mp4
@@ -41,7 +39,3 @@ _playcheck.txt
 _qa_bounds.txt
 _render_log.txt
 *_out.txt
-
-# Keep output and inputs directory structure
-!inputs/.gitkeep
-!output/.gitkeep

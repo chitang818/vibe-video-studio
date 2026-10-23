@@ -22,6 +22,19 @@ ROOT_DIR = Path(__file__).resolve().parent
 SCRIPTS_DIR = ROOT_DIR / "scripts"
 
 
+def run_pack(args):
+    from scripts.pack import scan_and_bundle
+    success = scan_and_bundle(
+        args.target,
+        out_dir=args.out,
+        voice_override=args.voice,
+        timestamps_override=args.timestamps,
+        sfx_override=args.sfx,
+        script_override=args.script,
+    )
+    sys.exit(0 if success else 1)
+
+
 def run_doctor(args):
     from scripts.doctor import run_diagnostics
     success = run_diagnostics()
@@ -101,13 +114,9 @@ def run_clean(args):
         format_size,
         get_dir_size,
     )
-    targets_dirs, targets_files = scan_clean_targets(
-        keep_sample=args.keep_sample,
-        only_output=args.only_output,
-        only_inputs=args.only_inputs,
-    )
+    targets_dirs, targets_files = scan_clean_targets()
     if not targets_dirs and not targets_files:
-        print("✨ 工作区已经是最原始纯净状态，无需清理。")
+        print("✨ 临时缓存区 (temp/) 已经是最原始纯净状态，无需清理。")
         ensure_gitkeep_and_readme()
         return
 
@@ -115,21 +124,18 @@ def run_clean(args):
         total_sz = sum(get_dir_size(d) for d in targets_dirs) + sum(
             f.stat().st_size for f in targets_files if f.exists()
         )
-        print("=" * 86)
-        print("⚠️  VIBE Video Studio · 清理还原操作警示")
-        print("=" * 86)
-        print(f"即将永久清理 {len(targets_dirs)} 个目录和 {len(targets_files)} 个文件 (预计释放 {format_size(total_sz)})：")
-        for d in targets_dirs[:10]:
-            print(f"   - {d.relative_to(ROOT_DIR)}")
-        if len(targets_dirs) > 10:
-            print(f"   - ... 及另外 {len(targets_dirs) - 10} 个目录")
+        print("=" * 80)
+        print("⚠️  VIBE Video Studio · 临时缓存清理警示")
+        print("=" * 80)
+        print(f"即将安全清空 temp/ 目录下的过程切片与根目录临时文件 (预计释放 {format_size(total_sz)})：")
+        for d in targets_dirs[:5]:
+            print(f"   - {d.relative_to(ROOT_DIR)}/")
         for f in targets_files[:5]:
             print(f"   - {f.relative_to(ROOT_DIR)}")
-        if len(targets_files) > 5:
-            print(f"   - ... 及另外 {len(targets_files) - 5} 个文件")
-        print("-" * 86)
+        print("-" * 80)
+        print("🔒 安全保障: 本操作仅清理 temp/ 过程缓存，projects/ 下全部作品工程完好无损。")
         try:
-            choice = input("❓ 是否确认删除上述输入/输出内容并将工作区恢复到最原始状态？(y/N): ").strip().lower()
+            choice = input("❓ 是否确认清空临时缓存？(y/N): ").strip().lower()
             if choice not in ["y", "yes"]:
                 print("❌ 操作已取消，未做任何修改。")
                 return
@@ -183,7 +189,7 @@ def run_pipeline(args):
     fps = args.fps
 
     out_dir = Path(output).parent
-    frames_dir = out_dir / "_work" / "frames"
+    frames_dir = ROOT_DIR / "temp" / "frames" / Path(html).stem
     frames_dir.mkdir(parents=True, exist_ok=True)
 
     print("\n[Step 1/5] 执行播放与场景推进检查 (check)...")
@@ -228,7 +234,8 @@ def run_pipeline(args):
                         "click": [],
                         "chime": [max(0.0, round(dur - 4.5, 2))]
                     }
-                    auto_sfx_path = out_dir / "_work" / "auto_sfx.json"
+                    auto_sfx_path = ROOT_DIR / "temp" / f"auto_sfx_{Path(html).stem}.json"
+                    auto_sfx_path.parent.mkdir(parents=True, exist_ok=True)
                     with io.open(auto_sfx_path, "w", encoding="utf-8") as sf:
                         json.dump(auto_sfx, sf, indent=2)
                     sfx_file = str(auto_sfx_path)
@@ -258,6 +265,16 @@ def main():
     # doctor
     p_doc = subparsers.add_parser("doctor", help="诊断运行环境（Python、Playwright、FFmpeg 等）")
     p_doc.set_defaults(func=run_doctor)
+
+    # pack
+    p_pack = subparsers.add_parser("pack", help="作品工程自包含归档与 WeMediaForge 导入就绪检查")
+    p_pack.add_argument("target", help="工程目录路径或 HTML 文件路径")
+    p_pack.add_argument("-o", "--out", help="输出归档目录（默认在原目录就地补齐整理）", default=None)
+    p_pack.add_argument("--voice", help="指定主配音文件路径", default=None)
+    p_pack.add_argument("--timestamps", help="指定字级时间戳 JSON 路径", default=None)
+    p_pack.add_argument("--sfx", help="指定音效表 JSON 路径", default=None)
+    p_pack.add_argument("--script", help="指定文案脚本 TXT 路径", default=None)
+    p_pack.set_defaults(func=run_pack)
 
     # timeline
     p_time = subparsers.add_parser("timeline", help="从字级时间戳 JSON 精确提取关键句/词的时间点，并可自动生成 SFX 音效表")
@@ -339,12 +356,9 @@ def main():
     p_pipe.set_defaults(func=run_pipeline)
 
     # clean
-    p_clean = subparsers.add_parser("clean", help="一键清理输入/输出内容与临时缓存，恢复到最原始纯净状态")
+    p_clean = subparsers.add_parser("clean", help="一键安全清空 temp/ 临时过程缓存与根目录中间文件")
     p_clean.add_argument("-y", "--yes", action="store_true", help="跳过确认提示，直接执行清理")
-    p_clean.add_argument("--keep-sample", action="store_true", help="保留 inputs/ 中的 N0000_quick_start 极速测试小样")
     p_clean.add_argument("--dry-run", action="store_true", help="仅扫描展示待清理项目，不执行实际删除")
-    p_clean.add_argument("--only-output", action="store_true", help="仅清理 output/ 输出内容与临时缓存")
-    p_clean.add_argument("--only-inputs", action="store_true", help="仅清理 inputs/ 输入素材")
     p_clean.set_defaults(func=run_clean)
 
     args = parser.parse_args()
