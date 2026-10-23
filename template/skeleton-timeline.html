@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIBE 知识视频时间线特化模板（历史演进·大事记）</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%23070d12'/><text x='12' y='17' font-size='13' font-weight='bold' text-anchor='middle' fill='%2338bdf8'>T</text></svg>">
+<style>
+  /* ========================================================
+     1. 主题变量与全局基础（科技青蓝风格为主）
+     ======================================================== */
+  :root {
+    --bg: #050b14;
+    --panel: #0a1526;
+    --panel-sub: rgba(12, 24, 44, 0.94);
+    --line: rgba(56, 189, 248, 0.22);
+    --ink: #e2f1fd;
+    --dim: #8faec4;
+    --cyan: #38bdf8;
+    --cyan2: #0284c7;
+    --green: #4ade80;
+    --amber: #fbbf24;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans SC", "Microsoft YaHei", -apple-system, system-ui, sans-serif;
+    overflow: hidden;
+  }
+
+  .stage {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    container-type: size;
+  }
+  #bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ========================================================
+     2. 上区（顶部纯粹作品标题区，100% 聚焦主题）
+     规范：
+     - 顶部≥10cqh、底限≤16.5cqh、居中呈现、仅显示作品标题（严禁分镜胶囊/HUD）
+     - 短标题（≤12字）单行大字醒目；长标题（>12字）根据语义自然断句呈现为双行
+     - 悬浮轻透磨砂拟态底板 + 高对比度立体发光字效，好看、醒目、通透
+     ======================================================== */
+  .head {
+    position: fixed;
+    top: 10cqh;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .head-pill {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 84cqw;
+    padding: 0.8cqw 3.6cqw 0.9cqw;
+    background: rgba(8, 18, 36, 0.72);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 999px;
+    border: 1px solid rgba(56, 189, 248, 0.22);
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.45),
+      0 0 25px rgba(56, 189, 248, 0.15),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+  .head-pill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(56, 189, 248, 0.6), transparent);
+    border-radius: 999px;
+  }
+  .main-title {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+  .main-title .title-line {
+    display: inline-block;
+    line-height: 1.25;
+    white-space: nowrap;
+    background: linear-gradient(180deg, #ffffff 15%, #f1f5f9 65%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85));
+  }
+  /* 模式 1：文字较少（单行标题） */
+  .main-title.is-single .title-line,
+  .main-title:not(.is-double) .title-line:only-child {
+    font-size: 4.2cqw;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    background: linear-gradient(180deg, #ffffff 10%, #e0f2fe 60%, var(--cyan, #38bdf8) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 16px rgba(56, 189, 248, 0.35));
+  }
+  /* 模式 2：文字较多（语义断句双行标题） */
+  .main-title.is-double {
+    gap: 0.35cqw;
+  }
+  .main-title.is-double .title-main {
+    font-size: 3.8cqw;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    background: linear-gradient(180deg, #ffffff 20%, #f1f5f9 70%, #e0f2fe 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 12px rgba(56, 189, 248, 0.25));
+  }
+  .main-title.is-double .title-sub {
+    font-size: 3.2cqw;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    background: linear-gradient(180deg, #bae6fd 10%, var(--cyan, #38bdf8) 70%, #0284c7 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 10px rgba(56, 189, 248, 0.3));
+  }
+
+  /* 中区（场景内容区：垂直居中、限宽 82cqw、高度 <= 51cqh） */
+  .scene {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .scene.active {
+    display: block;
+    opacity: 1;
+  }
+  .scene .inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 17cqh 9cqw 21cqh;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  .aura {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .aura .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(8cqw);
+  }
+
+  /* 波次入场 */
+  .scene .w { opacity: 0; }
+  .scene.active .w { animation: wIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .scene.active .w2 { animation-delay: 0.12s; }
+  .scene.active .w3 { animation-delay: 0.24s; }
+  .scene.active .w4 { animation-delay: 0.36s; }
+  @keyframes wIn {
+    from { opacity: 0; transform: translateY(2.5cqw) scale(0.96); }
+    to { opacity: 1; transform: none; }
+  }
+
+  .badge {
+    font-size: 2.8cqw;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--cyan);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    border-radius: 6cqw;
+    padding: 0.5cqw 2.8cqw;
+    background: rgba(56, 189, 248, 0.08);
+    display: inline-block;
+  }
+  .scene h2 {
+    font-size: 5.4cqw;
+    font-weight: 900;
+    margin: 1.6cqw 0 1cqw;
+    line-height: 1.25;
+    text-shadow: 0 0 3.5cqw rgba(56, 189, 248, 0.3);
+  }
+  .scene .sub {
+    font-size: 2.7cqw;
+    color: var(--dim);
+    line-height: 1.55;
+    max-width: 80cqw;
+  }
+
+  /* 呼吸与脉冲 */
+  .breathe { animation: breathe 2.4s ease-in-out infinite; }
+  @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+  .cta-pulse { animation: ctaPulse 1.4s ease-in-out infinite; }
+  @keyframes ctaPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+
+  /* ========================================================
+     垂直时间轴专属组件系统 (Timeline Components)
+     ======================================================== */
+  .timeline-box {
+    width: 82cqw;
+    margin-top: 2cqw;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 1.8cqw;
+  }
+  /* 垂直主轴线 */
+  .timeline-box::before {
+    content: '';
+    position: absolute;
+    left: 4.8cqw;
+    top: 2cqw;
+    bottom: 2cqw;
+    width: 2px;
+    background: linear-gradient(180deg, var(--cyan), rgba(56, 189, 248, 0.15));
+  }
+  .t-node {
+    display: flex;
+    align-items: flex-start;
+    gap: 3cqw;
+    text-align: left;
+    position: relative;
+  }
+  .t-dot {
+    width: 3.2cqw;
+    height: 3.2cqw;
+    border-radius: 50%;
+    background: #050b14;
+    border: 2px solid var(--cyan);
+    margin-top: 1cqw;
+    flex: none;
+    box-shadow: 0 0 1.5cqw rgba(56, 189, 248, 0.5);
+    z-index: 2;
+    transition: all 0.3s ease;
+  }
+  .t-node.on .t-dot {
+    background: var(--cyan);
+    box-shadow: 0 0 3cqw var(--cyan), 0 0 5cqw rgba(56, 189, 248, 0.8);
+    transform: scale(1.2);
+  }
+  .t-card {
+    flex: 1;
+    background: var(--panel-sub);
+    border: 1px solid var(--line);
+    border-radius: 2.4cqw;
+    padding: 2.2cqw 3cqw;
+  }
+  .t-card .year {
+    font-size: 3.2cqw;
+    font-weight: 900;
+    color: var(--cyan);
+    letter-spacing: 0.05em;
+  }
+  .t-card .title {
+    font-size: 2.8cqw;
+    font-weight: 800;
+    color: var(--ink);
+    margin-top: 0.4cqw;
+  }
+  .t-card .desc {
+    font-size: 2.4cqw;
+    color: var(--dim);
+    line-height: 1.5;
+    margin-top: 0.6cqw;
+  }
+
+  /* 下区（卡拉OK字幕区） */
+  .sub-box {
+    position: fixed;
+    bottom: 14%;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 6;
+    min-height: 6.5cqh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+  }
+  .sub-text {
+    font-size: 4.4cqw;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    color: rgba(226, 241, 253, 0.35);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    max-width: 82cqw;
+  }
+  .sub-text .w { display: inline; color: rgba(226, 241, 253, 0.35); transition: color 0.12s; }
+  .sub-text .w.read { color: #7dd3fc; }
+  .sub-text .w.curr {
+    color: #ffffff;
+    text-shadow: 0 0 1.5cqw #38bdf8, 0 0 3cqw #0284c7;
+  }
+
+  .flash {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .flash.do-flash { animation: flashAnim 0.38s ease-out forwards; }
+  @keyframes flashAnim { 0% { opacity: 0.85; } 100% { opacity: 0; } }
+
+  #btnPlay {
+    position: fixed;
+    bottom: 4cqh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    background: rgba(10, 21, 38, 0.85);
+    border: 1px solid var(--line);
+    color: var(--cyan);
+    font-size: 2.8cqw;
+    padding: 1cqw 4cqw;
+    border-radius: 4cqw;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <canvas id="bg-canvas"></canvas>
+  <div id="flashOverlay" class="flash"></div>
+
+  <!-- 上区 -->
+  <!-- 顶部作品标题区（纯粹展示作品标题，支持单行/双行语义断句，无分镜胶囊/无HUD） -->
+  <div class="head">
+    <div class="head-pill">
+      <h1 id="mainTitle" class="main-title">
+        <span class="title-line title-main">技术发展演进史</span>
+        <span class="title-line title-sub">核心突破与产业大事件</span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- 中区 -->
+  <!-- S1: 起源探索 -->
+  <div id="s-open" class="scene active">
+    <div class="aura">
+      <div class="glow" style="width:110cqw;height:110cqw;left:50%;top:10%;transform:translateX(-50%);background:radial-gradient(circle,rgba(56,189,248,0.15),transparent 65%)"></div>
+    </div>
+    <div class="inner">
+      <div class="badge w">历史演进</div>
+      <h2 class="w w2">从理论发现到工业突破</h2>
+      <div class="timeline-box w w3">
+        <div class="t-node on">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <div class="year">1970s · 初步发现</div>
+            <div class="title">自然界样本的分离鉴定</div>
+            <div class="desc">科研团队从原始土壤样本中首次捕获活性菌落。</div>
+          </div>
+        </div>
+        <div class="t-node">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <div class="year">2000s · 基因测序</div>
+            <div class="title">分类学地位的确立</div>
+            <div class="desc">完成全基因组扫描，确立独立的生物功能亚种。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S2: 产业应用跨越 -->
+  <div id="s-content" class="scene">
+    <div class="aura">
+      <div class="glow" style="width:110cqw;height:110cqw;left:50%;bottom:5%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,0.12),transparent 65%)"></div>
+    </div>
+    <div class="inner">
+      <div class="badge w">规模产业化</div>
+      <h2 class="w w2">万亩应用与时代拐点</h2>
+      <div class="timeline-box w w3">
+        <div class="t-node on">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <div class="year">2018 · 登记推广</div>
+            <div class="title">首批国家生物农药登记</div>
+            <div class="desc">正式迈入规模化商品制剂生产与田间试验。</div>
+          </div>
+        </div>
+        <div class="t-node on">
+          <div class="t-dot"></div>
+          <div class="t-card">
+            <div class="year">2026 · 绿色生态</div>
+            <div class="title">全球绿色农业核心主角</div>
+            <div class="desc">全面替代传统化学农药，形成绿色生防新范式。</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: 结尾 CTA -->
+  <div id="s-cta" class="scene">
+    <div class="aura">
+      <div class="glow" style="width:110cqw;height:110cqw;left:50%;top:15%;transform:translateX(-50%);background:radial-gradient(circle,rgba(251,191,36,0.14),transparent 65%)"></div>
+    </div>
+    <div class="inner">
+      <div class="badge w">下期预告</div>
+      <h2 class="w w2">见证下一个十年的科技浪潮</h2>
+      <div class="sub w w3" style="margin-bottom: 3cqw;">更多科技演进史，与你共同解读</div>
+      <div class="badge w w4 cta-pulse" style="font-size:3.6cqw;padding:1.4cqw 5.4cqw;background:var(--cyan);color:#050b14;font-weight:900;">
+        点赞 · 关注 · 收藏
+      </div>
+    </div>
+  </div>
+
+  <!-- 下区：卡拉OK字幕 -->
+  <div class="sub-box">
+    <div id="sentence" class="sub-text"></div>
+  </div>
+
+  <!-- 控制与音频驱动 -->
+  <button id="btnPlay">点击播放</button>
+  <audio id="voice" preload="auto" src="voice.wav"></audio>
+</div>
+
+<script>
+/* ========================================================
+   数据内联插槽
+   ======================================================== */
+const CHARS = [
+  "大", "家", "好", "，", "欢", "迎", "来", "到", "历", "史", "大", "事", "记", "。",
+  "今", "天", "我", "们", "来", "看", "看", "技", "术", "的", "演", "进", "轨", "迹", "。",
+  "关", "注", "我", "们", "，", "了", "解", "更", "多", "行", "业", "内", "幕", "。"
+];
+
+const TIMES = [
+  0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6,
+  3.2, 3.4, 3.6, 3.8, 4.0, 4.2, 4.4, 4.6, 4.8, 5.0, 5.2, 5.4, 5.6, 5.8, 6.0,
+  6.6, 6.8, 7.0, 7.2, 7.4, 7.6, 7.8, 8.0, 8.2, 8.4, 8.6, 8.8, 9.0, 9.2
+];
+
+const SCENES = [
+  ["s-open", 0.0],
+  ["s-content", 3.0],
+  ["s-cta", 6.5]
+];
+
+const CHAP_NAMES = [
+  "起源突破",
+  "规模产业",
+  "未来展望"
+];
+
+/* ========================================================
+   卡拉OK字幕分词与过滤引擎
+   ======================================================== */
+var UNITS = [];
+function buildUnits() {
+  var units = [], s = 0;
+  for (var i = 0; i < CHARS.length; i++) {
+    if ('。！？!?；;'.indexOf(CHARS[i]) >= 0) {
+      units.push([s, i]);
+      s = i + 1;
+    }
+  }
+  if (s < CHARS.length) units.push([s, CHARS.length - 1]);
+
+  var subUnits = [];
+  var SEP = '，、：:；;，,';
+  for (var u = 0; u < units.length; u++) {
+    var a = units[u][0], b = units[u][1];
+    var segA = a;
+    while (segA <= b) {
+      var pos = -1;
+      for (var i = segA; i <= b; i++) {
+        if (SEP.indexOf(CHARS[i]) >= 0) { pos = i; break; }
+      }
+      var segB = (pos >= 0) ? pos : b;
+      var len = segB - segA + 1;
+      if (len > 10) {
+        var cut = -1;
+        for (var i2 = Math.min(segB, segA + 10); i2 >= Math.max(segA, segA + 6); i2--) {
+          var l = i2 - segA + 1;
+          if (l >= 8 && l <= 10 && ('的的得'.indexOf(CHARS[i2]) >= 0 || SEP.indexOf(CHARS[i2]) >= 0)) {
+            cut = i2; break;
+          }
+        }
+        if (cut < 0 && len > 16) cut = segA + 9;
+        if (cut >= segA) {
+          subUnits.push([segA, cut]);
+          segA = cut + 1;
+          continue;
+        }
+      }
+      subUnits.push([segA, segB]);
+      segA = segB + 1;
+    }
+  }
+
+  var merged = [];
+  for (var k = 0; k < subUnits.length; k++) {
+    var ua = subUnits[k][0], ub = subUnits[k][1];
+    var tl = ub - ua + 1;
+    if (tl <= 0) continue;
+    if ('。！？!?；;，、：:，,'.indexOf(CHARS[ub]) >= 0) tl--;
+    if (tl < 4 && merged.length > 0) {
+      merged[merged.length - 1][1] = ub;
+    } else {
+      merged.push([ua, ub]);
+    }
+  }
+  UNITS = merged;
+}
+buildUnits();
+
+function escHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+var sentenceEl = document.getElementById('sentence');
+
+function renderUnit(uIdx, currCharIdx) {
+  var a = UNITS[uIdx][0], b = UNITS[uIdx][1];
+  var end = b;
+  if ('，、：:；;，,'.indexOf(CHARS[b]) >= 0) end = b - 1;
+
+  var html = '';
+  for (var i = a; i <= end; i++) {
+    var ch = escHtml(CHARS[i]);
+    var cls = 'w';
+    if (i < currCharIdx) cls += ' read';
+    else if (i === currCharIdx) cls += ' curr';
+    html += '<span class="' + cls + '">' + ch + '</span>';
+  }
+  sentenceEl.innerHTML = html;
+}
+
+function updateSubtitle(t) {
+  if (TIMES.length === 0 || UNITS.length === 0) return;
+  var lo = 0, hi = TIMES.length - 1, ans = 0;
+  while (lo <= hi) {
+    var mid = (lo + hi) >> 1;
+    if (TIMES[mid] <= t) { ans = mid; lo = mid + 1; }
+    else { hi = mid - 1; }
+  }
+
+  var uIdx = -1;
+  for (var u = 0; u < UNITS.length; u++) {
+    if (ans >= UNITS[u][0] && ans <= UNITS[u][1]) { uIdx = u; break; }
+  }
+
+  if (uIdx >= 0) {
+    renderUnit(uIdx, ans);
+  } else if (ans >= UNITS[UNITS.length - 1][1]) {
+    renderUnit(UNITS.length - 1, ans);
+  }
+}
+
+/* ========================================================
+   VibeSound: 原生 Web Audio 高质音效引擎（零外部依赖、零体积开销）
+   ======================================================== */
+var VibeSound = (function() {
+  var ctx = null;
+  var noiseBuffer = null;
+
+  function getCtx() {
+    if (window.__RECORDING__) return null;
+    if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
+      try {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch (e) {
+        console.warn('AudioContext 初始化跳过:', e);
+      }
+    }
+    if (ctx && ctx.state === 'suspended') {
+      ctx.resume().catch(function() {});
+    }
+    return ctx;
+  }
+
+  function getNoiseBuffer(ac) {
+    if (noiseBuffer) return noiseBuffer;
+    var dur = 0.5;
+    var buf = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate);
+    var data = buf.getChannelData(0);
+    var b0 = 0, b1 = 0, b2 = 0;
+    for (var i = 0; i < data.length; i++) {
+      var white = Math.random() * 2 - 1;
+      b0 = 0.99765 * b0 + white * 0.0990460;
+      b1 = 0.96300 * b1 + white * 0.2965164;
+      b2 = 0.57000 * b2 + white * 1.0526913;
+      data[i] = (b0 + b1 + b2 + white * 0.1848) * 0.15;
+    }
+    noiseBuffer = buf;
+    return noiseBuffer;
+  }
+
+  return {
+    init: function() { getCtx(); },
+    pop: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var osc = ac.createOscillator();
+      var gain = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(1100, now);
+      osc.frequency.exponentialRampToValueAtTime(320, now + 0.1);
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.35, now + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+      osc.connect(gain);
+      gain.connect(ac.destination);
+      osc.start(now);
+      osc.stop(now + 0.12);
+    },
+    whoosh: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var buf = getNoiseBuffer(ac);
+      var src = ac.createBufferSource();
+      src.buffer = buf;
+      var filter = ac.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.Q.value = 1.2;
+      filter.frequency.setValueAtTime(300, now);
+      filter.frequency.exponentialRampToValueAtTime(2200, now + 0.15);
+      filter.frequency.exponentialRampToValueAtTime(380, now + 0.35);
+      var gain = ac.createGain();
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.32, now + 0.14);
+      gain.gain.linearRampToValueAtTime(0.0001, now + 0.35);
+      src.connect(filter);
+      filter.connect(gain);
+      gain.connect(ac.destination);
+      src.start(now);
+      src.stop(now + 0.35);
+    },
+    ding: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      [1760, 2637].forEach(function(freq, i) {
+        var osc = ac.createOscillator();
+        var gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        var vol = i === 0 ? 0.3 : 0.15;
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.linearRampToValueAtTime(vol, now + 0.003);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      });
+    },
+    chime: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var notes = [
+        { f: 659.25, d: 0.00, v: 0.28 },
+        { f: 880.00, d: 0.04, v: 0.25 },
+        { f: 1108.73, d: 0.08, v: 0.22 },
+        { f: 1318.51, d: 0.12, v: 0.20 }
+      ];
+      notes.forEach(function(n) {
+        var t = now + n.d;
+        var osc = ac.createOscillator();
+        var gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(n.f, t);
+        gain.gain.setValueAtTime(0.001, t);
+        gain.gain.linearRampToValueAtTime(n.v, t + 0.005);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.95);
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.start(t);
+        osc.stop(t + 0.95);
+      });
+    },
+    play: function(type) {
+      try {
+        if (type === 'whoosh') this.whoosh();
+        else if (type === 'pop') this.pop();
+        else if (type === 'ding') this.ding();
+        else if (type === 'chime') this.chime();
+      } catch (err) {}
+    }
+  };
+})();
+window.VibeSound = VibeSound;
+
+/* ========================================================
+   场景切换状态机
+   ======================================================== */
+var curScene = -1;
+var flashEl = document.getElementById('flashOverlay');
+
+
+// ==================== 智能作品标题自适应语义渲染引擎 ====================
+function renderMainTitle(rawTitle) {
+  var el = document.getElementById('mainTitle');
+  if (!el || !rawTitle) return;
+  rawTitle = rawTitle.trim();
+  if (rawTitle.indexOf('<span') >= 0 || rawTitle.indexOf('<br') >= 0) {
+    el.innerHTML = rawTitle;
+    el.classList.toggle('is-double', rawTitle.indexOf('title-sub') >= 0 || rawTitle.indexOf('<br') >= 0);
+    return;
+  }
+  var splitters = ['\n', ' · ', '·', ' —— ', '——', '：', ':'];
+  var parts = null;
+  for (var i = 0; i < splitters.length; i++) {
+    if (rawTitle.indexOf(splitters[i]) >= 0) {
+      var arr = rawTitle.split(splitters[i]);
+      if (arr.length === 2 && arr[0].trim().length >= 3 && arr[1].trim().length >= 3) {
+        parts = [arr[0].trim(), arr[1].trim()];
+        break;
+      }
+    }
+  }
+  if (!parts && rawTitle.length > 12) {
+    if (rawTitle.indexOf(' ') >= 0) {
+      var sArr = rawTitle.split(/\s+/);
+      if (sArr.length === 2) parts = sArr;
+    }
+  }
+  if (parts) {
+    el.innerHTML = '<span class="title-line title-main">' + parts[0] + '</span><span class="title-line title-sub">' + parts[1] + '</span>';
+    el.classList.add('is-double');
+    el.classList.remove('is-single');
+  } else {
+    el.innerHTML = '<span class="title-line">' + rawTitle + '</span>';
+    el.classList.add('is-single');
+    el.classList.remove('is-double');
+  }
+}
+window.renderMainTitle = renderMainTitle;
+
+function setScene(idx) {
+  if (idx === curScene || idx < 0 || idx >= SCENES.length) return;
+  var prev = curScene;
+  curScene = idx;
+
+  if (prev >= 0) {
+    var prevEl = document.getElementById(SCENES[prev][0]);
+    if (prevEl) prevEl.classList.remove('active');
+    // 触发场景转场风切音效
+    VibeSound.play('whoosh');
+  }
+
+  var newEl = document.getElementById(SCENES[idx][0]);
+  if (newEl) newEl.classList.add('active');
+
+  if (prev >= 0 && flashEl) {
+    flashEl.classList.remove('do-flash');
+    void flashEl.offsetWidth;
+    flashEl.classList.add('do-flash');
+  }
+
+  // 若进入最后一个场景，触发结尾和弦
+  if (idx === SCENES.length - 1 && prev >= 0) {
+    VibeSound.play('chime');
+  }
+
+// 顶部已彻底废除分镜指示胶囊与 HUD，只纯粹呈现作品标题
+}
+
+function updateScene(t) {
+  var idx = 0;
+  for (var i = 0; i < SCENES.length; i++) {
+    if (t >= SCENES[i][1]) idx = i;
+  }
+  setScene(idx);
+}
+
+/* ========================================================
+   主时钟循环与 Playwright 接口
+   ======================================================== */
+var audio = document.getElementById('voice');
+var btnPlay = document.getElementById('btnPlay');
+
+function syncTime(t) {
+  updateScene(t);
+  updateSubtitle(t);
+}
+window.syncTime = syncTime;
+
+function tick() {
+  if (!audio.paused && !audio.ended) {
+    syncTime(audio.currentTime);
+  }
+  requestAnimationFrame(tick);
+}
+
+function startPlay() {
+  VibeSound.init();
+  for (var i = 0; i < SCENES.length; i++) {
+    var el = document.getElementById(SCENES[i][0]);
+    if (el) el.classList.remove('active');
+  }
+  curScene = -1;
+  btnPlay.style.display = 'none';
+  syncTime(0);
+  audio.currentTime = 0;
+  audio.play().catch(function(e) {
+    console.warn("音频自动播放提示:", e);
+  });
+}
+
+btnPlay.addEventListener('click', startPlay);
+audio.addEventListener('play', function() { requestAnimationFrame(tick); });
+audio.addEventListener('seeked', function() { syncTime(audio.currentTime); });
+audio.addEventListener('timeupdate', function() { syncTime(audio.currentTime); });
+
+syncTime(0);
+
+/* ========================================================
+   Canvas 粒子背景
+   ======================================================== */
+var cv = document.getElementById('bg-canvas');
+var ctx = cv.getContext('2d');
+var W, H, pts = [];
+
+function initBg() {
+  W = cv.width = innerWidth;
+  H = cv.height = innerHeight;
+  var n = Math.min(36, Math.floor(W * H / 45000));
+  pts = [];
+  for (var i = 0; i < n; i++) {
+    pts.push({
+      x: Math.random() * W,
+      y: Math.random() * H,
+      r: Math.random() * 1.6 + 0.6,
+      vx: (Math.random() - 0.5) * 0.2,
+      vy: (Math.random() - 0.5) * 0.2,
+      a: Math.random() * 0.35 + 0.15
+    });
+  }
+}
+
+function drawBg() {
+  ctx.clearRect(0, 0, W, H);
+  for (var i = 0; i < pts.length; i++) {
+    var p = pts[i];
+    p.x += p.vx; p.y += p.vy;
+    if (p.x < 0 || p.x > W) p.vx *= -1;
+    if (p.y < 0 || p.y > H) p.vy *= -1;
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(56, 189, 248, ' + p.a + ')';
+    ctx.fill();
+    for (var j = i + 1; j < pts.length; j++) {
+      var q = pts[j], dx = p.x - q.x, dy = p.y - q.y, d2 = dx * dx + dy * dy;
+      if (d2 < 10000) {
+        ctx.strokeStyle = 'rgba(56, 189, 248, ' + (0.07 * (1 - d2 / 10000)) + ')';
+        ctx.lineWidth = 1;
+        ctx.beginPath();
+        ctx.moveTo(p.x, p.y);
+        ctx.lineTo(q.x, q.y);
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawBg);
+}
+
+initBg();
+drawBg();
+window.addEventListener('resize', initBg);
+</script>
+</body>
+</html>

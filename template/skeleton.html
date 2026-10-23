@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIBE 知识视频标准骨架模板（机理科普版）</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%23070d12'/><text x='12' y='17' font-size='13' font-weight='bold' text-anchor='middle' fill='%234ade80'>V</text></svg>">
+<style>
+  /* ========================================================
+     1. 主题变量与全局基础（支持 .theme-cyber / .theme-finance 快速换肤）
+     ======================================================== */
+  :root {
+    --bg: #070d12;
+    --panel: #0e1a22;
+    --panel-sub: rgba(16, 28, 38, 0.92);
+    --line: rgba(148, 163, 184, 0.18);
+    --ink: #e8f1ec;
+    --dim: #93a7a0;
+    --green: #4ade80;
+    --green2: #22c55e;
+    --amber: #fbbf24;
+    --cyan: #38bdf8;
+    --red: #f87171;
+  }
+  .stage.theme-cyber {
+    --bg: #050b14;
+    --panel: #0a1526;
+    --panel-sub: rgba(12, 24, 44, 0.92);
+    --green: #38bdf8;
+    --green2: #0284c7;
+    --amber: #a855f7;
+    --cyan: #06b6d4;
+  }
+  .stage.theme-finance {
+    --bg: #0d0e12;
+    --panel: #181920;
+    --panel-sub: rgba(26, 28, 36, 0.92);
+    --green: #fbbf24;
+    --green2: #d97706;
+    --amber: #f59e0b;
+    --cyan: #94a3b8;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Noto Sans SC", "Microsoft YaHei", -apple-system, system-ui, sans-serif;
+    overflow: hidden;
+  }
+
+  /* 9:16 容器查询竖屏舞台 */
+  .stage {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    container-type: size;
+  }
+  #bg-canvas {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+  }
+
+  /* ========================================================
+     2. 上区（顶部纯粹作品标题区，100% 聚焦主题）
+     规范：
+     - 顶部≥10cqh、底限≤16.5cqh、居中呈现、仅显示作品标题（严禁分镜胶囊/HUD）
+     - 短标题（≤12字）单行大字醒目；长标题（>12字）根据语义自然断句呈现为双行
+     - 悬浮轻透磨砂拟态底板 + 高对比度立体发光字效，好看、醒目、通透
+     ======================================================== */
+  .head {
+    position: fixed;
+    top: 10cqh;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .head-pill {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 84cqw;
+    padding: 0.8cqw 3.6cqw 0.9cqw;
+    background: rgba(10, 18, 26, 0.68);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 
+      0 4px 20px rgba(0, 0, 0, 0.45),
+      0 0 25px rgba(74, 222, 128, 0.12),
+      inset 0 1px 1px rgba(255, 255, 255, 0.15);
+  }
+  .head-pill::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 15%;
+    right: 15%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(74, 222, 128, 0.6), transparent);
+    border-radius: 999px;
+  }
+  .main-title {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    letter-spacing: 0.05em;
+  }
+  .main-title .title-line {
+    display: inline-block;
+    line-height: 1.25;
+    white-space: nowrap;
+    background: linear-gradient(180deg, #ffffff 15%, #f1f5f9 65%, #cbd5e1 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85));
+  }
+  /* 模式 1：文字较少（单行标题）—— 4.2cqw 饱满挺拔 */
+  .main-title.is-single .title-line,
+  .main-title:not(.is-double) .title-line:only-child {
+    font-size: 4.2cqw;
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    background: linear-gradient(180deg, #ffffff 10%, #ecfdf5 60%, var(--green) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.9)) drop-shadow(0 0 16px rgba(74, 222, 128, 0.35));
+  }
+  /* 模式 2：文字较多（语义断句双行标题）—— 主副层次鲜明 */
+  .main-title.is-double {
+    gap: 0.35cqw;
+  }
+  .main-title.is-double .title-main {
+    font-size: 3.8cqw;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    background: linear-gradient(180deg, #ffffff 20%, #f1f5f9 70%, #d1fae5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 12px rgba(74, 222, 128, 0.25));
+  }
+  .main-title.is-double .title-sub {
+    font-size: 3.2cqw;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    background: linear-gradient(180deg, #86efac 10%, var(--green) 70%, var(--green2) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.85)) drop-shadow(0 0 10px rgba(74, 222, 128, 0.3));
+  }
+
+  /* ========================================================
+     3. 中区（场景内容区）
+     规范：四边安全区内（居中x∈[8,92]cqw），内容宽≤82cqw，高度≤51cqh
+     ======================================================== */
+  .scene {
+    position: fixed;
+    inset: 0;
+    z-index: 1;
+    display: none;
+    opacity: 0;
+    transition: opacity 0.35s ease;
+  }
+  .scene.active {
+    display: block;
+    opacity: 1;
+  }
+  .scene .inner {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 17cqh 9cqw 21cqh;
+    text-align: center;
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+
+  /* 场景独立氛围光 */
+  .aura {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+  }
+  .aura .glow {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(8cqw);
+  }
+
+  /* 波次入场动效系统 (w1 -> w4 stagger) */
+  .scene .w { opacity: 0; }
+  .scene.active .w { animation: wIn 0.5s cubic-bezier(0.22, 1, 0.36, 1) forwards; }
+  .scene.active .w2 { animation-delay: 0.12s; }
+  .scene.active .w3 { animation-delay: 0.24s; }
+  .scene.active .w4 { animation-delay: 0.36s; }
+
+  @keyframes wIn {
+    from { opacity: 0; transform: translateY(2.5cqw) scale(0.96); }
+    to { opacity: 1; transform: none; }
+  }
+
+  /* 通用徽标与字号 */
+  .badge {
+    font-size: 2.8cqw;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+    color: var(--green);
+    border: 1px solid rgba(74, 222, 128, 0.4);
+    border-radius: 6cqw;
+    padding: 0.5cqw 2.8cqw;
+    background: rgba(74, 222, 128, 0.08);
+    display: inline-block;
+  }
+  .scene h2 {
+    font-size: 5.6cqw;
+    font-weight: 900;
+    margin: 1.6cqw 0 1cqw;
+    line-height: 1.25;
+    text-shadow: 0 0 3.5cqw rgba(74, 222, 128, 0.3);
+  }
+  .scene .sub {
+    font-size: 2.7cqw;
+    color: var(--dim);
+    line-height: 1.55;
+    max-width: 80cqw;
+  }
+
+  /* 持续强调动画 */
+  .breathe { animation: breathe 2.4s ease-in-out infinite; }
+  @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+  .cta-pulse { animation: ctaPulse 1.4s ease-in-out infinite; }
+  @keyframes ctaPulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.06); } }
+
+  .arr-pulse { animation: arrPulse 1.2s ease-in-out infinite; }
+  @keyframes arrPulse { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(0.6cqw); } }
+
+  /* ========================================================
+     4. 开场阶段状态机系统（Hook -> Topic）
+     规范：第 1 秒有高能动效，由 data-phase 驱动多阶段推进
+     ======================================================== */
+  .phs {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.35s ease;
+    padding: 18cqh 8cqw 21cqh;
+  }
+  #s-open[data-phase="splash"] .phs-splash { opacity: 1; pointer-events: auto; }
+  #s-open[data-phase="topic"] .phs-topic { opacity: 1; pointer-events: auto; }
+
+  /* 钩子阶段：悬念提问与核心反差大字 */
+  .hook-title {
+    font-size: 8cqw;
+    font-weight: 900;
+    line-height: 1.3;
+    letter-spacing: 0.04em;
+    color: var(--ink);
+    position: relative;
+    max-width: 82cqw;
+  }
+  .hook-title em {
+    font-style: normal;
+    color: var(--green);
+    text-shadow: 0 0 4cqw rgba(74, 222, 128, 0.5);
+  }
+  .hook-graphic {
+    width: 28cqw;
+    height: 28cqw;
+    margin: 2.5cqw 0 1.5cqw;
+    position: relative;
+  }
+  .hook-graphic svg {
+    width: 100%;
+    height: 100%;
+    color: var(--green);
+    filter: drop-shadow(0 0 2cqw rgba(74, 222, 128, 0.4));
+  }
+
+  /* 主题阶段：核心结论登场 */
+  .tp-title {
+    font-size: 9cqw;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    color: var(--ink);
+    text-shadow: 0 0 5cqw rgba(74, 222, 128, 0.4);
+    max-width: 82cqw;
+  }
+
+  /* ========================================================
+     5.1 分镜头微节拍（Micro-beats）分批次入场动效系统
+     ======================================================== */
+  .scene.active [data-beat="1"] {
+    animation: shotCardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.15s backwards;
+  }
+  .scene.active [data-beat="2"] {
+    animation: shotCardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.45s backwards;
+  }
+  .scene.active [data-beat="3"] {
+    animation: shotCardIn 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.85s backwards;
+  }
+  @keyframes shotCardIn {
+    0% { opacity: 0; transform: translateY(16px) scale(0.96); }
+    100% { opacity: 1; transform: translateY(0) scale(1); }
+  }
+
+  /* ========================================================
+     5. 图案化视觉组件库（内置 SVG 图表与双列排版范式）
+     ======================================================== */
+  /* 组件 A：SVG 环形数据图（图数解耦标准范式：环内仅限纯数，标签外置） */
+  .gene-ring-box {
+    width: 26cqw;
+    height: 26cqw;
+    position: relative;
+    margin: 1.5cqw auto;
+  }
+  .gene-ring-box svg {
+    width: 100%;
+    height: 100%;
+    transform: rotate(-90deg);
+  }
+  .gene-ring-box .center-txt {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .gene-ring-box .center-txt .val {
+    font-size: 5.4cqw;
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(180deg, #86efac, #22c55e);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+  }
+
+  /* 组件 B1：【竖屏优先】上下纵向堆叠大通栏卡片（首选推荐） */
+  .card-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 2.4cqw;
+    width: 82cqw;
+    margin-top: 1.8cqw;
+  }
+  .stack-card {
+    background: var(--panel-sub);
+    border: 1px solid var(--line);
+    border-radius: 2.8cqw;
+    padding: 2.6cqw 3.2cqw;
+    text-align: left;
+    display: flex;
+    align-items: center;
+    gap: 3.2cqw;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  }
+  .stack-card .card-ico {
+    width: 7cqw;
+    height: 7cqw;
+    flex: none;
+    color: var(--green);
+  }
+  .stack-card .card-ico svg { width: 100%; height: 100%; }
+  .stack-card .card-body {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6cqw;
+  }
+  .stack-card .card-title {
+    font-size: 3.8cqw;
+    font-weight: 800;
+    color: var(--ink);
+    line-height: 1.25;
+  }
+  .stack-card .card-desc {
+    font-size: 2.8cqw;
+    color: var(--dim);
+    line-height: 1.45;
+  }
+
+  /* 组件 B2：左右双列对比卡片（次选：仅用于上下纵向空间受限或极简指标时） */
+  .duo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4cqw;
+    width: 82cqw;
+    margin-top: 2cqw;
+  }
+  .duo-card {
+    background: var(--panel-sub);
+    border: 1px solid var(--line);
+    border-radius: 2.8cqw;
+    padding: 2.4cqw 2.6cqw;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+  }
+  .duo-card .ico {
+    width: 6.4cqw;
+    height: 6.4cqw;
+    color: var(--green);
+    margin-bottom: 1cqw;
+  }
+  .duo-card .ico svg { width: 100%; height: 100%; }
+  .duo-card .t { font-size: 3cqw; font-weight: 800; color: var(--ink); }
+  .duo-card .d { font-size: 2.4cqw; color: var(--dim); line-height: 1.5; margin-top: 0.6cqw; }
+
+  /* 组件 C：多步递进流程条 */
+  .flow-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1.6cqw;
+    width: 82cqw;
+    margin-top: 2cqw;
+  }
+  .flow-step {
+    flex: 1;
+    background: rgba(148, 163, 184, 0.08);
+    border: 1px solid var(--line);
+    border-radius: 2.2cqw;
+    padding: 1.8cqw 1cqw;
+    text-align: center;
+  }
+  .flow-step .num { font-size: 2.4cqw; color: var(--green); font-weight: 800; }
+  .flow-step .st { font-size: 2.6cqw; font-weight: 700; color: var(--ink); margin-top: 0.4cqw; }
+  .flow-arrow {
+    color: var(--green);
+    font-size: 3.2cqw;
+    font-weight: 900;
+    flex: none;
+  }
+
+  /* ========================================================
+     6. 下区（卡拉OK字幕区）
+     规范：bottom: 14%、底线≥14cqh、固定窗口不滚动、逐字高亮
+     ======================================================== */
+  .sub-box {
+    position: fixed;
+    bottom: 14%;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 6;
+    min-height: 6.5cqh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    pointer-events: none;
+  }
+  .sub-text {
+    font-size: 4.4cqw;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.05em;
+    color: rgba(232, 241, 236, 0.35);
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8);
+    display: inline-block;
+    max-width: 82cqw;
+  }
+  .sub-text .w { display: inline; color: rgba(232, 241, 236, 0.35); transition: color 0.12s; }
+  .sub-text .w.read { color: #86efac; }
+  .sub-text .w.curr {
+    color: #ffffff;
+    text-shadow: 0 0 1.5cqw #4ade80, 0 0 3cqw #22c55e;
+  }
+
+  /* 转场与控制 */
+  .flash {
+    position: fixed;
+    inset: 0;
+    background: #ffffff;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 10;
+  }
+  .flash.do-flash { animation: flashAnim 0.38s ease-out forwards; }
+  @keyframes flashAnim { 0% { opacity: 0.85; } 100% { opacity: 0; } }
+
+  #btnPlay {
+    position: fixed;
+    bottom: 4cqh;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9;
+    background: rgba(14, 26, 34, 0.85);
+    border: 1px solid var(--line);
+    color: var(--green);
+    font-size: 2.8cqw;
+    padding: 1cqw 4cqw;
+    border-radius: 4cqw;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+<div class="stage">
+  <canvas id="bg-canvas"></canvas>
+  <div id="flashOverlay" class="flash"></div>
+
+  <!-- 顶部作品标题区（纯粹展示作品标题，支持单行/双行语义断句，无分镜胶囊/无HUD） -->
+  <div class="head">
+    <div class="head-pill">
+      <h1 id="mainTitle" class="main-title">
+        <span class="title-line title-main">贝莱斯芽孢杆菌</span>
+        <span class="title-line title-sub">核心机理与商业化全指南</span>
+      </h1>
+    </div>
+  </div>
+
+  <!-- 中区：多场景轮播 -->
+  <!-- S1: 开场钩子（多阶段推进：splash 痛点 -> topic 主题） -->
+  <div id="s-open" class="scene active" data-phase="splash">
+    <div class="aura">
+      <div class="glow" style="width:110cqw;height:110cqw;left:50%;top:10%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,0.15),transparent 65%)"></div>
+    </div>
+    
+    <!-- Phase 1: 钩子悬念闪屏 -->
+    <div class="phs phs-splash">
+      <div class="badge">农业黑科技</div>
+      <div class="hook-graphic breathe">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+          <path d="M12 8v4"/><path d="M12 16h.01"/>
+        </svg>
+      </div>
+      <div class="hook-title">农用菌中的<em>全能选手</em>？</div>
+      <div class="sub" style="margin-top:1.5cqw;">从防病促生到土壤修复的生物学奥秘</div>
+    </div>
+
+    <!-- Phase 2: 核心主题亮相 -->
+    <div class="phs phs-topic">
+      <div class="badge">核心主角</div>
+      <div class="tp-title breathe" style="margin:2cqw 0 1.5cqw;">贝莱斯芽孢杆菌</div>
+      <div class="sub">历经二十余年分类演进的明星生防菌株</div>
+    </div>
+  </div>
+
+  <!-- S2: 机理推导与图案化表达（集成 SVG 环形图 + 双列卡片 + 递进流程） -->
+  <div id="s-content" class="scene">
+    <div class="aura">
+      <div class="glow" style="width:110cqw;height:110cqw;left:50%;bottom:5%;transform:translateX(-50%);background:radial-gradient(circle,rgba(56,189,248,0.12),transparent 65%)"></div>
+    </div>
+    <div class="inner">
+      <div class="badge w">作用机制</div>
+      <h2 class="w w2">双重防御与促生矩阵</h2>
+
+      <!-- 组件 A：环形占比图范式 -->
+      <div class="gene-ring-box w w3">
+        <svg viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="rgba(148,163,184,0.15)" stroke-width="8"/>
+          <circle cx="50" cy="50" r="40" fill="none" stroke="url(#greenGrad)" stroke-width="8" stroke-dasharray="251.2" stroke-dashoffset="30" stroke-linecap="round"/>
+          <defs>
+            <linearGradient id="greenGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#86efac"/>
+              <stop offset="100%" stop-color="#22c55e"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <div class="center-txt">
+          <span class="val breathe">88%</span>
+        </div>
+      </div>
+      <div class="badge green w w3" style="margin-top:-0.5cqw;margin-bottom:1.5cqw;">广谱抑菌率突破 88%</div>
+
+      <!-- 组件 B：左右双列对比卡片 -->
+      <div class="duo-grid w w4">
+        <div class="duo-card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <rect x="3" y="3" width="18" height="18" rx="2"/><path d="m9 12 2 2 4-4"/>
+            </svg>
+          </div>
+          <div class="t">抗菌脂肽分泌</div>
+          <div class="d">直接穿孔破坏病原真菌细胞膜，快速抑制菌丝生长。</div>
+        </div>
+        <div class="duo-card">
+          <div class="ico" style="color:var(--cyan);">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+            </svg>
+          </div>
+          <div class="t">生态位强势占领</div>
+          <div class="d">在根际率先形成保护性生物膜，断绝病菌营养竞争。</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- S3: 结尾 CTA 互动收束 -->
+  <div id="s-cta" class="scene">
+    <div class="aura">
+      <div class="glow" style="width:110cqw;height:110cqw;left:50%;top:15%;transform:translateX(-50%);background:radial-gradient(circle,rgba(251,191,36,0.14),transparent 65%)"></div>
+    </div>
+    <div class="inner">
+      <div class="badge w">下期预告</div>
+      <h2 class="w w2">探索微生物的更多未知</h2>
+      <div class="sub w w3" style="margin-bottom: 3cqw;">从实验室走向万亩农田的产业化之路</div>
+      <div class="badge w w4 cta-pulse" style="font-size:3.6cqw;padding:1.4cqw 5.4cqw;background:var(--green);color:#070d12;font-weight:900;">
+        点赞 · 关注 · 收藏
+      </div>
+    </div>
+  </div>
+
+  <!-- 下区：卡拉OK字幕 -->
+  <div class="sub-box">
+    <div id="sentence" class="sub-text"></div>
+  </div>
+
+  <!-- 控制与音频驱动（支持同级 voice.wav 与 assets/voice.wav 双回退） -->
+  <button id="btnPlay">点击播放</button>
+  <audio id="voice" preload="auto">
+    <source src="voice.wav" type="audio/wav">
+    <source src="assets/voice.wav" type="audio/wav">
+  </audio>
+</div>
+
+<script>
+/* ========================================================
+   7. 数据内联插槽（CHARS / TIMES / SCENES / OPEN_PHASES）
+   ======================================================== */
+const CHARS = [
+  "大", "家", "好", "，", "欢", "迎", "来", "到", "知", "识", "大", "赏", "。",
+  "今", "天", "我", "们", "来", "看", "看", "核", "心", "的", "图", "案", "化", "机", "制", "。",
+  "关", "注", "我", "们", "，", "获", "取", "更", "多", "精", "彩", "科", "普", "。"
+];
+
+const TIMES = [
+  0.2, 0.4, 0.6, 0.8, 1.0, 1.2, 1.4, 1.6, 1.8, 2.0, 2.2, 2.4, 2.6,
+  3.2, 3.4, 3.6, 3.8, 4.0, 4.2, 4.4, 4.6, 4.8, 5.0, 5.2, 5.4, 5.6, 5.8, 6.0,
+  6.6, 6.8, 7.0, 7.2, 7.4, 7.6, 7.8, 8.0, 8.2, 8.4, 8.6, 8.8, 9.0, 9.2
+];
+
+const SCENES = [
+  ["s-open", 0.0],
+  ["s-content", 3.0],
+  ["s-cta", 6.5]
+];
+
+const CHAP_NAMES = [
+  "开场钩子",
+  "核心机制",
+  "互动收束"
+];
+
+// 开场子阶段映射：[phaseName, startTime]
+const OPEN_PHASES = [
+  ["splash", 0.0],
+  ["topic", 1.6]
+];
+
+/* ========================================================
+   8. 卡拉OK字幕分词与过滤引擎
+   ======================================================== */
+var UNITS = [];
+function buildUnits() {
+  var units = [], s = 0;
+  for (var i = 0; i < CHARS.length; i++) {
+    if ('。！？!?；;'.indexOf(CHARS[i]) >= 0) {
+      units.push([s, i]);
+      s = i + 1;
+    }
+  }
+  if (s < CHARS.length) units.push([s, CHARS.length - 1]);
+
+  var subUnits = [];
+  var SEP = '，、：:；;，,';
+  for (var u = 0; u < units.length; u++) {
+    var a = units[u][0], b = units[u][1];
+    var segA = a;
+    while (segA <= b) {
+      var pos = -1;
+      for (var i = segA; i <= b; i++) {
+        if (SEP.indexOf(CHARS[i]) >= 0) { pos = i; break; }
+      }
+      var segB = (pos >= 0) ? pos : b;
+      var len = segB - segA + 1;
+      if (len > 10) {
+        var cut = -1;
+        for (var i2 = Math.min(segB, segA + 10); i2 >= Math.max(segA, segA + 6); i2--) {
+          var l = i2 - segA + 1;
+          if (l >= 8 && l <= 10 && ('的的得'.indexOf(CHARS[i2]) >= 0 || SEP.indexOf(CHARS[i2]) >= 0)) {
+            cut = i2; break;
+          }
+        }
+        if (cut < 0 && len > 16) cut = segA + 9;
+        if (cut >= segA) {
+          subUnits.push([segA, cut]);
+          segA = cut + 1;
+          continue;
+        }
+      }
+      subUnits.push([segA, segB]);
+      segA = segB + 1;
+    }
+  }
+
+  // 防碎行合并（扣除末尾标点后少于 4 字并入前一行）
+  var merged = [];
+  for (var k = 0; k < subUnits.length; k++) {
+    var ua = subUnits[k][0], ub = subUnits[k][1];
+    var tl = ub - ua + 1;
+    if (tl <= 0) continue;
+    if ('。！？!?；;，、：:，,'.indexOf(CHARS[ub]) >= 0) tl--;
+    if (tl < 4 && merged.length > 0) {
+      merged[merged.length - 1][1] = ub;
+    } else {
+      merged.push([ua, ub]);
+    }
+  }
+  UNITS = merged;
+}
+buildUnits();
+
+function escHtml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+
+var sentenceEl = document.getElementById('sentence');
+
+function renderUnit(uIdx, currCharIdx) {
+  var a = UNITS[uIdx][0], b = UNITS[uIdx][1];
+  var end = b;
+  // 行末断句标点不显示
+  if ('，、：:；;，,'.indexOf(CHARS[b]) >= 0) end = b - 1;
+
+  var html = '';
+  for (var i = a; i <= end; i++) {
+    var ch = escHtml(CHARS[i]);
+    var cls = 'w';
+    if (i < currCharIdx) cls += ' read';
+    else if (i === currCharIdx) cls += ' curr';
+    html += '<span class="' + cls + '">' + ch + '</span>';
+  }
+  sentenceEl.innerHTML = html;
+}
+
+function updateSubtitle(t) {
+  if (TIMES.length === 0 || UNITS.length === 0) return;
+  var lo = 0, hi = TIMES.length - 1, ans = 0;
+  while (lo <= hi) {
+    var mid = (lo + hi) >> 1;
+    if (TIMES[mid] <= t) { ans = mid; lo = mid + 1; }
+    else { hi = mid - 1; }
+  }
+
+  var uIdx = -1;
+  for (var u = 0; u < UNITS.length; u++) {
+    if (ans >= UNITS[u][0] && ans <= UNITS[u][1]) { uIdx = u; break; }
+  }
+
+  if (uIdx >= 0) {
+    renderUnit(uIdx, ans);
+  } else if (ans >= UNITS[UNITS.length - 1][1]) {
+    renderUnit(UNITS.length - 1, ans);
+  }
+}
+
+/* ========================================================
+   9. 场景与开场相位状态机
+   ======================================================== */
+var curScene = -1;
+/* ========================================================
+   VibeSound: 原生 Web Audio 高质音效引擎（零外部依赖、零体积开销）
+   ======================================================== */
+var VibeSound = (function() {
+  var ctx = null;
+  var noiseBuffer = null;
+
+  function getCtx() {
+    if (window.__RECORDING__) return null;
+    if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
+      try {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch (e) {
+        console.warn('AudioContext 初始化跳过:', e);
+      }
+    }
+    if (ctx && ctx.state === 'suspended') {
+      ctx.resume().catch(function() {});
+    }
+    return ctx;
+  }
+
+  function getNoiseBuffer(ac) {
+    if (noiseBuffer) return noiseBuffer;
+    var dur = 0.5;
+    var buf = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate);
+    var data = buf.getChannelData(0);
+    var b0 = 0, b1 = 0, b2 = 0;
+    for (var i = 0; i < data.length; i++) {
+      var white = Math.random() * 2 - 1;
+      b0 = 0.99765 * b0 + white * 0.0990460;
+      b1 = 0.96300 * b1 + white * 0.2965164;
+      b2 = 0.57000 * b2 + white * 1.0526913;
+      data[i] = (b0 + b1 + b2 + white * 0.1848) * 0.15;
+    }
+    noiseBuffer = buf;
+    return noiseBuffer;
+  }
+
+  return {
+    init: function() { getCtx(); },
+    pop: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var osc = ac.createOscillator();
+      var gain = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(1100, now);
+      osc.frequency.exponentialRampToValueAtTime(320, now + 0.1);
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.35, now + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+      osc.connect(gain);
+      gain.connect(ac.destination);
+      osc.start(now);
+      osc.stop(now + 0.12);
+    },
+    whoosh: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var buf = getNoiseBuffer(ac);
+      var src = ac.createBufferSource();
+      src.buffer = buf;
+      var filter = ac.createBiquadFilter();
+      filter.type = 'bandpass';
+      filter.Q.value = 1.2;
+      filter.frequency.setValueAtTime(300, now);
+      filter.frequency.exponentialRampToValueAtTime(2200, now + 0.15);
+      filter.frequency.exponentialRampToValueAtTime(380, now + 0.35);
+      var gain = ac.createGain();
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.32, now + 0.14);
+      gain.gain.linearRampToValueAtTime(0.0001, now + 0.35);
+      src.connect(filter);
+      filter.connect(gain);
+      gain.connect(ac.destination);
+      src.start(now);
+      src.stop(now + 0.35);
+    },
+    ding: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      [1760, 2637].forEach(function(freq, i) {
+        var osc = ac.createOscillator();
+        var gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        var vol = i === 0 ? 0.3 : 0.15;
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.linearRampToValueAtTime(vol, now + 0.003);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      });
+    },
+    chime: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var notes = [
+        { f: 659.25, d: 0.00, v: 0.28 },
+        { f: 880.00, d: 0.04, v: 0.25 },
+        { f: 1108.73, d: 0.08, v: 0.22 },
+        { f: 1318.51, d: 0.12, v: 0.20 }
+      ];
+      notes.forEach(function(n) {
+        var t = now + n.d;
+        var osc = ac.createOscillator();
+        var gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(n.f, t);
+        gain.gain.setValueAtTime(0.001, t);
+        gain.gain.linearRampToValueAtTime(n.v, t + 0.005);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.95);
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.start(t);
+        osc.stop(t + 0.95);
+      });
+    },
+    play: function(type) {
+      try {
+        if (type === 'whoosh') this.whoosh();
+        else if (type === 'pop') this.pop();
+        else if (type === 'ding') this.ding();
+        else if (type === 'chime') this.chime();
+      } catch (err) {}
+    }
+  };
+})();
+window.VibeSound = VibeSound;
+
+var curPhase = '';
+var flashEl = document.getElementById('flashOverlay');
+var openSceneEl = document.getElementById('s-open');
+
+// 兼容分镜头流引擎（统一挂载到 window 供 Playwright 自动化检测读取）
+var _activeScenes = (typeof SCENES !== 'undefined') ? SCENES : ((typeof SHOTS !== 'undefined') ? SHOTS : []);
+var _activeChaps = (typeof CHAP_NAMES !== 'undefined') ? CHAP_NAMES : ((typeof SHOT_NAMES !== 'undefined') ? SHOT_NAMES : []);
+window.SCENES = _activeScenes;
+
+// ==================== 智能作品标题自适应语义渲染引擎 ====================
+function renderMainTitle(rawTitle) {
+  var el = document.getElementById('mainTitle');
+  if (!el || !rawTitle) return;
+  rawTitle = rawTitle.trim();
+  if (rawTitle.indexOf('<span') >= 0 || rawTitle.indexOf('<br') >= 0) {
+    el.innerHTML = rawTitle;
+    el.classList.toggle('is-double', rawTitle.indexOf('title-sub') >= 0 || rawTitle.indexOf('<br') >= 0);
+    return;
+  }
+  // 语义断句切分逻辑
+  var splitters = ['\n', ' · ', '·', ' —— ', '——', '：', ':'];
+  var parts = null;
+  for (var i = 0; i < splitters.length; i++) {
+    if (rawTitle.indexOf(splitters[i]) >= 0) {
+      var arr = rawTitle.split(splitters[i]);
+      if (arr.length === 2 && arr[0].trim().length >= 3 && arr[1].trim().length >= 3) {
+        parts = [arr[0].trim(), arr[1].trim()];
+        break;
+      }
+    }
+  }
+  if (!parts && rawTitle.length > 12) {
+    if (rawTitle.indexOf(' ') >= 0) {
+      var sArr = rawTitle.split(/\s+/);
+      if (sArr.length === 2) parts = sArr;
+    }
+  }
+  if (parts) {
+    el.innerHTML = '<span class="title-line title-main">' + parts[0] + '</span><span class="title-line title-sub">' + parts[1] + '</span>';
+    el.classList.add('is-double');
+    el.classList.remove('is-single');
+  } else {
+    el.innerHTML = '<span class="title-line">' + rawTitle + '</span>';
+    el.classList.add('is-single');
+    el.classList.remove('is-double');
+  }
+}
+window.renderMainTitle = renderMainTitle;
+
+window.CHAP_NAMES = _activeChaps;
+
+function setScene(idx) {
+  if (idx === curScene || idx < 0 || idx >= _activeScenes.length) return;
+  var prev = curScene;
+  curScene = idx;
+
+  if (prev >= 0) {
+    var prevEl = document.getElementById(_activeScenes[prev][0]);
+    if (prevEl) prevEl.classList.remove('active');
+    // 触发场景转场风切音效
+    VibeSound.play('whoosh');
+  }
+
+  var newEl = document.getElementById(_activeScenes[idx][0]);
+  if (newEl) newEl.classList.add('active');
+
+  // 转场闪光
+  if (prev >= 0 && flashEl) {
+    flashEl.classList.remove('do-flash');
+    void flashEl.offsetWidth;
+    flashEl.classList.add('do-flash');
+  }
+
+  // 若进入最后一个场景，触发结尾和弦
+  if (idx === _activeScenes.length - 1 && prev >= 0) {
+    VibeSound.play('chime');
+  }
+
+// 顶部已彻底废除分镜指示胶囊与 HUD，只纯粹呈现作品标题
+}
+
+function updateScene(t) {
+  var idx = 0;
+  for (var i = 0; i < _activeScenes.length; i++) {
+    if (t >= _activeScenes[i][1]) idx = i;
+  }
+  setScene(idx);
+
+  // 若处于开场场景，更新子阶段（phase）
+  if (idx === 0 && openSceneEl && OPEN_PHASES.length > 0) {
+    var p = OPEN_PHASES[0][0];
+    for (var j = 0; j < OPEN_PHASES.length; j++) {
+      if (t >= OPEN_PHASES[j][1]) p = OPEN_PHASES[j][0];
+    }
+    if (p !== curPhase) {
+      curPhase = p;
+      openSceneEl.setAttribute('data-phase', curPhase);
+    }
+  }
+}
+
+/* ========================================================
+   10. 主时钟循环与 Playwright 无头接口
+   ======================================================== */
+var audio = document.getElementById('voice');
+var btnPlay = document.getElementById('btnPlay');
+
+function syncTime(t) {
+  updateScene(t);
+  updateSubtitle(t);
+}
+// 暴露全局 API 供 Playwright 录制与 QA 脚本调用
+window.syncTime = syncTime;
+
+function tick() {
+  if (!audio.paused && !audio.ended) {
+    syncTime(audio.currentTime);
+  }
+  requestAnimationFrame(tick);
+}
+
+function startPlay() {
+  VibeSound.init();
+  for (var i = 0; i < _activeScenes.length; i++) {
+    var el = document.getElementById(_activeScenes[i][0]);
+    if (el) el.classList.remove('active');
+  }
+  curScene = -1;
+  curPhase = '';
+  btnPlay.style.display = 'none';
+  syncTime(0);
+  audio.currentTime = 0;
+  audio.play().catch(function(e) {
+    console.warn("音频自动播放提示（开发模式下无需阻断）:", e);
+  });
+}
+
+btnPlay.addEventListener('click', startPlay);
+audio.addEventListener('play', function() { requestAnimationFrame(tick); });
+audio.addEventListener('seeked', function() { syncTime(audio.currentTime); });
+audio.addEventListener('timeupdate', function() { syncTime(audio.currentTime); });
+
+// 默认首屏初始渲染
+syncTime(0);
+
+/* ========================================================
+   11. 高品质背景粒子引擎 (VibeBackgrounds)
+   预设可选: bio-bubbles | constellation | dna-spiral | cyber-grid | aurora-dust
+   可运行 python vibe.py bg 打开画廊预览各动效与色调
+   ======================================================== */
+// ========================================================
+// VIBE Video Studio · 背景动效粒子预设库 (VibeBackgrounds)
+// 5 款专为抖音竖屏 1080x1920 打造的高能、高辨识度背景动效引擎
+// 100% 原生 Canvas 2D，零外部依赖，极速渲染
+// ========================================================
+
+var VibeBackgrounds = (function () {
+  "use strict";
+
+  // 色彩辅助解析
+  function parseColor(c, defaultColor) {
+    if (!c) return defaultColor || { r: 74, g: 222, b: 128 };
+    if (typeof c === "object" && c.r !== undefined) return c;
+    if (c.startsWith("#")) {
+      var hex = c.replace("#", "");
+      if (hex.length === 3) hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+      var num = parseInt(hex, 16);
+      return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+    }
+    // 默认绿色
+    return { r: 74, g: 222, b: 128 };
+  }
+
+  // 1. 预设：深海/微生物浮游细胞光斑 (bio-bubbles) —— 生物、农业、显微科普首选
+  function presetBioBubbles(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var col2 = parseColor(opt.color2, { r: 56, g: 189, b: 248 }); // 辅助微青色
+    var count = Math.floor(45 * (opt.density || 1.0));
+    var speed = (opt.speed || 1.0);
+
+    var orbs = [];
+    for (var i = 0; i < count; i++) {
+      var layer = Math.random(); // 景深: 0(远景小微粒) ~ 1(近景大光斑)
+      var r = layer < 0.6 ? (Math.random() * 4 + 1.5) : (Math.random() * 26 + 10);
+      var isCol2 = Math.random() < 0.35;
+      orbs.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: r,
+        baseR: r,
+        layer: layer,
+        color: isCol2 ? col2 : col,
+        vy: -(Math.random() * 0.45 + 0.15) * speed * (0.6 + layer * 0.8),
+        vx: (Math.random() - 0.5) * 0.25 * speed,
+        alpha: layer < 0.6 ? (Math.random() * 0.4 + 0.2) : (Math.random() * 0.18 + 0.08),
+        pulseSpeed: Math.random() * 0.03 + 0.015,
+        pulseOffset: Math.random() * Math.PI * 2
+      });
+    }
+
+    var frame = 0;
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+
+      for (var i = 0; i < orbs.length; i++) {
+        var o = orbs[i];
+        o.y += o.vy;
+        o.x += o.vx + Math.sin(frame * 0.018 + o.pulseOffset) * 0.15;
+        if (o.y < -o.r * 2) { o.y = H + o.r * 2; o.x = Math.random() * W; }
+        if (o.x < -o.r * 2) o.x = W + o.r * 2;
+        if (o.x > W + o.r * 2) o.x = -o.r * 2;
+
+        var pulse = Math.sin(frame * o.pulseSpeed + o.pulseOffset) * 0.15 + 1.0;
+        var curR = o.baseR * pulse;
+
+        if (o.layer >= 0.6) {
+          // 近景大光斑带柔焦径向渐变
+          var grad = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, curR);
+          var a = o.alpha * pulse;
+          grad.addColorStop(0, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + a + ")");
+          grad.addColorStop(0.5, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + (a * 0.4) + ")");
+          grad.addColorStop(1, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + ", 0)");
+          ctx.beginPath();
+          ctx.arc(o.x, o.y, curR, 0, Math.PI * 2);
+          ctx.fillStyle = grad;
+          ctx.fill();
+        } else {
+          // 远景微粒，清晰实心点
+          ctx.beginPath();
+          ctx.arc(o.x, o.y, curR, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + o.alpha + ")";
+          ctx.fill();
+        }
+      }
+    };
+  }
+
+  // 2. 预设：科技星芒/神经元能量网 (constellation-v2) —— AI、技术机理、数据连接
+  function presetConstellation(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var count = Math.floor(58 * (opt.density || 1.0));
+    var speed = (opt.speed || 1.0);
+    var maxDist = 180 * 180;
+
+    var pts = [];
+    for (var i = 0; i < count; i++) {
+      pts.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 2.8 + 1.2,
+        vx: (Math.random() - 0.5) * 0.45 * speed,
+        vy: (Math.random() - 0.5) * 0.45 * speed,
+        a: Math.random() * 0.45 + 0.3
+      });
+    }
+
+    // 沿连线流动的能量脉冲小光点
+    var pulses = [];
+    for (var k = 0; k < 6; k++) {
+      pulses.push({ p1: 0, p2: 1, prog: Math.random(), speed: 0.015 * speed });
+    }
+
+    var frame = 0;
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+
+      // 更新节点
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+
+        // 绘制发光节点
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + p.a + ")";
+        ctx.shadowColor = "rgba(" + col.r + "," + col.g + "," + col.b + ", 0.6)";
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      // 绘制连线
+      var activePairs = [];
+      for (var i = 0; i < pts.length; i++) {
+        for (var j = i + 1; j < pts.length; j++) {
+          var p1 = pts[i], p2 = pts[j];
+          var dx = p1.x - p2.x, dy = p1.y - p2.y;
+          var d2 = dx * dx + dy * dy;
+          if (d2 < maxDist) {
+            var alpha = (1 - d2 / maxDist) * 0.22;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + alpha + ")";
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+            if (activePairs.length < 24) activePairs.push([p1, p2]);
+          }
+        }
+      }
+
+      // 能量穿梭光梭
+      if (activePairs.length > 0) {
+        for (var k = 0; k < pulses.length; k++) {
+          var pulse = pulses[k];
+          pulse.prog += pulse.speed;
+          if (pulse.prog >= 1.0) {
+            pulse.prog = 0;
+            pulse.pairIdx = Math.floor(Math.random() * activePairs.length);
+          }
+          var pair = activePairs[pulse.pairIdx % activePairs.length];
+          if (pair) {
+            var qx = pair[0].x + (pair[1].x - pair[0].x) * pulse.prog;
+            var qy = pair[0].y + (pair[1].y - pair[0].y) * pulse.prog;
+            ctx.beginPath();
+            ctx.arc(qx, qy, 2.2, 0, Math.PI * 2);
+            ctx.fillStyle = "#ffffff";
+            ctx.shadowColor = "rgba(" + col.r + "," + col.g + "," + col.b + ", 0.9)";
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+      }
+    };
+  }
+
+  // 3. 预设：螺旋基因流光/双螺旋光尘 (dna-spiral) —— 基因编辑、生化、生命科学
+  function presetDnaSpiral(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 56, g: 189, b: 248 }); // 主青色
+    var col2 = parseColor(opt.color2, { r: 74, g: 222, b: 128 }); // 辅绿色
+    var speed = (opt.speed || 1.0) * 0.022;
+
+    var count = Math.floor(40 * (opt.density || 1.0));
+    var sparks = [];
+    for (var i = 0; i < count; i++) {
+      sparks.push({
+        t: (i / count) * Math.PI * 4,
+        y: (i / count) * H,
+        r: Math.random() * 2.5 + 1.2,
+        twinkle: Math.random() * Math.PI * 2
+      });
+    }
+
+    var frame = 0;
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+      var tOffset = frame * speed;
+      var cx = W / 2;
+      var amplitude = W * 0.28;
+
+      for (var i = 0; i < sparks.length; i++) {
+        var s = sparks[i];
+        s.y -= 1.4 * (opt.speed || 1.0);
+        if (s.y < 0) s.y = H;
+
+        var ang = s.t + tOffset + (s.y / H) * Math.PI * 3;
+        var x1 = cx + Math.sin(ang) * amplitude;
+        var z1 = Math.cos(ang); // 景深
+        var x2 = cx - Math.sin(ang) * amplitude;
+        var z2 = -z1;
+
+        // 梯级阶梯横向发光连接线
+        if (i % 2 === 0 && Math.abs(z1) < 0.7) {
+          ctx.beginPath();
+          ctx.moveTo(x1, s.y);
+          ctx.lineTo(x2, s.y);
+          ctx.strokeStyle = "rgba(148, 163, 184, " + (0.12 * (1 - Math.abs(z1))) + ")";
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+
+        // 双螺旋两翼粒子点
+        var alpha1 = (z1 * 0.4 + 0.55);
+        var r1 = Math.max(1, s.r * (z1 * 0.35 + 1.0));
+        ctx.beginPath();
+        ctx.arc(x1, s.y, r1, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + alpha1 + ")";
+        ctx.fill();
+
+        var alpha2 = (z2 * 0.4 + 0.55);
+        var r2 = Math.max(1, s.r * (z2 * 0.35 + 1.0));
+        ctx.beginPath();
+        ctx.arc(x2, s.y, r2, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col2.r + "," + col2.g + "," + col2.b + "," + alpha2 + ")";
+        ctx.fill();
+      }
+    };
+  }
+
+  // 4. 预设：赛博透视网格 + 极光光柱 (cyber-grid) —— 工业生产、硬科技、数字盘点
+  function presetCyberGrid(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var horizonY = H * 0.65;
+    var speed = (opt.speed || 1.0);
+
+    var gridOffset = 0;
+    var stars = [];
+    for (var s = 0; s < 30; s++) {
+      stars.push({
+        x: Math.random() * W,
+        y: Math.random() * horizonY,
+        r: Math.random() * 1.8 + 0.8,
+        a: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      gridOffset = (gridOffset + 1.2 * speed) % 50;
+
+      // 上半部极光夜空星芒
+      for (var i = 0; i < stars.length; i++) {
+        var st = stars[i];
+        ctx.beginPath();
+        ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + st.a + ")";
+        ctx.fill();
+      }
+
+      // 地平线柔光扩散带 (Horizon Glow)
+      var glowGrad = ctx.createLinearGradient(0, horizonY - 120, 0, horizonY + 80);
+      glowGrad.addColorStop(0, "rgba(" + col.r + "," + col.g + "," + col.b + ", 0)");
+      glowGrad.addColorStop(0.6, "rgba(" + col.r + "," + col.g + "," + col.b + ", 0.15)");
+      glowGrad.addColorStop(1, "rgba(" + col.r + "," + col.g + "," + col.b + ", 0)");
+      ctx.fillStyle = glowGrad;
+      ctx.fillRect(0, horizonY - 120, W, 200);
+
+      // 下半部 3D 透视辐射纵向线
+      var cx = W / 2;
+      ctx.lineWidth = 1;
+      var numLines = 14;
+      for (var l = -numLines; l <= numLines; l++) {
+        var bottomX = cx + l * (W / 10);
+        ctx.beginPath();
+        ctx.moveTo(cx, horizonY);
+        ctx.lineTo(bottomX, H);
+        ctx.strokeStyle = "rgba(" + col.r + "," + col.g + "," + col.b + ", 0.12)";
+        ctx.stroke();
+      }
+
+      // 3D 透视横向向前推进线 (对数深度分布)
+      for (var z = 10; z < H - horizonY; z += 35) {
+        var curY = horizonY + Math.pow((z + gridOffset) / (H - horizonY), 1.8) * (H - horizonY);
+        if (curY > horizonY && curY <= H) {
+          var lineAlpha = ((curY - horizonY) / (H - horizonY)) * 0.22;
+          ctx.beginPath();
+          ctx.moveTo(0, curY);
+          ctx.lineTo(W, curY);
+          ctx.strokeStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + lineAlpha + ")";
+          ctx.stroke();
+        }
+      }
+    };
+  }
+
+  // 5. 预设：极光星尘漂移 (aurora-dust) —— 优雅高端纪录片质感
+  function presetAuroraDust(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var col2 = parseColor(opt.color2, { r: 56, g: 189, b: 248 });
+    var speed = (opt.speed || 1.0);
+    var count = Math.floor(50 * (opt.density || 1.0));
+
+    var dusts = [];
+    for (var i = 0; i < count; i++) {
+      dusts.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 2.2 + 0.8,
+        vy: -(Math.random() * 0.6 + 0.2) * speed,
+        vx: (Math.random() - 0.5) * 0.3 * speed,
+        a: Math.random() * 0.5 + 0.25,
+        twinkleSpeed: Math.random() * 0.04 + 0.02
+      });
+    }
+
+    var frame = 0;
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+
+      // 双核大面积极光呼吸光球
+      var a1 = Math.sin(frame * 0.012) * 0.04 + 0.09;
+      var g1 = ctx.createRadialGradient(W * 0.3, H * 0.25, 0, W * 0.3, H * 0.25, W * 0.7);
+      g1.addColorStop(0, "rgba(" + col.r + "," + col.g + "," + col.b + "," + a1 + ")");
+      g1.addColorStop(1, "rgba(" + col.r + "," + col.g + "," + col.b + ", 0)");
+      ctx.fillStyle = g1;
+      ctx.fillRect(0, 0, W, H);
+
+      var a2 = Math.cos(frame * 0.014) * 0.03 + 0.08;
+      var g2 = ctx.createRadialGradient(W * 0.7, H * 0.6, 0, W * 0.7, H * 0.6, W * 0.8);
+      g2.addColorStop(0, "rgba(" + col2.r + "," + col2.g + "," + col2.b + "," + a2 + ")");
+      g2.addColorStop(1, "rgba(" + col2.r + "," + col2.g + "," + col2.b + ", 0)");
+      ctx.fillStyle = g2;
+      ctx.fillRect(0, 0, W, H);
+
+      // 星尘粒子飘舞
+      for (var i = 0; i < dusts.length; i++) {
+        var d = dusts[i];
+        d.y += d.vy;
+        d.x += d.vx + Math.sin(frame * 0.02 + i) * 0.2;
+        if (d.y < 0) { d.y = H; d.x = Math.random() * W; }
+        if (d.x < 0) d.x = W;
+        if (d.x > W) d.x = 0;
+
+        var tw = Math.sin(frame * d.twinkleSpeed + i) * 0.3 + 0.7;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + (d.a * tw) + ")";
+        ctx.fill();
+      }
+    };
+  }
+
+  // 预设注册表
+  var PRESETS = {
+    "bio-bubbles": presetBioBubbles,      // 微生物浮游细胞光斑 (推荐)
+    "constellation": presetConstellation, // 科技星芒神经元网络 (高能版)
+    "dna-spiral": presetDnaSpiral,        // 双螺旋基因光尘流
+    "cyber-grid": presetCyberGrid,        // 赛博透视网格与地平线
+    "aurora-dust": presetAuroraDust       // 极光星尘漂移
+  };
+
+  var PRESET_NAMES = {
+    "bio-bubbles": "深海细胞光斑 (Bio Bubbles · 农业生物首选)",
+    "constellation": "神经元能量网 (Constellation V2 · 科技AI)",
+    "dna-spiral": "双螺旋基因流 (DNA Spiral · 遗传育种)",
+    "cyber-grid": "赛博地平网格 (Cyber Grid · 工业数码)",
+    "aurora-dust": "极光星尘漂移 (Aurora Dust · 高端纪实)"
+  };
+
+  // 全局管理器状态
+  var currentAnimId = null;
+  var currentDrawFn = null;
+
+  return {
+    presets: PRESETS,
+    presetNames: PRESET_NAMES,
+
+    // 一键初始化使用指定预设
+    use: function (canvasId, presetName, options) {
+      options = options || {};
+      var cv = typeof canvasId === "string" ? document.getElementById(canvasId) : canvasId;
+      if (!cv) {
+        console.warn("[VibeBackgrounds] 未找到目标 Canvas 元素:", canvasId);
+        return;
+      }
+
+      var ctx = cv.getContext("2d");
+      var factory = PRESETS[presetName] || PRESETS["bio-bubbles"];
+
+      function resize() {
+        cv.width = window.innerWidth;
+        cv.height = window.innerHeight;
+      }
+      resize();
+
+      currentDrawFn = factory(cv, ctx, options);
+
+      if (currentAnimId) cancelAnimationFrame(currentAnimId);
+      function loop() {
+        if (currentDrawFn) currentDrawFn();
+        currentAnimId = requestAnimationFrame(loop);
+      }
+      loop();
+
+      window.removeEventListener("resize", cv._vibeResize || function () {});
+      cv._vibeResize = function () {
+        resize();
+        currentDrawFn = factory(cv, ctx, options);
+      };
+      window.addEventListener("resize", cv._vibeResize);
+
+      console.log("🌟 VIBE 背景预设已加载: [" + presetName + "] - " + (PRESET_NAMES[presetName] || ""));
+      return this;
+    },
+
+    // 自动扫描页面带有 data-preset 的 canvas 进行挂载
+    init: function () {
+      var canvases = document.querySelectorAll("canvas[data-preset]");
+      for (var i = 0; i < canvases.length; i++) {
+        var cv = canvases[i];
+        var p = cv.getAttribute("data-preset") || "bio-bubbles";
+        var col = cv.getAttribute("data-color") || "#4ade80";
+        var col2 = cv.getAttribute("data-color2") || "#38bdf8";
+        var density = parseFloat(cv.getAttribute("data-density") || "1.0");
+        var speed = parseFloat(cv.getAttribute("data-speed") || "1.0");
+        this.use(cv, p, { color: col, color2: col2, density: density, speed: speed });
+      }
+    }
+  };
+})();
+
+// 暴露全局 API
+if (typeof window !== "undefined") {
+  window.VibeBackgrounds = VibeBackgrounds;
+}
+
+
+// 默认挂载深海微生物细胞光斑（可按学科题材一键切换）
+VibeBackgrounds.use('bg-canvas', 'bio-bubbles', {
+  color: '#4ade80',
+  color2: '#38bdf8',
+  density: 1.1,
+  speed: 1.0
+});
+</script>
+</body>
+</html>

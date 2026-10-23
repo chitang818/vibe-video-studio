@@ -1,0 +1,76 @@
+{
+  "version": "2.0.0",
+  "description": "VIBE Video Studio 标准 UI 音效元数据与语义映射表（SSOT 单一事实源）",
+  "presets": {
+    "whoosh": {
+      "desc": "场景切换、镜头平移、大幅度滑入破风声",
+      "visual_event": "场景边界切换 (setScene)、全屏卡片飞入、转场闪光",
+      "semantic_tags": ["whoosh", "转场", "场景", "切幕", "阶段", "节", "然而", "但是", "随后", "过渡"],
+      "default_volume": 0.30,
+      "duration_sec": 0.35,
+      "constraints": {
+        "min_interval_sec": 2.5,
+        "max_per_scene": 1,
+        "auto_binding": "HTML setScene() 自动触发，无需模型手写"
+      },
+      "lavfi_fallback": "anoisesrc=color=pink:duration=0.4:amplitude=0.45,afade=t=in:st=0:d=0.12,afade=t=out:st=0.25:d=0.15,lowpass=f=2200,highpass=f=180"
+    },
+    "pop": {
+      "desc": "关键数字、百分比、卡片浮现、Q 弹点触提示",
+      "visual_event": "数字滚动跳动、数据柱/环形图展开、标签 Badge 弹出",
+      "semantic_tags": ["pop", "数字", "数据", "百分比", "年份", "倍数", "增长", "暴跌", "万", "亿", "元", "%", "比重", "金额"],
+      "default_volume": 0.32,
+      "duration_sec": 0.12,
+      "constraints": {
+        "min_interval_sec": 0.6,
+        "max_per_scene": 3,
+        "auto_binding": "VibeSound.play('pop') 或 timeline 提取阶段正则自动挂载"
+      },
+      "lavfi_fallback": "sine=frequency=987.77:duration=0.12,afade=t=in:st=0:d=0.005,afade=t=out:st=0.06:d=0.06"
+    },
+    "ding": {
+      "desc": "核心亮点、顿悟转折、重点强调水晶提示",
+      "visual_event": "金句下划线划出、关键词高光变色、核心机制突破定格",
+      "semantic_tags": ["ding", "重点", "核心", "顿悟", "秘密", "关键", "结论", "反差", "真相", "本质", "突破", "致命", "痛点"],
+      "default_volume": 0.28,
+      "duration_sec": 0.45,
+      "constraints": {
+        "min_interval_sec": 3.0,
+        "max_per_scene": 1,
+        "auto_binding": "仅在全片 1~3 个最核心反转或结论高潮点触发"
+      },
+      "lavfi_fallback": "sine=frequency=1760:duration=0.6"
+    },
+    "chime": {
+      "desc": "结尾提示、正向强化、总结 CTA 引导和弦",
+      "visual_event": "片尾点赞/关注/收藏组件弹入脉冲、全片总结定格",
+      "semantic_tags": ["chime", "结尾", "总结", "关注", "cta", "下期见", "收束", "点赞", "收藏", "预告", "复盘"],
+      "default_volume": 0.32,
+      "duration_sec": 1.10,
+      "constraints": {
+        "min_interval_sec": 10.0,
+        "max_per_scene": 1,
+        "auto_binding": "HTML 最后一幕自动触发，或成片总时长 -4.5s 处触发"
+      },
+      "lavfi_fallback": "sine=frequency=659:duration=1.2"
+    },
+    "click": {
+      "desc": "科技脉冲、微触击、时间轴跳跃、步骤展开",
+      "visual_event": "步骤列表逐项出现、时间轴游标跳动、小图标微点击",
+      "semantic_tags": ["click", "点击", "触控", "步骤", "清单", "游标", "打字", "脉冲"],
+      "default_volume": 0.25,
+      "duration_sec": 0.05,
+      "constraints": {
+        "min_interval_sec": 0.15,
+        "max_per_scene": 5,
+        "auto_binding": "VibeSound.play('click')"
+      },
+      "lavfi_fallback": "sine=frequency=1450:duration=0.05,afade=t=out:st=0.01:d=0.04"
+    }
+  },
+  "rules": {
+    "whitelist_only": "严禁大模型或调用方使用上述 5 款音效之外的任何未定义名称",
+    "asset_fallback": "若 assets/sounds/ 目录下存在对应的 <name>.wav 文件，优先加载真实采样；若缺失则全自动通过 FFmpeg lavfi 虚拟合成，零外部依赖",
+    "zero_leak_in_recording": "HTML 端 Web Audio API 必须在 window.__RECORDING__ 模式下自动静音，不得阻断 Playwright 渲染"
+  }
+}

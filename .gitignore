@@ -1,0 +1,47 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Editor & OS
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# Video Studio Pipeline Outputs & Intermediate Caches
+output/*/_work/
+output/*/frames/
+output/*/*.mp4
+output/*/*.wav
+output/*/_*.txt
+output/*/_*.json
+**/_playcheck.txt
+**/_qa_bounds.txt
+**/_work/
+
+# Root / Temporary artifacts
+_silent.mp4
+_sfx.wav
+_pop.wav
+_whoosh.wav
+_chime.wav
+_probe.json
+_verify.txt
+_playcheck.txt
+_qa_bounds.txt
+_render_log.txt
+*_out.txt
+
+# Keep output and inputs directory structure
+!inputs/.gitkeep
+!output/.gitkeep

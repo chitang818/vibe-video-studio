@@ -1,0 +1,6 @@
+# Vibe Video Studio Python Dependencies
+playwright>=1.40.0
+
+# Note: System FFmpeg & FFprobe are required.
+# Windows: winget install Gyan.FFmpeg or choco install ffmpeg
+# After pip install, run: playwright install chromium

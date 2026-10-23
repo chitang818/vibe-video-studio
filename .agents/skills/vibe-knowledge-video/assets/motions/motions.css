@@ -1,0 +1,105 @@
+/* ========================================================
+   VIBE Video Studio 标准动效库
+   规范：同屏循环动效 ≤2 种；入场带 stagger；关键数据做持续强调
+   ======================================================== */
+
+/* ---------- 1. 入场类（一次性） ---------- */
+
+/* 默认波次入场：上浮淡入 */
+@keyframes wIn {
+  from { opacity: 0; transform: translateY(3cqw) scale(0.96); }
+  to { opacity: 1; transform: none; }
+}
+
+/* 强冲击弹入（用于开场钩子大字、主题登场） */
+@keyframes punchIn {
+  0% { opacity: 0; transform: scale(1.6); }
+  70% { transform: scale(0.96); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* 轻量淡入上浮（副标、徽标） */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(1.8cqw); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* 卡片弹入（网格、数据对比卡） */
+@keyframes pcardIn {
+  from { opacity: 0; transform: translateY(2.5cqw) scale(0.92); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* 结尾 CTA 弹入 */
+@keyframes ctaIn {
+  0% { opacity: 0; transform: scale(0.7); }
+  70% { transform: scale(1.08); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+/* 横条/进度条生长 */
+@keyframes barGrow {
+  from { transform: scaleX(0); transform-origin: left center; }
+  to { transform: scaleX(1); transform-origin: left center; }
+}
+
+/* ---------- 2. 持续强调类（循环） ---------- */
+
+/* 关键数字/核心词条呼吸 */
+@keyframes breathe {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+/* 结尾 CTA 循环脉冲 */
+@keyframes ctaPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.06); }
+}
+
+/* 菌落/微粒扩散脉冲 */
+@keyframes colonyPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  70% { transform: scale(1.4); opacity: 0.1; }
+  100% { transform: scale(1); opacity: 0; }
+}
+
+/* 指示箭头跳动 */
+@keyframes arrPulse {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(0.8cqw); }
+}
+
+/* ---------- 3. 氛围与装饰类（循环） ---------- */
+
+/* 主图形轻浮动 */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-1.5cqw); }
+}
+
+/* 水平轻滑 */
+@keyframes slideX {
+  0%, 100% { transform: translateX(0); }
+  50% { transform: translateX(1.5cqw); }
+}
+
+/* 环形扫描旋转 */
+@keyframes scanSpin {
+  from { transform: translate(-50%, -50%) rotate(0deg); }
+  to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* 标题扫光 */
+@keyframes shimmerX {
+  0% { transform: translateX(-120%); }
+  100% { transform: translateX(420%); }
+}
+
+/* ---------- 4. 转场类 ---------- */
+
+/* 场景切换白闪 */
+@keyframes flashAnim {
+  0% { opacity: 0.85; }
+  100% { opacity: 0; }
+}

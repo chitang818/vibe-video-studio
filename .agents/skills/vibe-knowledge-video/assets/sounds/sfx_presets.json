@@ -1,0 +1,46 @@
+{
+  "recipes": {
+    "pop": {
+      "desc": "关键数字、突出词条、点触提示（双频叠加消除尖锐感）",
+      "lavfi": "sine=frequency=987.77:duration=0.12",
+      "afade": "afade=t=in:st=0:d=0.005,afade=t=out:st=0.06:d=0.06",
+      "sample_rate": 44100,
+      "default_volume": 0.32
+    },
+    "whoosh": {
+      "desc": "场景切换、镜头转场、大幅度滑入（粉红噪声带通滤波，拟真气流）",
+      "lavfi": "anoisesrc=color=pink:duration=0.4:amplitude=0.45",
+      "afade": "afade=t=in:st=0:d=0.12,afade=t=out:st=0.25:d=0.15,lowpass=f=2200,highpass=f=180",
+      "sample_rate": 44100,
+      "default_volume": 0.30
+    },
+    "ding": {
+      "desc": "核心亮点、顿悟、重点强调（双谐波清脆提示）",
+      "inputs": [
+        "sine=frequency=1760:duration=0.6",
+        "sine=frequency=2637:duration=0.6"
+      ],
+      "filter_complex": "[0:a][1:a]amix=inputs=2:weights=1.0 0.4:normalize=0,afade=t=out:st=0.1:d=0.5",
+      "sample_rate": 44100,
+      "default_volume": 0.28
+    },
+    "chime": {
+      "desc": "结尾提示、高潮回扣、正向强化三和弦 (E5 659Hz + A5 880Hz + E6 1318Hz)",
+      "inputs": [
+        "sine=frequency=659:duration=1.2",
+        "sine=frequency=880:duration=1.2",
+        "sine=frequency=1318:duration=1.2"
+      ],
+      "filter_complex": "[0:a][1:a][2:a]amix=inputs=3:normalize=0,afade=t=out:st=0.7:d=0.5",
+      "sample_rate": 44100,
+      "default_volume": 0.32
+    }
+  },
+  "rules": {
+    "whoosh_placement": "每个场景边界（SCENES 中各个 stage 的时间点）",
+    "pop_placement": "文案中关键数据、年份、倍数首次读出的精确时刻",
+    "ding_placement": "核心机制突破、反差点、顿悟结论首次读出的精确时刻",
+    "chime_placement": "成片收束结尾 CTA 阶段（通常为总时长 - 3s 至 9s 处）",
+    "asset_fallback": "若 assets/sounds/ 目录下存在对应的 <name>.wav 文件，优先加载真实采样；若缺失则全自动通过 FFmpeg lavfi 虚拟合成，零外部依赖"
+  }
+}
