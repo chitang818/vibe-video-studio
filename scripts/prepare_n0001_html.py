@@ -493,7 +493,6 @@ function loop(){
 }"""
 
 new_scene_fn = """var SFX_CUES = [
-  { t: 0.05, sfx: 'whoosh' },
   { t: 2.20, sfx: 'whoosh' },
   { t: 8.04, sfx: 'pop' },
   { t: 14.82, sfx: 'pop' },
