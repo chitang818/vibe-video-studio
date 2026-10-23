@@ -120,7 +120,11 @@ def run_full_audit(html_path, custom_probes=None):
                 }
                 const chapEl = document.getElementById('chapText');
                 if (chapEl && window.getComputedStyle(chapEl).display !== 'none') {
-                    warns.push('[HEAD_PURITY] 页面检测到残留的 #chapText 分镜指示元素，请移除以保持顶部只显示作品标题');
+                    const cr = chapEl.getBoundingClientRect();
+                    // 规则允许且推荐将 #chapText 作为开发校对 HUD 放置于安全区外左上角盲区 (T < 188 或 L < 80)
+                    if (cr.top >= 188 && cr.left >= 80) {
+                        warns.push(`[HEAD_PURITY] 检测到 #chapText 侵入安全区内 (T=${Math.round(cr.top)}, L=${Math.round(cr.left)})，建议依规外移至安全区外左上角盲区 (top: 3.2cqh; left: 4cqw;)`);
+                    }
                 }
 
                 // ==================== A. 四边安全区审查 ====================
@@ -220,6 +224,12 @@ def run_full_audit(html_path, custom_probes=None):
                     const fs = parseFloat(st.fontSize);
                     if (fs < 32) {
                         warns.push(`[TYPOGRAPHY] ${sid} 标题字号偏小 (${Math.round(fs)}px < 32px/3.0cqw)`);
+                    }
+                    if (tEl.tagName.toLowerCase() === 'h2') {
+                        const lines = tEl.innerText.split(String.fromCharCode(10)).filter(s => s.trim().length > 0);
+                        if (lines.length > 1 && lines[lines.length - 1].trim().length <= 3) {
+                            warns.push(`[HEADING_ORPHAN] ${sid} 大标题末行存在孤字悬挂断行 ("${lines[lines.length - 1].trim()}")，请依语义添加 <br> 对称分行`);
+                        }
                     }
                 }
                 const descs = activeScene.querySelectorAll('.card-desc, .stack-card .card-desc, .sub, .ring-info .d');

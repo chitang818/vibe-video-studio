@@ -156,7 +156,7 @@ add_sfx(chime, CHIME_T)
 
 if idx[0] > 0:
     mix = "".join(f"[s{i}]" for i in range(idx[0]))
-    fc.append(f"{mix}amix=inputs={idx[0]}:normalize=0,volume=0.35,apad=whole_dur={DUR:.2f}[sfx]")
+    fc.append(f"{mix}amix=inputs={idx[0]}:normalize=0,volume=0.22,lowpass=f=2800,apad=whole_dur={DUR:.2f}[sfx]")
 
     script_path = os.path.join(VID, "_sfx_filter.txt")
     with io.open(script_path, "w", encoding="utf-8") as sf:

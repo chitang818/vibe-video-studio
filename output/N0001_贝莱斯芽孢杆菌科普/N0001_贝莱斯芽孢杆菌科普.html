@@ -1,0 +1,1790 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>贝莱斯芽孢杆菌 · 从发现到成为农用全能明星菌株</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'><rect width='24' height='24' rx='5' fill='%23070d12'/><text x='12' y='17' font-size='13' font-weight='bold' text-anchor='middle' fill='%234ade80'>B</text></svg>">
+<style>
+  :root{--bg:#070d12;--panel:#0e1a22;--line:rgba(148,163,184,.18);--ink:#e8f1ec;--dim:#93a7a0;--green:#4ade80;--green2:#22c55e;--amber:#fbbf24;--cyan:#38bdf8;--red:#f87171}
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%}
+  body{background:var(--bg);color:var(--ink);font-family:"Noto Sans SC","Microsoft YaHei",system-ui,sans-serif;overflow:hidden}
+  .stage{position:fixed;inset:0;width:100%;height:100%;container-type:size;}
+  #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none}
+  /* ===== 上区（外置 Dev HUD + 居中纯粹作品标题区） ===== */
+  #chapText {
+    position: fixed;
+    top: 3.2cqh;
+    left: 4cqw;
+    z-index: 10;
+    font-size: 2.2cqw;
+    font-weight: 600;
+    color: rgba(147, 167, 160, 0.75);
+    background: rgba(10, 20, 32, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 999px;
+    padding: 0.5cqw 2.4cqw;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
+  .head {
+    position: fixed;
+    top: 10cqh;
+    left: 8cqw;
+    right: 8cqw;
+    z-index: 6;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+  }
+  .head-pill {
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 84cqw;
+    padding: 0.8cqw 3.6cqw 0.9cqw;
+    background: rgba(10, 18, 26, 0.68);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-radius: 999px;
+    border: 1px solid rgba(148, 163, 184, 0.22);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.45);
+  }
+  .head-pill .title-line {
+    display: block;
+    text-align: center;
+    line-height: 1.25;
+    background: linear-gradient(180deg, #ffffff 15%, #e2e8f0 70%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    filter: drop-shadow(0 2px 8px rgba(0,0,0,0.85));
+    letter-spacing: 0.05em;
+  }
+  .head-pill .title-main {
+    font-size: 4.0cqw;
+    font-weight: 900;
+  }
+  .head-pill .title-sub {
+    font-size: 3.2cqw;
+    font-weight: 700;
+    color: #4ade80;
+    background: linear-gradient(180deg, #86efac 10%, #4ade80 75%, #22c55e 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    margin-top: 0.4cqw;
+  }
+  /* ===== 场景 ===== */
+  .scene{position:fixed;inset:0;z-index:1;display:none;opacity:0;transition:opacity .45s ease}
+  .scene.active{display:block;opacity:1}
+  .scene .inner{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:24cqh 8cqw 25cqh;text-align:center;box-sizing:border-box}
+  /* 场景氛围背景层（每场景独立，低透明度不抢戏） */
+  .aura{position:absolute;inset:0;pointer-events:none;z-index:0}
+  .aura .glow{position:absolute;border-radius:50%;filter:blur(6cqw)}
+  .aura .aura-ring{position:absolute;border:1px solid rgba(255,255,255,.05);border-radius:50%}
+  #s-arsenal .aura .glow{width:120cqw;height:120cqw;left:50%;top:8%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,.13),transparent 65%)}
+  #s-lipopeptide .aura .glow{width:110cqw;height:110cqw;left:-10%;top:30%;background:radial-gradient(circle,rgba(56,189,248,.10),transparent 65%)}
+  #s-enzyme .aura .glow{width:110cqw;height:110cqw;right:-15%;top:20%;background:radial-gradient(circle,rgba(251,191,36,.10),transparent 65%)}
+  #s-broad .aura .glow{width:120cqw;height:120cqw;left:50%;top:5%;transform:translateX(-50%);background:radial-gradient(circle,rgba(248,113,113,.10),transparent 65%)}
+  #s-compet .aura .glow{width:110cqw;height:110cqw;left:50%;bottom:-10%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,.10),transparent 65%)}
+  #s-isa .aura .glow{width:120cqw;height:120cqw;left:50%;top:0%;transform:translateX(-50%);background:radial-gradient(circle,rgba(168,85,247,.10),transparent 65%)}
+  #s-isa .aura .aura-ring{width:80cqw;height:80cqw;left:50%;top:38%;transform:translate(-50%,-50%);animation:scanSpin 16s linear infinite}
+  #s-arsenal .aura .aura-ring{width:90cqw;height:90cqw;left:50%;top:6%;transform:translateX(-50%);animation:scanSpin 20s linear infinite}
+  .scene .inner>*{position:relative;z-index:1}
+  /* ===== 波次入场（w1→w4） ===== */
+  .scene .w{opacity:0}
+  .scene.active .w{animation:wIn .55s cubic-bezier(.22,1,.36,1) forwards}
+  .scene.active .w2{animation-delay:.15s}
+  .scene.active .w3{animation-delay:.30s}
+  .scene.active .w4{animation-delay:.45s}
+  @keyframes wIn{from{opacity:0;transform:translateY(3cqw) scale(.96)}to{opacity:1;transform:none}}
+  .badge{font-size:3cqw;font-weight:800;letter-spacing:.22em;color:var(--green);border:1px solid rgba(74,222,128,.4);border-radius:6cqw;padding:.8cqw 3.4cqw;background:rgba(74,222,128,.08)}
+  .scene h2{font-size:7.2cqw;font-weight:900;margin:2.6cqw 0 1cqw;line-height:1.25;text-shadow:0 0 5cqw rgba(74,222,128,.35)}
+  .scene .sub{font-size:3.6cqw;color:var(--dim);line-height:1.7}
+  .scene .big-num{font-size:12cqw;font-weight:900;line-height:1;background:linear-gradient(180deg,#86efac,#22c55e);-webkit-background-clip:text;background-clip:text;color:transparent}
+  .card{background:linear-gradient(160deg,rgba(16,28,38,.92),rgba(10,18,26,.92));border:1px solid var(--line);border-radius:3cqw;padding:3.2cqw 3.6cqw;text-align:left}
+  .card .t{font-size:3.6cqw;font-weight:800;color:var(--green)}
+  .card .d{font-size:3.1cqw;color:var(--dim);line-height:1.75;margin-top:1cqw}
+  .card .hl{color:var(--ink);font-weight:700}
+  /* ===== S1 开场（钩子形态） ===== */
+  .phs{position:absolute;inset:0;opacity:0;pointer-events:none;transition:opacity .4s ease}
+  #s-open[data-phase="splash"] .phs-splash{opacity:1}
+  #s-open[data-phase="recap"] .phs-recap{opacity:1}
+  #s-open[data-phase="topic"] .phs-topic{opacity:1}
+  #s-open[data-phase="preview"] .phs-preview{opacity:1}
+  /* 钩子闪屏：悬念提问 + 细菌盾牌图形 */
+  .phs-splash{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3.6cqw}
+  .phs-splash .hook{font-size:10cqw;font-weight:900;line-height:1.35;text-align:center;letter-spacing:.04em;position:relative;display:inline-block;animation:punchIn .7s cubic-bezier(.22,1,.36,1) both}
+  .phs-splash .hook em{font-style:normal;color:var(--green);text-shadow:0 0 6cqw rgba(74,222,128,.6)}
+  .phs-splash .hook::after{content:'';position:absolute;left:0;top:8%;bottom:8%;width:34%;background:linear-gradient(90deg,transparent,rgba(74,222,128,.35),transparent);animation:shimmerX 2.2s ease-in-out .7s infinite;pointer-events:none}
+  .phs-splash .hook-sub{font-size:4.2cqw;color:var(--dim);letter-spacing:.22em;font-weight:700;opacity:0;animation:fadeUp .6s .4s both}
+  .phs-splash .fight{width:44cqw;height:44cqw;position:relative;margin-top:2cqw}
+  .phs-splash .fight svg{width:100%;height:100%;overflow:visible}
+  .phs-splash .fight .shield{animation:breathe 2.8s ease-in-out .5s infinite;transform-origin:50% 50%}
+  .phs-splash .fight .bug{animation:colonyPulse 2s ease-in-out infinite}
+  .phs-splash .fight .bug2{animation:colonyPulse 2s ease-in-out .6s infinite}
+  .phs-splash .fight .bug3{animation:colonyPulse 2s ease-in-out 1.1s infinite}
+  /* 回顾卡 */
+  .phs-recap{display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .phs-recap .rmark{font-size:3cqw;letter-spacing:.24em;color:var(--amber);font-weight:700}
+  .phs-recap .rcard{width:76cqw;background:linear-gradient(160deg,rgba(16,28,38,.95),rgba(10,18,26,.95));border:1px solid rgba(251,191,36,.35);border-radius:3.6cqw;padding:4.6cqw 5cqw;margin-top:3cqw;text-align:center;opacity:0;animation:fadeUp .5s .15s forwards}
+  .phs-recap .rcard .rt{font-size:5.6cqw;font-weight:900;color:var(--ink)}
+  .phs-recap .rcard .rd{font-size:3.6cqw;color:var(--dim);margin-top:1.6cqw;line-height:1.7}
+  .phs-topic{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+  .phs-topic .tp-title{font-size:13cqw;font-weight:900;letter-spacing:.1em;animation:breathe 3s ease-in-out infinite;text-shadow:0 0 7cqw rgba(74,222,128,.45)}
+  .phs-topic .tp-sub{font-size:4cqw;color:var(--green);margin-top:2.4cqw;letter-spacing:.18em;font-weight:700}
+  .phs-preview{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3cqw}
+  .phs-preview .pt{font-size:4.4cqw;font-weight:800;color:var(--ink)}
+  .phs-preview .pgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:3cqw;width:82cqw}
+  .phs-preview .pcell{background:linear-gradient(160deg,rgba(16,28,38,.92),rgba(10,18,26,.92));border:1px solid var(--line);border-radius:2.8cqw;padding:3cqw 1.4cqw;text-align:center;opacity:0;transform:translateY(3cqw) scale(.9);animation:pcardIn .45s cubic-bezier(.22,1,.36,1) forwards}
+  .phs-preview .pcell .n{font-size:6cqw;font-weight:900;color:var(--green);line-height:1}
+  .phs-preview .pcell svg{width:8cqw;height:8cqw;margin:1.4cqw auto 0;display:block;color:var(--green)}
+  .phs-preview .pcell .t{font-size:3.4cqw;font-weight:800;margin-top:1.2cqw}
+  .phs-preview .pcell:nth-child(1){animation-delay:.05s}
+  .phs-preview .pcell:nth-child(2){animation-delay:.16s}
+  .phs-preview .pcell:nth-child(3){animation-delay:.27s}
+  /* ===== S2 武器库 ===== */
+  #s-arsenal .factory{display:flex;flex-direction:column;align-items:center;gap:1cqw;margin-top:1cqw}
+  #s-arsenal .gene-ring{width:32cqw;height:32cqw;position:relative}
+  #s-arsenal .gene-ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+  #s-arsenal .gene-ring .ring-txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.6cqw}
+  #s-arsenal .gene-ring .ring-txt .num{font-size:9cqw;font-weight:900;line-height:1;background:linear-gradient(180deg,#86efac,#22c55e);-webkit-background-clip:text;background-clip:text;color:transparent;animation:breathe 2.4s ease-in-out infinite}
+  #s-arsenal .gene-ring .ring-txt .lab{font-size:2.9cqw;color:var(--dim)}
+  #s-arsenal .gene-ring .fac{position:absolute;right:6%;top:8%;width:11cqw;height:11cqw;color:var(--green);animation:floatY 3s ease-in-out infinite}
+  #s-arsenal .factory .tx{font-size:2.9cqw;color:var(--dim);line-height:1.7}
+  #s-arsenal .weapon-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;width:82cqw;margin-top:2.2cqw}
+  #s-arsenal h2{font-size:6.4cqw;margin:1.4cqw 0 .8cqw}
+  #s-arsenal .wcell{background:linear-gradient(160deg,rgba(16,28,38,.9),rgba(10,18,26,.9));border:1px solid var(--line);border-radius:2.4cqw;padding:1.6cqw .8cqw;text-align:center}
+  #s-arsenal .wcell .ico{width:7cqw;height:7cqw;margin:0 auto;display:flex;align-items:center;justify-content:center;color:var(--green)}
+  #s-arsenal .wcell .ico svg{width:100%;height:100%}
+  #s-arsenal .wcell .t{font-size:2.7cqw;font-weight:700;margin-top:.8cqw;line-height:1.5}
+  /* ===== S3 脂肽聚酮 ===== */
+  #s-lipopeptide .duo{display:grid;grid-template-columns:1fr 1fr;gap:3cqw;width:82cqw;align-items:stretch}
+  #s-lipopeptide .duo .card{width:auto;display:flex;flex-direction:column;padding:2.6cqw 3cqw;min-width:0}
+  #s-lipopeptide .drug-list{margin-top:1.2cqw;display:flex;flex-wrap:wrap;gap:1cqw}
+  #s-lipopeptide .drug{font-size:2.9cqw;border:1px solid var(--line);border-radius:5cqw;padding:.7cqw 2.2cqw;color:var(--ink);background:rgba(148,163,184,.07)}
+  #s-lipopeptide .membrane{margin-top:1.6cqw;width:100%;height:10cqw;position:relative}
+  #s-lipopeptide .membrane svg{width:100%;height:100%}
+  #s-lipopeptide .flow{display:flex;align-items:center;gap:1.2cqw;margin-top:1.2cqw;font-size:2.6cqw;line-height:1.5}
+  #s-lipopeptide .flow .arrow{color:var(--green);font-weight:900}
+  #s-lipopeptide .flow .hl{color:var(--cyan);font-weight:800}
+  /* ===== S4 胞壁酶抗菌蛋白 ===== */
+  #s-enzyme .duo{display:grid;grid-template-columns:1fr 1fr;gap:3cqw;width:82cqw;align-items:stretch}
+  #s-enzyme .duo .card{width:auto;display:flex;flex-direction:column;padding:2.6cqw 3cqw;min-width:0}
+  #s-enzyme .wall{margin-top:1.6cqw;width:100%;height:10cqw;position:relative}
+  #s-enzyme .wall svg{width:100%;height:100%}
+  #s-enzyme .case{margin-top:1.6cqw;padding:1.8cqw 2.4cqw;border-radius:2.4cqw;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);flex:1}
+  #s-enzyme .case .ct{font-size:3cqw;color:var(--amber);font-weight:700}
+  #s-enzyme .case .cd{font-size:2.7cqw;color:var(--dim);margin-top:.8cqw;line-height:1.6;overflow-wrap:anywhere}
+  #s-enzyme .case .cd b{color:var(--amber)}
+  #s-enzyme .nine{display:flex;gap:.5cqw;margin-top:1.4cqw;justify-content:center}
+  #s-enzyme .nine i{width:3cqw;height:3cqw;border-radius:.8cqw;background:rgba(148,163,184,.14)}
+  #s-enzyme .nine i.on{background:linear-gradient(180deg,#fbbf24,#f59e0b);box-shadow:0 0 2.4cqw rgba(251,191,36,.5)}
+  #s-enzyme .nine-tag{font-size:2.8cqw;color:var(--amber);font-weight:800;margin-top:1cqw}
+  #s-enzyme h2{font-size:6.4cqw;margin:1.4cqw 0 .8cqw}
+  /* ===== S5 广谱抑菌 ===== */
+  #s-broad .pathogen-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;width:82cqw;margin-top:3cqw}
+  #s-broad .pcell{background:rgba(148,163,184,.07);border:1px solid var(--line);border-radius:2.2cqw;padding:2cqw 1cqw;text-align:center;font-size:2.8cqw;line-height:1.5}
+  #s-broad .pcell svg{width:6.4cqw;height:6.4cqw;display:block;margin:0 auto .8cqw;color:var(--red)}
+  #s-broad .pest-row{display:flex;gap:2.6cqw;justify-content:center;margin-top:3cqw}
+  #s-broad .pest{display:flex;align-items:center;gap:1.2cqw;background:rgba(248,113,113,.1);border:1px solid rgba(248,113,113,.35);border-radius:2.6cqw;padding:1.8cqw 3.4cqw;font-size:3cqw;font-weight:700;color:var(--red)}
+  #s-broad .pest svg{width:5cqw;height:5cqw}
+  #s-broad .pest.dash{border-style:dashed}
+  /* ===== S6 生态位竞争 ===== */
+  #s-compet .zone-row{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;width:82cqw;margin-top:3cqw}
+  #s-compet .zone{text-align:center}
+  #s-compet .zone .zico{width:12cqw;height:12cqw;margin:0 auto;border-radius:50%;border:1px solid rgba(74,222,128,.4);display:flex;align-items:center;justify-content:center;color:var(--green);background:rgba(74,222,128,.07)}
+  #s-compet .zone .zico svg{width:60%;height:60%}
+  #s-compet .zone .zt{font-size:3cqw;margin-top:1.2cqw;font-weight:700}
+  #s-compet .biofilm{margin-top:3cqw;background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.3);border-radius:3cqw;padding:2.6cqw 3.6cqw;font-size:3cqw;line-height:1.7;width:82cqw}
+  #s-compet .sider{margin-top:2.6cqw;background:rgba(56,189,248,.07);border:1px solid rgba(56,189,248,.3);border-radius:3cqw;padding:2.6cqw 3.6cqw;font-size:3cqw;line-height:1.7;width:82cqw;display:flex;align-items:center;gap:3cqw}
+  #s-compet .sider .sico{width:9cqw;height:9cqw;flex:none;color:var(--cyan)}
+  #s-compet .sider .sico svg{width:100%;height:100%}
+  /* ===== S7 诱导抗性 ===== */
+  #s-isa .signal{display:flex;align-items:center;justify-content:center;gap:1.6cqw;width:82cqw;margin-top:2.8cqw}
+  #s-isa .signal .node{background:rgba(56,189,248,.1);border:1px solid rgba(56,189,248,.35);border-radius:2.6cqw;padding:1.6cqw 2.4cqw;font-size:2.8cqw;font-weight:700;color:var(--cyan)}
+  #s-isa .signal .arr{color:var(--green);font-size:3.2cqw;font-weight:900;animation:arrPulse 1.2s ease-in-out infinite}
+  #s-isa .enzyme-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2cqw;width:82cqw;margin-top:3cqw}
+  #s-isa .ecell{background:rgba(74,222,128,.07);border:1px solid rgba(74,222,128,.25);border-radius:2.2cqw;padding:1.8cqw 1cqw;text-align:center;font-size:2.7cqw;line-height:1.5}
+  #s-isa .sy01{margin-top:3cqw;width:82cqw;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.3);border-radius:3cqw;padding:2.6cqw 3.6cqw;font-size:3cqw;line-height:1.7;display:flex;align-items:center;gap:3.4cqw}
+  #s-isa .sy01 .ring-wrap{width:15cqw;height:15cqw;flex:none;position:relative}
+  #s-isa .sy01 .ring-wrap svg{width:100%;height:100%;transform:rotate(-90deg)}
+  #s-isa .sy01 .ring-wrap .rn{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:3.4cqw;font-weight:900;color:var(--amber)}
+  /* ===== S8 结尾 ===== */
+  #s-end .next{width:80cqw;background:linear-gradient(160deg,rgba(16,28,38,.95),rgba(10,18,26,.95));border:1px solid rgba(74,222,128,.35);border-radius:3.6cqw;padding:4.6cqw 6cqw;text-align:center;margin-top:3cqw}
+  #s-end .next .nt{font-size:3.8cqw;color:var(--dim);letter-spacing:.14em}
+  #s-end .next .ntt{font-size:6.6cqw;font-weight:900;margin-top:1.4cqw;color:var(--green);animation:breathe 2.2s ease-in-out infinite;display:inline-block}
+  #s-end .cta-row{display:flex;gap:2.4cqw;margin-top:4cqw}
+  #s-end .cta{font-size:3.2cqw;font-weight:700;border:1px solid var(--line);border-radius:6cqw;padding:1.3cqw 3.4cqw;background:rgba(148,163,184,.07);opacity:0;animation:ctaIn .5s cubic-bezier(.22,1,.36,1) forwards,ctaPulse 2s ease-in-out 1.2s infinite}
+  #s-end .cta:nth-child(1){animation-delay:.1s,.1s}
+  #s-end .cta:nth-child(2){animation-delay:.22s,.22s}
+  #s-end .cta:nth-child(3){animation-delay:.34s,.34s}
+  #s-end .cta:nth-child(4){animation-delay:.46s,.46s}
+  #s-end .cta:hover{border-color:var(--green);color:var(--green)}
+  /* ===== 转场闪光 ===== */
+  .flash{position:fixed;inset:0;z-index:9;background:radial-gradient(circle at 50% 50%,rgba(255,255,255,.85),rgba(74,222,128,.35) 55%,transparent 75%);opacity:0;pointer-events:none}
+  .flash.go{animation:flashAnim .5s ease-out}
+  /* ===== 字幕（固定窗口 + 断句 + 位置偏上不贴底） ===== */
+  .subtitle{position:absolute;left:8%;right:8%;bottom:14%;z-index:6;text-align:center;min-height:7cqw;display:flex;align-items:center;justify-content:center}
+  .subtitle .sentence{font-size:4.4cqw;line-height:1.8;color:var(--dim);font-weight:600;text-shadow:0 .4cqw 2.4cqw rgba(0,0,0,.85)}
+  .subtitle .sentence .cur{color:var(--green);font-weight:900;text-shadow:0 0 2.6cqw rgba(74,222,128,.85)}
+  .subtitle .sentence .done{color:var(--ink)}
+  .progress{position:absolute;left:0;right:0;bottom:0;height:1.2cqw;background:rgba(148,163,184,.12);z-index:8}
+  .progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,#22c55e,#4ade80);box-shadow:0 0 2cqw rgba(74,222,128,.5)}
+  .overlay{position:absolute;inset:0;z-index:20;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6cqw;background:radial-gradient(ellipse at 50% 40%, rgba(10,20,40,.4), rgba(4,6,13,.9) 70%);backdrop-filter:blur(2px)}
+  .overlay.hide{opacity:0;visibility:hidden;transition:opacity .4s ease}
+  .overlay .o-title{font-size:9cqw;font-weight:900;text-align:center;line-height:1.3;text-shadow:0 0 4cqw rgba(74,222,128,.5)}
+  .overlay .o-title em{font-style:normal;color:var(--green)}
+  .overlay .o-sub{font-size:3.8cqw;color:var(--dim);text-align:center;letter-spacing:.12em}
+  .play-btn,.replay-btn{display:inline-flex;align-items:center;gap:2cqw;padding:2.6cqw 6cqw;border-radius:6cqw;border:1px solid rgba(74,222,128,.5);background:rgba(16,30,24,.85);color:var(--ink);font-size:4.4cqw;font-weight:700;cursor:pointer;transition:.25s}
+  .play-btn:hover,.replay-btn:hover{border-color:var(--green);color:var(--green);transform:translateY(-.4cqw)}
+  .play-btn svg,.replay-btn svg{width:4.6cqw;height:4.6cqw;fill:currentColor}
+  .replay-btn{position:absolute;left:50%;bottom:10%;transform:translateX(-50%);z-index:21;display:none}
+  .replay-btn.show{display:inline-flex}
+  @keyframes punchIn{0%{transform:scale(1.7);filter:blur(10px);opacity:0}100%{transform:scale(1);filter:blur(0);opacity:1}}
+  @keyframes breathe{0%,100%{transform:scale(1)}50%{transform:scale(1.05)}}
+  @keyframes shimmerX{0%{transform:translateX(-120%)}100%{transform:translateX(420%)}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(2.6cqw)}to{opacity:1;transform:translateY(0)}}
+  @keyframes scanSpin{to{transform:translateX(-50%) rotate(360deg)}}
+  @keyframes colonyPulse{0%,100%{transform:scale(1);opacity:.85}50%{transform:scale(1.4);opacity:1}}
+  @keyframes pcardIn{to{opacity:1;transform:translateY(0) scale(1)}}
+  @keyframes flashAnim{0%{opacity:.9}100%{opacity:0}}
+  @keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-1.6cqw)}}
+  @keyframes arrPulse{0%,100%{opacity:1;transform:translateX(0)}50%{opacity:.4;transform:translateX(.8cqw)}}
+  @keyframes ctaIn{to{opacity:1;transform:none}}
+  @keyframes ctaPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+
+  /* ===== N0001 专用样式 ===== */
+  #s-why .aura .glow{width:120cqw;height:120cqw;left:50%;top:6%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,.12),transparent 65%)}
+  #s-ability .aura .glow{width:110cqw;height:110cqw;left:50%;top:2%;transform:translateX(-50%);background:radial-gradient(circle,rgba(56,189,248,.10),transparent 65%)}
+  #s-origin .aura .glow{width:110cqw;height:110cqw;left:-8%;top:26%;background:radial-gradient(circle,rgba(251,191,36,.09),transparent 65%)}
+  #s-name .aura .glow{width:110cqw;height:110cqw;right:-12%;top:18%;background:radial-gradient(circle,rgba(56,189,248,.09),transparent 65%)}
+  #s-crisis .aura .glow{width:120cqw;height:120cqw;left:50%;top:0%;transform:translateX(-50%);background:radial-gradient(circle,rgba(248,113,113,.08),transparent 65%)}
+  #s-crisis .aura .aura-ring{width:82cqw;height:82cqw;left:50%;top:30%;transform:translate(-50%,-50%);animation:scanSpin 18s linear infinite}
+  #s-home .aura .glow{width:110cqw;height:110cqw;left:50%;bottom:-8%;transform:translateX(-50%);background:radial-gradient(circle,rgba(74,222,128,.10),transparent 65%)}
+  #s-industry .aura .glow{width:120cqw;height:120cqw;left:50%;top:4%;transform:translateX(-50%);background:radial-gradient(circle,rgba(251,191,36,.09),transparent 65%)}
+  /* 开场扩展相位 */
+  .phs-hook{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4cqw}
+  .phs-hook .hh{font-size:11cqw;font-weight:900;text-align:center;line-height:1.3;letter-spacing:.04em;animation:punchIn .7s cubic-bezier(.22,1,.36,1) both}
+  .phs-hook .hh em{font-style:normal;color:var(--green);text-shadow:0 0 6cqw rgba(74,222,128,.6)}
+  .phs-hook .tri-mini{display:flex;gap:3cqw}
+  .phs-hook .tri-mini span{font-size:4.4cqw;font-weight:800;color:var(--cyan);border:1px solid rgba(56,189,248,.4);border-radius:6cqw;padding:1.2cqw 4cqw;background:rgba(56,189,248,.08)}
+  .phs-promise{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3.6cqw}
+  .phs-promise .pm{font-size:7.6cqw;font-weight:900;text-align:center;line-height:1.5;color:var(--amber);text-shadow:0 0 5cqw rgba(251,191,36,.4);animation:punchIn .6s cubic-bezier(.22,1,.36,1) both}
+  .phs-promise .pm-sub{font-size:4cqw;color:var(--dim);letter-spacing:.1em}
+  .phs-cta{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4.4cqw}
+  .phs-cta .ct-title{font-size:6.6cqw;font-weight:900;animation:punchIn .6s cubic-bezier(.22,1,.36,1) both}
+  .phs-cta .cta-row2{display:flex;gap:3.6cqw}
+  .phs-cta .cta-row2 .cta{font-size:5cqw;font-weight:800;border:1px solid rgba(74,222,128,.45);border-radius:4cqw;padding:2.4cqw 5cqw;background:rgba(74,222,128,.10);color:var(--green);animation:ctaPulse 1.6s ease-in-out infinite}
+  .phs-cta .cta-row2 .cta:nth-child(2){animation-delay:.15s}
+  .phs-cta .cta-row2 .cta:nth-child(3){animation-delay:.3s}
+  .phs-cta .cta-row2 .cta:nth-child(4){animation-delay:.45s}
+  .phs-cta .ct-sub{font-size:3.8cqw;color:var(--dim)}
+  #s-open[data-phase="splash"] .phs-splash{opacity:1}
+  #s-open[data-phase="topic"] .phs-topic{opacity:1}
+  #s-open[data-phase="hook"] .phs-hook{opacity:1}
+  #s-open[data-phase="promise"] .phs-promise{opacity:1}
+  #s-open[data-phase="cta"] .phs-cta{opacity:1}
+  #s-open[data-phase="preview"] .phs-preview{opacity:1}
+  @keyframes ctaPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.07)}}
+  /* S2 标题优化：对称断句，杜绝孤字 */
+  #s-why h2 {
+    font-size: 5.6cqw;
+    font-weight: 900;
+    line-height: 1.35;
+    margin: 1.6cqw 0 1.8cqw;
+    text-align: center;
+  }
+  #s-why h2 .hl-green {
+    color: var(--green);
+    text-shadow: 0 0 4cqw rgba(74, 222, 128, 0.45);
+    display: inline-block;
+    margin-top: 0.5cqw;
+    font-size: 6.2cqw;
+  }
+  /* S2 痛点因果矩阵：上因下果，整齐划一，杜绝悬挂孤立标签 */
+  .pain-box {
+    width: 82cqw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2.2cqw;
+  }
+  .cause-chip {
+    font-size: 2.9cqw;
+    font-weight: 700;
+    color: #f87171;
+    border: 1px solid rgba(248, 113, 113, 0.4);
+    border-radius: 6cqw;
+    padding: 0.8cqw 3.6cqw;
+    background: rgba(248, 113, 113, 0.12);
+    display: inline-flex;
+    align-items: center;
+    gap: 1.2cqw;
+  }
+  .arrow-down {
+    font-size: 2.4cqw;
+    color: var(--dim);
+    font-weight: 700;
+    margin: 0.8cqw 0 1cqw;
+    letter-spacing: 0.08em;
+  }
+  .effect-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2cqw;
+    width: 82cqw;
+  }
+  .echip {
+    font-size: 3.0cqw;
+    font-weight: 800;
+    color: #fca5a5;
+    border: 1px solid rgba(248, 113, 113, 0.3);
+    border-radius: 2.4cqw;
+    padding: 1.2cqw 1cqw;
+    background: rgba(248, 113, 113, 0.08);
+    text-align: center;
+    letter-spacing: 0.04em;
+  }
+  /* S2 菌体结构化卡：垂直堆叠优先，条目通栏排布 */
+  .bug-card {
+    width: 82cqw;
+    background: linear-gradient(160deg, rgba(16,28,38,.94), rgba(10,18,26,.94));
+    border: 1px solid rgba(74,222,128,.35);
+    border-radius: 3.2cqw;
+    padding: 2.4cqw 3.2cqw;
+    text-align: left;
+    margin-top: 1.2cqw;
+    box-shadow: 0 4px 20px rgba(0,0,0,.45);
+    box-sizing: border-box;
+  }
+  .bc-top {
+    display: flex;
+    align-items: center;
+    gap: 3cqw;
+    border-bottom: 1px solid rgba(148,163,184,.14);
+    padding-bottom: 1.6cqw;
+    margin-bottom: 1.8cqw;
+  }
+  .bc-svg-wrap {
+    width: 18cqw;
+    flex: none;
+  }
+  .bc-svg-wrap svg {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .bc-title-box {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8cqw;
+  }
+  .bc-tag {
+    font-size: 2.4cqw;
+    font-weight: 800;
+    color: var(--green);
+    background: rgba(74,222,128,.12);
+    border: 1px solid rgba(74,222,128,.4);
+    border-radius: 4cqw;
+    padding: 0.3cqw 1.8cqw;
+    display: inline-block;
+    align-self: flex-start;
+  }
+  .bc-t {
+    font-size: 3.2cqw;
+    font-weight: 800;
+    color: var(--ink);
+    letter-spacing: 0.02em;
+  }
+  .bc-points {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2cqw;
+  }
+  .bc-row {
+    display: flex;
+    align-items: center;
+    gap: 1.4cqw;
+    font-size: 2.7cqw;
+  }
+  .bp-dot {
+    color: var(--green);
+    font-size: 2.2cqw;
+    flex: none;
+  }
+  .bp-label {
+    font-weight: 800;
+    color: var(--cyan);
+    flex: none;
+  }
+  .bp-val {
+    color: var(--ink);
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    flex: 1;
+  }
+  /* S2 环境耐受仪表条：饱满拟态设计 */
+  .env-bars {
+    width: 82cqw;
+    display: flex;
+    flex-direction: column;
+    gap: 1.6cqw;
+    margin-top: 2.2cqw;
+    background: linear-gradient(160deg, rgba(16,28,38,.88), rgba(10,18,26,.88));
+    border: 1px solid var(--line);
+    border-radius: 2.8cqw;
+    padding: 2.2cqw 3.6cqw;
+    box-shadow: 0 4px 18px rgba(0,0,0,.35);
+  }
+  .env {
+    display: flex;
+    align-items: center;
+    gap: 2.4cqw;
+  }
+  .env .lab {
+    font-size: 2.8cqw;
+    font-weight: 700;
+    color: var(--cyan);
+    width: 14cqw;
+    text-align: left;
+    flex: none;
+  }
+  .env .bar {
+    flex: 1;
+    height: 3.2cqw;
+    border-radius: 999px;
+    background: rgba(148,163,184,.14);
+    overflow: hidden;
+  }
+  .env .bar i {
+    display: block;
+    height: 100%;
+    border-radius: 999px;
+    background: linear-gradient(90deg,#22c55e,#4ade80);
+    box-shadow: 0 0 10px rgba(74,222,128,.4);
+    animation: barGrow 1s cubic-bezier(.22,1,.36,1) .4s both;
+  }
+  .env .val {
+    font-size: 3.0cqw;
+    font-weight: 800;
+    color: #fff;
+    width: 20cqw;
+    text-align: right;
+    flex: none;
+  }
+  @keyframes barGrow{from{width:0}}
+  /* S3 三能力 */
+  .tri-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:3cqw;width:82cqw}
+  .tcell{background:linear-gradient(160deg,rgba(16,28,38,.92),rgba(10,18,26,.92));border:1px solid var(--line);border-radius:3cqw;padding:3cqw 2.4cqw;display:flex;flex-direction:column;align-items:center;gap:1.6cqw}
+  .tcell .t-ico{width:12cqw;height:12cqw;color:var(--green)}
+  .tcell .t-ico svg{width:100%;height:100%}
+  .tcell:nth-child(2) .t-ico{color:var(--cyan)}
+  .tcell:nth-child(3) .t-ico{color:var(--amber)}
+  .tcell .t-t{font-size:4.6cqw;font-weight:900}
+  .tcell .t-d{font-size:3cqw;color:var(--dim)}
+  .use-row{display:flex;align-items:center;gap:2.4cqw;width:82cqw;justify-content:center;margin-top:3cqw;flex-wrap:wrap}
+  .u{font-size:3.4cqw;font-weight:800;color:var(--ink);border:1px solid rgba(74,222,128,.4);border-radius:4cqw;padding:1.4cqw 3.4cqw;background:rgba(74,222,128,.08)}
+  .u.gain{color:var(--amber);border-color:rgba(251,191,36,.4);background:rgba(251,191,36,.08);font-size:3.2cqw}
+  /* S4 时间轴 */
+  .tl-row{display:flex;align-items:stretch;width:82cqw;gap:2.4cqw}
+  .tl-node{flex:1;background:linear-gradient(160deg,rgba(16,28,38,.92),rgba(10,18,26,.92));border:1px solid var(--line);border-radius:3cqw;padding:3cqw 2.6cqw;text-align:center}
+  .tl-node .yr{font-size:6.6cqw;font-weight:900;color:var(--amber);line-height:1.1}
+  .tl-node .tl-t{font-size:3.4cqw;font-weight:800;color:var(--ink);margin-top:1.4cqw}
+  .tl-node .tl-d{font-size:2.9cqw;color:var(--dim);line-height:1.7;margin-top:1cqw}
+  .tl-line{width:6cqw;display:flex;align-items:center;justify-content:center;position:relative}
+  .tl-line::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1cqw;background:linear-gradient(180deg,#fbbf24,rgba(251,191,36,.15));transform:translateX(-50%)}
+  .tl-line i{width:2.2cqw;height:2.2cqw;border-radius:50%;background:#fbbf24;box-shadow:0 0 2.4cqw rgba(251,191,36,.6);z-index:1;animation:ctaPulse 1.6s ease-in-out infinite}
+  .foreshadow{display:flex;align-items:center;gap:4cqw;width:82cqw;margin-top:3cqw;background:linear-gradient(160deg,rgba(16,28,38,.9),rgba(10,18,26,.9));border:1px solid rgba(251,191,36,.25);border-radius:3cqw;padding:2.6cqw 4cqw;text-align:left}
+  .foreshadow .bag{width:22cqw;flex:none}
+  .foreshadow .bag svg{width:100%;height:auto}
+  .foreshadow .fs-txt{flex:1;font-size:3.4cqw;color:var(--dim);line-height:1.8}
+  /* S5 命名流程链 */
+  .flow3{display:flex;align-items:stretch;width:82cqw;gap:1.8cqw}
+  .fnode{flex:1;background:linear-gradient(160deg,rgba(16,28,38,.92),rgba(10,18,26,.92));border:1px solid var(--line);border-radius:3cqw;padding:2.8cqw 2.2cqw;text-align:center}
+  .fnode .yr{font-size:4.8cqw;font-weight:900;color:var(--cyan)}
+  .fnode .fn-t{font-size:3.2cqw;font-weight:800;color:var(--ink);margin-top:1cqw}
+  .fnode .fn-d{font-size:2.7cqw;color:var(--dim);line-height:1.65;margin-top:.8cqw}
+  .arr3{display:flex;align-items:center;font-size:5cqw;font-weight:900;color:var(--green);flex:none}
+  .river{width:82cqw;margin-top:3cqw}
+  .river svg{width:100%;height:auto}
+  /* S6 分类危机链 */
+  .crisis-chain{display:flex;align-items:stretch;width:82cqw;gap:1.4cqw}
+  .cnode{flex:1;background:linear-gradient(160deg,rgba(16,28,38,.92),rgba(10,18,26,.92));border:1px solid rgba(248,113,113,.25);border-radius:3cqw;padding:2.6cqw 1.8cqw;text-align:center}
+  .cnode .yr{font-size:4.4cqw;font-weight:900;color:var(--red)}
+  .cnode .ct2{font-size:3cqw;font-weight:800;color:var(--ink);margin-top:.8cqw}
+  .cnode .cd2{font-size:2.5cqw;color:var(--dim);line-height:1.6;margin-top:.6cqw}
+  .verdict{display:flex;align-items:center;justify-content:center;gap:6cqw;width:82cqw;margin-top:3cqw;background:linear-gradient(160deg,rgba(16,28,38,.9),rgba(10,18,26,.9));border:1px solid rgba(251,191,36,.3);border-radius:3cqw;padding:2.8cqw 4cqw}
+  .ring89{width:22cqw;position:relative;flex:none}
+  .ring89 svg{width:100%;height:auto}
+  .ring-txt{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+  .ring-txt .num{font-size:6cqw;font-weight:900;color:var(--amber);line-height:1.1}
+  .ring-txt .lab{font-size:2.6cqw;color:var(--dim);margin-top:.6cqw}
+  .v-txt{flex:1;font-size:3.6cqw;color:var(--ink);line-height:1.8;text-align:left}
+  .v-txt b{color:var(--amber)}
+  /* S7 认祖归宗 */
+  .star-row{display:flex;gap:3cqw;width:82cqw;justify-content:center}
+  .star{font-size:4.4cqw;font-weight:900;color:var(--cyan);border:1px solid rgba(56,189,248,.45);border-radius:4cqw;padding:2.2cqw 4.4cqw;background:rgba(56,189,248,.08);letter-spacing:.04em}
+  .star:nth-child(2){color:var(--green);border-color:rgba(74,222,128,.45);background:rgba(74,222,128,.08)}
+  .star:nth-child(3){color:var(--amber);border-color:rgba(251,191,36,.45);background:rgba(251,191,36,.08)}
+  .star:nth-child(4){color:var(--red);border-color:rgba(248,113,113,.45);background:rgba(248,113,113,.08)}
+  .home-flow{display:flex;align-items:center;justify-content:center;gap:5cqw;width:82cqw;margin-top:3.6cqw}
+  .home-flow .arr2{font-size:9cqw;color:var(--green);font-weight:900;animation:slideX 1.2s ease-in-out infinite}
+  @keyframes slideX{0%,100%{transform:translateX(0)}50%{transform:translateX(2.4cqw)}}
+  .door{display:flex;flex-direction:column;align-items:center;gap:1cqw;width:30cqw}
+  .door svg{width:100%;height:auto}
+  .door .door-t{font-size:3.2cqw;font-weight:800;color:var(--green)}
+  /* S8 产业化 */
+  .reg-tl{display:flex;align-items:stretch;width:82cqw;gap:1.8cqw}
+  .rnode{flex:1;background:linear-gradient(160deg,rgba(16,28,38,.92),rgba(10,18,26,.92));border:1px solid var(--line);border-radius:3cqw;padding:2.8cqw 2.2cqw;text-align:center}
+  .rnode .yr{font-size:5.2cqw;font-weight:900;color:var(--green)}
+  .rnode .rd2{font-size:2.9cqw;color:var(--dim);line-height:1.7;margin-top:1.2cqw}
+  .rnode.on{border-color:rgba(74,222,128,.5)}
+  .rnode.on .yr{color:var(--amber)}
+  .stat-row{display:flex;align-items:center;justify-content:center;gap:7cqw;width:82cqw;margin-top:3.2cqw}
+  .ring10{width:22cqw;position:relative;flex:none}
+  .ring10 svg{width:100%;height:auto}
+  .ring10 .ring-txt .num{color:var(--green);font-size:5.4cqw}
+  .eu{display:flex;align-items:center;gap:3cqw;background:linear-gradient(160deg,rgba(16,28,38,.9),rgba(10,18,26,.9));border:1px solid rgba(56,189,248,.35);border-radius:3cqw;padding:2.6cqw 3.6cqw}
+  .eu .eu-badge{width:11cqw;height:11cqw;border-radius:50%;border:2px solid rgba(56,189,248,.6);display:flex;align-items:center;justify-content:center;font-size:4.6cqw;font-weight:900;color:var(--cyan);flex:none}
+  .eu .eu-t{font-size:3cqw;color:var(--dim);line-height:1.7;text-align:left}
+  .ext{font-size:3.4cqw;font-weight:800;color:var(--amber);width:82cqw;margin-top:3cqw}
+  /* S9 结尾 */
+  .preview-card{width:82cqw;background:linear-gradient(160deg,rgba(16,28,38,.92),rgba(10,18,26,.92));border:1px solid rgba(74,222,128,.4);border-radius:3cqw;padding:3cqw 4cqw;margin-top:1.4cqw}
+  .preview-card .pc-t{font-size:3.6cqw;font-weight:800;color:var(--green)}
+  .preview-card .pc-d{font-size:4.2cqw;font-weight:900;color:var(--ink);line-height:1.7;margin-top:1.2cqw}
+  .follow{font-size:3.8cqw;color:var(--amber);margin-top:2.4cqw}
+  /* ===== N0001 越界修复覆盖（确保左右安全区 8cqw 内） ===== */
+  .phs-splash .hook{font-size:8cqw;max-width:84cqw}
+  .phs-splash .hook-sub{font-size:3.6cqw}
+  .phs-splash .fight{width:40cqw;height:40cqw}
+  .phs-topic .tp-title{font-size:7.6cqw;max-width:84cqw}
+  .phs-topic .tp-sub{font-size:3.4cqw;margin-top:1.8cqw}
+  .phs-hook .hh{font-size:8cqw;max-width:84cqw}
+  .phs-hook .tri-mini span{font-size:3.6cqw;padding:1cqw 3.2cqw}
+  .phs-promise .pm{font-size:6.2cqw;max-width:84cqw}
+  .phs-promise .pm-sub{font-size:3.6cqw}
+  .phs-cta .ct-title{font-size:5.6cqw}
+  .phs-cta .cta-row2{gap:2.6cqw}
+  .phs-cta .cta-row2 .cta{font-size:4cqw;padding:2cqw 3.6cqw}
+  .phs-cta .ct-sub{font-size:3.4cqw}
+  .phs-preview .pt{font-size:3.8cqw}
+  #s-home .star-row{gap:2cqw}
+  #s-home .star{font-size:3.6cqw;padding:1.8cqw 3.2cqw}
+  #s-home .home-flow{gap:4cqw}
+  #s-home .door{width:26cqw}
+
+</style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+
+<div id="chapText">第 1 / 9 节</div>
+<div class="head">
+  <div class="head-pill" id="mainTitle">
+    <span class="title-line title-main">贝莱斯芽孢杆菌</span>
+    <span class="title-line title-sub">从发现到成为全能明星菌株</span>
+  </div>
+</div>
+
+<div class="stage">
+  <!-- ===== S1 开场（钩子→回顾→主题→预告） ===== -->
+  <!-- ===== S1 开场（自我介绍+承诺+号召型，钩子=全能选手） ===== -->
+  <div class="scene active" id="s-open" data-phase="splash">
+    <div class="phs phs-splash">
+      <div class="hook">一株菌，凭什么成为<br>农用菌里的<em>全能选手</em>？</div>
+      <div class="hook-sub">农业黑科技 · 贝莱斯芽孢杆菌</div>
+      <div class="fight">
+        <svg viewBox="0 0 200 200" fill="none" stroke="currentColor">
+          <g class="bac" stroke="#4ade80" stroke-width="3">
+            <rect x="56" y="84" width="86" height="30" rx="15" fill="rgba(74,222,128,.10)"/>
+            <ellipse cx="142" cy="99" rx="11" ry="3.6" fill="rgba(74,222,128,.5)"/>
+            <path d="M142 90c12-4 18-1 20 8-9 6-15 5-20-8z" fill="rgba(74,222,128,.25)"/>
+            <path d="M56 99l-16-11M56 99l-16 11" stroke-linecap="round"/>
+            <circle cx="116" cy="99" r="9" stroke-width="2.4"/>
+            <circle cx="90" cy="90" r="6" fill="rgba(251,191,36,.35)" stroke="#fbbf24" stroke-width="2"/>
+          </g>
+          <g stroke="#38bdf8" stroke-width="2" stroke-linecap="round" opacity=".55">
+            <path d="M42 44l-14-10M164 50l14-10M162 152l14 12M38 150l-14 12"/>
+          </g>
+          <g fill="#4ade80" opacity=".6">
+            <circle cx="70" cy="44" r="2.6"/><circle cx="132" cy="36" r="2"/><circle cx="168" cy="120" r="2.4"/><circle cx="36" cy="112" r="2"/>
+          </g>
+        </svg>
+      </div>
+    </div>
+    <div class="phs phs-topic">
+      <div class="tp-title">农业黑科技 · 功能菌</div>
+      <div class="tp-sub">从发现到成为明星菌株的科普指南</div>
+    </div>
+    <div class="phs phs-hook">
+      <div class="hh">农用菌中的<em>全能选手</em></div>
+      <div class="tri-mini"><span>促生</span><span>防病</span><span>修复</span></div>
+    </div>
+    <div class="phs phs-promise">
+      <div class="pm">全网没有比这更全面<br>更细致的科普讲解</div>
+      <div class="pm-sub">建议认真听 · 一键三连</div>
+    </div>
+    <div class="phs phs-cta">
+      <div class="ct-title">觉得学到了？</div>
+      <div class="cta-row2">
+        <div class="cta">点赞</div><div class="cta">收藏</div><div class="cta">评论</div><div class="cta">分享</div>
+      </div>
+      <div class="ct-sub">分享给身边的小伙伴 · 一起进步</div>
+    </div>
+    <div class="phs phs-preview">
+      <div class="pt">言归正传 · 三部分</div>
+      <div class="pgrid">
+        <div class="pcell"><div class="n">01</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="7"/><circle cx="9" cy="9" r="1.5" fill="currentColor"/><circle cx="15" cy="9" r="1.5" fill="currentColor"/><path d="M9 15c1.8 1.4 4.2 1.4 6 0"/></svg><div class="t">为什么是全能选手</div></div>
+        <div class="pcell"><div class="n">02</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-4 3-6.5 7-6.5s7 2.5 7 6.5"/></svg><div class="t">曲折身世</div></div>
+        <div class="pcell"><div class="n">03</div><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 21h18M5 21V10l7-5 7 5v11M9 21v-5h6v5"/></svg><div class="t">产业化快车道</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== S2 为什么是全能选手 ===== -->
+  <div class="scene" id="s-why">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">第一部分 · 全能选手</div>
+      <h2 class="w w2">为什么被称为<br><span class="hl-green">农用菌中的"全能选手"？</span></h2>
+      <div class="pain-box w w3">
+        <div class="cause-chip">
+          <span>⚠️</span> 长期过量使用化肥农药
+        </div>
+        <div class="arrow-down">↓ 导致三大土壤生态问题</div>
+        <div class="effect-grid">
+          <div class="echip">土壤板结</div>
+          <div class="echip">农残超标</div>
+          <div class="echip">病菌耐药</div>
+        </div>
+      </div>
+      <div class="bug-card w w3">
+        <div class="bc-top">
+          <div class="bc-svg-wrap">
+            <svg viewBox="0 0 120 66" fill="none" stroke="currentColor">
+              <rect x="18" y="26" width="70" height="22" rx="11" fill="rgba(74,222,128,.12)" stroke="#4ade80" stroke-width="2.4"/>
+              <ellipse cx="88" cy="37" rx="9" ry="3" fill="rgba(74,222,128,.5)"/>
+              <path d="M88 30c10-3 15 0 17 7-8 5-13 4-17-7z" fill="rgba(74,222,128,.25)"/>
+              <path d="M18 37l-10-7M18 37l-10 7" stroke-linecap="round"/>
+              <circle cx="68" cy="37" r="6" stroke-width="1.8"/>
+              <circle cx="48" cy="30" r="4.4" fill="rgba(251,191,36,.3)" stroke="#fbbf24" stroke-width="1.6"/>
+              <path d="M96 6c8 0 14 4 16 10M100 12c4 0 7 2 8 5" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round" opacity=".7"/>
+              <circle cx="24" cy="6" r="2.4" fill="#4ade80" opacity=".7"/>
+            </svg>
+          </div>
+          <div class="bc-title-box">
+            <div class="bc-tag">革兰氏阳性菌</div>
+            <div class="bc-t">从实验室走向田间 · 绿色农业新宠</div>
+          </div>
+        </div>
+        <div class="bc-points">
+          <div class="bc-row">
+            <span class="bp-dot">✦</span>
+            <span class="bp-label">形态特征：</span>
+            <span class="bp-val">杆状菌体 · 可产抗逆芽孢 · 具鞭毛自主运动</span>
+          </div>
+          <div class="bc-row">
+            <span class="bp-dot">✦</span>
+            <span class="bp-label">多重酶系：</span>
+            <span class="bp-val">分泌淀粉酶 · 蛋白酶 · 脂肪酶等多种胞外酶</span>
+          </div>
+        </div>
+      </div>
+      <div class="env-bars w w4">
+        <div class="env"><div class="lab">温度范围</div><div class="bar"><i style="width:72%"></i></div><div class="val">15 ~ 45 ℃</div></div>
+        <div class="env"><div class="lab">酸碱耐受</div><div class="bar"><i style="width:58%"></i></div><div class="val">pH 5 ~ 10</div></div>
+        <div class="env"><div class="lab">耐盐特性</div><div class="bar"><i style="width:42%"></i></div><div class="val">耐受高盐</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== S3 三大核心能力 + 应用 ===== -->
+  <div class="scene" id="s-ability">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">三大核心能力</div>
+      <h2 class="w w2">促生 · 防病 · 修复</h2>
+      <div class="tri-grid w w3">
+        <div class="tcell">
+          <div class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21V10M12 10c-3-1-5-3-6-6 3 0 5 2 6 6zM12 10c3-1 5-3 6-6-3 0-5 2-6 6z" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <div class="t-t">促生</div><div class="t-d">提质增产</div>
+        </div>
+        <div class="tcell">
+          <div class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3l8 4v5c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V7z"/><path d="M9 12l2.2 2.2L15.5 10"/></svg></div>
+          <div class="t-t">防病</div><div class="t-d">抵御病害</div>
+        </div>
+        <div class="tcell">
+          <div class="t-ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 3c2.5 2.5 4 5 4 8a4 4 0 0 1-8 0c0-3 1.5-5.5 4-8z"/><path d="M5 21h14M7 18c-1-1.5-2-3-2-4.5S7 9 9 8.5" opacity=".6"/></svg></div>
+          <div class="t-t">修复</div><div class="t-d">土壤水体治理</div>
+        </div>
+      </div>
+      <div class="use-row w w4">
+        <div class="u">拌种</div><div class="u">灌根</div><div class="u">叶面喷施</div>
+        <div class="u gain">既能提质增产 → 又能减少化肥农药</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== S4 曲折身世 ===== -->
+  <div class="scene" id="s-origin">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">第二部分 · 身世</div>
+      <h2 class="w w2">它的故事，远比想象中曲折</h2>
+      <div class="tl-row w w3">
+        <div class="tl-node on">
+          <div class="yr">1897</div><div class="tl-t">德国地主 · 卡隆</div>
+          <div class="tl-d">推出全球首款细菌肥料<br>阿利尼特</div>
+        </div>
+        <div class="tl-line"><i></i></div>
+        <div class="tl-node">
+          <div class="yr">2016</div><div class="tl-t">正式确立</div>
+          <div class="tl-d">独立物种</div>
+        </div>
+      </div>
+      <div class="foreshadow w w4">
+        <div class="bag">
+          <svg viewBox="0 0 100 84" fill="none" stroke="currentColor">
+            <path d="M22 16h56v10c0 28-14 44-28 44S22 54 22 26z" fill="rgba(251,191,36,.08)" stroke="#fbbf24" stroke-width="2.4"/>
+            <path d="M26 10c6-4 14-4 20 0-2 5-10 7-20 5z" fill="rgba(251,191,36,.15)"/>
+            <text x="50" y="44" font-size="11" font-weight="800" text-anchor="middle" fill="#fbbf24">阿利尼特</text>
+            <text x="50" y="58" font-size="6.5" text-anchor="middle" fill="rgba(251,191,36,.75)">细菌肥料 · 1897</text>
+          </svg>
+        </div>
+        <div class="fs-txt">当年笼统叫"枯草 / 解淀粉芽孢杆菌"的<br>许多其实就是贝莱斯</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== S5 命名之争 ===== -->
+  <div class="scene" id="s-name">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">命名之争</div>
+      <h2 class="w w2">从"张冠李戴"到正式命名</h2>
+      <div class="flow3 w w3">
+        <div class="fnode"><div class="yr">1943</div><div class="fn-t">日本 · 伏本</div><div class="fn-d">命名"解淀粉芽孢杆菌"<br>未入 1980 名录</div></div>
+        <div class="arr3">→</div>
+        <div class="fnode"><div class="yr">1987</div><div class="fn-t">英国 · 普里斯特</div><div class="fn-d">名称合格化<br>避免与枯草混淆</div></div>
+        <div class="arr3">→</div>
+        <div class="fnode"><div class="yr">1999~2005</div><div class="fn-t">西班牙 · 加西亚</div><div class="fn-d">贝莱斯河河口<br>CR14B · CR502T 命名</div></div>
+      </div>
+      <div class="river w w4">
+        <svg viewBox="0 0 300 60" fill="none" stroke="currentColor">
+          <path d="M10 44c40-18 90-18 130-4s90 14 130-2" stroke="#38bdf8" stroke-width="3" stroke-linecap="round" opacity=".65"/>
+          <path d="M10 50c40-14 90-14 130-2s90 10 130-4" stroke="#38bdf8" stroke-width="1.6" stroke-linecap="round" opacity=".35"/>
+          <g stroke="#4ade80" stroke-width="2.2">
+            <rect x="52" y="30" width="16" height="7" rx="3.5" fill="rgba(74,222,128,.15)"/>
+            <rect x="128" y="28" width="16" height="7" rx="3.5" fill="rgba(74,222,128,.15)"/>
+            <rect x="212" y="26" width="16" height="7" rx="3.5" fill="rgba(74,222,128,.15)"/>
+          </g>
+          <text x="60" y="24" font-size="7" fill="#93a7a0">CR14B</text>
+          <text x="136" y="22" font-size="7" fill="#93a7a0">CR502T</text>
+          <text x="204" y="20" font-size="7" fill="#4ade80" font-weight="700">贝莱斯河河口</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== S6 分类危机与确立 ===== -->
+  <div class="scene" id="s-crisis">
+    <div class="aura"><div class="glow"></div><div class="aura-ring"></div></div>
+    <div class="inner">
+      <div class="badge w">分类危机</div>
+      <h2 class="w w2">一度失去"身份" · 2016 尘埃落定</h2>
+      <div class="crisis-chain w w3">
+        <div class="cnode"><div class="yr">2008</div><div class="ct2">中国台湾</div><div class="cd2">DNA 同源 89%<br>归为同物异名</div></div>
+        <div class="arr3">→</div>
+        <div class="cnode"><div class="yr">2010</div><div class="ct2">韩国</div><div class="cd2">甲基营养型</div></div>
+        <div class="arr3">→</div>
+        <div class="cnode"><div class="yr">2011</div><div class="ct2">德国</div><div class="cd2">解淀粉<br>植物亚种</div></div>
+        <div class="arr3">→</div>
+        <div class="cnode"><div class="yr">2015</div><div class="ct2">美国</div><div class="cd2">全基因组比较<br>实为同一物种</div></div>
+      </div>
+      <div class="verdict w w4">
+        <div class="ring89">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(148,163,184,.18)" stroke-width="7"/>
+            <circle class="ring-arc" cx="60" cy="60" r="52" fill="none" stroke="#fbbf24" stroke-width="7" stroke-linecap="round" stroke-dasharray="326.7 0.1" opacity="0" style="transition:stroke-dashoffset 1.2s ease .5s"/>
+          </svg>
+          <div class="ring-txt"><div class="num">89%</div><div class="lab">DNA 同源性</div></div>
+        </div>
+        <div class="v-txt">2016 · 邓拉普等证实三者属<br>同一进化分支 → <b>正式确立独立物种</b></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== S7 明星菌株认祖归宗 ===== -->
+  <div class="scene" id="s-home">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">认祖归宗</div>
+      <h2 class="w w2">明星菌株，纷纷归队</h2>
+      <div class="star-row w w3">
+        <div class="star">FZB42</div><div class="star">GB03</div><div class="star">QST-713</div><div class="star">9912D</div>
+      </div>
+      <div class="home-flow w w4">
+        <span class="arr2 big">→</span>
+        <div class="door">
+          <svg viewBox="0 0 120 80" fill="none" stroke="currentColor">
+            <path d="M60 8l44 22v28c0 20-18 22-44 22S16 78 16 58V30z" stroke="#4ade80" stroke-width="3" fill="rgba(74,222,128,.08)"/>
+            <rect x="44" y="26" width="30" height="12" rx="6" fill="rgba(74,222,128,.15)" stroke="#4ade80" stroke-width="2"/>
+            <circle cx="94" cy="18" r="3.4" fill="#fbbf24"/>
+            <path d="M60 58v14" stroke="#4ade80" stroke-width="2.4" stroke-linecap="round"/>
+            <path d="M52 66c4 2 8 2 12 0" stroke="#4ade80" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <div class="door-t">归入贝莱斯芽孢杆菌门下</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== S8 产业化快车道 ===== -->
+  <div class="scene" id="s-industry">
+    <div class="aura"><div class="glow"></div></div>
+    <div class="inner">
+      <div class="badge w">产业化快车道</div>
+      <h2 class="w w2">分类厘清 → 商业提速</h2>
+      <div class="reg-tl w w3">
+        <div class="rnode on"><div class="yr">2021</div><div class="rd2">百施东旺 14384<br>国内率先登记</div></div>
+        <div class="arr3">→</div>
+        <div class="rnode"><div class="yr">2025</div><div class="rd2">登记元年<br>MST三C · 1727 · MBI600</div></div>
+        <div class="arr3">→</div>
+        <div class="rnode"><div class="yr">2026</div><div class="rd2">LMW2 · BJ1<br>相继问世</div></div>
+      </div>
+      <div class="stat-row w w4">
+        <div class="ring10">
+          <svg viewBox="0 0 120 120">
+            <circle cx="60" cy="60" r="52" fill="none" stroke="rgba(148,163,184,.18)" stroke-width="7"/>
+            <circle class="ring-arc" cx="60" cy="60" r="52" fill="none" stroke="#4ade80" stroke-width="7" stroke-linecap="round" stroke-dasharray="326.7 0.1" opacity="0" style="transition:stroke-dashoffset 1.2s ease .5s"/>
+          </svg>
+          <div class="ring-txt"><div class="num">近 10 个</div><div class="lab">菌株获登记</div></div>
+        </div>
+        <div class="eu">
+          <div class="eu-badge">EU</div>
+          <div class="eu-t">2025 批准 RTI301<br>低风险活性物质</div>
+        </div>
+      </div>
+      <div class="ext w w4">杀菌剂 → 杀线虫剂 / 杀螨剂</div>
+    </div>
+  </div>
+
+  <!-- ===== S9 结尾 ===== -->
+  <div class="scene" id="s-end">
+    <div class="inner">
+      <div class="badge w">下期预告</div>
+      <h2 class="w w2">核心功能 · 驯化改造</h2>
+      <div class="preview-card w w3">
+        <div class="pc-t">下个视频详细讲解</div>
+        <div class="pc-d">核心功能特点<br>人工驯化与改造</div>
+      </div>
+      <div class="follow w w3">感兴趣的朋友 · 持续关注</div>
+      <div class="cta-row w w4">
+        <div class="cta">点赞</div><div class="cta">关注</div><div class="cta">收藏</div><div class="cta">评论</div>
+      </div>
+    </div>
+  </div>
+
+<div class="flash" id="flash"></div>
+<div class="subtitle"><p class="sentence" id="sentence"></p></div>
+<div class="progress"><i id="progFill"></i></div>
+
+<div class="overlay" id="overlay">
+  <div class="o-title">一株菌，凭什么成为农用菌里的<em>全能选手</em>？</div>
+  <div class="o-sub">314 秒 · 音画同步 · 建议佩戴耳机</div>
+  <button class="play-btn" id="btnPlay" type="button">
+    <svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>开始播放
+  </button>
+</div>
+<button class="replay-btn" id="btnReplay" type="button">
+  <svg viewBox="0 0 24 24"><path d="M12 5V1L7 6l5 5V7c3.3 0 6 2.7 6 6s-2.7 6-6 6-6-2.7-6-6H4c0 4.4 3.6 8 8 8s8-3.6 8-8-3.6-8-8-8z"/></svg>重播
+</button>
+
+<audio id="voice" src="../../inputs/N0001_贝莱斯芽孢杆菌科普/voice.wav" preload="auto"></audio>
+
+<script>
+const CHARS = ["喽", "，", "大", "家", "好", "。", "今", "天", "我", "们", "讲", "解", "一", "个", "农", "业", "黑", "科", "技", "的", "功", "能", "菌", "—", "—", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "。", "它", "是", "如", "何", "被", "称", "为", "农", "用", "菌", "中", "的", "全", "能", "选", "手", "，", "包", "括", "从", "发", "现", "到", "作", "用", "机", "理", "，", "到", "如", "何", "成", "为", "明", "星", "菌", "株", "的", "科", "普", "指", "南", "。", "全", "网", "没", "有", "比", "这", "更", "全", "面", "、", "更", "细", "致", "的", "科", "普", "讲", "解", "。", "建", "议", "大", "家", "认", "真", "听", "，", "并", "点", "赞", "、", "收", "藏", "和", "评", "论", "。", "如", "果", "您", "觉", "得", "学", "到", "了", "，", "也", "可", "以", "分", "享", "给", "身", "边", "的", "小", "伙", "伴", "，", "我", "们", "来", "一", "起", "共", "同", "进", "步", "。", "好", "了", "，", "言", "归", "正", "传", "，", "我", "们", "首", "先", "来", "讲", "第", "一", "部", "分", "。", "为", "什", "么", "它", "被", "称", "为", "农", "用", "菌", "中", "的", "全", "能", "选", "手", "？", "在", "化", "肥", "、", "农", "药", "长", "期", "大", "量", "使", "用", "，", "带", "来", "土", "壤", "板", "结", "、", "农", "残", "超", "标", "、", "病", "菌", "耐", "药", "性", "上", "升", "等", "问", "题", "的", "今", "天", "，", "一", "种", "名", "为", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "的", "革", "兰", "氏", "阳", "性", "细", "菌", "，", "正", "从", "实", "验", "室", "走", "向", "田", "间", "，", "成", "为", "绿", "色", "农", "业", "的", "新", "宠", "。", "它", "菌", "体", "呈", "杆", "状", "，", "可", "产", "芽", "孢", "，", "能", "借", "助", "鞭", "毛", "自", "主", "运", "动", "，", "能", "分", "泌", "淀", "粉", "酶", "、", "蛋", "白", "酶", "、", "脂", "肪", "酶", "等", "多", "种", "胞", "外", "酶", "。", "环", "境", "适", "应", "性", "极", "强", "，", "可", "在", "1", "5", "~", "4", "5", "摄", "氏", "度", "、", "p", "H", "值", "5", "~", "1", "0", "范", "围", "内", "生", "长", "，", "还", "能", "耐", "受", "一", "定", "盐", "度", "。", "更", "重", "要", "的", "是", "，", "它", "同", "时", "具", "备", "促", "生", "、", "防", "病", "、", "修", "复", "三", "大", "核", "心", "能", "力", "。", "在", "农", "业", "生", "产", "中", "，", "被", "加", "工", "成", "生", "物", "菌", "剂", "，", "通", "过", "拌", "种", "、", "灌", "根", "、", "叶", "面", "喷", "施", "等", "方", "式", "使", "用", "，", "既", "能", "提", "质", "增", "产", "，", "又", "能", "减", "少", "化", "肥", "、", "农", "药", "使", "用", "，", "还", "可", "用", "于", "受", "污", "染", "土", "壤", "和", "水", "体", "治", "理", "。", "要", "真", "正", "用", "好", "这", "株", "宝", "藏", "菌", "，", "我", "们", "需", "要", "从", "它", "的", "身", "世", "说", "起", "。", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "的", "故", "事", "，", "远", "比", "想", "象", "中", "曲", "折", "。", "它", "的", "应", "用", "可", "追", "溯", "至", "1", "9", "世", "纪", "末", "，", "而", "它", "作", "为", "一", "个", "独", "立", "物", "种", "被", "正", "式", "承", "认", "，", "却", "迟", "至", "2", "0", "1", "6", "年", "。", "早", "在", "1", "0", "0", "多", "年", "前", "，", "德", "国", "地", "主", "阿", "尔", "伯", "特", "·", "冯", "·", "卡", "隆", "就", "发", "现", "，", "土", "壤", "中", "的", "草", "甸", "芽", "孢", "杆", "菌", "能", "显", "著", "提", "高", "作", "物", "产", "量", "，", "并", "于", "1", "8", "9", "7", "年", "推", "出", "了", "全", "球", "首", "款", "细", "菌", "肥", "料", "—", "—", "阿", "利", "尼", "特", "。", "随", "着", "后", "世", "基", "因", "组", "学", "的", "发", "展", "，", "人", "们", "才", "发", "现", "，", "当", "年", "那", "些", "被", "笼", "统", "称", "为", "枯", "草", "芽", "孢", "杆", "菌", "或", "解", "淀", "粉", "芽", "孢", "杆", "菌", "的", "细", "菌", "，", "许", "多", "其", "实", "就", "是", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "。", "1", "9", "4", "3", "年", "，", "日", "本", "科", "学", "家", "伏", "本", "分", "离", "到", "一", "株", "高", "产", "淀", "粉", "酶", "的", "细", "菌", "，", "命", "名", "为", "解", "淀", "粉", "芽", "孢", "杆", "菌", "。", "但", "该", "名", "称", "未", "被", "1", "9", "8", "0", "年", "核", "准", "的", "细", "菌", "名", "录", "收", "录", "。", "直", "到", "1", "9", "8", "7", "年", "，", "英", "国", "科", "学", "家", "普", "里", "斯", "特", "为", "避", "免", "其", "与", "枯", "草", "芽", "孢", "杆", "菌", "混", "淆", "，", "才", "在", "《", "国", "际", "系", "统", "细", "菌", "学", "杂", "志", "》", "上", "将", "其", "名", "称", "合", "格", "化", "。", "这", "段", "伏", "笔", "，", "为", "后", "来", "的", "分", "类", "争", "议", "埋", "下", "了", "种", "子", "。", "1", "9", "9", "9", "~", "2", "0", "0", "0", "年", "，", "西", "班", "牙", "科", "学", "家", "路", "易", "斯", "·", "加", "西", "亚", "等", "人", "，", "在", "西", "班", "牙", "南", "部", "马", "拉", "加", "省", "的", "贝", "莱", "斯", "河", "河", "口", "苦", "咸", "水", "中", "，", "分", "离", "出", "两", "株", "能", "大", "量", "合", "成", "脂", "肽", "类", "抗", "菌", "物", "质", "的", "杆", "状", "细", "菌", "，", "编", "号", "C", "R", "1", "4", "B", "和", "C", "R", "5", "0", "2", "T", "。", "2", "0", "0", "5", "年", "，", "他", "们", "在", "《", "国", "际", "系", "统", "与", "进", "化", "微", "生", "物", "学", "杂", "志", "》", "上", "，", "正", "式", "将", "其", "命", "名", "为", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "。", "然", "而", "，", "新", "名", "字", "刚", "诞", "生", "不", "久", "就", "遭", "遇", "挑", "战", "。", "2", "0", "0", "8", "年", "，", "中", "国", "台", "湾", "学", "者", "通", "过", "D", "N", "A", "杂", "交", "和", "基", "因", "分", "析", "，", "认", "为", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "与", "解", "淀", "粉", "芽", "孢", "杆", "菌", "D", "N", "A", "同", "源", "性", "高", "达", "8", "9", "%", "，", "将", "其", "归", "为", "解", "淀", "粉", "芽", "孢", "杆", "菌", "的", "同", "物", "异", "名", "。", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "一", "度", "失", "去", "命", "名", "法", "地", "位", "。", "2", "0", "1", "0", "年", "，", "韩", "国", "科", "学", "家", "从", "水", "稻", "根", "际", "分", "离", "出", "甲", "基", "营", "养", "型", "芽", "孢", "杆", "菌", "。", "2", "0", "1", "1", "年", "，", "德", "国", "提", "出", "将", "商", "业", "化", "应", "用", "多", "年", "的", "生", "防", "菌", "化", "为", "解", "淀", "粉", "芽", "孢", "杆", "菌", "植", "物", "亚", "种", "。", "2", "0", "1", "5", "年", "，", "美", "国", "通", "过", "全", "基", "因", "组", "比", "较", "发", "现", "，", "甲", "基", "营", "养", "型", "芽", "孢", "杆", "菌", "与", "解", "淀", "粉", "芽", "孢", "杆", "菌", "植", "物", "亚", "种", "无", "法", "区", "分", "，", "实", "为", "同", "一", "物", "种", "。", "2", "0", "1", "6", "年", "，", "邓", "拉", "普", "等", "科", "学", "家", "继", "续", "利", "用", "比", "较", "基", "因", "组", "学", "和", "杂", "交", "技", "术", "，", "证", "实", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "、", "甲", "基", "营", "养", "型", "芽", "孢", "杆", "菌", "、", "解", "淀", "粉", "芽", "孢", "杆", "菌", "植", "物", "亚", "种", "三", "者", "属", "于", "同", "一", "个", "独", "立", "进", "化", "分", "支", "，", "且", "有", "别", "于", "解", "淀", "粉", "芽", "孢", "杆", "菌", "模", "式", "株", "。", "根", "据", "国", "际", "细", "菌", "命", "名", "法", "规", "的", "优", "先", "率", "，", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "作", "为", "最", "早", "合", "格", "发", "表", "的", "名", "称", "，", "被", "正", "式", "确", "立", "为", "独", "立", "物", "种", "。", "至", "此", "，", "包", "括", "著", "名", "商", "业", "化", "菌", "株", "F", "Z", "B", "4", "2", "、", "G", "B", "0", "3", "、", "Q", "S", "T", "-", "7", "1", "3", "、", "9", "9", "1", "2", "D", "等", "在", "内", "的", "一", "大", "批", "曾", "被", "归", "类", "为", "解", "淀", "粉", "芽", "孢", "杆", "菌", "的", "明", "星", "菌", "株", "，", "纷", "纷", "认", "祖", "归", "宗", "，", "重", "归", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "门", "下", "。", "分", "类", "地", "位", "的", "厘", "清", "，", "直", "接", "推", "动", "了", "产", "业", "化", "。", "2", "0", "2", "1", "年", "，", "四", "川", "百", "施", "东", "旺", "的", "C", "G", "M", "C", "C", "编", "号", "1", "4", "3", "8", "4", "菌", "株", "，", "在", "国", "内", "率", "先", "获", "得", "农", "药", "登", "记", "，", "标", "志", "着", "我", "国", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "正", "式", "进", "入", "商", "业", "化", "快", "车", "道", "。", "2", "0", "2", "5", "年", "被", "行", "业", "称", "为", "贝", "莱", "斯", "登", "记", "元", "年", "，", "M", "S", "T", "三", "C", "、", "1", "7", "2", "7", "、", "M", "B", "I", "6", "0", "0", "等", "多", "个", "菌", "株", "密", "集", "获", "批", "。", "2", "0", "2", "6", "年", "初", "，", "L", "M", "W", "2", "、", "B", "J", "1", "等", "菌", "株", "相", "继", "问", "世", "。", "截", "至", "2", "0", "2", "6", "年", "8", "月", "，", "我", "国", "已", "有", "近", "1", "0", "个", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "菌", "株", "获", "得", "或", "公", "示", "农", "药", "登", "记", "，", "应", "用", "场", "景", "从", "单", "纯", "杀", "菌", "剂", "扩", "展", "到", "杀", "线", "虫", "剂", "、", "杀", "螨", "剂", "等", "多", "维", "度", "。", "欧", "盟", "也", "于", "2", "0", "2", "5", "年", "批", "准", "菌", "株", "R", "T", "I", "3", "0", "1", "为", "低", "风", "险", "活", "性", "物", "质", "。", "关", "于", "贝", "莱", "斯", "芽", "孢", "杆", "菌", "的", "核", "心", "功", "能", "特", "点", "，", "与", "人", "工", "驯", "化", "与", "改", "造", "等", "课", "题", "，", "由", "于", "篇", "幅", "的", "问", "题", "，", "我", "们", "放", "在", "下", "一", "个", "视", "频", "详", "细", "讲", "解", "，", "也", "请", "感", "兴", "趣", "的", "朋", "友", "持", "续", "关", "注", "。"];
+const TIMES = [1.84, 1.92, 1.96, 2.08, 2.2, 2.44, 2.68, 2.84, 2.96, 3.08, 3.16, 3.32, 3.44, 3.6, 3.76, 3.96, 4.2, 4.44, 4.64, 4.76, 5, 5.12, 5.28, 5.48, 5.48, 5.76, 5.92, 6.12, 6.32, 6.48, 6.68, 6.84, 7.08, 7.56, 7.8, 8.04, 8.24, 8.4, 8.64, 8.8, 9.04, 9.24, 9.52, 9.72, 9.96, 10.2, 10.4, 10.64, 10.84, 11.04, 11.2, 11.36, 11.48, 11.72, 11.96, 12.2, 12.44, 12.64, 12.84, 12.92, 13.04, 13.46, 13.7, 13.9, 14.02, 14.18, 14.38, 14.5, 14.82, 15.02, 15.14, 15.34, 15.46, 15.62, 15.82, 15.94, 16.26, 16.5, 16.7, 16.82, 16.94, 17.1, 17.3, 17.5, 17.7, 17.86, 17.9, 18.1, 18.34, 18.42, 18.62, 18.78, 18.94, 19.14, 19.3, 19.54, 19.66, 19.78, 19.9, 20.06, 20.22, 20.38, 20.7, 20.74, 21.06, 21.26, 21.46, 21.5, 21.74, 21.86, 22.06, 22.22, 22.38, 22.5, 22.62, 22.74, 22.9, 23.02, 23.14, 23.3, 23.5, 23.66, 23.66, 23.78, 23.86, 23.98, 24.06, 24.22, 24.38, 24.5, 24.58, 24.74, 24.86, 25.02, 25.14, 25.3, 25.42, 25.5, 25.66, 25.78, 25.9, 26.1, 26.26, 26.42, 26.58, 26.66, 26.82, 26.94, 26.98, 27.14, 27.26, 27.42, 27.54, 27.62, 27.78, 27.86, 27.98, 28.06, 28.22, 28.38, 28.5, 28.62, 28.74, 28.86, 29.26, 29.38, 29.5, 29.62, 29.74, 29.94, 30.1, 30.26, 30.5, 30.74, 30.98, 31.18, 31.38, 31.62, 31.86, 32.06, 32.22, 32.38, 32.66, 32.94, 33.14, 33.18, 33.38, 33.66, 33.9, 34.06, 34.3, 34.46, 34.66, 34.82, 34.82, 34.98, 35.14, 35.34, 35.58, 35.78, 35.82, 36.14, 36.3, 36.5, 36.66, 36.9, 37.18, 37.38, 37.58, 37.78, 37.94, 38.1, 38.3, 38.46, 38.66, 38.78, 38.86, 39.02, 39.18, 39.3, 39.5, 39.66, 39.82, 40.02, 40.3, 40.46, 40.66, 40.9, 41.06, 41.26, 41.42, 41.54, 41.82, 41.98, 42.18, 42.38, 42.54, 42.78, 42.98, 43.18, 43.55, 43.71, 43.87, 43.99, 44.11, 44.39, 44.55, 44.71, 44.91, 45.15, 45.23, 45.39, 45.51, 45.71, 45.87, 46.07, 46.15, 46.31, 46.47, 46.63, 46.79, 47.03, 47.19, 47.43, 47.79, 47.95, 48.19, 48.19, 48.39, 48.63, 48.91, 48.95, 49.31, 49.55, 49.71, 50.03, 50.19, 50.47, 50.67, 50.83, 50.99, 51.15, 51.35, 51.59, 51.79, 52.11, 52.27, 52.55, 52.71, 52.99, 53.19, 53.47, 53.59, 53.79, 53.99, 54.23, 54.43, 54.67, 54.87, 55.15, 55.27, 55.55, 55.67, 55.95, 56.15, 56.31, 56.47, 56.59, 56.79, 56.99, 57.23, 57.35, 57.55, 57.79, 57.99, 58.19, 58.39, 58.59, 58.79, 58.91, 58.99, 59.19, 59.31, 59.43, 59.67, 59.91, 60.06, 60.21, 60.36, 60.51, 60.67, 60.79, 60.99, 61.15, 61.27, 61.27, 61.47, 61.63, 61.75, 61.95, 62.07, 62.27, 62.39, 62.55, 62.97, 63.21, 63.33, 63.49, 63.65, 63.89, 64.09, 64.25, 64.45, 64.61, 64.81, 65.05, 65.29, 65.57, 65.69, 65.97, 66.25, 66.37, 66.61, 66.97, 67.17, 67.41, 67.57, 67.73, 67.93, 68.01, 68.17, 68.37, 68.53, 68.65, 68.85, 68.93, 69.13, 69.13, 69.37, 69.53, 69.65, 69.89, 70.09, 70.25, 70.49, 70.61, 70.85, 71.01, 71.25, 71.41, 71.65, 71.93, 72.17, 72.37, 72.53, 72.69, 72.93, 73.13, 73.33, 73.53, 73.69, 73.89, 74.01, 74.17, 74.33, 74.49, 74.69, 74.93, 75.13, 75.29, 75.53, 75.69, 75.89, 76.09, 76.29, 76.45, 76.69, 76.85, 76.85, 77.05, 77.21, 77.37, 77.49, 77.61, 77.77, 77.93, 78.09, 78.25, 78.53, 78.73, 78.97, 79.17, 79.33, 79.57, 79.77, 79.97, 80.13, 80.25, 80.55, 80.79, 80.99, 81.11, 81.31, 81.55, 81.75, 81.91, 82.07, 82.27, 82.51, 82.63, 82.79, 82.91, 83.03, 83.11, 83.35, 83.43, 83.59, 83.83, 83.99, 84.23, 84.39, 84.55, 84.71, 84.83, 85.03, 85.19, 85.39, 85.51, 85.63, 85.83, 85.99, 86.11, 86.27, 86.47, 86.71, 86.91, 87.03, 87.39, 87.55, 87.63, 88.07, 88.15, 88.35, 88.47, 88.63, 88.91, 89.11, 89.27, 89.47, 89.63, 89.79, 89.95, 90.11, 90.35, 90.47, 90.67, 90.83, 90.91, 91.03, 91.11, 91.23, 91.43, 91.51, 91.71, 91.87, 92.11, 92.27, 92.47, 92.63, 92.79, 92.95, 93.23, 93.43, 93.63, 93.76, 93.89, 94.02, 94.15, 94.35, 94.51, 94.75, 94.91, 95.0, 95.1, 95.19, 95.35, 95.51, 95.71, 96.17, 96.33, 96.49, 96.69, 96.89, 96.97, 97.17, 97.29, 97.45, 97.61, 97.65, 97.93, 98.17, 98.33, 98.53, 98.65, 98.77, 98.81, 98.97, 99.21, 99.41, 99.57, 99.89, 100.09, 100.29, 100.45, 100.65, 101.13, 101.45, 101.69, 101.93, 102.13, 102.29, 102.49, 102.61, 102.77, 102.97, 103.17, 103.37, 103.57, 103.76, 103.95, 104.14, 104.33, 104.49, 104.69, 104.81, 105.01, 105.21, 106.03, 106.19, 106.51, 106.67, 106.91, 107.15, 107.35, 107.35, 107.47, 107.71, 107.87, 108.07, 108.23, 108.43, 108.59, 108.71, 108.91, 109.11, 109.27, 109.43, 109.63, 109.79, 109.95, 110.07, 110.23, 110.35, 110.51, 110.63, 110.83, 110.99, 111.15, 111.43, 111.67, 111.83, 111.99, 112.15, 112.47, 112.63, 112.91, 113.11, 113.35, 113.59, 114.23, 114.43, 114.59, 114.83, 115.07, 115.51, 115.75, 115.91, 116.19, 116.35, 116.51, 116.67, 116.75, 116.99, 117.15, 117.31, 117.79, 117.99, 118.19, 118.31, 118.39, 118.51, 118.75, 118.87, 119.03, 119.23, 119.39, 119.55, 119.67, 119.87, 120.07, 120.23, 120.39, 120.55, 120.71, 120.91, 120.95, 121.15, 121.27, 121.43, 121.51, 121.79, 121.99, 122.39, 122.55, 122.67, 122.83, 122.99, 123.15, 123.39, 123.71, 123.83, 124.07, 124.19, 124.39, 124.51, 124.67, 124.91, 125.03, 125.23, 125.79, 126.11, 126.23, 126.55, 126.75, 126.91, 127.07, 127.23, 127.77, 127.97, 128.21, 128.41, 128.65, 128.89, 129.17, 129.34, 129.51, 129.68, 129.85, 130.17, 130.33, 130.53, 130.77, 130.93, 131.09, 131.29, 131.45, 131.61, 131.73, 132.01, 132.17, 132.29, 132.45, 132.61, 132.77, 132.93, 133.13, 133.21, 133.41, 133.61, 133.77, 133.85, 134.13, 134.25, 134.37, 134.53, 134.69, 134.97, 135.13, 135.29, 135.45, 135.69, 135.85, 136.13, 136.33, 136.49, 136.65, 136.85, 137.13, 137.17, 137.45, 137.65, 137.89, 137.93, 138.17, 138.37, 138.57, 138.85, 138.97, 139.13, 139.41, 139.61, 139.73, 139.73, 139.97, 140.17, 140.37, 140.57, 140.73, 140.93, 141.09, 141.33, 141.61, 141.73, 141.97, 142.09, 142.25, 142.29, 142.49, 142.65, 142.77, 142.89, 143.05, 143.25, 143.45, 143.69, 143.81, 143.93, 144.09, 144.21, 144.37, 144.53, 144.69, 144.84, 145.0, 145.15, 145.31, 145.46, 145.62, 145.77, 145.93, 146.13, 146.13, 146.29, 146.45, 146.61, 146.77, 146.89, 147.21, 147.41, 147.53, 147.65, 147.77, 147.93, 148.05, 148.25, 148.41, 148.57, 148.57, 148.77, 148.89, 149.05, 149.45, 149.61, 149.85, 150.05, 150.33, 150.49, 150.65, 150.93, 151.09, 151.25, 151.45, 151.73, 151.85, 152.13, 152.41, 152.57, 152.77, 152.97, 153.09, 153.29, 153.41, 153.57, 153.85, 154.01, 154.29, 154.45, 154.65, 154.85, 155.17, 155.41, 155.57, 155.77, 155.97, 156.17, 156.37, 156.83, 157.27, 157.43, 157.67, 157.87, 158.07, 158.27, 158.51, 158.83, 158.95, 159.15, 159.32, 159.5, 159.71, 160.03, 160.15, 160.31, 160.49, 160.67, 160.85, 161.03, 161.79, 161.96, 162.13, 162.3, 162.47, 162.67, 162.71, 162.83, 162.95, 163.23, 163.39, 163.59, 163.75, 163.95, 164.11, 164.35, 164.51, 164.71, 164.87, 165.03, 165.15, 165.35, 165.55, 165.67, 165.83, 166.11, 166.15, 166.35, 166.47, 166.67, 166.87, 167.03, 167.19, 167.92, 168.08, 168.28, 168.56, 168.76, 168.96, 169.12, 169.32, 169.6, 169.76, 169.92, 169.92, 170.12, 170.28, 170.44, 170.64, 170.84, 170.96, 171.12, 171.28, 171.48, 171.64, 171.84, 172.04, 172.16, 172.52, 172.69, 172.86, 173.03, 173.2, 173.4, 173.4, 173.6, 173.72, 173.92, 174.12, 174.32, 174.68, 174.8, 175, 175.07, 175.13, 175.44, 175.6, 175.76, 175.96, 176.12, 176.32, 176.48, 176.64, 176.88, 177.08, 177.36, 177.48, 177.64, 177.84, 178, 178.16, 178.32, 178.52, 178.92, 179.12, 179.28, 179.6, 179.76, 179.88, 180.04, 180.16, 180.25, 180.35, 180.68, 180.84, 181, 181.2, 181.4, 181.56, 181.94, 182.32, 182.32, 182.44, 182.64, 182.84, 183, 183.36, 183.6, 183.72, 184, 184.16, 184.32, 184.48, 184.64, 184.84, 185.08, 185.32, 185.48, 185.68, 185.96, 186.12, 186.24, 186.44, 186.6, 186.76, 186.92, 187.2, 187.4, 187.6, 187.8, 187.92, 188.08, 188.24, 188.44, 188.56, 188.72, 188.98, 189.12, 189.26, 189.4, 189.54, 189.74, 189.86, 190.02, 190.22, 190.38, 190.5, 190.7, 190.9, 191.18, 191.62, 191.9, 192.1, 192.26, 192.42, 192.86, 193.1, 193.3, 193.46, 193.62, 193.98, 194.14, 194.3, 194.5, 194.7, 195.02, 195.18, 195.34, 195.5, 195.66, 195.86, 195.94, 196.14, 196.34, 196.54, 196.66, 196.94, 197.14, 197.26, 197.54, 197.66, 197.86, 198.06, 198.5, 198.78, 199.06, 199.26, 199.54, 199.74, 200.18, 200.42, 200.58, 200.9, 201.1, 201.3, 201.46, 201.74, 201.94, 202.18, 202.3, 202.54, 202.97, 203.11, 203.25, 203.39, 203.53, 203.73, 203.73, 203.89, 204.05, 204.21, 204.33, 204.65, 204.81, 205.01, 205.29, 205.45, 205.61, 205.77, 205.93, 206.37, 206.65, 206.89, 207.05, 207.25, 207.57, 207.77, 207.97, 208.17, 208.45, 208.81, 209.05, 209.21, 209.57, 209.73, 209.93, 210.09, 210.33, 210.53, 210.77, 210.93, 211.21, 211.37, 211.57, 211.77, 211.97, 212.25, 212.37, 212.57, 212.73, 212.89, 213.05, 213.25, 213.59, 213.73, 213.87, 214.01, 214.15, 214.31, 214.43, 214.63, 214.87, 214.99, 215.19, 215.31, 215.43, 215.63, 215.79, 216.15, 216.27, 216.47, 216.71, 216.95, 217.11, 217.31, 217.51, 217.71, 217.91, 218.15, 218.35, 218.51, 218.67, 218.99, 219.23, 219.55, 219.71, 219.91, 220.15, 220.27, 220.47, 220.63, 220.83, 221.11, 221.35, 221.59, 221.71, 221.87, 222.15, 222.31, 222.51, 222.63, 222.79, 223.39, 223.67, 223.83, 224.11, 224.31, 224.47, 224.67, 224.99, 225.19, 225.47, 225.63, 226.39, 226.59, 226.83, 226.99, 227.15, 227.39, 227.59, 227.75, 227.95, 228.11, 228.23, 228.39, 228.63, 228.67, 228.99, 229.23, 229.47, 229.67, 229.99, 230.27, 230.43, 230.71, 230.91, 231.07, 231.23, 231.55, 231.71, 231.99, 232.03, 232.59, 232.75, 232.91, 233.15, 233.31, 233.51, 233.75, 233.91, 234.03, 234.19, 234.31, 234.51, 234.63, 234.75, 234.95, 235.19, 235.39, 235.55, 235.75, 235.87, 236.07, 236.23, 236.43, 236.59, 236.75, 236.95, 237.15, 237.39, 237.51, 237.71, 237.83, 237.99, 238.15, 238.35, 238.7, 238.98, 239.18, 239.42, 239.62, 239.78, 240.02, 240.26, 240.38, 240.58, 240.82, 241.14, 241.34, 241.62, 241.66, 241.82, 241.98, 242.18, 242.34, 242.58, 242.7, 242.94, 243.18, 243.5, 243.66, 243.82, 244.06, 244.26, 244.46, 244.62, 244.72, 244.98, 245.16, 245.34, 245.34, 245.49, 245.63, 245.78, 246.14, 246.35, 246.57, 246.78, 246.94, 247.1, 247.42, 247.58, 247.74, 247.94, 248.14, 248.3, 248.42, 248.58, 248.78, 248.98, 249.22, 249.42, 249.62, 249.78, 250.14, 250.5, 250.74, 250.9, 251.14, 251.3, 251.46, 251.62, 251.78, 251.98, 252.14, 252.38, 252.62, 252.7, 253.08, 253.24, 253.4, 253.6, 253.76, 254, 254.04, 254.24, 254.48, 254.84, 255.04, 255.24, 255.44, 255.64, 255.8, 255.96, 256.2, 256.32, 256.52, 256.6, 256.8, 256.96, 257.08, 257.2, 257.44, 257.64, 257.68, 257.96, 258.12, 258.24, 258.44, 258.56, 258.72, 258.92, 259, 259.28, 259.6, 259.76, 259.92, 260.08, 260.24, 260.48, 260.6, 260.8, 261.04, 261.32, 261.48, 261.72, 261.84, 262.04, 262.19, 262.34, 262.49, 262.76, 262.88, 263.04, 263.49, 263.64, 263.79, 263.95, 264.1, 264.33, 264.53, 264.61, 264.73, 264.97, 265.13, 265.33, 265.49, 265.73, 265.93, 266.05, 266.21, 266.41, 266.61, 266.69, 267.01, 267.21, 267.37, 267.49, 267.69, 268.01, 268.21, 268.37, 268.61, 268.77, 268.97, 269.13, 269.53, 269.73, 269.85, 270.01, 270.13, 270.33, 270.37, 270.57, 270.77, 270.93, 271.05, 271.37, 271.54, 271.71, 271.88, 272.05, 272.25, 272.49, 272.65, 272.81, 273.01, 273.45, 273.61, 273.85, 274.01, 274.25, 274.49, 274.61, 274.89, 275.29, 275.45, 275.61, 275.85, 276.17, 276.49, 276.97, 277.13, 277.32, 277.5, 277.69, 278.09, 278.22, 278.36, 278.57, 278.77, 278.97, 279.17, 279.45, 279.69, 279.89, 280.17, 280.41, 280.69, 280.85, 281.09, 281.33, 281.77, 281.93, 282.09, 282.25, 282.41, 282.57, 282.81, 283.05, 283.24, 283.42, 283.85, 284.05, 284.17, 284.33, 284.53, 284.73, 284.93, 285.17, 285.41, 285.65, 285.81, 286.05, 286.13, 286.6, 286.8, 286.96, 287.1, 287.24, 287.38, 287.52, 287.68, 287.88, 288.12, 288.2, 288.4, 288.56, 288.72, 288.92, 289.12, 289.22, 289.32, 289.56, 289.72, 289.88, 290.08, 290.24, 290.4, 290.56, 291, 291.2, 291.36, 291.56, 291.72, 292, 292.16, 292.32, 292.44, 292.64, 292.84, 292.96, 293.32, 293.48, 293.68, 293.92, 294.08, 294.32, 294.56, 294.8, 295, 295.2, 295.52, 295.68, 295.84, 296.04, 296.28, 296.48, 296.72, 296.8, 297.08, 297.36, 297.64, 297.8, 298, 298.2, 298.36, 298.56, 298.72, 298.92, 299.08, 299.28, 299.44, 299.56, 299.68, 299.8, 299.92, 300.12, 300.32, 300.52, 300.72, 301.38, 301.51, 301.65, 301.9, 302.06, 302.22, 302.46, 302.7, 302.94, 303.14, 303.38, 303.58, 303.78, 303.98, 304.1, 304.34, 304.54, 304.78, 304.94, 305.14, 305.34, 305.5, 305.66, 305.82, 305.94, 306.14, 306.26, 306.38, 306.54, 306.82, 307.02, 307.26, 307.26, 307.5, 307.74, 308.02, 308.14, 308.34, 308.54, 308.74, 308.86, 309.1, 309.26, 309.5, 309.7, 309.9, 310.02, 310.26, 310.38, 310.54, 310.66, 310.78, 310.86, 311.02, 311.14, 311.26, 311.38, 311.54, 311.62, 311.74, 311.82, 311.94, 312.14, 312.22, 312.38, 312.54, 312.66, 312.86, 313.02, 313.18, 313.3, 313.38, 313.5, 313.62, 313.78, 313.98, 314.1, 314.3, 314.42];
+const SCENES = [["s-open",0.0],["s-why",26.66],["s-ability",58.39],["s-origin",77.93],["s-name",106.51],["s-crisis",153.41],["s-home",216.71],["s-industry",235.55],["s-end",275.29]];
+const CHAP_NAMES = ["开场", "为什么是全能选手", "促生·防病·修复", "曲折身世", "命名之争", "分类危机·2016确立", "明星菌株认祖归宗", "产业化快车道", "下期预告"];
+
+var audio = document.getElementById('voice');
+var sentenceEl = document.getElementById('sentence');
+var btnPlay = document.getElementById('btnPlay');
+var btnReplay = document.getElementById('btnReplay');
+var overlay = document.getElementById('overlay');
+var progFill = document.getElementById('progFill');
+var flashEl = document.getElementById('flash');
+var state = 'idle';
+var curIdx = -1;
+var curScene = -1;
+var rafId = 0;
+var SEP = '。！？!?；;，,、 ';
+
+function escHtml(s){ return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+function findCharIndex(t){
+  var lo=0,hi=TIMES.length-1,ans=0;
+  while(lo<=hi){ var mid=(lo+hi)>>1; if(TIMES[mid]<=t){ans=mid;lo=mid+1;}else{hi=mid-1;} }
+  return ans;
+}
+/* 固定断句单元：一次性预切分（句末标点分句 → 逗号顿号拆子段 → 超10字在可断点截断，不可断整段保留），
+   单元边界固定不变；运行时只查当前字落在哪个单元，整条常驻显示、逐字高亮，读完整单元才整体切换 —— 绝不滚动 */
+var UNITS = buildUnits();
+function buildUnits(){
+  var units = [], s = 0;
+  for(var i=0;i<CHARS.length;i++){
+    if('。！？!?；;'.indexOf(CHARS[i])>=0){ units.push([s,i]); s=i+1; }
+  }
+  if(s<CHARS.length) units.push([s,CHARS.length-1]);
+  var out = [];
+  for(var u=0;u<units.length;u++){
+    var a=units[u][0], b=units[u][1];
+    var segA=a;
+    while(segA<=b){
+      var pos=-1;
+      for(var i=segA;i<=b;i++){ if('，、'.indexOf(CHARS[i])>=0){ pos=i; break; } }
+      var end = (pos>=0)? pos : b;
+      var len = end-segA+1;
+      if(len>10){
+        var cut=-1;
+        for(var i2=end;i2>segA;i2--){
+          var l=i2-segA+1;
+          if(l>=8 && l<=10 && ('的地得'.indexOf(CHARS[i2])>=0 || SEP.indexOf(CHARS[i2])>=0)){ cut=i2; break; }
+        }
+        if(cut<0){
+          if(end-segA+1<=16){ out.push([segA,end]); segA=end+1; continue; }
+          cut=segA+9;
+        }
+        out.push([segA,cut]); segA=cut+1;
+      } else {
+        out.push([segA,end]); segA=end+1;
+      }
+    }
+  }
+  var merged=[];
+  for(var k=0;k<out.length;k++){
+    var ua=out[k][0], ub=out[k][1];
+    var tl=ub-ua+1;
+    if('，、：。！？!?；;'.indexOf(CHARS[ub])>=0) tl--;
+    if(merged.length>0 && tl<4){ merged[merged.length-1][1]=ub; }
+    else { merged.push([ua,ub]); }
+  }
+  return merged;
+}
+var curUnit = -1;
+/* 标点显示规则：行末断句标点（，、：等）不显示，句末标点（。！？!?；;）保留，单元中间标点正常显示 */
+function renderSubtitle(idx){
+  if(curUnit<0 || idx<UNITS[curUnit][0] || idx>UNITS[curUnit][1]){
+    var ui=0;
+    while(ui<UNITS.length-1 && idx>UNITS[ui][1]) ui++;
+    curUnit=ui;
+  }
+  var a=UNITS[curUnit][0], b=UNITS[curUnit][1];
+  var end=b;
+  if('，、：'.indexOf(CHARS[b])>=0) end=b-1;                 /* 行尾断句标点：不渲染 */
+  var h='';
+  for(var i=a;i<=end;i++){
+    var ch=escHtml(CHARS[i]);
+    if(i===idx) h+='<span class="cur">'+ch+'</span>';
+    else if(i<idx) h+='<span class="done">'+ch+'</span>';
+    else h+=ch;
+  }
+  sentenceEl.innerHTML=h;
+}
+function sceneAt(t){
+  var idx=0;
+  for(var i=0;i<SCENES.length;i++){ if(t>=SCENES[i][1]) idx=i; }
+  return idx;
+}
+var SFX_CUES = [
+  { t: 0.05, sfx: 'whoosh' },
+  { t: 2.20, sfx: 'whoosh' },
+  { t: 8.04, sfx: 'pop' },
+  { t: 14.82, sfx: 'pop' },
+  { t: 17.86, sfx: 'ding' },
+  { t: 26.66, sfx: 'whoosh' },
+  { t: 34.20, sfx: 'pop' },
+  { t: 45.00, sfx: 'pop' },
+  { t: 50.50, sfx: 'pop' },
+  { t: 58.39, sfx: 'whoosh' },
+  { t: 65.20, sfx: 'pop' },
+  { t: 71.80, sfx: 'ding' },
+  { t: 77.93, sfx: 'whoosh' },
+  { t: 86.50, sfx: 'pop' },
+  { t: 98.20, sfx: 'pop' },
+  { t: 106.51, sfx: 'whoosh' },
+  { t: 118.40, sfx: 'ding' },
+  { t: 135.20, sfx: 'pop' },
+  { t: 153.41, sfx: 'whoosh' },
+  { t: 170.50, sfx: 'ding' },
+  { t: 195.20, sfx: 'pop' },
+  { t: 216.71, sfx: 'whoosh' },
+  { t: 224.20, sfx: 'pop' },
+  { t: 235.55, sfx: 'whoosh' },
+  { t: 248.30, sfx: 'pop' },
+  { t: 262.50, sfx: 'pop' },
+  { t: 275.29, sfx: 'whoosh' },
+  { t: 282.00, sfx: 'chime' }
+];
+
+var lastCueTime = -0.5;
+function checkSfxCues(t) {
+  if (!window.VibeSound || window.__RECORDING__) return;
+  if (t < lastCueTime) { lastCueTime = t - 0.2; }
+  for (var i = 0; i < SFX_CUES.length; i++) {
+    var cue = SFX_CUES[i];
+    if (t >= cue.t && lastCueTime < cue.t && (t - cue.t) < 0.35) {
+      VibeSound.play(cue.sfx);
+    }
+  }
+  lastCueTime = t;
+}
+
+function setScene(idx){
+  if(idx===curScene || idx<0 || idx>=SCENES.length) return;
+  var prev=curScene;
+  if(prev>=0 && prev<SCENES.length){
+    var prevEl = document.getElementById(SCENES[prev][0]);
+    if(prevEl) prevEl.classList.remove('active');
+  }
+  curScene=idx;
+  var el=document.getElementById(SCENES[idx][0]);
+  if(el) el.classList.add('active');
+  var ct=document.getElementById('chapText');
+  if(ct) ct.innerHTML='第 '+(idx+1)+' / '+SCENES.length+' 节';
+  if(idx>0 && prev!==idx && flashEl){
+    flashEl.classList.remove('go'); void flashEl.offsetWidth; flashEl.classList.add('go');
+  }
+}
+var S1 = document.getElementById('s-open');
+function setPhase(p){ if(S1 && S1.getAttribute('data-phase')!==p) S1.setAttribute('data-phase',p); }
+
+function syncTime(t){
+  var sc = sceneAt(t);
+  if(sc !== curScene){
+    setScene(sc);
+    triggerSceneGfx(sc);
+  }
+  if(sc === 0){
+    setPhase(t<2.20?'splash':(t<8.04?'topic':(t<14.82?'hook':(t<17.86?'promise':(t<24.74?'cta':'preview')))));
+  }
+  var idx = findCharIndex(t);
+  if(idx !== curIdx){
+    curIdx = idx;
+    renderSubtitle(idx);
+  }
+  checkSfxCues(t);
+  var dur = (audio && audio.duration && !isNaN(audio.duration)) ? audio.duration : 314.56;
+  if(progFill) progFill.style.width = Math.min(100, (t / dur * 100)).toFixed(2) + '%';
+}
+window.syncTime = syncTime;
+window.SCENES = SCENES;
+window.CHAP_NAMES = CHAP_NAMES;
+
+function startPlay(){
+  if(state==='playing') return;
+  if(window.VibeSound) {
+    VibeSound.init();
+    VibeSound.play('whoosh');
+  }
+  overlay.classList.add('hide');
+  curScene=-1; curIdx=-1;
+  lastCueTime = -0.5;
+  syncTime(0);
+  audio.currentTime=0;
+  audio.play().then(function(){
+    state='playing';
+    flashEl.classList.remove('go'); void flashEl.offsetWidth; flashEl.classList.add('go');
+    if(!rafId) loop();
+  }).catch(function(e){
+    console.warn("Audio play:", e);
+  });
+}
+function endPlay(){
+  state='ended';
+  if(progFill) progFill.style.width='100%';
+  btnReplay.classList.add('show');
+}
+function loop(){
+  if(state!=='playing'){ rafId=0; return; }
+  var t=audio.currentTime;
+  var dur = (audio && audio.duration && !isNaN(audio.duration)) ? audio.duration : 314.56;
+  if(audio.ended || t>=dur-0.05){ endPlay(); rafId=0; return; }
+  syncTime(t);
+  rafId=requestAnimationFrame(loop);
+}
+btnPlay.addEventListener('click',function(){ startPlay(); });
+btnReplay.addEventListener('click',function(){
+  btnReplay.classList.remove('show');
+  startPlay();
+});
+renderSubtitle(0);
+
+/* ===== 环形/进度图形：场景激活后从 0 画到目标值 ===== */
+function animRing(ring, target){
+  if(!ring) return;
+  var r = parseFloat(ring.getAttribute('r')) || 52;
+  var len = Math.PI*2*r;
+  ring.setAttribute('stroke-dasharray', len.toFixed(1)+' 0.1');
+  var t0 = performance.now();
+  function step(now){
+    var p = Math.min(1, (now-t0)/1200);
+    var eased = 1-Math.pow(1-p,3);
+    ring.setAttribute('stroke-dashoffset', (len*(1-target*eased)).toFixed(1));
+    ring.style.opacity = 1;
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+/* 场景激活时触发关键图形动画（S2 环形5%~8%、S7 96h环） */
+function triggerSceneGfx(idx){
+  if(idx===5){
+    var arc=document.querySelector('#s-crisis .ring-arc');
+    if(arc) animRing(arc, 0.89);
+  } else if(idx===7){
+    var r2=document.querySelector('#s-industry .ring-arc');
+    if(r2) animRing(r2, 0.95);
+  }
+}
+
+/* ===== VibeSound 引擎 ===== */
+var VibeSound = (function() {
+  var ctx = null;
+  var noiseBuffer = null;
+
+  function getCtx() {
+    if (window.__RECORDING__) return null;
+    if (!ctx && (window.AudioContext || window.webkitAudioContext)) {
+      try {
+        ctx = new (window.AudioContext || window.webkitAudioContext)();
+      } catch (e) {
+        console.warn('AudioContext 初始化异常:', e);
+      }
+    }
+    if (ctx && ctx.state === 'suspended') {
+      ctx.resume().catch(function() {});
+    }
+    return ctx;
+  }
+
+  function getNoiseBuffer(ac) {
+    if (noiseBuffer) return noiseBuffer;
+    var dur = 0.5;
+    var buf = ac.createBuffer(1, Math.floor(ac.sampleRate * dur), ac.sampleRate);
+    var data = buf.getChannelData(0);
+    var b0 = 0, b1 = 0, b2 = 0;
+    for (var i = 0; i < data.length; i++) {
+      var white = Math.random() * 2 - 1;
+      b0 = 0.99765 * b0 + white * 0.0990460;
+      b1 = 0.96300 * b1 + white * 0.2965164;
+      b2 = 0.57000 * b2 + white * 1.0526913;
+      data[i] = (b0 + b1 + b2 + white * 0.1848) * 0.45;
+    }
+    noiseBuffer = buf;
+    return noiseBuffer;
+  }
+
+  return {
+    init: function() { getCtx(); },
+    // 1. 温润水滴微触感 (Organic Droplet Pop · 560Hz -> 240Hz，饱满清晰)
+    pop: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var osc = ac.createOscillator();
+      var gain = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(560, now);
+      osc.frequency.exponentialRampToValueAtTime(240, now + 0.10);
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.24, now + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.10);
+      osc.connect(gain);
+      gain.connect(ac.destination);
+      osc.start(now);
+      osc.stop(now + 0.10);
+    },
+    // 2. 电影感温润风切 (Cinematic Warm Whoosh · 1100Hz 低通暖化粉红气流)
+    whoosh: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var buf = getNoiseBuffer(ac);
+      var src = ac.createBufferSource();
+      src.buffer = buf;
+      var filter = ac.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.Q.value = 1.0;
+      filter.frequency.setValueAtTime(200, now);
+      filter.frequency.exponentialRampToValueAtTime(1100, now + 0.16);
+      filter.frequency.exponentialRampToValueAtTime(260, now + 0.42);
+      var gain = ac.createGain();
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.16, now + 0.14);
+      gain.gain.linearRampToValueAtTime(0.0001, now + 0.42);
+      src.connect(filter);
+      filter.connect(gain);
+      gain.connect(ac.destination);
+      src.start(now);
+      src.stop(now + 0.42);
+    },
+    // 3. 柔和水晶编钟 (Soft Acoustic Ding · 1046Hz + 1568Hz 双音纯净谐波)
+    ding: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var filter = ac.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 2200;
+      var masterGain = ac.createGain();
+      masterGain.gain.setValueAtTime(0.18, now);
+      filter.connect(masterGain);
+      masterGain.connect(ac.destination);
+
+      [1046.5, 1567.98].forEach(function(freq, i) {
+        var osc = ac.createOscillator();
+        var gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(freq, now);
+        var vol = i === 0 ? 0.8 : 0.4;
+        gain.gain.setValueAtTime(0.001, now);
+        gain.gain.linearRampToValueAtTime(vol, now + 0.005);
+        gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
+        osc.connect(gain);
+        gain.connect(filter);
+        osc.start(now);
+        osc.stop(now + 0.45);
+      });
+    },
+    // 4. 片尾温润和弦 (Soft Ambient Chime · 4音温润和弦)
+    chime: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var notes = [
+        { f: 523.25, d: 0.00, v: 0.16 },
+        { f: 659.25, d: 0.06, v: 0.14 },
+        { f: 783.99, d: 0.12, v: 0.12 },
+        { f: 1046.50, d: 0.18, v: 0.10 }
+      ];
+      notes.forEach(function(n) {
+        var t = now + n.d;
+        var osc = ac.createOscillator();
+        var gain = ac.createGain();
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(n.f, t);
+        gain.gain.setValueAtTime(0.001, t);
+        gain.gain.linearRampToValueAtTime(n.v, t + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + 1.1);
+        osc.connect(gain);
+        gain.connect(ac.destination);
+        osc.start(t);
+        osc.stop(t + 1.1);
+      });
+    },
+    // 5. 科技微触 (Crisp Subtle Click)
+    click: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var osc = ac.createOscillator();
+      var gain = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(880, now);
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.18, now + 0.003);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
+      osc.connect(gain);
+      gain.connect(ac.destination);
+      osc.start(now);
+      osc.stop(now + 0.05);
+    },
+    play: function(type) {
+      try {
+        if (type === 'whoosh') this.whoosh();
+        else if (type === 'pop') this.pop();
+        else if (type === 'ding') this.ding();
+        else if (type === 'chime') this.chime();
+        else if (type === 'click') this.click();
+      } catch (err) {}
+    }
+  };
+})();
+window.VibeSound = VibeSound;
+
+/* ===== VibeBackgrounds 高能背景预设引擎 ===== */
+var VibeBackgrounds = (function () {
+  "use strict";
+
+  // 色彩辅助解析
+  function parseColor(c, defaultColor) {
+    if (!c) return defaultColor || { r: 74, g: 222, b: 128 };
+    if (typeof c === "object" && c.r !== undefined) return c;
+    if (c.startsWith("#")) {
+      var hex = c.replace("#", "");
+      if (hex.length === 3) hex = hex[0] + hex[0] + hex[1] + hex[1] + hex[2] + hex[2];
+      var num = parseInt(hex, 16);
+      return { r: (num >> 16) & 255, g: (num >> 8) & 255, b: num & 255 };
+    }
+    // 默认绿色
+    return { r: 74, g: 222, b: 128 };
+  }
+
+  // 1. 预设：深海/微生物浮游细胞光斑 (bio-bubbles) —— 生物、农业、显微科普首选
+  function presetBioBubbles(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var col2 = parseColor(opt.color2, { r: 56, g: 189, b: 248 }); // 辅助微青色
+    var count = Math.floor(45 * (opt.density || 1.0));
+    var speed = (opt.speed || 1.0);
+
+    var orbs = [];
+    for (var i = 0; i < count; i++) {
+      var layer = Math.random(); // 景深: 0(远景小微粒) ~ 1(近景大光斑)
+      var r = layer < 0.6 ? (Math.random() * 4 + 1.5) : (Math.random() * 26 + 10);
+      var isCol2 = Math.random() < 0.35;
+      orbs.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: r,
+        baseR: r,
+        layer: layer,
+        color: isCol2 ? col2 : col,
+        vy: -(Math.random() * 0.45 + 0.15) * speed * (0.6 + layer * 0.8),
+        vx: (Math.random() - 0.5) * 0.25 * speed,
+        alpha: layer < 0.6 ? (Math.random() * 0.4 + 0.2) : (Math.random() * 0.18 + 0.08),
+        pulseSpeed: Math.random() * 0.03 + 0.015,
+        pulseOffset: Math.random() * Math.PI * 2
+      });
+    }
+
+    var frame = 0;
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+
+      for (var i = 0; i < orbs.length; i++) {
+        var o = orbs[i];
+        o.y += o.vy;
+        o.x += o.vx + Math.sin(frame * 0.018 + o.pulseOffset) * 0.15;
+        if (o.y < -o.r * 2) { o.y = H + o.r * 2; o.x = Math.random() * W; }
+        if (o.x < -o.r * 2) o.x = W + o.r * 2;
+        if (o.x > W + o.r * 2) o.x = -o.r * 2;
+
+        var pulse = Math.sin(frame * o.pulseSpeed + o.pulseOffset) * 0.15 + 1.0;
+        var curR = o.baseR * pulse;
+
+        if (o.layer >= 0.6) {
+          // 近景大光斑带柔焦径向渐变
+          var grad = ctx.createRadialGradient(o.x, o.y, 0, o.x, o.y, curR);
+          var a = o.alpha * pulse;
+          grad.addColorStop(0, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + a + ")");
+          grad.addColorStop(0.5, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + (a * 0.4) + ")");
+          grad.addColorStop(1, "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + ", 0)");
+          ctx.beginPath();
+          ctx.arc(o.x, o.y, curR, 0, Math.PI * 2);
+          ctx.fillStyle = grad;
+          ctx.fill();
+        } else {
+          // 远景微粒，清晰实心点
+          ctx.beginPath();
+          ctx.arc(o.x, o.y, curR, 0, Math.PI * 2);
+          ctx.fillStyle = "rgba(" + o.color.r + "," + o.color.g + "," + o.color.b + "," + o.alpha + ")";
+          ctx.fill();
+        }
+      }
+    };
+  }
+
+  // 2. 预设：科技星芒/神经元能量网 (constellation-v2) —— AI、技术机理、数据连接
+  function presetConstellation(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var count = Math.floor(58 * (opt.density || 1.0));
+    var speed = (opt.speed || 1.0);
+    var maxDist = 180 * 180;
+
+    var pts = [];
+    for (var i = 0; i < count; i++) {
+      pts.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 2.8 + 1.2,
+        vx: (Math.random() - 0.5) * 0.45 * speed,
+        vy: (Math.random() - 0.5) * 0.45 * speed,
+        a: Math.random() * 0.45 + 0.3
+      });
+    }
+
+    // 沿连线流动的能量脉冲小光点
+    var pulses = [];
+    for (var k = 0; k < 6; k++) {
+      pulses.push({ p1: 0, p2: 1, prog: Math.random(), speed: 0.015 * speed });
+    }
+
+    var frame = 0;
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+
+      // 更新节点
+      for (var i = 0; i < pts.length; i++) {
+        var p = pts[i];
+        p.x += p.vx; p.y += p.vy;
+        if (p.x < 0 || p.x > W) p.vx *= -1;
+        if (p.y < 0 || p.y > H) p.vy *= -1;
+
+        // 绘制发光节点
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + p.a + ")";
+        ctx.shadowColor = "rgba(" + col.r + "," + col.g + "," + col.b + ", 0.6)";
+        ctx.shadowBlur = 8;
+        ctx.fill();
+        ctx.shadowBlur = 0;
+      }
+
+      // 绘制连线
+      var activePairs = [];
+      for (var i = 0; i < pts.length; i++) {
+        for (var j = i + 1; j < pts.length; j++) {
+          var p1 = pts[i], p2 = pts[j];
+          var dx = p1.x - p2.x, dy = p1.y - p2.y;
+          var d2 = dx * dx + dy * dy;
+          if (d2 < maxDist) {
+            var alpha = (1 - d2 / maxDist) * 0.22;
+            ctx.beginPath();
+            ctx.moveTo(p1.x, p1.y);
+            ctx.lineTo(p2.x, p2.y);
+            ctx.strokeStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + alpha + ")";
+            ctx.lineWidth = 1.2;
+            ctx.stroke();
+            if (activePairs.length < 24) activePairs.push([p1, p2]);
+          }
+        }
+      }
+
+      // 能量穿梭光梭
+      if (activePairs.length > 0) {
+        for (var k = 0; k < pulses.length; k++) {
+          var pulse = pulses[k];
+          pulse.prog += pulse.speed;
+          if (pulse.prog >= 1.0) {
+            pulse.prog = 0;
+            pulse.pairIdx = Math.floor(Math.random() * activePairs.length);
+          }
+          var pair = activePairs[pulse.pairIdx % activePairs.length];
+          if (pair) {
+            var qx = pair[0].x + (pair[1].x - pair[0].x) * pulse.prog;
+            var qy = pair[0].y + (pair[1].y - pair[0].y) * pulse.prog;
+            ctx.beginPath();
+            ctx.arc(qx, qy, 2.2, 0, Math.PI * 2);
+            ctx.fillStyle = "#ffffff";
+            ctx.shadowColor = "rgba(" + col.r + "," + col.g + "," + col.b + ", 0.9)";
+            ctx.shadowBlur = 10;
+            ctx.fill();
+            ctx.shadowBlur = 0;
+          }
+        }
+      }
+    };
+  }
+
+  // 3. 预设：螺旋基因流光/双螺旋光尘 (dna-spiral) —— 基因编辑、生化、生命科学
+  function presetDnaSpiral(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 56, g: 189, b: 248 }); // 主青色
+    var col2 = parseColor(opt.color2, { r: 74, g: 222, b: 128 }); // 辅绿色
+    var speed = (opt.speed || 1.0) * 0.022;
+
+    var count = Math.floor(40 * (opt.density || 1.0));
+    var sparks = [];
+    for (var i = 0; i < count; i++) {
+      sparks.push({
+        t: (i / count) * Math.PI * 4,
+        y: (i / count) * H,
+        r: Math.random() * 2.5 + 1.2,
+        twinkle: Math.random() * Math.PI * 2
+      });
+    }
+
+    var frame = 0;
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+      var tOffset = frame * speed;
+      var cx = W / 2;
+      var amplitude = W * 0.28;
+
+      for (var i = 0; i < sparks.length; i++) {
+        var s = sparks[i];
+        s.y -= 1.4 * (opt.speed || 1.0);
+        if (s.y < 0) s.y = H;
+
+        var ang = s.t + tOffset + (s.y / H) * Math.PI * 3;
+        var x1 = cx + Math.sin(ang) * amplitude;
+        var z1 = Math.cos(ang); // 景深
+        var x2 = cx - Math.sin(ang) * amplitude;
+        var z2 = -z1;
+
+        // 梯级阶梯横向发光连接线
+        if (i % 2 === 0 && Math.abs(z1) < 0.7) {
+          ctx.beginPath();
+          ctx.moveTo(x1, s.y);
+          ctx.lineTo(x2, s.y);
+          ctx.strokeStyle = "rgba(148, 163, 184, " + (0.12 * (1 - Math.abs(z1))) + ")";
+          ctx.lineWidth = 1;
+          ctx.stroke();
+        }
+
+        // 双螺旋两翼粒子点
+        var alpha1 = (z1 * 0.4 + 0.55);
+        var r1 = Math.max(1, s.r * (z1 * 0.35 + 1.0));
+        ctx.beginPath();
+        ctx.arc(x1, s.y, r1, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + alpha1 + ")";
+        ctx.fill();
+
+        var alpha2 = (z2 * 0.4 + 0.55);
+        var r2 = Math.max(1, s.r * (z2 * 0.35 + 1.0));
+        ctx.beginPath();
+        ctx.arc(x2, s.y, r2, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col2.r + "," + col2.g + "," + col2.b + "," + alpha2 + ")";
+        ctx.fill();
+      }
+    };
+  }
+
+  // 4. 预设：赛博透视网格 + 极光光柱 (cyber-grid) —— 工业生产、硬科技、数字盘点
+  function presetCyberGrid(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var horizonY = H * 0.65;
+    var speed = (opt.speed || 1.0);
+
+    var gridOffset = 0;
+    var stars = [];
+    for (var s = 0; s < 30; s++) {
+      stars.push({
+        x: Math.random() * W,
+        y: Math.random() * horizonY,
+        r: Math.random() * 1.8 + 0.8,
+        a: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      gridOffset = (gridOffset + 1.2 * speed) % 50;
+
+      // 上半部极光夜空星芒
+      for (var i = 0; i < stars.length; i++) {
+        var st = stars[i];
+        ctx.beginPath();
+        ctx.arc(st.x, st.y, st.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + st.a + ")";
+        ctx.fill();
+      }
+
+      // 地平线柔光扩散带 (Horizon Glow)
+      var glowGrad = ctx.createLinearGradient(0, horizonY - 120, 0, horizonY + 80);
+      glowGrad.addColorStop(0, "rgba(" + col.r + "," + col.g + "," + col.b + ", 0)");
+      glowGrad.addColorStop(0.6, "rgba(" + col.r + "," + col.g + "," + col.b + ", 0.15)");
+      glowGrad.addColorStop(1, "rgba(" + col.r + "," + col.g + "," + col.b + ", 0)");
+      ctx.fillStyle = glowGrad;
+      ctx.fillRect(0, horizonY - 120, W, 200);
+
+      // 下半部 3D 透视辐射纵向线
+      var cx = W / 2;
+      ctx.lineWidth = 1;
+      var numLines = 14;
+      for (var l = -numLines; l <= numLines; l++) {
+        var bottomX = cx + l * (W / 10);
+        ctx.beginPath();
+        ctx.moveTo(cx, horizonY);
+        ctx.lineTo(bottomX, H);
+        ctx.strokeStyle = "rgba(" + col.r + "," + col.g + "," + col.b + ", 0.12)";
+        ctx.stroke();
+      }
+
+      // 3D 透视横向向前推进线 (对数深度分布)
+      for (var z = 10; z < H - horizonY; z += 35) {
+        var curY = horizonY + Math.pow((z + gridOffset) / (H - horizonY), 1.8) * (H - horizonY);
+        if (curY > horizonY && curY <= H) {
+          var lineAlpha = ((curY - horizonY) / (H - horizonY)) * 0.22;
+          ctx.beginPath();
+          ctx.moveTo(0, curY);
+          ctx.lineTo(W, curY);
+          ctx.strokeStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + lineAlpha + ")";
+          ctx.stroke();
+        }
+      }
+    };
+  }
+
+  // 5. 预设：极光星尘漂移 (aurora-dust) —— 优雅高端纪录片质感
+  function presetAuroraDust(cv, ctx, opt) {
+    var W = cv.width, H = cv.height;
+    var col = parseColor(opt.color, { r: 74, g: 222, b: 128 });
+    var col2 = parseColor(opt.color2, { r: 56, g: 189, b: 248 });
+    var speed = (opt.speed || 1.0);
+    var count = Math.floor(50 * (opt.density || 1.0));
+
+    var dusts = [];
+    for (var i = 0; i < count; i++) {
+      dusts.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 2.2 + 0.8,
+        vy: -(Math.random() * 0.6 + 0.2) * speed,
+        vx: (Math.random() - 0.5) * 0.3 * speed,
+        a: Math.random() * 0.5 + 0.25,
+        twinkleSpeed: Math.random() * 0.04 + 0.02
+      });
+    }
+
+    var frame = 0;
+    return function draw() {
+      ctx.clearRect(0, 0, W, H);
+      frame++;
+
+      // 双核大面积极光呼吸光球
+      var a1 = Math.sin(frame * 0.012) * 0.04 + 0.09;
+      var g1 = ctx.createRadialGradient(W * 0.3, H * 0.25, 0, W * 0.3, H * 0.25, W * 0.7);
+      g1.addColorStop(0, "rgba(" + col.r + "," + col.g + "," + col.b + "," + a1 + ")");
+      g1.addColorStop(1, "rgba(" + col.r + "," + col.g + "," + col.b + ", 0)");
+      ctx.fillStyle = g1;
+      ctx.fillRect(0, 0, W, H);
+
+      var a2 = Math.cos(frame * 0.014) * 0.03 + 0.08;
+      var g2 = ctx.createRadialGradient(W * 0.7, H * 0.6, 0, W * 0.7, H * 0.6, W * 0.8);
+      g2.addColorStop(0, "rgba(" + col2.r + "," + col2.g + "," + col2.b + "," + a2 + ")");
+      g2.addColorStop(1, "rgba(" + col2.r + "," + col2.g + "," + col2.b + ", 0)");
+      ctx.fillStyle = g2;
+      ctx.fillRect(0, 0, W, H);
+
+      // 星尘粒子飘舞
+      for (var i = 0; i < dusts.length; i++) {
+        var d = dusts[i];
+        d.y += d.vy;
+        d.x += d.vx + Math.sin(frame * 0.02 + i) * 0.2;
+        if (d.y < 0) { d.y = H; d.x = Math.random() * W; }
+        if (d.x < 0) d.x = W;
+        if (d.x > W) d.x = 0;
+
+        var tw = Math.sin(frame * d.twinkleSpeed + i) * 0.3 + 0.7;
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(" + col.r + "," + col.g + "," + col.b + "," + (d.a * tw) + ")";
+        ctx.fill();
+      }
+    };
+  }
+
+  // 预设注册表
+  var PRESETS = {
+    "bio-bubbles": presetBioBubbles,      // 微生物浮游细胞光斑 (推荐)
+    "constellation": presetConstellation, // 科技星芒神经元网络 (高能版)
+    "dna-spiral": presetDnaSpiral,        // 双螺旋基因光尘流
+    "cyber-grid": presetCyberGrid,        // 赛博透视网格与地平线
+    "aurora-dust": presetAuroraDust       // 极光星尘漂移
+  };
+
+  var PRESET_NAMES = {
+    "bio-bubbles": "深海细胞光斑 (Bio Bubbles · 农业生物首选)",
+    "constellation": "神经元能量网 (Constellation V2 · 科技AI)",
+    "dna-spiral": "双螺旋基因流 (DNA Spiral · 遗传育种)",
+    "cyber-grid": "赛博地平网格 (Cyber Grid · 工业数码)",
+    "aurora-dust": "极光星尘漂移 (Aurora Dust · 高端纪实)"
+  };
+
+  // 全局管理器状态
+  var currentAnimId = null;
+  var currentDrawFn = null;
+
+  return {
+    presets: PRESETS,
+    presetNames: PRESET_NAMES,
+
+    // 一键初始化使用指定预设
+    use: function (canvasId, presetName, options) {
+      options = options || {};
+      var cv = typeof canvasId === "string" ? document.getElementById(canvasId) : canvasId;
+      if (!cv) {
+        console.warn("[VibeBackgrounds] 未找到目标 Canvas 元素:", canvasId);
+        return;
+      }
+
+      var ctx = cv.getContext("2d");
+      var factory = PRESETS[presetName] || PRESETS["bio-bubbles"];
+
+      function resize() {
+        cv.width = window.innerWidth;
+        cv.height = window.innerHeight;
+      }
+      resize();
+
+      currentDrawFn = factory(cv, ctx, options);
+
+      if (currentAnimId) cancelAnimationFrame(currentAnimId);
+      function loop() {
+        if (currentDrawFn) currentDrawFn();
+        currentAnimId = requestAnimationFrame(loop);
+      }
+      loop();
+
+      window.removeEventListener("resize", cv._vibeResize || function () {});
+      cv._vibeResize = function () {
+        resize();
+        currentDrawFn = factory(cv, ctx, options);
+      };
+      window.addEventListener("resize", cv._vibeResize);
+
+      console.log("🌟 VIBE 背景预设已加载: [" + presetName + "] - " + (PRESET_NAMES[presetName] || ""));
+      return this;
+    },
+
+    // 自动扫描页面带有 data-preset 的 canvas 进行挂载
+    init: function () {
+      var canvases = document.querySelectorAll("canvas[data-preset]");
+      for (var i = 0; i < canvases.length; i++) {
+        var cv = canvases[i];
+        var p = cv.getAttribute("data-preset") || "bio-bubbles";
+        var col = cv.getAttribute("data-color") || "#4ade80";
+        var col2 = cv.getAttribute("data-color2") || "#38bdf8";
+        var density = parseFloat(cv.getAttribute("data-density") || "1.0");
+        var speed = parseFloat(cv.getAttribute("data-speed") || "1.0");
+        this.use(cv, p, { color: col, color2: col2, density: density, speed: speed });
+      }
+    }
+  };
+})();
+
+// 暴露全局 API
+if (typeof window !== "undefined") {
+  window.VibeBackgrounds = VibeBackgrounds;
+}
+
+
+// 默认挂载深海微生物细胞光斑（可按学科题材一键切换）
+VibeBackgrounds.use('bg-canvas', 'bio-bubbles', {
+  color: '#4ade80',
+  color2: '#38bdf8',
+  density: 1.1,
+  speed: 1.0
+});
+
+// 页面加载默认初始化首屏
+syncTime(0);
+</script>
+</body>
+</html>

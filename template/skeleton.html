@@ -72,6 +72,25 @@
      - 短标题（≤12字）单行大字醒目；长标题（>12字）根据语义自然断句呈现为双行
      - 悬浮轻透磨砂拟态底板 + 高对比度立体发光字效，好看、醒目、通透
      ======================================================== */
+  /* 制作与卡点排查辅助 HUD（置于安全区外左上角盲区，平台发布后自然避让） */
+  #chapText {
+    position: fixed;
+    top: 3.2cqh;
+    left: 4cqw;
+    z-index: 10;
+    font-size: 2.2cqw;
+    font-weight: 600;
+    color: rgba(147, 167, 160, 0.75);
+    background: rgba(10, 20, 32, 0.55);
+    border: 1px solid rgba(148, 163, 184, 0.2);
+    border-radius: 999px;
+    padding: 0.5cqw 2.4cqw;
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    pointer-events: none;
+    letter-spacing: 0.05em;
+    user-select: none;
+  }
   .head {
     position: fixed;
     top: 10cqh;
@@ -526,6 +545,7 @@
   <div id="flashOverlay" class="flash"></div>
 
   <!-- 顶部作品标题区（纯粹展示作品标题，支持单行/双行语义断句，无分镜胶囊/无HUD） -->
+  <div id="chapText">第 1 / 1 节</div>
   <div class="head">
     <div class="head-pill">
       <h1 id="mainTitle" class="main-title">
@@ -800,7 +820,7 @@ var VibeSound = (function() {
       try {
         ctx = new (window.AudioContext || window.webkitAudioContext)();
       } catch (e) {
-        console.warn('AudioContext 初始化跳过:', e);
+        console.warn('AudioContext 初始化异常:', e);
       }
     }
     if (ctx && ctx.state === 'suspended') {
@@ -820,7 +840,7 @@ var VibeSound = (function() {
       b0 = 0.99765 * b0 + white * 0.0990460;
       b1 = 0.96300 * b1 + white * 0.2965164;
       b2 = 0.57000 * b2 + white * 1.0526913;
-      data[i] = (b0 + b1 + b2 + white * 0.1848) * 0.15;
+      data[i] = (b0 + b1 + b2 + white * 0.1848) * 0.45;
     }
     noiseBuffer = buf;
     return noiseBuffer;
@@ -828,6 +848,7 @@ var VibeSound = (function() {
 
   return {
     init: function() { getCtx(); },
+    // 1. 温润水滴微触感 (Organic Droplet Pop · 560Hz -> 240Hz，饱满清晰)
     pop: function() {
       var ac = getCtx();
       if (!ac) return;
@@ -835,16 +856,17 @@ var VibeSound = (function() {
       var osc = ac.createOscillator();
       var gain = ac.createGain();
       osc.type = 'sine';
-      osc.frequency.setValueAtTime(1100, now);
-      osc.frequency.exponentialRampToValueAtTime(320, now + 0.1);
+      osc.frequency.setValueAtTime(560, now);
+      osc.frequency.exponentialRampToValueAtTime(240, now + 0.10);
       gain.gain.setValueAtTime(0.001, now);
-      gain.gain.linearRampToValueAtTime(0.35, now + 0.004);
-      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.12);
+      gain.gain.linearRampToValueAtTime(0.24, now + 0.004);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.10);
       osc.connect(gain);
       gain.connect(ac.destination);
       osc.start(now);
-      osc.stop(now + 0.12);
+      osc.stop(now + 0.10);
     },
+    // 2. 电影感温润风切 (Cinematic Warm Whoosh · 1100Hz 低通暖化粉红气流)
     whoosh: function() {
       var ac = getCtx();
       if (!ac) return;
@@ -853,49 +875,59 @@ var VibeSound = (function() {
       var src = ac.createBufferSource();
       src.buffer = buf;
       var filter = ac.createBiquadFilter();
-      filter.type = 'bandpass';
-      filter.Q.value = 1.2;
-      filter.frequency.setValueAtTime(300, now);
-      filter.frequency.exponentialRampToValueAtTime(2200, now + 0.15);
-      filter.frequency.exponentialRampToValueAtTime(380, now + 0.35);
+      filter.type = 'lowpass';
+      filter.Q.value = 1.0;
+      filter.frequency.setValueAtTime(200, now);
+      filter.frequency.exponentialRampToValueAtTime(1100, now + 0.16);
+      filter.frequency.exponentialRampToValueAtTime(260, now + 0.42);
       var gain = ac.createGain();
       gain.gain.setValueAtTime(0.001, now);
-      gain.gain.linearRampToValueAtTime(0.32, now + 0.14);
-      gain.gain.linearRampToValueAtTime(0.0001, now + 0.35);
+      gain.gain.linearRampToValueAtTime(0.16, now + 0.14);
+      gain.gain.linearRampToValueAtTime(0.0001, now + 0.42);
       src.connect(filter);
       filter.connect(gain);
       gain.connect(ac.destination);
       src.start(now);
-      src.stop(now + 0.35);
+      src.stop(now + 0.42);
     },
+    // 3. 柔和水晶编钟 (Soft Acoustic Ding · 1046Hz + 1568Hz 双音纯净谐波)
     ding: function() {
       var ac = getCtx();
       if (!ac) return;
       var now = ac.currentTime;
-      [1760, 2637].forEach(function(freq, i) {
+      var filter = ac.createBiquadFilter();
+      filter.type = 'lowpass';
+      filter.frequency.value = 2200;
+      var masterGain = ac.createGain();
+      masterGain.gain.setValueAtTime(0.18, now);
+      filter.connect(masterGain);
+      masterGain.connect(ac.destination);
+
+      [1046.5, 1567.98].forEach(function(freq, i) {
         var osc = ac.createOscillator();
         var gain = ac.createGain();
         osc.type = 'sine';
         osc.frequency.setValueAtTime(freq, now);
-        var vol = i === 0 ? 0.3 : 0.15;
+        var vol = i === 0 ? 0.8 : 0.4;
         gain.gain.setValueAtTime(0.001, now);
-        gain.gain.linearRampToValueAtTime(vol, now + 0.003);
+        gain.gain.linearRampToValueAtTime(vol, now + 0.005);
         gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.45);
         osc.connect(gain);
-        gain.connect(ac.destination);
+        gain.connect(filter);
         osc.start(now);
         osc.stop(now + 0.45);
       });
     },
+    // 4. 片尾温润和弦 (Soft Ambient Chime · 4音温润和弦)
     chime: function() {
       var ac = getCtx();
       if (!ac) return;
       var now = ac.currentTime;
       var notes = [
-        { f: 659.25, d: 0.00, v: 0.28 },
-        { f: 880.00, d: 0.04, v: 0.25 },
-        { f: 1108.73, d: 0.08, v: 0.22 },
-        { f: 1318.51, d: 0.12, v: 0.20 }
+        { f: 523.25, d: 0.00, v: 0.16 },
+        { f: 659.25, d: 0.06, v: 0.14 },
+        { f: 783.99, d: 0.12, v: 0.12 },
+        { f: 1046.50, d: 0.18, v: 0.10 }
       ];
       notes.forEach(function(n) {
         var t = now + n.d;
@@ -904,13 +936,30 @@ var VibeSound = (function() {
         osc.type = 'sine';
         osc.frequency.setValueAtTime(n.f, t);
         gain.gain.setValueAtTime(0.001, t);
-        gain.gain.linearRampToValueAtTime(n.v, t + 0.005);
-        gain.gain.exponentialRampToValueAtTime(0.0001, t + 0.95);
+        gain.gain.linearRampToValueAtTime(n.v, t + 0.01);
+        gain.gain.exponentialRampToValueAtTime(0.0001, t + 1.1);
         osc.connect(gain);
         gain.connect(ac.destination);
         osc.start(t);
-        osc.stop(t + 0.95);
+        osc.stop(t + 1.1);
       });
+    },
+    // 5. 科技微触 (Crisp Subtle Click)
+    click: function() {
+      var ac = getCtx();
+      if (!ac) return;
+      var now = ac.currentTime;
+      var osc = ac.createOscillator();
+      var gain = ac.createGain();
+      osc.type = 'sine';
+      osc.frequency.setValueAtTime(880, now);
+      gain.gain.setValueAtTime(0.001, now);
+      gain.gain.linearRampToValueAtTime(0.18, now + 0.003);
+      gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
+      osc.connect(gain);
+      gain.connect(ac.destination);
+      osc.start(now);
+      osc.stop(now + 0.05);
     },
     play: function(type) {
       try {
@@ -918,6 +967,7 @@ var VibeSound = (function() {
         else if (type === 'pop') this.pop();
         else if (type === 'ding') this.ding();
         else if (type === 'chime') this.chime();
+        else if (type === 'click') this.click();
       } catch (err) {}
     }
   };
@@ -1002,7 +1052,8 @@ function setScene(idx) {
     VibeSound.play('chime');
   }
 
-// 顶部已彻底废除分镜指示胶囊与 HUD，只纯粹呈现作品标题
+var ct = document.getElementById("chapText");
+  if (ct) ct.innerHTML = "第 " + (idx + 1) + " / " + _activeScenes.length + " 节";
 }
 
 function updateScene(t) {
