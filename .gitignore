@@ -1,4 +1,6 @@
-# Python
+# ========================================================
+# 1. Python 环境与字节码
+# ========================================================
 __pycache__/
 *.py[cod]
 *$py.class
@@ -10,7 +12,9 @@ venv/
 pip-log.txt
 pip-delete-this-directory.txt
 
-# Editor & OS
+# ========================================================
+# 2. 编辑器与操作系统
+# ========================================================
 .vscode/
 .idea/
 *.swp
@@ -18,16 +22,42 @@ pip-delete-this-directory.txt
 .DS_Store
 Thumbs.db
 
-# Dedicated Temporary & Cache Directory (Cleanable anytime)
-temp/*
+# ========================================================
+# 3. 独立临时缓存区 (temp/ 彻底隔离，不入库)
+# ========================================================
+temp/
 !temp/.gitkeep
 !temp/README.md
 
-# Video Studio Projects - keep directory structure
+# ========================================================
+# 4. 作品工程库 (projects/) 资产精细化过滤
+# 允许入库: 动效 HTML、文案 TXT、时间戳 JSON、sfx.json
+# 强制忽略: 大体积成片 MP4 视频、过程截图帧、中间切片
+# ========================================================
 !projects/.gitkeep
 !projects/README.md
 
-# Root / Temporary artifacts
+# 忽略最终合成的高清大体积视频 (避免 Git 仓库急剧膨胀甚至突破 100MB 限制)
+projects/**/*.mp4
+projects/**/*.mov
+projects/**/*.mkv
+projects/**/*.avi
+
+# 忽略工程内部可能产生的逐帧截图与临时工作目录
+projects/**/_work/
+projects/**/frames/
+projects/**/_*.txt
+projects/**/_*.json
+projects/**/_*.wav
+projects/**/_*.mp4
+
+# 忽略探针与临时调试截图
+projects/**/preview_shot*.png
+projects/**/shot_*.png
+
+# ========================================================
+# 5. 根目录零散临时切片
+# ========================================================
 _silent.mp4
 _sfx.wav
 _pop.wav
@@ -39,3 +69,4 @@ _playcheck.txt
 _qa_bounds.txt
 _render_log.txt
 *_out.txt
+audit_*.txt
