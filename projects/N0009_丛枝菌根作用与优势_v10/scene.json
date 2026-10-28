@@ -1,0 +1,6930 @@
+{
+  "titleMode": "shown",
+  "background": {
+    "color": "#071d1b",
+    "particles": false,
+    "seed": 8
+  },
+  "subtitleSize": 46,
+  "protectedTerms": [],
+  "scenes": [
+    {
+      "id": "shot-01",
+      "startUs": 0,
+      "endUs": 6680000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "回顾：菌剂与菌根",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 620,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 480000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 650,
+          "width": 736,
+          "height": 110,
+          "text": "真菌类菌剂的分类",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 480000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 825,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 2880000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 855,
+          "width": 736,
+          "height": 110,
+          "text": "肥料类菌剂中的菌根",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 2880000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-3",
+          "type": "rect",
+          "x": 130,
+          "y": 1030,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 5920000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "item-3",
+          "type": "text",
+          "x": 172,
+          "y": 1060,
+          "width": 736,
+          "height": 110,
+          "text": "连接上期基本特性",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5920000,
+          "entrance": "slide-right",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "color",
+            "timeUs": 5920000
+          }
+        }
+      ],
+      "transition": "push"
+    },
+    {
+      "id": "shot-02",
+      "startUs": 6680000,
+      "endUs": 15040000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "这期看机制与应用",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 150,
+          "y": 680,
+          "width": 780,
+          "height": 220,
+          "text": "从吸收机制开始",
+          "size": 82,
+          "color": "#eef9f3",
+          "align": "center",
+          "enterUs": 600000,
+          "entrance": "fade-up",
+          "enterDelayUs": 0
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 150,
+          "y": 965,
+          "width": 780,
+          "height": 220,
+          "text": "再看实际应用优势",
+          "size": 48,
+          "color": "#eef9f3",
+          "align": "center",
+          "enterUs": 6000000,
+          "entrance": "slide-left",
+          "enterDelayUs": 0,
+          "emphasis": {
+            "kind": "marker",
+            "timeUs": 6000000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-03",
+      "startUs": 15040000,
+      "endUs": 21960000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "磷为何难被吸收",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 620,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 400000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "bullet-1",
+          "type": "rect",
+          "x": 145,
+          "y": 660,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 400000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 650,
+          "width": 736,
+          "height": 110,
+          "text": "磷素吸收是重点",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 400000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 794,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 3520000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "bullet-2",
+          "type": "rect",
+          "x": 145,
+          "y": 834,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 3520000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 824,
+          "width": 736,
+          "height": 110,
+          "text": "磷被土壤颗粒固定",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 3520000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-3",
+          "type": "rect",
+          "x": 130,
+          "y": 968,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 4920000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "bullet-3",
+          "type": "rect",
+          "x": 145,
+          "y": 1008,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 4920000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "item-3",
+          "type": "text",
+          "x": 172,
+          "y": 998,
+          "width": 736,
+          "height": 110,
+          "text": "移动性差",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 4920000,
+          "entrance": "slide-right",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-4",
+          "type": "rect",
+          "x": 130,
+          "y": 1142,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 5640000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "bullet-4",
+          "type": "rect",
+          "x": 145,
+          "y": 1182,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 5640000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-4",
+          "type": "text",
+          "x": 172,
+          "y": 1172,
+          "width": 736,
+          "height": 110,
+          "text": "根系难以直接获取",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5640000,
+          "entrance": "zoom",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "underline",
+            "timeUs": 5640000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-04",
+      "startUs": 21960000,
+      "endUs": 30830000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "菌丝延伸，磷素转运",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "picture",
+          "type": "image",
+          "x": 132,
+          "y": 610,
+          "width": 816,
+          "height": 420,
+          "source": "assets/images/leaf.png",
+          "fit": "cover",
+          "focusX": 0.5,
+          "focusY": 0.5,
+          "imageZoom": true,
+          "radius": 24,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 1080,
+          "width": 736,
+          "height": 106,
+          "text": "菌丝向根外延伸",
+          "size": 46,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 760000,
+          "entrance": "fade-up",
+          "enterDelayUs": 0
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 1210,
+          "width": 736,
+          "height": 106,
+          "text": "提升植物磷素供应",
+          "size": 46,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 6950000,
+          "entrance": "slide-left",
+          "enterDelayUs": 0,
+          "emphasis": {
+            "kind": "color",
+            "timeUs": 6950000
+          }
+        }
+      ],
+      "transition": "push"
+    },
+    {
+      "id": "shot-05",
+      "startUs": 30830000,
+      "endUs": 43980000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "氮素转运与微生物协同",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 620,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 2120000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "bullet-1",
+          "type": "rect",
+          "x": 145,
+          "y": 660,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 2120000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 650,
+          "width": 736,
+          "height": 110,
+          "text": "菌丝转运无机氮",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 2120000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 794,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 5640000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "bullet-2",
+          "type": "rect",
+          "x": 145,
+          "y": 834,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 5640000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 824,
+          "width": 736,
+          "height": 110,
+          "text": "与固氮微生物协同",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5640000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-3",
+          "type": "rect",
+          "x": 130,
+          "y": 968,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 8830000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "bullet-3",
+          "type": "rect",
+          "x": 145,
+          "y": 1008,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 8830000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "item-3",
+          "type": "text",
+          "x": 172,
+          "y": 998,
+          "width": 736,
+          "height": 110,
+          "text": "帮助植物获取氮素",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 8830000,
+          "entrance": "slide-right",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-4",
+          "type": "rect",
+          "x": 130,
+          "y": 1142,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 11350000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "bullet-4",
+          "type": "rect",
+          "x": 145,
+          "y": 1182,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 11350000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-4",
+          "type": "text",
+          "x": 172,
+          "y": 1172,
+          "width": 736,
+          "height": 110,
+          "text": "减少氮肥流失浪费",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 11350000,
+          "entrance": "zoom",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "marker",
+            "timeUs": 11350000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-06",
+      "startUs": 43980000,
+      "endUs": 56960000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "不止大量元素",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 620,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 1960000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 650,
+          "width": 736,
+          "height": 110,
+          "text": "还关注微量元素",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 1960000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 794,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 5040000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 824,
+          "width": 736,
+          "height": 110,
+          "text": "锌、铜、铁等元素",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5040000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-3",
+          "type": "rect",
+          "x": 130,
+          "y": 968,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 8100000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "item-3",
+          "type": "text",
+          "x": 172,
+          "y": 998,
+          "width": 736,
+          "height": 110,
+          "text": "减少缺素症状",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 8100000,
+          "entrance": "slide-right",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-4",
+          "type": "rect",
+          "x": 130,
+          "y": 1142,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 10100000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-4",
+          "type": "text",
+          "x": 172,
+          "y": 1172,
+          "width": 736,
+          "height": 110,
+          "text": "关注贫瘠土壤条件",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 10100000,
+          "entrance": "zoom",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "underline",
+            "timeUs": 10100000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-07",
+      "startUs": 56960000,
+      "endUs": 67120000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "菌丝向根外拓展",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 150,
+          "y": 680,
+          "width": 780,
+          "height": 220,
+          "text": "拓展养分吸收面积",
+          "size": 82,
+          "color": "#eef9f3",
+          "align": "center",
+          "enterUs": 2800000,
+          "entrance": "fade-up",
+          "enterDelayUs": 0
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 150,
+          "y": 965,
+          "width": 780,
+          "height": 220,
+          "text": "原稿倍数依据待核对",
+          "size": 48,
+          "color": "#eef9f3",
+          "align": "center",
+          "enterUs": 8480000,
+          "entrance": "slide-left",
+          "enterDelayUs": 0,
+          "emphasis": {
+            "kind": "color",
+            "timeUs": 8480000
+          }
+        }
+      ],
+      "transition": "push"
+    },
+    {
+      "id": "shot-08",
+      "startUs": 67120000,
+      "endUs": 74500000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "从根际走向周边土壤",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "picture",
+          "type": "image",
+          "x": 132,
+          "y": 610,
+          "width": 816,
+          "height": 500,
+          "source": "assets/images/soil.png",
+          "fit": "cover",
+          "focusX": 0.5,
+          "focusY": 0.5,
+          "imageZoom": true,
+          "radius": 24,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 1160,
+          "width": 736,
+          "height": 106,
+          "text": "从根际附近开始",
+          "size": 46,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 1120000,
+          "entrance": "fade-up",
+          "enterDelayUs": 0
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 1290,
+          "width": 736,
+          "height": 106,
+          "text": "提升养分获取能力",
+          "size": 46,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5300000,
+          "entrance": "slide-left",
+          "enterDelayUs": 0,
+          "emphasis": {
+            "kind": "marker",
+            "timeUs": 5300000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-09",
+      "startUs": 74500000,
+      "endUs": 85860000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "养分形态转化",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 620,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 2400000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "bullet-1",
+          "type": "rect",
+          "x": 145,
+          "y": 660,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 2400000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 650,
+          "width": 736,
+          "height": 110,
+          "text": "共生过程分泌有机酸",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 2400000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 794,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 5320000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "bullet-2",
+          "type": "rect",
+          "x": 145,
+          "y": 834,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 5320000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 824,
+          "width": 736,
+          "height": 110,
+          "text": "作用于固定矿质养分",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5320000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-3",
+          "type": "rect",
+          "x": 130,
+          "y": 968,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 8200000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "bullet-3",
+          "type": "rect",
+          "x": 145,
+          "y": 1008,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 8200000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "item-3",
+          "type": "text",
+          "x": 172,
+          "y": 998,
+          "width": 736,
+          "height": 110,
+          "text": "转为可吸收利用形态",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 8200000,
+          "entrance": "slide-right",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-4",
+          "type": "rect",
+          "x": 130,
+          "y": 1142,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 9760000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "bullet-4",
+          "type": "rect",
+          "x": 145,
+          "y": 1182,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 9760000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-4",
+          "type": "text",
+          "x": 172,
+          "y": 1172,
+          "width": 736,
+          "height": 110,
+          "text": "提高养分利用率",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 9760000,
+          "entrance": "zoom",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "underline",
+            "timeUs": 9760000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-10",
+      "startUs": 85860000,
+      "endUs": 95310000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "根内丛枝：双向交换",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 660,
+          "width": 820,
+          "height": 230,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 840000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 690,
+          "width": 736,
+          "height": 170,
+          "text": "丛枝扩大交换界面",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 840000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 990,
+          "width": 820,
+          "height": 230,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 6970000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 1020,
+          "width": 736,
+          "height": 170,
+          "text": "真菌向植物供养分",
+          "size": 52,
+          "color": "#ebc86d",
+          "align": "left",
+          "enterUs": 6970000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "color",
+            "timeUs": 6970000
+          }
+        }
+      ],
+      "transition": "push"
+    },
+    {
+      "id": "shot-11",
+      "startUs": 95310000,
+      "endUs": 103290000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "从交换机制到应用",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 150,
+          "y": 680,
+          "width": 780,
+          "height": 220,
+          "text": "原稿对比：吸附交换",
+          "size": 82,
+          "color": "#eef9f3",
+          "align": "center",
+          "enterUs": 1280000,
+          "entrance": "fade-up",
+          "enterDelayUs": 0
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 150,
+          "y": 965,
+          "width": 780,
+          "height": 220,
+          "text": "进一步看实际应用",
+          "size": 48,
+          "color": "#eef9f3",
+          "align": "center",
+          "enterUs": 6500000,
+          "entrance": "slide-left",
+          "enterDelayUs": 0,
+          "emphasis": {
+            "kind": "marker",
+            "timeUs": 6500000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-12",
+      "startUs": 103290000,
+      "endUs": 111950000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "肥料利用与生产成本",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 620,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 1200000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "bullet-1",
+          "type": "rect",
+          "x": 145,
+          "y": 660,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 1200000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 650,
+          "width": 736,
+          "height": 110,
+          "text": "促进养分高效利用",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 1200000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 794,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 3960000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "bullet-2",
+          "type": "rect",
+          "x": 145,
+          "y": 834,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 3960000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 824,
+          "width": 736,
+          "height": 110,
+          "text": "提升磷肥利用率",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 3960000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-3",
+          "type": "rect",
+          "x": 130,
+          "y": 968,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 5520000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "bullet-3",
+          "type": "rect",
+          "x": 145,
+          "y": 1008,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 5520000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "item-3",
+          "type": "text",
+          "x": 172,
+          "y": 998,
+          "width": 736,
+          "height": 110,
+          "text": "减少化肥施用量",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5520000,
+          "entrance": "slide-right",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-4",
+          "type": "rect",
+          "x": 130,
+          "y": 1142,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 7260000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "bullet-4",
+          "type": "rect",
+          "x": 145,
+          "y": 1182,
+          "width": 8,
+          "height": 40,
+          "background": "#ebc86d",
+          "color": "#ebc86d",
+          "radius": 3,
+          "enterUs": 7260000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-4",
+          "type": "text",
+          "x": 172,
+          "y": 1172,
+          "width": 736,
+          "height": 110,
+          "text": "降低生产成本",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 7260000,
+          "entrance": "zoom",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "underline",
+            "timeUs": 7260000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-13",
+      "startUs": 111950000,
+      "endUs": 119310000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "减少流失，关注水体",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "picture",
+          "type": "image",
+          "x": 132,
+          "y": 610,
+          "width": 816,
+          "height": 420,
+          "source": "assets/images/water.png",
+          "fit": "cover",
+          "focusX": 0.5,
+          "focusY": 0.5,
+          "imageZoom": true,
+          "radius": 24,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 1080,
+          "width": 736,
+          "height": 106,
+          "text": "减少养分淋失",
+          "size": 46,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 320000,
+          "entrance": "fade-up",
+          "enterDelayUs": 0
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 1210,
+          "width": 736,
+          "height": 106,
+          "text": "转向土壤生态改善",
+          "size": 46,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5880000,
+          "entrance": "slide-left",
+          "enterDelayUs": 0,
+          "emphasis": {
+            "kind": "color",
+            "timeUs": 5880000
+          }
+        }
+      ],
+      "transition": "push"
+    },
+    {
+      "id": "shot-14",
+      "startUs": 119310000,
+      "endUs": 126280000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "土壤生态的多个层面",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 620,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 640000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 650,
+          "width": 736,
+          "height": 110,
+          "text": "促进团聚体形成",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 640000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 794,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 2000000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 824,
+          "width": 736,
+          "height": 110,
+          "text": "提升土壤固碳能力",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 2000000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-3",
+          "type": "rect",
+          "x": 130,
+          "y": 968,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 3560000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "item-3",
+          "type": "text",
+          "x": 172,
+          "y": 998,
+          "width": 736,
+          "height": 110,
+          "text": "优化微生物群落",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 3560000,
+          "entrance": "slide-right",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-4",
+          "type": "rect",
+          "x": 130,
+          "y": 1142,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 5160000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-4",
+          "type": "text",
+          "x": 172,
+          "y": 1172,
+          "width": 736,
+          "height": 110,
+          "text": "构建菌丝网络",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5160000,
+          "entrance": "zoom",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "marker",
+            "timeUs": 5160000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-15",
+      "startUs": 126280000,
+      "endUs": 132560000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "缠绕与粘合共同作用",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 660,
+          "width": 820,
+          "height": 230,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 2280000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 690,
+          "width": 736,
+          "height": 170,
+          "text": "菌丝形成物理缠绕",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 2280000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 990,
+          "width": 820,
+          "height": 230,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 4400000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 1020,
+          "width": 736,
+          "height": 170,
+          "text": "分泌粘合物质",
+          "size": 52,
+          "color": "#ebc86d",
+          "align": "left",
+          "enterUs": 4400000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "underline",
+            "timeUs": 4400000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-16",
+      "startUs": 132560000,
+      "endUs": 139040000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "微团聚体聚合",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "picture",
+          "type": "image",
+          "x": 132,
+          "y": 610,
+          "width": 816,
+          "height": 420,
+          "source": "assets/images/soil.png",
+          "fit": "cover",
+          "focusX": 0.5,
+          "focusY": 0.5,
+          "imageZoom": true,
+          "radius": 24,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 1080,
+          "width": 736,
+          "height": 106,
+          "text": "微团聚体发生聚合",
+          "size": 46,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 920000,
+          "entrance": "fade-up",
+          "enterDelayUs": 0
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 1210,
+          "width": 736,
+          "height": 106,
+          "text": "降低板结风险",
+          "size": 46,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 4800000,
+          "entrance": "slide-left",
+          "enterDelayUs": 0,
+          "emphasis": {
+            "kind": "color",
+            "timeUs": 4800000
+          }
+        }
+      ],
+      "transition": "push"
+    },
+    {
+      "id": "shot-17",
+      "startUs": 139040000,
+      "endUs": 149130000,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "根际群落的协同",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "card-1",
+          "type": "rect",
+          "x": 130,
+          "y": 620,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 1280000,
+          "entrance": "fade-up"
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 172,
+          "y": 650,
+          "width": 736,
+          "height": 110,
+          "text": "根际微生物协同",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 1280000,
+          "entrance": "fade-up",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-2",
+          "type": "rect",
+          "x": 130,
+          "y": 794,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 3570000,
+          "entrance": "slide-left"
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 172,
+          "y": 824,
+          "width": 736,
+          "height": 110,
+          "text": "有益微生物定殖繁殖",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 3570000,
+          "entrance": "slide-left",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-3",
+          "type": "rect",
+          "x": 130,
+          "y": 968,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 5730000,
+          "entrance": "slide-right"
+        },
+        {
+          "id": "item-3",
+          "type": "text",
+          "x": 172,
+          "y": 998,
+          "width": 736,
+          "height": 110,
+          "text": "抑制有害微生物生长",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 5730000,
+          "entrance": "slide-right",
+          "enterDelayUs": 90000
+        },
+        {
+          "id": "card-4",
+          "type": "rect",
+          "x": 130,
+          "y": 1142,
+          "width": 820,
+          "height": 170,
+          "background": "#10332f",
+          "color": "#28554b",
+          "radius": 24,
+          "enterUs": 7530000,
+          "entrance": "zoom"
+        },
+        {
+          "id": "item-4",
+          "type": "text",
+          "x": 172,
+          "y": 1172,
+          "width": 736,
+          "height": 110,
+          "text": "维持群落健康稳定",
+          "size": 52,
+          "color": "#eef9f3",
+          "align": "left",
+          "enterUs": 7530000,
+          "entrance": "zoom",
+          "enterDelayUs": 90000,
+          "emphasis": {
+            "kind": "marker",
+            "timeUs": 7530000
+          }
+        }
+      ],
+      "transition": "fade"
+    },
+    {
+      "id": "shot-18",
+      "startUs": 149130000,
+      "endUs": 160101625,
+      "nodes": [
+        {
+          "id": "title-panel",
+          "type": "rect",
+          "x": 110,
+          "y": 194,
+          "width": 860,
+          "height": 122,
+          "background": "#0b2927",
+          "color": "#265c50",
+          "radius": 20
+        },
+        {
+          "id": "title-1",
+          "type": "text",
+          "x": 130,
+          "y": 235,
+          "width": 820,
+          "height": 72,
+          "text": "丛枝菌根作用与优势",
+          "size": 48,
+          "color": "#65efb5",
+          "align": "center"
+        },
+        {
+          "id": "heading",
+          "type": "text",
+          "x": 130,
+          "y": 440,
+          "width": 820,
+          "height": 92,
+          "text": "地下共同菌丝网络",
+          "size": 58,
+          "color": "#eef9f3",
+          "align": "left"
+        },
+        {
+          "id": "section-rule",
+          "type": "rect",
+          "x": 132,
+          "y": 553,
+          "width": 88,
+          "height": 5,
+          "background": "#65efb5",
+          "color": "#65efb5",
+          "radius": 2
+        },
+        {
+          "id": "item-1",
+          "type": "text",
+          "x": 150,
+          "y": 680,
+          "width": 780,
+          "height": 220,
+          "text": "连接不同植物根系",
+          "size": 82,
+          "color": "#eef9f3",
+          "align": "center",
+          "enterUs": 2040000,
+          "entrance": "fade-up",
+          "enterDelayUs": 0
+        },
+        {
+          "id": "item-2",
+          "type": "text",
+          "x": 150,
+          "y": 965,
+          "width": 780,
+          "height": 220,
+          "text": "回扣农田养分平衡",
+          "size": 48,
+          "color": "#eef9f3",
+          "align": "center",
+          "enterUs": 10120000,
+          "entrance": "slide-left",
+          "enterDelayUs": 0,
+          "emphasis": {
+            "kind": "underline",
+            "timeUs": 10120000
+          }
+        }
+      ],
+      "transition": "fade"
+    }
+  ],
+  "subtitles": [
+    {
+      "startUs": 120000,
+      "endUs": 1160000,
+      "chars": [
+        {
+          "text": "上",
+          "startUs": 120000
+        },
+        {
+          "text": "一",
+          "startUs": 240000
+        },
+        {
+          "text": "期",
+          "startUs": 360000
+        },
+        {
+          "text": "我",
+          "startUs": 480000
+        },
+        {
+          "text": "们",
+          "startUs": 600000
+        },
+        {
+          "text": "介",
+          "startUs": 720000
+        },
+        {
+          "text": "绍",
+          "startUs": 800000
+        },
+        {
+          "text": "了",
+          "startUs": 920000
+        }
+      ]
+    },
+    {
+      "startUs": 1160000,
+      "endUs": 2040000,
+      "chars": [
+        {
+          "text": "真",
+          "startUs": 1160000
+        },
+        {
+          "text": "菌",
+          "startUs": 1240000
+        },
+        {
+          "text": "类",
+          "startUs": 1440000
+        },
+        {
+          "text": "菌",
+          "startUs": 1760000
+        },
+        {
+          "text": "剂",
+          "startUs": 1920000
+        }
+      ]
+    },
+    {
+      "startUs": 2040000,
+      "endUs": 2880000,
+      "chars": [
+        {
+          "text": "有",
+          "startUs": 2040000
+        },
+        {
+          "text": "哪",
+          "startUs": 2200000
+        },
+        {
+          "text": "些",
+          "startUs": 2280000
+        },
+        {
+          "text": "分",
+          "startUs": 2400000
+        },
+        {
+          "text": "类",
+          "startUs": 2600000
+        }
+      ]
+    },
+    {
+      "startUs": 2880000,
+      "endUs": 4480000,
+      "chars": [
+        {
+          "text": "和",
+          "startUs": 2880000
+        },
+        {
+          "text": "肥",
+          "startUs": 3120000
+        },
+        {
+          "text": "料",
+          "startUs": 3360000
+        },
+        {
+          "text": "类",
+          "startUs": 3560000
+        },
+        {
+          "text": "菌",
+          "startUs": 3840000
+        },
+        {
+          "text": "剂",
+          "startUs": 4000000
+        },
+        {
+          "text": "的",
+          "startUs": 4120000
+        }
+      ]
+    },
+    {
+      "startUs": 4480000,
+      "endUs": 5920000,
+      "chars": [
+        {
+          "text": "丛",
+          "startUs": 4480000
+        },
+        {
+          "text": "枝",
+          "startUs": 4680000
+        },
+        {
+          "text": "菌",
+          "startUs": 4880000
+        },
+        {
+          "text": "根",
+          "startUs": 5200000
+        },
+        {
+          "text": "真",
+          "startUs": 5400000
+        },
+        {
+          "text": "菌",
+          "startUs": 5520000
+        },
+        {
+          "text": "的",
+          "startUs": 5680000
+        }
+      ]
+    },
+    {
+      "startUs": 5920000,
+      "endUs": 6680000,
+      "chars": [
+        {
+          "text": "基",
+          "startUs": 5920000
+        },
+        {
+          "text": "本",
+          "startUs": 6040000
+        },
+        {
+          "text": "特",
+          "startUs": 6160000
+        },
+        {
+          "text": "性",
+          "startUs": 6360000
+        },
+        {
+          "text": "。",
+          "startUs": 6520000
+        }
+      ]
+    },
+    {
+      "startUs": 6680000,
+      "endUs": 7280000,
+      "chars": [
+        {
+          "text": "这",
+          "startUs": 6680000
+        },
+        {
+          "text": "一",
+          "startUs": 6840000
+        },
+        {
+          "text": "期",
+          "startUs": 6960000
+        },
+        {
+          "text": "我",
+          "startUs": 7080000
+        },
+        {
+          "text": "们",
+          "startUs": 7160000
+        }
+      ]
+    },
+    {
+      "startUs": 7280000,
+      "endUs": 8160000,
+      "chars": [
+        {
+          "text": "着",
+          "startUs": 7280000
+        },
+        {
+          "text": "重",
+          "startUs": 7400000
+        },
+        {
+          "text": "讲",
+          "startUs": 7560000
+        },
+        {
+          "text": "一",
+          "startUs": 7760000
+        },
+        {
+          "text": "下",
+          "startUs": 7880000
+        }
+      ]
+    },
+    {
+      "startUs": 8160000,
+      "endUs": 9080000,
+      "chars": [
+        {
+          "text": "丛",
+          "startUs": 8160000
+        },
+        {
+          "text": "枝",
+          "startUs": 8360000
+        },
+        {
+          "text": "菌",
+          "startUs": 8560000
+        },
+        {
+          "text": "根",
+          "startUs": 8800000
+        }
+      ]
+    },
+    {
+      "startUs": 9080000,
+      "endUs": 9800000,
+      "chars": [
+        {
+          "text": "促",
+          "startUs": 9080000
+        },
+        {
+          "text": "进",
+          "startUs": 9240000
+        },
+        {
+          "text": "植",
+          "startUs": 9440000
+        },
+        {
+          "text": "物",
+          "startUs": 9560000
+        },
+        {
+          "text": "的",
+          "startUs": 9640000
+        }
+      ]
+    },
+    {
+      "startUs": 9800000,
+      "endUs": 10840000,
+      "chars": [
+        {
+          "text": "养",
+          "startUs": 9800000
+        },
+        {
+          "text": "分",
+          "startUs": 9960000
+        },
+        {
+          "text": "吸",
+          "startUs": 10160000
+        },
+        {
+          "text": "收",
+          "startUs": 10320000
+        },
+        {
+          "text": "机",
+          "startUs": 10480000
+        },
+        {
+          "text": "制",
+          "startUs": 10640000
+        }
+      ]
+    },
+    {
+      "startUs": 10840000,
+      "endUs": 12080000,
+      "chars": [
+        {
+          "text": "和",
+          "startUs": 10840000
+        },
+        {
+          "text": "应",
+          "startUs": 11040000
+        },
+        {
+          "text": "用",
+          "startUs": 11240000
+        },
+        {
+          "text": "优",
+          "startUs": 11360000
+        },
+        {
+          "text": "势",
+          "startUs": 11560000
+        },
+        {
+          "text": "。",
+          "startUs": 11680000
+        }
+      ]
+    },
+    {
+      "startUs": 12080000,
+      "endUs": 12680000,
+      "chars": [
+        {
+          "text": "丛",
+          "startUs": 12080000
+        },
+        {
+          "text": "枝",
+          "startUs": 12240000
+        },
+        {
+          "text": "菌",
+          "startUs": 12400000
+        },
+        {
+          "text": "根",
+          "startUs": 12560000
+        }
+      ]
+    },
+    {
+      "startUs": 12680000,
+      "endUs": 13920000,
+      "chars": [
+        {
+          "text": "是",
+          "startUs": 12680000
+        },
+        {
+          "text": "如",
+          "startUs": 12880000
+        },
+        {
+          "text": "何",
+          "startUs": 13000000
+        },
+        {
+          "text": "促",
+          "startUs": 13160000
+        },
+        {
+          "text": "进",
+          "startUs": 13400000
+        },
+        {
+          "text": "植",
+          "startUs": 13520000
+        },
+        {
+          "text": "物",
+          "startUs": 13680000
+        },
+        {
+          "text": "的",
+          "startUs": 13760000
+        }
+      ]
+    },
+    {
+      "startUs": 13920000,
+      "endUs": 15040000,
+      "chars": [
+        {
+          "text": "养",
+          "startUs": 13920000
+        },
+        {
+          "text": "分",
+          "startUs": 14080000
+        },
+        {
+          "text": "吸",
+          "startUs": 14280000
+        },
+        {
+          "text": "收",
+          "startUs": 14400000
+        },
+        {
+          "text": "呢",
+          "startUs": 14560000
+        },
+        {
+          "text": "？",
+          "startUs": 14800000
+        }
+      ]
+    },
+    {
+      "startUs": 15040000,
+      "endUs": 17080000,
+      "chars": [
+        {
+          "text": "一",
+          "startUs": 15040000
+        },
+        {
+          "text": "、",
+          "startUs": 15360000
+        },
+        {
+          "text": "强",
+          "startUs": 15440000
+        },
+        {
+          "text": "化",
+          "startUs": 15640000
+        },
+        {
+          "text": "磷",
+          "startUs": 15960000
+        },
+        {
+          "text": "元",
+          "startUs": 16120000
+        },
+        {
+          "text": "素",
+          "startUs": 16240000
+        },
+        {
+          "text": "的",
+          "startUs": 16360000
+        },
+        {
+          "text": "吸",
+          "startUs": 16560000
+        },
+        {
+          "text": "收",
+          "startUs": 16680000
+        },
+        {
+          "text": "。",
+          "startUs": 16800000
+        }
+      ]
+    },
+    {
+      "startUs": 17080000,
+      "endUs": 18320000,
+      "chars": [
+        {
+          "text": "土",
+          "startUs": 17080000
+        },
+        {
+          "text": "壤",
+          "startUs": 17280000
+        },
+        {
+          "text": "中",
+          "startUs": 17440000
+        },
+        {
+          "text": "的",
+          "startUs": 17600000
+        },
+        {
+          "text": "磷",
+          "startUs": 17800000
+        },
+        {
+          "text": "元",
+          "startUs": 17960000
+        },
+        {
+          "text": "素",
+          "startUs": 18120000
+        }
+      ]
+    },
+    {
+      "startUs": 18320000,
+      "endUs": 19960000,
+      "chars": [
+        {
+          "text": "容",
+          "startUs": 18320000
+        },
+        {
+          "text": "易",
+          "startUs": 18480000
+        },
+        {
+          "text": "被",
+          "startUs": 18560000
+        },
+        {
+          "text": "土",
+          "startUs": 18800000
+        },
+        {
+          "text": "壤",
+          "startUs": 18960000
+        },
+        {
+          "text": "颗",
+          "startUs": 19120000
+        },
+        {
+          "text": "粒",
+          "startUs": 19280000
+        },
+        {
+          "text": "固",
+          "startUs": 19440000
+        },
+        {
+          "text": "定",
+          "startUs": 19640000
+        }
+      ]
+    },
+    {
+      "startUs": 19960000,
+      "endUs": 20680000,
+      "chars": [
+        {
+          "text": "移",
+          "startUs": 19960000
+        },
+        {
+          "text": "动",
+          "startUs": 20120000
+        },
+        {
+          "text": "性",
+          "startUs": 20240000
+        },
+        {
+          "text": "差",
+          "startUs": 20400000
+        }
+      ]
+    },
+    {
+      "startUs": 20680000,
+      "endUs": 21960000,
+      "chars": [
+        {
+          "text": "难",
+          "startUs": 20680000
+        },
+        {
+          "text": "以",
+          "startUs": 20880000
+        },
+        {
+          "text": "被",
+          "startUs": 21000000
+        },
+        {
+          "text": "植",
+          "startUs": 21160000
+        },
+        {
+          "text": "物",
+          "startUs": 21280000
+        },
+        {
+          "text": "吸",
+          "startUs": 21400000
+        },
+        {
+          "text": "收",
+          "startUs": 21600000
+        },
+        {
+          "text": "。",
+          "startUs": 21720000
+        }
+      ]
+    },
+    {
+      "startUs": 21960000,
+      "endUs": 22720000,
+      "chars": [
+        {
+          "text": "丛",
+          "startUs": 21960000
+        },
+        {
+          "text": "枝",
+          "startUs": 22120000
+        },
+        {
+          "text": "菌",
+          "startUs": 22160000
+        },
+        {
+          "text": "根",
+          "startUs": 22280000
+        },
+        {
+          "text": "的",
+          "startUs": 22520000
+        }
+      ]
+    },
+    {
+      "startUs": 22720000,
+      "endUs": 23520000,
+      "chars": [
+        {
+          "text": "根",
+          "startUs": 22720000
+        },
+        {
+          "text": "外",
+          "startUs": 22840000
+        },
+        {
+          "text": "菌",
+          "startUs": 23080000
+        },
+        {
+          "text": "丝",
+          "startUs": 23320000
+        }
+      ]
+    },
+    {
+      "startUs": 23520000,
+      "endUs": 24280000,
+      "chars": [
+        {
+          "text": "可",
+          "startUs": 23520000
+        },
+        {
+          "text": "以",
+          "startUs": 23640000
+        },
+        {
+          "text": "延",
+          "startUs": 23800000
+        },
+        {
+          "text": "伸",
+          "startUs": 23960000
+        },
+        {
+          "text": "到",
+          "startUs": 24080000
+        }
+      ]
+    },
+    {
+      "startUs": 24280000,
+      "endUs": 25160000,
+      "chars": [
+        {
+          "text": "更",
+          "startUs": 24280000
+        },
+        {
+          "text": "大",
+          "startUs": 24440000
+        },
+        {
+          "text": "范",
+          "startUs": 24640000
+        },
+        {
+          "text": "围",
+          "startUs": 24800000
+        }
+      ]
+    },
+    {
+      "startUs": 25160000,
+      "endUs": 26000000,
+      "chars": [
+        {
+          "text": "将",
+          "startUs": 25160000
+        },
+        {
+          "text": "土",
+          "startUs": 25400000
+        },
+        {
+          "text": "壤",
+          "startUs": 25600000
+        },
+        {
+          "text": "中",
+          "startUs": 25720000
+        },
+        {
+          "text": "的",
+          "startUs": 25840000
+        }
+      ]
+    },
+    {
+      "startUs": 26000000,
+      "endUs": 27520000,
+      "chars": [
+        {
+          "text": "难",
+          "startUs": 26000000
+        },
+        {
+          "text": "溶",
+          "startUs": 26280000
+        },
+        {
+          "text": "性",
+          "startUs": 26400000
+        },
+        {
+          "text": "磷",
+          "startUs": 26680000
+        },
+        {
+          "text": "溶",
+          "startUs": 26880000
+        },
+        {
+          "text": "解",
+          "startUs": 27080000
+        },
+        {
+          "text": "后",
+          "startUs": 27240000
+        }
+      ]
+    },
+    {
+      "startUs": 27520000,
+      "endUs": 28910000,
+      "chars": [
+        {
+          "text": "转",
+          "startUs": 27520000
+        },
+        {
+          "text": "运",
+          "startUs": 27760000
+        },
+        {
+          "text": "给",
+          "startUs": 27920000
+        },
+        {
+          "text": "植",
+          "startUs": 28120000
+        },
+        {
+          "text": "物",
+          "startUs": 28280000
+        }
+      ]
+    },
+    {
+      "startUs": 28910000,
+      "endUs": 29710000,
+      "chars": [
+        {
+          "text": "提",
+          "startUs": 28910000
+        },
+        {
+          "text": "升",
+          "startUs": 29070000
+        },
+        {
+          "text": "植",
+          "startUs": 29270000
+        },
+        {
+          "text": "物",
+          "startUs": 29470000
+        }
+      ]
+    },
+    {
+      "startUs": 29710000,
+      "endUs": 30830000,
+      "chars": [
+        {
+          "text": "磷",
+          "startUs": 29710000
+        },
+        {
+          "text": "素",
+          "startUs": 29870000
+        },
+        {
+          "text": "供",
+          "startUs": 30030000
+        },
+        {
+          "text": "应",
+          "startUs": 30190000
+        },
+        {
+          "text": "水",
+          "startUs": 30310000
+        },
+        {
+          "text": "平",
+          "startUs": 30510000
+        },
+        {
+          "text": "。",
+          "startUs": 30750000
+        }
+      ]
+    },
+    {
+      "startUs": 30830000,
+      "endUs": 32950000,
+      "chars": [
+        {
+          "text": "二",
+          "startUs": 30830000
+        },
+        {
+          "text": "、",
+          "startUs": 31070000
+        },
+        {
+          "text": "辅",
+          "startUs": 31390000
+        },
+        {
+          "text": "助",
+          "startUs": 31590000
+        },
+        {
+          "text": "氮",
+          "startUs": 31870000
+        },
+        {
+          "text": "元",
+          "startUs": 32030000
+        },
+        {
+          "text": "素",
+          "startUs": 32150000
+        },
+        {
+          "text": "的",
+          "startUs": 32270000
+        },
+        {
+          "text": "吸",
+          "startUs": 32470000
+        },
+        {
+          "text": "收",
+          "startUs": 32590000
+        },
+        {
+          "text": "。",
+          "startUs": 32710000
+        }
+      ]
+    },
+    {
+      "startUs": 32950000,
+      "endUs": 34430000,
+      "chars": [
+        {
+          "text": "丛",
+          "startUs": 32950000
+        },
+        {
+          "text": "枝",
+          "startUs": 33150000
+        },
+        {
+          "text": "菌",
+          "startUs": 33190000
+        },
+        {
+          "text": "根",
+          "startUs": 33350000
+        },
+        {
+          "text": "的",
+          "startUs": 33630000
+        },
+        {
+          "text": "菌",
+          "startUs": 33830000
+        },
+        {
+          "text": "丝",
+          "startUs": 34070000
+        }
+      ]
+    },
+    {
+      "startUs": 34430000,
+      "endUs": 35150000,
+      "chars": [
+        {
+          "text": "可",
+          "startUs": 34430000
+        },
+        {
+          "text": "以",
+          "startUs": 34590000
+        },
+        {
+          "text": "转",
+          "startUs": 34710000
+        },
+        {
+          "text": "运",
+          "startUs": 34910000
+        }
+      ]
+    },
+    {
+      "startUs": 35150000,
+      "endUs": 36470000,
+      "chars": [
+        {
+          "text": "土",
+          "startUs": 35150000
+        },
+        {
+          "text": "壤",
+          "startUs": 35310000
+        },
+        {
+          "text": "中",
+          "startUs": 35430000
+        },
+        {
+          "text": "的",
+          "startUs": 35590000
+        },
+        {
+          "text": "无",
+          "startUs": 35710000
+        },
+        {
+          "text": "机",
+          "startUs": 35950000
+        },
+        {
+          "text": "氮",
+          "startUs": 36190000
+        }
+      ]
+    },
+    {
+      "startUs": 36470000,
+      "endUs": 37150000,
+      "chars": [
+        {
+          "text": "同",
+          "startUs": 36470000
+        },
+        {
+          "text": "时",
+          "startUs": 36590000
+        },
+        {
+          "text": "还",
+          "startUs": 36710000
+        },
+        {
+          "text": "能",
+          "startUs": 36830000
+        },
+        {
+          "text": "和",
+          "startUs": 36990000
+        }
+      ]
+    },
+    {
+      "startUs": 37150000,
+      "endUs": 37710000,
+      "chars": [
+        {
+          "text": "土",
+          "startUs": 37150000
+        },
+        {
+          "text": "壤",
+          "startUs": 37310000
+        },
+        {
+          "text": "中",
+          "startUs": 37390000
+        },
+        {
+          "text": "的",
+          "startUs": 37510000
+        }
+      ]
+    },
+    {
+      "startUs": 37710000,
+      "endUs": 38510000,
+      "chars": [
+        {
+          "text": "固",
+          "startUs": 37710000
+        },
+        {
+          "text": "氮",
+          "startUs": 37910000
+        },
+        {
+          "text": "微",
+          "startUs": 38070000
+        },
+        {
+          "text": "生",
+          "startUs": 38190000
+        },
+        {
+          "text": "物",
+          "startUs": 38350000
+        }
+      ]
+    },
+    {
+      "startUs": 38510000,
+      "endUs": 39660000,
+      "chars": [
+        {
+          "text": "形",
+          "startUs": 38510000
+        },
+        {
+          "text": "成",
+          "startUs": 38670000
+        },
+        {
+          "text": "协",
+          "startUs": 38830000
+        },
+        {
+          "text": "同",
+          "startUs": 38990000
+        },
+        {
+          "text": "作",
+          "startUs": 39190000
+        },
+        {
+          "text": "用",
+          "startUs": 39350000
+        }
+      ]
+    },
+    {
+      "startUs": 39660000,
+      "endUs": 40300000,
+      "chars": [
+        {
+          "text": "帮",
+          "startUs": 39660000
+        },
+        {
+          "text": "助",
+          "startUs": 39820000
+        },
+        {
+          "text": "植",
+          "startUs": 39940000
+        },
+        {
+          "text": "物",
+          "startUs": 40100000
+        }
+      ]
+    },
+    {
+      "startUs": 40300000,
+      "endUs": 41380000,
+      "chars": [
+        {
+          "text": "更",
+          "startUs": 40300000
+        },
+        {
+          "text": "高",
+          "startUs": 40500000
+        },
+        {
+          "text": "效",
+          "startUs": 40700000
+        },
+        {
+          "text": "获",
+          "startUs": 40900000
+        },
+        {
+          "text": "取",
+          "startUs": 41100000
+        }
+      ]
+    },
+    {
+      "startUs": 41380000,
+      "endUs": 42180000,
+      "chars": [
+        {
+          "text": "氮",
+          "startUs": 41380000
+        },
+        {
+          "text": "素",
+          "startUs": 41580000
+        },
+        {
+          "text": "养",
+          "startUs": 41740000
+        },
+        {
+          "text": "分",
+          "startUs": 41900000
+        }
+      ]
+    },
+    {
+      "startUs": 42180000,
+      "endUs": 43020000,
+      "chars": [
+        {
+          "text": "减",
+          "startUs": 42180000
+        },
+        {
+          "text": "少",
+          "startUs": 42340000
+        },
+        {
+          "text": "氮",
+          "startUs": 42580000
+        },
+        {
+          "text": "肥",
+          "startUs": 42700000
+        },
+        {
+          "text": "的",
+          "startUs": 42860000
+        }
+      ]
+    },
+    {
+      "startUs": 43020000,
+      "endUs": 43980000,
+      "chars": [
+        {
+          "text": "流",
+          "startUs": 43020000
+        },
+        {
+          "text": "失",
+          "startUs": 43140000
+        },
+        {
+          "text": "浪",
+          "startUs": 43340000
+        },
+        {
+          "text": "费",
+          "startUs": 43500000
+        },
+        {
+          "text": "。",
+          "startUs": 43700000
+        }
+      ]
+    },
+    {
+      "startUs": 43980000,
+      "endUs": 45940000,
+      "chars": [
+        {
+          "text": "三",
+          "startUs": 43980000
+        },
+        {
+          "text": "、",
+          "startUs": 44260000
+        },
+        {
+          "text": "帮",
+          "startUs": 44340000
+        },
+        {
+          "text": "助",
+          "startUs": 44500000
+        },
+        {
+          "text": "微",
+          "startUs": 44700000
+        },
+        {
+          "text": "量",
+          "startUs": 44820000
+        },
+        {
+          "text": "元",
+          "startUs": 45020000
+        },
+        {
+          "text": "素",
+          "startUs": 45140000
+        },
+        {
+          "text": "的",
+          "startUs": 45220000
+        },
+        {
+          "text": "吸",
+          "startUs": 45460000
+        },
+        {
+          "text": "收",
+          "startUs": 45580000
+        },
+        {
+          "text": "。",
+          "startUs": 45740000
+        }
+      ]
+    },
+    {
+      "startUs": 45940000,
+      "endUs": 47100000,
+      "chars": [
+        {
+          "text": "除",
+          "startUs": 45940000
+        },
+        {
+          "text": "了",
+          "startUs": 46100000
+        },
+        {
+          "text": "大",
+          "startUs": 46220000
+        },
+        {
+          "text": "量",
+          "startUs": 46380000
+        },
+        {
+          "text": "元",
+          "startUs": 46540000
+        },
+        {
+          "text": "素",
+          "startUs": 46700000
+        }
+      ]
+    },
+    {
+      "startUs": 47100000,
+      "endUs": 47780000,
+      "chars": [
+        {
+          "text": "根",
+          "startUs": 47100000
+        },
+        {
+          "text": "外",
+          "startUs": 47220000
+        },
+        {
+          "text": "菌",
+          "startUs": 47420000
+        },
+        {
+          "text": "丝",
+          "startUs": 47620000
+        }
+      ]
+    },
+    {
+      "startUs": 47780000,
+      "endUs": 48700000,
+      "chars": [
+        {
+          "text": "还",
+          "startUs": 47780000
+        },
+        {
+          "text": "可",
+          "startUs": 47900000
+        },
+        {
+          "text": "以",
+          "startUs": 47980000
+        },
+        {
+          "text": "帮",
+          "startUs": 48100000
+        },
+        {
+          "text": "助",
+          "startUs": 48260000
+        },
+        {
+          "text": "植",
+          "startUs": 48380000
+        },
+        {
+          "text": "物",
+          "startUs": 48540000
+        }
+      ]
+    },
+    {
+      "startUs": 48700000,
+      "endUs": 49740000,
+      "chars": [
+        {
+          "text": "吸",
+          "startUs": 48700000
+        },
+        {
+          "text": "收",
+          "startUs": 48900000
+        },
+        {
+          "text": "土",
+          "startUs": 49020000
+        },
+        {
+          "text": "壤",
+          "startUs": 49220000
+        },
+        {
+          "text": "中",
+          "startUs": 49340000
+        },
+        {
+          "text": "的",
+          "startUs": 49500000
+        }
+      ]
+    },
+    {
+      "startUs": 49740000,
+      "endUs": 51020000,
+      "chars": [
+        {
+          "text": "锌",
+          "startUs": 49740000
+        },
+        {
+          "text": "、",
+          "startUs": 49780000
+        },
+        {
+          "text": "铜",
+          "startUs": 50220000
+        },
+        {
+          "text": "、",
+          "startUs": 50300000
+        },
+        {
+          "text": "铁",
+          "startUs": 50500000
+        },
+        {
+          "text": "等",
+          "startUs": 50820000
+        }
+      ]
+    },
+    {
+      "startUs": 51020000,
+      "endUs": 52080000,
+      "chars": [
+        {
+          "text": "微",
+          "startUs": 51020000
+        },
+        {
+          "text": "量",
+          "startUs": 51140000
+        },
+        {
+          "text": "元",
+          "startUs": 51340000
+        },
+        {
+          "text": "素",
+          "startUs": 51460000
+        }
+      ]
+    },
+    {
+      "startUs": 52080000,
+      "endUs": 52720000,
+      "chars": [
+        {
+          "text": "减",
+          "startUs": 52080000
+        },
+        {
+          "text": "少",
+          "startUs": 52240000
+        },
+        {
+          "text": "作",
+          "startUs": 52440000
+        },
+        {
+          "text": "物",
+          "startUs": 52600000
+        }
+      ]
+    },
+    {
+      "startUs": 52720000,
+      "endUs": 54080000,
+      "chars": [
+        {
+          "text": "缺",
+          "startUs": 52720000
+        },
+        {
+          "text": "素",
+          "startUs": 53040000
+        },
+        {
+          "text": "症",
+          "startUs": 53200000
+        },
+        {
+          "text": "状",
+          "startUs": 53360000
+        },
+        {
+          "text": "的",
+          "startUs": 53440000
+        },
+        {
+          "text": "发",
+          "startUs": 53640000
+        },
+        {
+          "text": "生",
+          "startUs": 53800000
+        }
+      ]
+    },
+    {
+      "startUs": 54080000,
+      "endUs": 55200000,
+      "chars": [
+        {
+          "text": "在",
+          "startUs": 54080000
+        },
+        {
+          "text": "贫",
+          "startUs": 54400000
+        },
+        {
+          "text": "瘠",
+          "startUs": 54560000
+        },
+        {
+          "text": "土",
+          "startUs": 54720000
+        },
+        {
+          "text": "壤",
+          "startUs": 54880000
+        },
+        {
+          "text": "中",
+          "startUs": 55000000
+        }
+      ]
+    },
+    {
+      "startUs": 55200000,
+      "endUs": 55800000,
+      "chars": [
+        {
+          "text": "这",
+          "startUs": 55200000
+        },
+        {
+          "text": "一",
+          "startUs": 55360000
+        },
+        {
+          "text": "效",
+          "startUs": 55480000
+        },
+        {
+          "text": "果",
+          "startUs": 55640000
+        }
+      ]
+    },
+    {
+      "startUs": 55800000,
+      "endUs": 56960000,
+      "chars": [
+        {
+          "text": "尤",
+          "startUs": 55800000
+        },
+        {
+          "text": "为",
+          "startUs": 56000000
+        },
+        {
+          "text": "明",
+          "startUs": 56200000
+        },
+        {
+          "text": "显",
+          "startUs": 56360000
+        },
+        {
+          "text": "。",
+          "startUs": 56520000
+        }
+      ]
+    },
+    {
+      "startUs": 56960000,
+      "endUs": 57840000,
+      "chars": [
+        {
+          "text": "丛",
+          "startUs": 56960000
+        },
+        {
+          "text": "枝",
+          "startUs": 57200000
+        },
+        {
+          "text": "菌",
+          "startUs": 57440000
+        },
+        {
+          "text": "根",
+          "startUs": 57600000
+        }
+      ]
+    },
+    {
+      "startUs": 57840000,
+      "endUs": 59760000,
+      "chars": [
+        {
+          "text": "促",
+          "startUs": 57840000
+        },
+        {
+          "text": "进",
+          "startUs": 58040000
+        },
+        {
+          "text": "养",
+          "startUs": 58200000
+        },
+        {
+          "text": "分",
+          "startUs": 58400000
+        },
+        {
+          "text": "吸",
+          "startUs": 58560000
+        },
+        {
+          "text": "收",
+          "startUs": 58720000
+        },
+        {
+          "text": "的",
+          "startUs": 58800000
+        },
+        {
+          "text": "原",
+          "startUs": 59040000
+        },
+        {
+          "text": "因",
+          "startUs": 59160000
+        }
+      ]
+    },
+    {
+      "startUs": 59760000,
+      "endUs": 60840000,
+      "chars": [
+        {
+          "text": "主",
+          "startUs": 59760000
+        },
+        {
+          "text": "要",
+          "startUs": 59920000
+        },
+        {
+          "text": "是",
+          "startUs": 60000000
+        },
+        {
+          "text": "菌",
+          "startUs": 60280000
+        },
+        {
+          "text": "丝",
+          "startUs": 60560000
+        }
+      ]
+    },
+    {
+      "startUs": 60840000,
+      "endUs": 62200000,
+      "chars": [
+        {
+          "text": "拓",
+          "startUs": 60840000
+        },
+        {
+          "text": "展",
+          "startUs": 61040000
+        },
+        {
+          "text": "了",
+          "startUs": 61200000
+        },
+        {
+          "text": "吸",
+          "startUs": 61400000
+        },
+        {
+          "text": "收",
+          "startUs": 61560000
+        },
+        {
+          "text": "面",
+          "startUs": 61680000
+        },
+        {
+          "text": "积",
+          "startUs": 61880000
+        },
+        {
+          "text": "。",
+          "startUs": 61960000
+        }
+      ]
+    },
+    {
+      "startUs": 62200000,
+      "endUs": 63480000,
+      "chars": [
+        {
+          "text": "根",
+          "startUs": 62200000
+        },
+        {
+          "text": "外",
+          "startUs": 62320000
+        },
+        {
+          "text": "菌",
+          "startUs": 62560000
+        },
+        {
+          "text": "丝",
+          "startUs": 62720000
+        },
+        {
+          "text": "的",
+          "startUs": 62800000
+        },
+        {
+          "text": "总",
+          "startUs": 62960000
+        },
+        {
+          "text": "长",
+          "startUs": 63160000
+        },
+        {
+          "text": "度",
+          "startUs": 63320000
+        }
+      ]
+    },
+    {
+      "startUs": 63480000,
+      "endUs": 64040000,
+      "chars": [
+        {
+          "text": "可",
+          "startUs": 63480000
+        },
+        {
+          "text": "以",
+          "startUs": 63640000
+        },
+        {
+          "text": "达",
+          "startUs": 63760000
+        },
+        {
+          "text": "到",
+          "startUs": 63880000
+        }
+      ]
+    },
+    {
+      "startUs": 64040000,
+      "endUs": 65440000,
+      "chars": [
+        {
+          "text": "植",
+          "startUs": 64040000
+        },
+        {
+          "text": "物",
+          "startUs": 64200000
+        },
+        {
+          "text": "根",
+          "startUs": 64560000
+        },
+        {
+          "text": "表",
+          "startUs": 64760000
+        },
+        {
+          "text": "面",
+          "startUs": 64960000
+        },
+        {
+          "text": "积",
+          "startUs": 65120000
+        },
+        {
+          "text": "的",
+          "startUs": 65200000
+        }
+      ]
+    },
+    {
+      "startUs": 65440000,
+      "endUs": 67120000,
+      "chars": [
+        {
+          "text": "数",
+          "startUs": 65440000
+        },
+        {
+          "text": "十",
+          "startUs": 65680000
+        },
+        {
+          "text": "倍",
+          "startUs": 65880000
+        },
+        {
+          "text": "甚",
+          "startUs": 66080000
+        },
+        {
+          "text": "至",
+          "startUs": 66240000
+        },
+        {
+          "text": "上",
+          "startUs": 66360000
+        },
+        {
+          "text": "百",
+          "startUs": 66560000
+        },
+        {
+          "text": "倍",
+          "startUs": 66800000
+        }
+      ]
+    },
+    {
+      "startUs": 67120000,
+      "endUs": 68240000,
+      "chars": [
+        {
+          "text": "让",
+          "startUs": 67120000
+        },
+        {
+          "text": "植",
+          "startUs": 67400000
+        },
+        {
+          "text": "物",
+          "startUs": 67520000
+        },
+        {
+          "text": "根",
+          "startUs": 67680000
+        },
+        {
+          "text": "系",
+          "startUs": 67920000
+        },
+        {
+          "text": "的",
+          "startUs": 68040000
+        }
+      ]
+    },
+    {
+      "startUs": 68240000,
+      "endUs": 69480000,
+      "chars": [
+        {
+          "text": "养",
+          "startUs": 68240000
+        },
+        {
+          "text": "分",
+          "startUs": 68400000
+        },
+        {
+          "text": "吸",
+          "startUs": 68600000
+        },
+        {
+          "text": "收",
+          "startUs": 68760000
+        },
+        {
+          "text": "范",
+          "startUs": 68920000
+        },
+        {
+          "text": "围",
+          "startUs": 69080000
+        }
+      ]
+    },
+    {
+      "startUs": 69480000,
+      "endUs": 70640000,
+      "chars": [
+        {
+          "text": "从",
+          "startUs": 69480000
+        },
+        {
+          "text": "根",
+          "startUs": 69680000
+        },
+        {
+          "text": "际",
+          "startUs": 69960000
+        },
+        {
+          "text": "拓",
+          "startUs": 70160000
+        },
+        {
+          "text": "展",
+          "startUs": 70280000
+        },
+        {
+          "text": "到",
+          "startUs": 70440000
+        }
+      ]
+    },
+    {
+      "startUs": 70640000,
+      "endUs": 72420000,
+      "chars": [
+        {
+          "text": "周",
+          "startUs": 70640000
+        },
+        {
+          "text": "边",
+          "startUs": 70800000
+        },
+        {
+          "text": "更",
+          "startUs": 71000000
+        },
+        {
+          "text": "大",
+          "startUs": 71160000
+        },
+        {
+          "text": "体",
+          "startUs": 71360000
+        },
+        {
+          "text": "积",
+          "startUs": 71560000
+        },
+        {
+          "text": "的",
+          "startUs": 71680000
+        },
+        {
+          "text": "土",
+          "startUs": 71880000
+        },
+        {
+          "text": "壤",
+          "startUs": 72040000
+        }
+      ]
+    },
+    {
+      "startUs": 72420000,
+      "endUs": 73260000,
+      "chars": [
+        {
+          "text": "大",
+          "startUs": 72420000
+        },
+        {
+          "text": "幅",
+          "startUs": 72620000
+        },
+        {
+          "text": "提",
+          "startUs": 72820000
+        },
+        {
+          "text": "升",
+          "startUs": 72980000
+        },
+        {
+          "text": "了",
+          "startUs": 73060000
+        }
+      ]
+    },
+    {
+      "startUs": 73260000,
+      "endUs": 74500000,
+      "chars": [
+        {
+          "text": "养",
+          "startUs": 73260000
+        },
+        {
+          "text": "分",
+          "startUs": 73460000
+        },
+        {
+          "text": "获",
+          "startUs": 73620000
+        },
+        {
+          "text": "取",
+          "startUs": 73820000
+        },
+        {
+          "text": "能",
+          "startUs": 73980000
+        },
+        {
+          "text": "力",
+          "startUs": 74140000
+        },
+        {
+          "text": "。",
+          "startUs": 74220000
+        }
+      ]
+    },
+    {
+      "startUs": 74500000,
+      "endUs": 75740000,
+      "chars": [
+        {
+          "text": "同",
+          "startUs": 74500000
+        },
+        {
+          "text": "时",
+          "startUs": 74700000
+        },
+        {
+          "text": "，",
+          "startUs": 74860000
+        },
+        {
+          "text": "丛",
+          "startUs": 75020000
+        },
+        {
+          "text": "枝",
+          "startUs": 75220000
+        },
+        {
+          "text": "菌",
+          "startUs": 75260000
+        },
+        {
+          "text": "根",
+          "startUs": 75380000
+        }
+      ]
+    },
+    {
+      "startUs": 75740000,
+      "endUs": 76660000,
+      "chars": [
+        {
+          "text": "共",
+          "startUs": 75740000
+        },
+        {
+          "text": "生",
+          "startUs": 75900000
+        },
+        {
+          "text": "过",
+          "startUs": 76060000
+        },
+        {
+          "text": "程",
+          "startUs": 76220000
+        },
+        {
+          "text": "中",
+          "startUs": 76300000
+        }
+      ]
+    },
+    {
+      "startUs": 76660000,
+      "endUs": 77420000,
+      "chars": [
+        {
+          "text": "会",
+          "startUs": 76660000
+        },
+        {
+          "text": "分",
+          "startUs": 76900000
+        },
+        {
+          "text": "泌",
+          "startUs": 77020000
+        },
+        {
+          "text": "一",
+          "startUs": 77140000
+        },
+        {
+          "text": "些",
+          "startUs": 77300000
+        }
+      ]
+    },
+    {
+      "startUs": 77420000,
+      "endUs": 78460000,
+      "chars": [
+        {
+          "text": "有",
+          "startUs": 77420000
+        },
+        {
+          "text": "机",
+          "startUs": 77620000
+        },
+        {
+          "text": "酸",
+          "startUs": 77740000
+        },
+        {
+          "text": "类",
+          "startUs": 77940000
+        },
+        {
+          "text": "物",
+          "startUs": 78140000
+        },
+        {
+          "text": "质",
+          "startUs": 78260000
+        }
+      ]
+    },
+    {
+      "startUs": 78460000,
+      "endUs": 79260000,
+      "chars": [
+        {
+          "text": "能",
+          "startUs": 78460000
+        },
+        {
+          "text": "够",
+          "startUs": 78620000
+        },
+        {
+          "text": "溶",
+          "startUs": 78820000
+        },
+        {
+          "text": "解",
+          "startUs": 79020000
+        }
+      ]
+    },
+    {
+      "startUs": 79260000,
+      "endUs": 80620000,
+      "chars": [
+        {
+          "text": "土",
+          "startUs": 79260000
+        },
+        {
+          "text": "壤",
+          "startUs": 79460000
+        },
+        {
+          "text": "中",
+          "startUs": 79580000
+        },
+        {
+          "text": "被",
+          "startUs": 79820000
+        },
+        {
+          "text": "固",
+          "startUs": 80100000
+        },
+        {
+          "text": "定",
+          "startUs": 80300000
+        },
+        {
+          "text": "的",
+          "startUs": 80420000
+        }
+      ]
+    },
+    {
+      "startUs": 80620000,
+      "endUs": 81500000,
+      "chars": [
+        {
+          "text": "矿",
+          "startUs": 80620000
+        },
+        {
+          "text": "质",
+          "startUs": 80900000
+        },
+        {
+          "text": "养",
+          "startUs": 81060000
+        },
+        {
+          "text": "分",
+          "startUs": 81220000
+        }
+      ]
+    },
+    {
+      "startUs": 81500000,
+      "endUs": 82380000,
+      "chars": [
+        {
+          "text": "将",
+          "startUs": 81500000
+        },
+        {
+          "text": "其",
+          "startUs": 81700000
+        },
+        {
+          "text": "转",
+          "startUs": 81900000
+        },
+        {
+          "text": "化",
+          "startUs": 82060000
+        },
+        {
+          "text": "为",
+          "startUs": 82180000
+        }
+      ]
+    },
+    {
+      "startUs": 82380000,
+      "endUs": 82980000,
+      "chars": [
+        {
+          "text": "植",
+          "startUs": 82380000
+        },
+        {
+          "text": "物",
+          "startUs": 82540000
+        },
+        {
+          "text": "可",
+          "startUs": 82700000
+        },
+        {
+          "text": "以",
+          "startUs": 82820000
+        }
+      ]
+    },
+    {
+      "startUs": 82980000,
+      "endUs": 84260000,
+      "chars": [
+        {
+          "text": "吸",
+          "startUs": 82980000
+        },
+        {
+          "text": "收",
+          "startUs": 83140000
+        },
+        {
+          "text": "利",
+          "startUs": 83340000
+        },
+        {
+          "text": "用",
+          "startUs": 83500000
+        },
+        {
+          "text": "的",
+          "startUs": 83580000
+        },
+        {
+          "text": "形",
+          "startUs": 83780000
+        },
+        {
+          "text": "态",
+          "startUs": 83900000
+        }
+      ]
+    },
+    {
+      "startUs": 84260000,
+      "endUs": 85860000,
+      "chars": [
+        {
+          "text": "提",
+          "startUs": 84260000
+        },
+        {
+          "text": "升",
+          "startUs": 84420000
+        },
+        {
+          "text": "土",
+          "startUs": 84620000
+        },
+        {
+          "text": "壤",
+          "startUs": 84780000
+        },
+        {
+          "text": "养",
+          "startUs": 84940000
+        },
+        {
+          "text": "分",
+          "startUs": 85140000
+        },
+        {
+          "text": "的",
+          "startUs": 85220000
+        },
+        {
+          "text": "利",
+          "startUs": 85380000
+        },
+        {
+          "text": "用",
+          "startUs": 85460000
+        },
+        {
+          "text": "率",
+          "startUs": 85540000
+        },
+        {
+          "text": "。",
+          "startUs": 85700000
+        }
+      ]
+    },
+    {
+      "startUs": 85860000,
+      "endUs": 86700000,
+      "chars": [
+        {
+          "text": "根",
+          "startUs": 85860000
+        },
+        {
+          "text": "内",
+          "startUs": 86020000
+        },
+        {
+          "text": "形",
+          "startUs": 86220000
+        },
+        {
+          "text": "成",
+          "startUs": 86340000
+        },
+        {
+          "text": "的",
+          "startUs": 86460000
+        }
+      ]
+    },
+    {
+      "startUs": 86700000,
+      "endUs": 87500000,
+      "chars": [
+        {
+          "text": "丛",
+          "startUs": 86700000
+        },
+        {
+          "text": "枝",
+          "startUs": 86900000
+        },
+        {
+          "text": "结",
+          "startUs": 87060000
+        },
+        {
+          "text": "构",
+          "startUs": 87220000
+        }
+      ]
+    },
+    {
+      "startUs": 87500000,
+      "endUs": 88340000,
+      "chars": [
+        {
+          "text": "拥",
+          "startUs": 87500000
+        },
+        {
+          "text": "有",
+          "startUs": 87660000
+        },
+        {
+          "text": "极",
+          "startUs": 87900000
+        },
+        {
+          "text": "大",
+          "startUs": 88060000
+        },
+        {
+          "text": "的",
+          "startUs": 88220000
+        }
+      ]
+    },
+    {
+      "startUs": 88340000,
+      "endUs": 89390000,
+      "chars": [
+        {
+          "text": "交",
+          "startUs": 88340000
+        },
+        {
+          "text": "换",
+          "startUs": 88540000
+        },
+        {
+          "text": "面",
+          "startUs": 88700000
+        },
+        {
+          "text": "积",
+          "startUs": 88860000
+        }
+      ]
+    },
+    {
+      "startUs": 89390000,
+      "endUs": 90470000,
+      "chars": [
+        {
+          "text": "植",
+          "startUs": 89390000
+        },
+        {
+          "text": "物",
+          "startUs": 89510000
+        },
+        {
+          "text": "将",
+          "startUs": 89670000
+        },
+        {
+          "text": "光",
+          "startUs": 89830000
+        },
+        {
+          "text": "合",
+          "startUs": 90110000
+        },
+        {
+          "text": "作",
+          "startUs": 90230000
+        },
+        {
+          "text": "用",
+          "startUs": 90390000
+        }
+      ]
+    },
+    {
+      "startUs": 90470000,
+      "endUs": 91710000,
+      "chars": [
+        {
+          "text": "合",
+          "startUs": 90470000
+        },
+        {
+          "text": "成",
+          "startUs": 90630000
+        },
+        {
+          "text": "的",
+          "startUs": 90750000
+        },
+        {
+          "text": "碳",
+          "startUs": 90910000
+        },
+        {
+          "text": "水",
+          "startUs": 91030000
+        },
+        {
+          "text": "化",
+          "startUs": 91190000
+        },
+        {
+          "text": "合",
+          "startUs": 91350000
+        },
+        {
+          "text": "物",
+          "startUs": 91470000
+        }
+      ]
+    },
+    {
+      "startUs": 91710000,
+      "endUs": 92830000,
+      "chars": [
+        {
+          "text": "传",
+          "startUs": 91710000
+        },
+        {
+          "text": "递",
+          "startUs": 91870000
+        },
+        {
+          "text": "给",
+          "startUs": 91990000
+        },
+        {
+          "text": "真",
+          "startUs": 92190000
+        },
+        {
+          "text": "菌",
+          "startUs": 92350000
+        }
+      ]
+    },
+    {
+      "startUs": 92830000,
+      "endUs": 94230000,
+      "chars": [
+        {
+          "text": "真",
+          "startUs": 92830000
+        },
+        {
+          "text": "菌",
+          "startUs": 92950000
+        },
+        {
+          "text": "将",
+          "startUs": 93190000
+        },
+        {
+          "text": "吸",
+          "startUs": 93390000
+        },
+        {
+          "text": "收",
+          "startUs": 93590000
+        },
+        {
+          "text": "的",
+          "startUs": 93710000
+        },
+        {
+          "text": "养",
+          "startUs": 93870000
+        },
+        {
+          "text": "分",
+          "startUs": 94030000
+        }
+      ]
+    },
+    {
+      "startUs": 94230000,
+      "endUs": 95310000,
+      "chars": [
+        {
+          "text": "传",
+          "startUs": 94230000
+        },
+        {
+          "text": "递",
+          "startUs": 94430000
+        },
+        {
+          "text": "给",
+          "startUs": 94550000
+        },
+        {
+          "text": "植",
+          "startUs": 94750000
+        },
+        {
+          "text": "物",
+          "startUs": 94910000
+        }
+      ]
+    },
+    {
+      "startUs": 95310000,
+      "endUs": 96590000,
+      "chars": [
+        {
+          "text": "双",
+          "startUs": 95310000
+        },
+        {
+          "text": "向",
+          "startUs": 95550000
+        },
+        {
+          "text": "交",
+          "startUs": 95790000
+        },
+        {
+          "text": "换",
+          "startUs": 95950000
+        },
+        {
+          "text": "效",
+          "startUs": 96150000
+        },
+        {
+          "text": "率",
+          "startUs": 96350000
+        }
+      ]
+    },
+    {
+      "startUs": 96590000,
+      "endUs": 98430000,
+      "chars": [
+        {
+          "text": "远",
+          "startUs": 96590000
+        },
+        {
+          "text": "高",
+          "startUs": 96830000
+        },
+        {
+          "text": "于",
+          "startUs": 96990000
+        },
+        {
+          "text": "普",
+          "startUs": 97230000
+        },
+        {
+          "text": "通",
+          "startUs": 97390000
+        },
+        {
+          "text": "吸",
+          "startUs": 97550000
+        },
+        {
+          "text": "附",
+          "startUs": 97750000
+        },
+        {
+          "text": "交",
+          "startUs": 97910000
+        },
+        {
+          "text": "换",
+          "startUs": 98070000
+        }
+      ]
+    },
+    {
+      "startUs": 98430000,
+      "endUs": 100330000,
+      "chars": [
+        {
+          "text": "提",
+          "startUs": 98430000
+        },
+        {
+          "text": "升",
+          "startUs": 98590000
+        },
+        {
+          "text": "了",
+          "startUs": 98710000
+        },
+        {
+          "text": "养",
+          "startUs": 98910000
+        },
+        {
+          "text": "分",
+          "startUs": 99110000
+        },
+        {
+          "text": "交",
+          "startUs": 99270000
+        },
+        {
+          "text": "换",
+          "startUs": 99430000
+        },
+        {
+          "text": "的",
+          "startUs": 99550000
+        },
+        {
+          "text": "效",
+          "startUs": 99750000
+        },
+        {
+          "text": "率",
+          "startUs": 99870000
+        },
+        {
+          "text": "。",
+          "startUs": 99950000
+        }
+      ]
+    },
+    {
+      "startUs": 100330000,
+      "endUs": 101330000,
+      "chars": [
+        {
+          "text": "那",
+          "startUs": 100330000
+        },
+        {
+          "text": "么",
+          "startUs": 100450000
+        },
+        {
+          "text": "丛",
+          "startUs": 100690000
+        },
+        {
+          "text": "枝",
+          "startUs": 100850000
+        },
+        {
+          "text": "菌",
+          "startUs": 101050000
+        },
+        {
+          "text": "根",
+          "startUs": 101210000
+        }
+      ]
+    },
+    {
+      "startUs": 101330000,
+      "endUs": 101810000,
+      "chars": [
+        {
+          "text": "都",
+          "startUs": 101330000
+        },
+        {
+          "text": "有",
+          "startUs": 101450000
+        },
+        {
+          "text": "哪",
+          "startUs": 101610000
+        },
+        {
+          "text": "些",
+          "startUs": 101690000
+        }
+      ]
+    },
+    {
+      "startUs": 101810000,
+      "endUs": 103290000,
+      "chars": [
+        {
+          "text": "实",
+          "startUs": 101810000
+        },
+        {
+          "text": "际",
+          "startUs": 102010000
+        },
+        {
+          "text": "的",
+          "startUs": 102090000
+        },
+        {
+          "text": "应",
+          "startUs": 102250000
+        },
+        {
+          "text": "用",
+          "startUs": 102410000
+        },
+        {
+          "text": "优",
+          "startUs": 102570000
+        },
+        {
+          "text": "势",
+          "startUs": 102770000
+        },
+        {
+          "text": "呢",
+          "startUs": 102890000
+        },
+        {
+          "text": "？",
+          "startUs": 103090000
+        }
+      ]
+    },
+    {
+      "startUs": 103290000,
+      "endUs": 104490000,
+      "chars": [
+        {
+          "text": "首",
+          "startUs": 103290000
+        },
+        {
+          "text": "先",
+          "startUs": 103450000
+        },
+        {
+          "text": "是",
+          "startUs": 103530000
+        },
+        {
+          "text": "刚",
+          "startUs": 103730000
+        },
+        {
+          "text": "才",
+          "startUs": 103810000
+        },
+        {
+          "text": "讲",
+          "startUs": 103970000
+        },
+        {
+          "text": "到",
+          "startUs": 104130000
+        },
+        {
+          "text": "的",
+          "startUs": 104250000
+        }
+      ]
+    },
+    {
+      "startUs": 104490000,
+      "endUs": 105410000,
+      "chars": [
+        {
+          "text": "促",
+          "startUs": 104490000
+        },
+        {
+          "text": "进",
+          "startUs": 104730000
+        },
+        {
+          "text": "养",
+          "startUs": 104890000
+        },
+        {
+          "text": "分",
+          "startUs": 105090000
+        },
+        {
+          "text": "的",
+          "startUs": 105210000
+        }
+      ]
+    },
+    {
+      "startUs": 105410000,
+      "endUs": 106490000,
+      "chars": [
+        {
+          "text": "高",
+          "startUs": 105410000
+        },
+        {
+          "text": "效",
+          "startUs": 105570000
+        },
+        {
+          "text": "利",
+          "startUs": 105690000
+        },
+        {
+          "text": "用",
+          "startUs": 105890000
+        },
+        {
+          "text": "。",
+          "startUs": 106050000
+        }
+      ]
+    },
+    {
+      "startUs": 106490000,
+      "endUs": 107690000,
+      "chars": [
+        {
+          "text": "比",
+          "startUs": 106490000
+        },
+        {
+          "text": "如",
+          "startUs": 106690000
+        },
+        {
+          "text": "可",
+          "startUs": 106930000
+        },
+        {
+          "text": "以",
+          "startUs": 107090000
+        },
+        {
+          "text": "提",
+          "startUs": 107250000
+        },
+        {
+          "text": "升",
+          "startUs": 107450000
+        }
+      ]
+    },
+    {
+      "startUs": 107690000,
+      "endUs": 108810000,
+      "chars": [
+        {
+          "text": "磷",
+          "startUs": 107690000
+        },
+        {
+          "text": "肥",
+          "startUs": 107850000
+        },
+        {
+          "text": "的",
+          "startUs": 108050000
+        },
+        {
+          "text": "利",
+          "startUs": 108210000
+        },
+        {
+          "text": "用",
+          "startUs": 108290000
+        },
+        {
+          "text": "率",
+          "startUs": 108410000
+        }
+      ]
+    },
+    {
+      "startUs": 108810000,
+      "endUs": 110550000,
+      "chars": [
+        {
+          "text": "减",
+          "startUs": 108810000
+        },
+        {
+          "text": "少",
+          "startUs": 108970000
+        },
+        {
+          "text": "化",
+          "startUs": 109170000
+        },
+        {
+          "text": "肥",
+          "startUs": 109370000
+        },
+        {
+          "text": "的",
+          "startUs": 109530000
+        },
+        {
+          "text": "施",
+          "startUs": 109730000
+        },
+        {
+          "text": "用",
+          "startUs": 109850000
+        },
+        {
+          "text": "量",
+          "startUs": 109970000
+        }
+      ]
+    },
+    {
+      "startUs": 110550000,
+      "endUs": 111950000,
+      "chars": [
+        {
+          "text": "降",
+          "startUs": 110550000
+        },
+        {
+          "text": "低",
+          "startUs": 110670000
+        },
+        {
+          "text": "农",
+          "startUs": 110830000
+        },
+        {
+          "text": "业",
+          "startUs": 110990000
+        },
+        {
+          "text": "生",
+          "startUs": 111150000
+        },
+        {
+          "text": "产",
+          "startUs": 111310000
+        },
+        {
+          "text": "成",
+          "startUs": 111470000
+        },
+        {
+          "text": "本",
+          "startUs": 111630000
+        }
+      ]
+    },
+    {
+      "startUs": 111950000,
+      "endUs": 112630000,
+      "chars": [
+        {
+          "text": "同",
+          "startUs": 111950000
+        },
+        {
+          "text": "时",
+          "startUs": 112110000
+        },
+        {
+          "text": "减",
+          "startUs": 112270000
+        },
+        {
+          "text": "少",
+          "startUs": 112430000
+        }
+      ]
+    },
+    {
+      "startUs": 112630000,
+      "endUs": 113950000,
+      "chars": [
+        {
+          "text": "养",
+          "startUs": 112630000
+        },
+        {
+          "text": "分",
+          "startUs": 112790000
+        },
+        {
+          "text": "淋",
+          "startUs": 113070000
+        },
+        {
+          "text": "失",
+          "startUs": 113190000
+        },
+        {
+          "text": "带",
+          "startUs": 113430000
+        },
+        {
+          "text": "来",
+          "startUs": 113550000
+        },
+        {
+          "text": "的",
+          "startUs": 113670000
+        }
+      ]
+    },
+    {
+      "startUs": 113950000,
+      "endUs": 115230000,
+      "chars": [
+        {
+          "text": "水",
+          "startUs": 113950000
+        },
+        {
+          "text": "体",
+          "startUs": 114190000
+        },
+        {
+          "text": "富",
+          "startUs": 114430000
+        },
+        {
+          "text": "营",
+          "startUs": 114590000
+        },
+        {
+          "text": "养",
+          "startUs": 114710000
+        },
+        {
+          "text": "化",
+          "startUs": 114830000
+        },
+        {
+          "text": "等",
+          "startUs": 115030000
+        }
+      ]
+    },
+    {
+      "startUs": 115230000,
+      "endUs": 115950000,
+      "chars": [
+        {
+          "text": "环",
+          "startUs": 115230000
+        },
+        {
+          "text": "境",
+          "startUs": 115350000
+        },
+        {
+          "text": "问",
+          "startUs": 115470000
+        },
+        {
+          "text": "题",
+          "startUs": 115670000
+        }
+      ]
+    },
+    {
+      "startUs": 115950000,
+      "endUs": 117150000,
+      "chars": [
+        {
+          "text": "生",
+          "startUs": 115950000
+        },
+        {
+          "text": "态",
+          "startUs": 116190000
+        },
+        {
+          "text": "效",
+          "startUs": 116350000
+        },
+        {
+          "text": "益",
+          "startUs": 116550000
+        },
+        {
+          "text": "突",
+          "startUs": 116710000
+        },
+        {
+          "text": "出",
+          "startUs": 116870000
+        },
+        {
+          "text": "。",
+          "startUs": 117030000
+        }
+      ]
+    },
+    {
+      "startUs": 117150000,
+      "endUs": 117630000,
+      "chars": [
+        {
+          "text": "再",
+          "startUs": 117150000
+        },
+        {
+          "text": "有",
+          "startUs": 117310000
+        },
+        {
+          "text": "就",
+          "startUs": 117430000
+        },
+        {
+          "text": "是",
+          "startUs": 117550000
+        }
+      ]
+    },
+    {
+      "startUs": 117630000,
+      "endUs": 118630000,
+      "chars": [
+        {
+          "text": "对",
+          "startUs": 117630000
+        },
+        {
+          "text": "土",
+          "startUs": 117830000
+        },
+        {
+          "text": "壤",
+          "startUs": 117990000
+        },
+        {
+          "text": "生",
+          "startUs": 118150000
+        },
+        {
+          "text": "态",
+          "startUs": 118350000
+        },
+        {
+          "text": "的",
+          "startUs": 118430000
+        }
+      ]
+    },
+    {
+      "startUs": 118630000,
+      "endUs": 119310000,
+      "chars": [
+        {
+          "text": "改",
+          "startUs": 118630000
+        },
+        {
+          "text": "善",
+          "startUs": 118750000
+        },
+        {
+          "text": "作",
+          "startUs": 118910000
+        },
+        {
+          "text": "用",
+          "startUs": 119070000
+        }
+      ]
+    },
+    {
+      "startUs": 119310000,
+      "endUs": 119950000,
+      "chars": [
+        {
+          "text": "能",
+          "startUs": 119310000
+        },
+        {
+          "text": "够",
+          "startUs": 119470000
+        },
+        {
+          "text": "促",
+          "startUs": 119630000
+        },
+        {
+          "text": "进",
+          "startUs": 119830000
+        }
+      ]
+    },
+    {
+      "startUs": 119950000,
+      "endUs": 121310000,
+      "chars": [
+        {
+          "text": "土",
+          "startUs": 119950000
+        },
+        {
+          "text": "壤",
+          "startUs": 120150000
+        },
+        {
+          "text": "团",
+          "startUs": 120310000
+        },
+        {
+          "text": "聚",
+          "startUs": 120550000
+        },
+        {
+          "text": "体",
+          "startUs": 120710000
+        },
+        {
+          "text": "形",
+          "startUs": 120870000
+        },
+        {
+          "text": "成",
+          "startUs": 120990000
+        }
+      ]
+    },
+    {
+      "startUs": 121310000,
+      "endUs": 122870000,
+      "chars": [
+        {
+          "text": "提",
+          "startUs": 121310000
+        },
+        {
+          "text": "升",
+          "startUs": 121510000
+        },
+        {
+          "text": "土",
+          "startUs": 121670000
+        },
+        {
+          "text": "壤",
+          "startUs": 121870000
+        },
+        {
+          "text": "固",
+          "startUs": 122070000
+        },
+        {
+          "text": "碳",
+          "startUs": 122270000
+        },
+        {
+          "text": "能",
+          "startUs": 122430000
+        },
+        {
+          "text": "力",
+          "startUs": 122590000
+        }
+      ]
+    },
+    {
+      "startUs": 122870000,
+      "endUs": 124470000,
+      "chars": [
+        {
+          "text": "优",
+          "startUs": 122870000
+        },
+        {
+          "text": "化",
+          "startUs": 123030000
+        },
+        {
+          "text": "土",
+          "startUs": 123230000
+        },
+        {
+          "text": "壤",
+          "startUs": 123350000
+        },
+        {
+          "text": "微",
+          "startUs": 123510000
+        },
+        {
+          "text": "生",
+          "startUs": 123670000
+        },
+        {
+          "text": "物",
+          "startUs": 123830000
+        },
+        {
+          "text": "群",
+          "startUs": 123950000
+        },
+        {
+          "text": "落",
+          "startUs": 124230000
+        }
+      ]
+    },
+    {
+      "startUs": 124470000,
+      "endUs": 126280000,
+      "chars": [
+        {
+          "text": "构",
+          "startUs": 124470000
+        },
+        {
+          "text": "建",
+          "startUs": 124670000
+        },
+        {
+          "text": "土",
+          "startUs": 124870000
+        },
+        {
+          "text": "壤",
+          "startUs": 125030000
+        },
+        {
+          "text": "菌",
+          "startUs": 125190000
+        },
+        {
+          "text": "丝",
+          "startUs": 125390000
+        },
+        {
+          "text": "网",
+          "startUs": 125550000
+        },
+        {
+          "text": "络",
+          "startUs": 125670000
+        },
+        {
+          "text": "等",
+          "startUs": 125790000
+        },
+        {
+          "text": "。",
+          "startUs": 125990000
+        }
+      ]
+    },
+    {
+      "startUs": 126280000,
+      "endUs": 127320000,
+      "chars": [
+        {
+          "text": "这",
+          "startUs": 126280000
+        },
+        {
+          "text": "些",
+          "startUs": 126400000
+        },
+        {
+          "text": "应",
+          "startUs": 126520000
+        },
+        {
+          "text": "用",
+          "startUs": 126640000
+        },
+        {
+          "text": "优",
+          "startUs": 126800000
+        },
+        {
+          "text": "势",
+          "startUs": 126960000
+        }
+      ]
+    },
+    {
+      "startUs": 127320000,
+      "endUs": 127920000,
+      "chars": [
+        {
+          "text": "根",
+          "startUs": 127320000
+        },
+        {
+          "text": "本",
+          "startUs": 127440000
+        },
+        {
+          "text": "的",
+          "startUs": 127560000
+        },
+        {
+          "text": "原",
+          "startUs": 127680000
+        },
+        {
+          "text": "因",
+          "startUs": 127800000
+        }
+      ]
+    },
+    {
+      "startUs": 127920000,
+      "endUs": 129160000,
+      "chars": [
+        {
+          "text": "在",
+          "startUs": 127920000
+        },
+        {
+          "text": "于",
+          "startUs": 128120000
+        },
+        {
+          "text": "菌",
+          "startUs": 128560000
+        },
+        {
+          "text": "丝",
+          "startUs": 128800000
+        },
+        {
+          "text": "的",
+          "startUs": 128920000
+        }
+      ]
+    },
+    {
+      "startUs": 129160000,
+      "endUs": 130240000,
+      "chars": [
+        {
+          "text": "物",
+          "startUs": 129160000
+        },
+        {
+          "text": "理",
+          "startUs": 129320000
+        },
+        {
+          "text": "缠",
+          "startUs": 129520000
+        },
+        {
+          "text": "绕",
+          "startUs": 129720000
+        },
+        {
+          "text": "作",
+          "startUs": 129920000
+        },
+        {
+          "text": "用",
+          "startUs": 130080000
+        }
+      ]
+    },
+    {
+      "startUs": 130240000,
+      "endUs": 131080000,
+      "chars": [
+        {
+          "text": "加",
+          "startUs": 130240000
+        },
+        {
+          "text": "上",
+          "startUs": 130440000
+        },
+        {
+          "text": "菌",
+          "startUs": 130680000
+        },
+        {
+          "text": "丝",
+          "startUs": 130920000
+        }
+      ]
+    },
+    {
+      "startUs": 131080000,
+      "endUs": 132560000,
+      "chars": [
+        {
+          "text": "分",
+          "startUs": 131080000
+        },
+        {
+          "text": "泌",
+          "startUs": 131280000
+        },
+        {
+          "text": "的",
+          "startUs": 131400000
+        },
+        {
+          "text": "粘",
+          "startUs": 131680000
+        },
+        {
+          "text": "合",
+          "startUs": 131840000
+        },
+        {
+          "text": "物",
+          "startUs": 132080000
+        },
+        {
+          "text": "质",
+          "startUs": 132240000
+        }
+      ]
+    },
+    {
+      "startUs": 132560000,
+      "endUs": 133160000,
+      "chars": [
+        {
+          "text": "可",
+          "startUs": 132560000
+        },
+        {
+          "text": "以",
+          "startUs": 132680000
+        },
+        {
+          "text": "促",
+          "startUs": 132840000
+        },
+        {
+          "text": "进",
+          "startUs": 133000000
+        }
+      ]
+    },
+    {
+      "startUs": 133160000,
+      "endUs": 134240000,
+      "chars": [
+        {
+          "text": "土",
+          "startUs": 133160000
+        },
+        {
+          "text": "壤",
+          "startUs": 133320000
+        },
+        {
+          "text": "微",
+          "startUs": 133480000
+        },
+        {
+          "text": "团",
+          "startUs": 133680000
+        },
+        {
+          "text": "聚",
+          "startUs": 133920000
+        },
+        {
+          "text": "体",
+          "startUs": 134040000
+        }
+      ]
+    },
+    {
+      "startUs": 134240000,
+      "endUs": 135680000,
+      "chars": [
+        {
+          "text": "聚",
+          "startUs": 134240000
+        },
+        {
+          "text": "合",
+          "startUs": 134360000
+        },
+        {
+          "text": "形",
+          "startUs": 134600000
+        },
+        {
+          "text": "成",
+          "startUs": 134720000
+        },
+        {
+          "text": "大",
+          "startUs": 134840000
+        },
+        {
+          "text": "团",
+          "startUs": 135040000
+        },
+        {
+          "text": "聚",
+          "startUs": 135320000
+        },
+        {
+          "text": "体",
+          "startUs": 135440000
+        }
+      ]
+    },
+    {
+      "startUs": 135680000,
+      "endUs": 136520000,
+      "chars": [
+        {
+          "text": "改",
+          "startUs": 135680000
+        },
+        {
+          "text": "善",
+          "startUs": 135840000
+        },
+        {
+          "text": "土",
+          "startUs": 136040000
+        },
+        {
+          "text": "壤",
+          "startUs": 136200000
+        },
+        {
+          "text": "的",
+          "startUs": 136320000
+        }
+      ]
+    },
+    {
+      "startUs": 136520000,
+      "endUs": 137360000,
+      "chars": [
+        {
+          "text": "物",
+          "startUs": 136520000
+        },
+        {
+          "text": "理",
+          "startUs": 136680000
+        },
+        {
+          "text": "结",
+          "startUs": 136800000
+        },
+        {
+          "text": "构",
+          "startUs": 137000000
+        }
+      ]
+    },
+    {
+      "startUs": 137360000,
+      "endUs": 139040000,
+      "chars": [
+        {
+          "text": "降",
+          "startUs": 137360000
+        },
+        {
+          "text": "低",
+          "startUs": 137560000
+        },
+        {
+          "text": "土",
+          "startUs": 137760000
+        },
+        {
+          "text": "壤",
+          "startUs": 137920000
+        },
+        {
+          "text": "板",
+          "startUs": 138160000
+        },
+        {
+          "text": "结",
+          "startUs": 138320000
+        },
+        {
+          "text": "的",
+          "startUs": 138440000
+        },
+        {
+          "text": "风",
+          "startUs": 138600000
+        },
+        {
+          "text": "险",
+          "startUs": 138720000
+        },
+        {
+          "text": "。",
+          "startUs": 138880000
+        }
+      ]
+    },
+    {
+      "startUs": 139040000,
+      "endUs": 140320000,
+      "chars": [
+        {
+          "text": "同",
+          "startUs": 139040000
+        },
+        {
+          "text": "时",
+          "startUs": 139200000
+        },
+        {
+          "text": "会",
+          "startUs": 139320000
+        },
+        {
+          "text": "和",
+          "startUs": 139520000
+        },
+        {
+          "text": "根",
+          "startUs": 139760000
+        },
+        {
+          "text": "际",
+          "startUs": 140040000
+        },
+        {
+          "text": "的",
+          "startUs": 140120000
+        }
+      ]
+    },
+    {
+      "startUs": 140320000,
+      "endUs": 141200000,
+      "chars": [
+        {
+          "text": "有",
+          "startUs": 140320000
+        },
+        {
+          "text": "益",
+          "startUs": 140480000
+        },
+        {
+          "text": "微",
+          "startUs": 140720000
+        },
+        {
+          "text": "生",
+          "startUs": 140840000
+        },
+        {
+          "text": "物",
+          "startUs": 141000000
+        }
+      ]
+    },
+    {
+      "startUs": 141200000,
+      "endUs": 142610000,
+      "chars": [
+        {
+          "text": "产",
+          "startUs": 141200000
+        },
+        {
+          "text": "生",
+          "startUs": 141360000
+        },
+        {
+          "text": "协",
+          "startUs": 141560000
+        },
+        {
+          "text": "同",
+          "startUs": 141760000
+        },
+        {
+          "text": "作",
+          "startUs": 141960000
+        },
+        {
+          "text": "用",
+          "startUs": 142120000
+        }
+      ]
+    },
+    {
+      "startUs": 142610000,
+      "endUs": 143810000,
+      "chars": [
+        {
+          "text": "促",
+          "startUs": 142610000
+        },
+        {
+          "text": "进",
+          "startUs": 142770000
+        },
+        {
+          "text": "有",
+          "startUs": 142890000
+        },
+        {
+          "text": "益",
+          "startUs": 143090000
+        },
+        {
+          "text": "微",
+          "startUs": 143290000
+        },
+        {
+          "text": "生",
+          "startUs": 143410000
+        },
+        {
+          "text": "物",
+          "startUs": 143530000
+        },
+        {
+          "text": "的",
+          "startUs": 143610000
+        }
+      ]
+    },
+    {
+      "startUs": 143810000,
+      "endUs": 144770000,
+      "chars": [
+        {
+          "text": "定",
+          "startUs": 143810000
+        },
+        {
+          "text": "殖",
+          "startUs": 144010000
+        },
+        {
+          "text": "繁",
+          "startUs": 144170000
+        },
+        {
+          "text": "殖",
+          "startUs": 144330000
+        }
+      ]
+    },
+    {
+      "startUs": 144770000,
+      "endUs": 146570000,
+      "chars": [
+        {
+          "text": "抑",
+          "startUs": 144770000
+        },
+        {
+          "text": "制",
+          "startUs": 144970000
+        },
+        {
+          "text": "有",
+          "startUs": 145130000
+        },
+        {
+          "text": "害",
+          "startUs": 145330000
+        },
+        {
+          "text": "微",
+          "startUs": 145530000
+        },
+        {
+          "text": "生",
+          "startUs": 145650000
+        },
+        {
+          "text": "物",
+          "startUs": 145770000
+        },
+        {
+          "text": "的",
+          "startUs": 145850000
+        },
+        {
+          "text": "生",
+          "startUs": 146010000
+        },
+        {
+          "text": "长",
+          "startUs": 146170000
+        }
+      ]
+    },
+    {
+      "startUs": 146570000,
+      "endUs": 148410000,
+      "chars": [
+        {
+          "text": "维",
+          "startUs": 146570000
+        },
+        {
+          "text": "持",
+          "startUs": 146730000
+        },
+        {
+          "text": "根",
+          "startUs": 146970000
+        },
+        {
+          "text": "际",
+          "startUs": 147250000
+        },
+        {
+          "text": "微",
+          "startUs": 147450000
+        },
+        {
+          "text": "生",
+          "startUs": 147570000
+        },
+        {
+          "text": "物",
+          "startUs": 147730000
+        },
+        {
+          "text": "群",
+          "startUs": 147850000
+        },
+        {
+          "text": "落",
+          "startUs": 148130000
+        },
+        {
+          "text": "的",
+          "startUs": 148210000
+        }
+      ]
+    },
+    {
+      "startUs": 148410000,
+      "endUs": 149130000,
+      "chars": [
+        {
+          "text": "健",
+          "startUs": 148410000
+        },
+        {
+          "text": "康",
+          "startUs": 148530000
+        },
+        {
+          "text": "稳",
+          "startUs": 148690000
+        },
+        {
+          "text": "定",
+          "startUs": 148890000
+        },
+        {
+          "text": "。",
+          "startUs": 149010000
+        }
+      ]
+    },
+    {
+      "startUs": 149130000,
+      "endUs": 150410000,
+      "chars": [
+        {
+          "text": "然",
+          "startUs": 149130000
+        },
+        {
+          "text": "后",
+          "startUs": 149290000
+        },
+        {
+          "text": "，",
+          "startUs": 149410000
+        },
+        {
+          "text": "丛",
+          "startUs": 149490000
+        },
+        {
+          "text": "枝",
+          "startUs": 149690000
+        },
+        {
+          "text": "菌",
+          "startUs": 149930000
+        },
+        {
+          "text": "根",
+          "startUs": 150090000
+        },
+        {
+          "text": "的",
+          "startUs": 150210000
+        }
+      ]
+    },
+    {
+      "startUs": 150410000,
+      "endUs": 151650000,
+      "chars": [
+        {
+          "text": "菌",
+          "startUs": 150410000
+        },
+        {
+          "text": "丝",
+          "startUs": 150650000
+        },
+        {
+          "text": "可",
+          "startUs": 150850000
+        },
+        {
+          "text": "以",
+          "startUs": 151010000
+        },
+        {
+          "text": "连",
+          "startUs": 151170000
+        },
+        {
+          "text": "接",
+          "startUs": 151370000
+        }
+      ]
+    },
+    {
+      "startUs": 151650000,
+      "endUs": 153250000,
+      "chars": [
+        {
+          "text": "不",
+          "startUs": 151650000
+        },
+        {
+          "text": "同",
+          "startUs": 151850000
+        },
+        {
+          "text": "植",
+          "startUs": 152050000
+        },
+        {
+          "text": "物",
+          "startUs": 152250000
+        },
+        {
+          "text": "的",
+          "startUs": 152370000
+        },
+        {
+          "text": "根",
+          "startUs": 152570000
+        },
+        {
+          "text": "系",
+          "startUs": 152810000
+        }
+      ]
+    },
+    {
+      "startUs": 153250000,
+      "endUs": 154010000,
+      "chars": [
+        {
+          "text": "形",
+          "startUs": 153250000
+        },
+        {
+          "text": "成",
+          "startUs": 153410000
+        },
+        {
+          "text": "地",
+          "startUs": 153570000
+        },
+        {
+          "text": "下",
+          "startUs": 153810000
+        }
+      ]
+    },
+    {
+      "startUs": 154010000,
+      "endUs": 155250000,
+      "chars": [
+        {
+          "text": "共",
+          "startUs": 154010000
+        },
+        {
+          "text": "同",
+          "startUs": 154210000
+        },
+        {
+          "text": "菌",
+          "startUs": 154410000
+        },
+        {
+          "text": "丝",
+          "startUs": 154610000
+        },
+        {
+          "text": "网",
+          "startUs": 154730000
+        },
+        {
+          "text": "络",
+          "startUs": 154930000
+        }
+      ]
+    },
+    {
+      "startUs": 155250000,
+      "endUs": 156170000,
+      "chars": [
+        {
+          "text": "实",
+          "startUs": 155250000
+        },
+        {
+          "text": "现",
+          "startUs": 155410000
+        },
+        {
+          "text": "养",
+          "startUs": 155570000
+        },
+        {
+          "text": "分",
+          "startUs": 155770000
+        },
+        {
+          "text": "在",
+          "startUs": 155930000
+        }
+      ]
+    },
+    {
+      "startUs": 156170000,
+      "endUs": 157090000,
+      "chars": [
+        {
+          "text": "不",
+          "startUs": 156170000
+        },
+        {
+          "text": "同",
+          "startUs": 156290000
+        },
+        {
+          "text": "植",
+          "startUs": 156450000
+        },
+        {
+          "text": "物",
+          "startUs": 156610000
+        },
+        {
+          "text": "之",
+          "startUs": 156730000
+        },
+        {
+          "text": "间",
+          "startUs": 156850000
+        },
+        {
+          "text": "的",
+          "startUs": 156970000
+        }
+      ]
+    },
+    {
+      "startUs": 157090000,
+      "endUs": 157850000,
+      "chars": [
+        {
+          "text": "转",
+          "startUs": 157090000
+        },
+        {
+          "text": "移",
+          "startUs": 157290000
+        },
+        {
+          "text": "分",
+          "startUs": 157410000
+        },
+        {
+          "text": "配",
+          "startUs": 157570000
+        }
+      ]
+    },
+    {
+      "startUs": 157850000,
+      "endUs": 159250000,
+      "chars": [
+        {
+          "text": "维",
+          "startUs": 157850000
+        },
+        {
+          "text": "持",
+          "startUs": 158010000
+        },
+        {
+          "text": "农",
+          "startUs": 158170000
+        },
+        {
+          "text": "田",
+          "startUs": 158370000
+        },
+        {
+          "text": "生",
+          "startUs": 158530000
+        },
+        {
+          "text": "态",
+          "startUs": 158730000
+        },
+        {
+          "text": "系",
+          "startUs": 158850000
+        },
+        {
+          "text": "统",
+          "startUs": 159010000
+        },
+        {
+          "text": "的",
+          "startUs": 159090000
+        }
+      ]
+    },
+    {
+      "startUs": 159250000,
+      "endUs": 160101625,
+      "chars": [
+        {
+          "text": "养",
+          "startUs": 159250000
+        },
+        {
+          "text": "分",
+          "startUs": 159410000
+        },
+        {
+          "text": "平",
+          "startUs": 159570000
+        },
+        {
+          "text": "衡",
+          "startUs": 159730000
+        },
+        {
+          "text": "。",
+          "startUs": 159890000
+        }
+      ]
+    }
+  ]
+}

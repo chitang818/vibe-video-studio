@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "runtimeVersion": "1.1.0",
+  "runtimeSha256": "39c5ef63c93eccb9e64ab2814cfabb546e8ca08486cb9b847cc6c80f7c15552f",
+  "title": "丛枝菌根作用与优势",
+  "width": 1080,
+  "height": 1920,
+  "durationUs": 160101625,
+  "htmlFile": "index.html",
+  "sceneFile": "scene.json",
+  "voiceFile": "assets/voice.wav",
+  "timestampsFile": "assets/char_timestamps.json",
+  "sfxFile": "sfx.json",
+  "assetHashes": {
+    "assets/char_timestamps.json": "468d807ca645ec17fc4cd12379a850a3b310c1c16406a200338c45807206d623",
+    "assets/images/leaf.png": "8ab3602bf056f3856c9c5d3e952b198b1df5fc68fd21530d8f7f682d51ec01b6",
+    "assets/images/soil.png": "dc9aa61fc5b4c677be7b73e13e1b78e2894555c32a6a73f98e095fda58d2c683",
+    "assets/images/water.png": "23dae5fd92f612650fe9055f3c780d5ba952b648d3b641bdc20ec28526826433",
+    "assets/media-registry.json": "27f2e5f5618fae2d3d6ae4b2165ff2a013b2e67683a44c3d89eeb3218d4e8143",
+    "assets/script.txt": "25dae436f2ef6fb9fa2f6c78a8d7d9746a1f1005cdaef5c24bc6a284c6bf82bc",
+    "assets/sounds/chime.wav": "958a79e0d8250069a3ebe283ed35dae0ed72cbb25e3921614edfdfb17f69c981",
+    "assets/sounds/ding.wav": "01a5513fd0fbfb31535b008af89a71ab95370df6c555f492256a2f4bf4de767e",
+    "assets/sounds/whoosh.wav": "382f3549679d4e424b9dd57f73ba559ac13b0c1d25f03c57d3faf26082baaf8f",
+    "assets/voice.wav": "21f26f44a71c0f4f2b229723a9ca3e0fba5d3e6c42e35badbe461be820983c07",
+    "index.html": "6a32c020ec49c6657b68af507bfe677ff2a872819c336c5332afd39a4c934526",
+    "scene.json": "468eabb4d8241e9cfe0fe6e17195a309638fb739a48b1045e6ed48cb914e64d7",
+    "sfx.json": "cc56b29310569dfcace7b968be5bf95e42112786c2dcf1ee459c694728ee66f3",
+    "story.json": "2c11861363f522145552353282d1110287f18e9b2249fb7149a8884b27228b6f",
+    "vibe-runtime/audio.mjs": "38eb8f933ad5983be813ca689526c92f8d66a794eecdfa20906d96a6e1e3fefb",
+    "vibe-runtime/scene.mjs": "39c5ef63c93eccb9e64ab2814cfabb546e8ca08486cb9b847cc6c80f7c15552f"
+  }
+}

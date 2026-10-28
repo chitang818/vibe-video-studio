@@ -1,0 +1,150 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "timeUs": 4380000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 6020000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 13380000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 17220000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 21610000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 25850000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 29730000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 33750000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 40390000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 46790000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 53990000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 56550000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 60950000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 65990000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 68430000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 70190000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 76610000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 78690000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 83050000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 86290000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 88730000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 92270000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 94390000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 99110000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 102070000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 104750000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 107930000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.24
+    },
+    {
+      "timeUs": 109170000,
+      "source": "assets/sounds/click.wav",
+      "gain": 0.2
+    },
+    {
+      "timeUs": 113050000,
+      "source": "assets/sounds/chime.wav",
+      "gain": 0.24
+    }
+  ]
+}

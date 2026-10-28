@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "leaf",
+      "source": "assets/images/leaf.png",
+      "kind": "local",
+      "origin": "VIBE original symbolic artwork; scripts/build_presentation_examples.py",
+      "licenseStatus": "original",
+      "width": 1200,
+      "height": 760,
+      "sha256": "8ab3602bf056f3856c9c5d3e952b198b1df5fc68fd21530d8f7f682d51ec01b6",
+      "focusX": 0.5,
+      "focusY": 0.5
+    },
+    {
+      "id": "water",
+      "source": "assets/images/water.png",
+      "kind": "local",
+      "origin": "VIBE original symbolic artwork; scripts/build_presentation_examples.py",
+      "licenseStatus": "original",
+      "width": 1200,
+      "height": 760,
+      "sha256": "23dae5fd92f612650fe9055f3c780d5ba952b648d3b641bdc20ec28526826433",
+      "focusX": 0.5,
+      "focusY": 0.5
+    },
+    {
+      "id": "soil",
+      "source": "assets/images/soil.png",
+      "kind": "local",
+      "origin": "VIBE original symbolic artwork; scripts/build_presentation_examples.py",
+      "licenseStatus": "original",
+      "width": 1200,
+      "height": 760,
+      "sha256": "dc9aa61fc5b4c677be7b73e13e1b78e2894555c32a6a73f98e095fda58d2c683",
+      "focusX": 0.5,
+      "focusY": 0.5
+    }
+  ]
+}

@@ -1,0 +1,94 @@
+{
+  "type": "object",
+  "properties": {
+    "version": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "[A-Za-z][A-Za-z0-9-]{0,63}"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 500
+          },
+          "kind": {
+            "type": "string",
+            "enum": [
+              "local",
+              "search",
+              "generate"
+            ]
+          },
+          "origin": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 20000
+          },
+          "licenseStatus": {
+            "type": "string",
+            "enum": [
+              "user-provided",
+              "original",
+              "licensed",
+              "public-domain",
+              "provider-terms"
+            ]
+          },
+          "width": {
+            "type": "integer",
+            "minimum": 256,
+            "maximum": 16384
+          },
+          "height": {
+            "type": "integer",
+            "minimum": 256,
+            "maximum": 16384
+          },
+          "sha256": {
+            "type": "string",
+            "pattern": "[0-9a-f]{64}"
+          },
+          "focusX": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "focusY": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "id",
+          "source",
+          "kind",
+          "origin",
+          "licenseStatus",
+          "width",
+          "height",
+          "sha256",
+          "focusX",
+          "focusY"
+        ],
+        "additionalProperties": false
+      },
+      "maxItems": 100
+    }
+  },
+  "required": [
+    "version",
+    "assets"
+  ],
+  "additionalProperties": false
+}

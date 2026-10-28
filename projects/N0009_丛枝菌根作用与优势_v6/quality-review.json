@@ -1,0 +1,205 @@
+{
+  "version": 1,
+  "status": "pending",
+  "reviewer": "n0009-generation-agent",
+  "inputFingerprint": "101ff3390c30a31aa8ecea1795806333f83c12b425494eac89d033c9b60ff9ae",
+  "evidenceDigest": "10533e9cb8d23cf6072a5d6537be03c7ccf89529eb090abfb1de0c956382f852",
+  "checks": {
+    "scientificMeaning": {
+      "status": "pending",
+      "observations": "v4生成者观察保留，场景数据未变；仍非独立批准。生成者自检，非独立批准。待专业审核：原稿用菌丝长度与根表面积作倍数比较，量纲不一致；保留原声字幕，未额外制作该倍数图表。其他机制和应用效果也未取得独立科学审核。"
+    },
+    "narrationSync": {
+      "status": "pending",
+      "observations": "v4生成者观察保留，场景数据未变；仍非独立批准。生成者自检，非独立批准。原词锚点与字时间自动一致；已看供碳/养分回传前后，返向箭头在92.83秒原词出现。尚未按完整原声逐句听音复核。"
+    },
+    "semanticCaptions": {
+      "status": "pending",
+      "observations": "v4生成者观察保留，场景数据未变；仍非独立批准。生成者自检，非独立批准。已逐段人工划分144组语义窗口并核对文本，保留原句末标点和术语；自动身份/字时间检查通过，独立自然断句复核待完成。"
+    },
+    "visualRhythm": {
+      "status": "pending",
+      "observations": "v4生成者观察保留，场景数据未变；仍非独立批准。生成者自检，非独立批准。已查看18镜的开场、分阶段入场、转场边界、末帧与手机图；以菌丝/矿质/交换/团聚体区别机制，不靠整体呼吸推进。全帧与审美独立审核仍待完成。 v5已核对左上角第1/18节与第10/18节截图；自动校验18镜切点前后和倒退seek计数。"
+    },
+    "backgroundQuality": {
+      "status": "pending",
+      "observations": "v4生成者观察保留，场景数据未变；仍非独立批准。生成者自检，非独立批准。实际实现为共享深绿色固定种子粒子，未声称实现bio-bubbles预设。已看粒子在多镜头位置变化，局部靠近图解，是否足够克制仍待独立审美复核。 官方预设、标题渐变光晕磨砂、完整旧转场仍有共享内核能力缺口，未称已恢复。"
+    },
+    "mobileReadability": {
+      "status": "pending",
+      "observations": "v4生成者观察保留，场景数据未变；仍非独立批准。生成者自检，非独立批准。已查看440×956手机截图及场尾缩略图，标题、内容、字幕分区且未见裁切；不是实际手机硬件观看验收。 v6修复字形缓存，已看首镜同位置新旧截图，字头恢复；全片真实字形缓存逐像素检查通过，仍非独立手机硬件验收。"
+    },
+    "soundMix": {
+      "status": "pending",
+      "observations": "v4生成者观察保留，场景数据未变；仍非独立批准。生成者自检，非独立批准。完整PCM/网页声源与输出信号检查通过，最终无声音警告；未具备实际听音证据，不填听感通过。"
+    },
+    "ending": {
+      "status": "pending",
+      "observations": "v4生成者观察保留，场景数据未变；仍非独立批准。生成者自检，非独立批准。已看共同菌丝网络的分阶段连接与末帧，原稿无CTA，回扣养分平衡；结尾chime在157.09秒触发并在WAV结束前结束，未截断原声。实际听感待复核。"
+    }
+  },
+  "scenes": [
+    {
+      "sceneId": "shot-01",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。根系主图由菌剂回顾、肥料类菌剂、基本特性三阶段补齐；首个标签0.48秒出现，标题与字幕分区。",
+      "evidence": [
+        "frames/shot-01-6679999.png",
+        "frames/shot-01-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-02",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。根外分支与箭头按机制、养分与应用提问建立；开场/场尾阶段未见文字重叠。",
+      "evidence": [
+        "frames/shot-02-15039999.png",
+        "frames/shot-02-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-03",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。土壤颗粒、磷固定、移动性差与根系图依次出现；未绘制无依据百分比。",
+      "evidence": [
+        "frames/shot-03-21959999.png",
+        "frames/shot-03-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-04",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。根外菌丝四个方向逐层增加，与延伸、范围、磷素、供应四词锚定；阶段颜色区分。",
+      "evidence": [
+        "frames/shot-04-30829999.png",
+        "frames/shot-04-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-05",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。菌丝、微生物小簇及转运箭头按原词展开；13.15秒长镜有四次信息推进。",
+      "evidence": [
+        "frames/shot-05-43979999.png",
+        "frames/shot-05-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-06",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。微量元素圆点与锌铜铁文字同步出现，未虚构各元素含量；贫瘠土壤条件保留。",
+      "evidence": [
+        "frames/shot-06-56959999.png",
+        "frames/shot-06-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-07",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。菌丝向外分支扩张，原稿倍数只保留在原字字幕中，没有做长度/面积倍数图表。",
+      "evidence": [
+        "frames/shot-07-67119999.png",
+        "frames/shot-07-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-08",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。从根际主根到周边土体的分支逐步增加；与前镜同机制但阶段顺序不同。",
+      "evidence": [
+        "frames/shot-08-74499999.png",
+        "frames/shot-08-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-09",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。固定矿质颗粒、酸类小点、转化箭头依次出现；不将图形当作化学定量模型。",
+      "evidence": [
+        "frames/shot-09-85859999.png",
+        "frames/shot-09-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-10",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。细胞边框与丛枝主图；92.83秒前为供碳箭头和碳水标记，之后才出现左向养分箭头，最终形成相反方向。",
+      "evidence": [
+        "frames/shot-10-95309999.png",
+        "frames/shot-10-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-11",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。交换机制过渡到应用时保留相反方向箭头；标题与三项说明无交叠，场末保留原问题字幕。",
+      "evidence": [
+        "frames/shot-11-103289999.png",
+        "frames/shot-11-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-12",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。植物、菌丝、养分点与高效利用/减肥/成本说明逐段建立；未显示未经原稿提供的成本数值。",
+      "evidence": [
+        "frames/shot-12-111949999.png",
+        "frames/shot-12-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-13",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。先强调养分流失，再讲水体环境与土壤生态；图形作为示意，未承诺实际减排比例。",
+      "evidence": [
+        "frames/shot-13-119309999.png",
+        "frames/shot-13-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-14",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。团聚体、固碳、微生物与菌丝网络用不同颜色阶段区分，文字保持四项单行。",
+      "evidence": [
+        "frames/shot-14-126279999.png",
+        "frames/shot-14-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-15",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。颗粒小簇被两侧菌丝缠绕，随后出现粘合点；两个真实语义节拍覆盖本镜。",
+      "evidence": [
+        "frames/shot-15-132559999.png",
+        "frames/shot-15-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-16",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。多组微团聚体逐渐被外轮廓围合，明确形成一个聚合体；与前版只有分散点簇的图形相比更明确。",
+      "evidence": [
+        "frames/shot-16-139039999.png",
+        "frames/shot-16-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-17",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。两侧根际与三组微生物颜色区分，定殖、有害抑制、稳定逐阶段出现；未暗示具体物种或数量。",
+      "evidence": [
+        "frames/shot-17-149129999.png",
+        "frames/shot-17-mobile.png"
+      ]
+    },
+    {
+      "sceneId": "shot-18",
+      "status": "pending",
+      "observations": "v6字形缓存已修，旧版观察不是新版本独立批准。沿用未变场景数据的v4自检，v5独立复核仍待完成。生成者已查看抽样阶段图，仍待独立审核。两株根系经菌丝连接后出现转运箭头，最后回扣养分平衡；无新加CTA或伪造口播。",
+      "evidence": [
+        "frames/shot-18-160101624.png",
+        "frames/shot-18-mobile.png"
+      ]
+    }
+  ]
+}

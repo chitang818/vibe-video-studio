@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "templates": {
+    "bio-bubbles@1.0.0": {
+      "recipeSha256": "f13c431381c5a9520837db3e6e07d8291eda2940e0dc739c867512c6d1d4c729",
+      "moduleSha256": "21771666d66808835a1e9923931227e7d364630b4b2815a8a0e2834ccfa5a3f6",
+      "commonSha256": "1d2cfc748fefa1c1ed023639c1c0032de0f0d10f360078ed30478fb5a4247bee",
+      "qaSha256": "97bf632e07c17a0caea9fce9e0888f51946f421bedbf324b36654b77275128f8"
+    },
+    "constellation@1.0.0": {
+      "recipeSha256": "66e360f2b633b74694c13f43d314401291b79656b09da80f0465094b65e52c94",
+      "moduleSha256": "2261f25a09236c922edd76c3ad169b22b7b26b969517f6e2c8ebb0bc78fec580",
+      "commonSha256": "1d2cfc748fefa1c1ed023639c1c0032de0f0d10f360078ed30478fb5a4247bee",
+      "qaSha256": "675f563c74b0e50823908093b59123ddf5c440ec476e48f81cc837ab2cfa82fe"
+    },
+    "dna-spiral@1.0.0": {
+      "recipeSha256": "397493ba081b20a4155e1fd72e0805b4e46796a5b0b293a3cdb26823dc627a96",
+      "moduleSha256": "167978c338e69a01c1ea08462fcc9fa5060cf72d32c635846834ba6b1b3632d0",
+      "commonSha256": "1d2cfc748fefa1c1ed023639c1c0032de0f0d10f360078ed30478fb5a4247bee",
+      "qaSha256": "5aeeebac7a04247f0e74f89e4e0071d91c248b8a1bf7cf9b16e2a5c6d6634268"
+    },
+    "cyber-grid@1.0.0": {
+      "recipeSha256": "8e82f66f59be8a6bf8cfae5024c4bbe6655f9edecf32b52256e01869fe03c726",
+      "moduleSha256": "9ab1f9bad22c1118a42175344986c3ca07216efbd9d10a95ed8a698b182ec6db",
+      "commonSha256": "1d2cfc748fefa1c1ed023639c1c0032de0f0d10f360078ed30478fb5a4247bee",
+      "qaSha256": "3508e91f84aabffe6d9ecd562ed6e569e2a90c7fbaf79fc709a4534fafec9e9e"
+    },
+    "aurora-dust@1.0.0": {
+      "recipeSha256": "fa61fadea26a61e7a13e6cbbad782ad394917305e5ba30c3160ba85e6f626344",
+      "moduleSha256": "1d739f551ff01a85a0a4cf7577f02456ff59ee3f61a9c61a70d17370204fa4e6",
+      "commonSha256": "1d2cfc748fefa1c1ed023639c1c0032de0f0d10f360078ed30478fb5a4247bee",
+      "qaSha256": "675f563c74b0e50823908093b59123ddf5c440ec476e48f81cc837ab2cfa82fe"
+    },
+    "solid@1.0.0": {
+      "recipeSha256": "44136fa355b3678a1146ad16f7e8649e94fb4fc21fe77e8310c060f61caaff8a",
+      "moduleSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "commonSha256": "1d2cfc748fefa1c1ed023639c1c0032de0f0d10f360078ed30478fb5a4247bee",
+      "qaSha256": "322aba08ba3cbd525c5e89332e3d56bda4c7814b72ed7f286d3b7af02dfb1d53"
+    }
+  }
+}

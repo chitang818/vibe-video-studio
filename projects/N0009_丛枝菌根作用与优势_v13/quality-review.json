@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "status": "pending",
+  "reviewer": "",
+  "inputFingerprint": "1d4d05a6b65aef4dedacace05ce6787df77d49af638a359fc48c97af3e10e510",
+  "evidenceDigest": "58380e643f58646ccf8308ea7ff7687530aecd4d653464d8c9256197af5ab57c",
+  "checks": {
+    "scientificMeaning": {
+      "status": "pending",
+      "observations": "图文自检保留待复核。原稿以菌丝长度对比根表面积的量纲疑点未改原声字幕，未增加倍数图。象征插画不代表显微结构。"
+    },
+    "narrationSync": {
+      "status": "pending",
+      "observations": "切点与事件来自原字，源文件逐字节一致；实际逐句听音待复核。"
+    },
+    "semanticCaptions": {
+      "status": "pending",
+      "observations": "沿用已编排的原字意群，自动身份/数字/标点检查通过；自然断句仍需独立核对。"
+    },
+    "visualRhythm": {
+      "status": "pending",
+      "observations": "已查看全部18页入场、中段、终态联系表；事件真实像素变化已检查。截图采样不代表完整连续播放的独立观感批准。"
+    },
+    "backgroundQuality": {
+      "status": "pending",
+      "observations": "默认纯色深青绿，无装饰粒子；图文页用原创象征插画。主题质量待独立审阅。"
+    },
+    "mobileReadability": {
+      "status": "pending",
+      "observations": "已看440px图文与步骤手机截图，自动检查320/440控件、字形、安全区通过；独立手机阅读复核待完成。"
+    },
+    "soundMix": {
+      "status": "pending",
+      "observations": "实际声源/混音信号存在，自动声音警告0；没有完成主观听音，不填听感通过。"
+    },
+    "ending": {
+      "status": "pending",
+      "observations": "末页回扣原稿农田养分平衡，尾音检查通过；主观结尾节奏待复核。"
+    }
+  },
+  "scenes": [
+    {
+      "sceneId": "shot-01",
+      "status": "pending",
+      "observations": "回顾要点分三次进入，末项变色；顶部与字幕分区。",
+      "evidence": [
+        "frames/shot-01-0.png",
+        "frames/shot-01-3105000.png",
+        "frames/shot-01-6679999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-02",
+      "status": "pending",
+      "observations": "大字突出吸收机制，第二条仅在字形附近标记底色。",
+      "evidence": [
+        "frames/shot-02-6680000.png",
+        "frames/shot-02-10860000.png",
+        "frames/shot-02-15039999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-03",
+      "status": "pending",
+      "observations": "四条步骤卡片顺序入场，左侧金色标记与文字保持净空。",
+      "evidence": [
+        "frames/shot-03-15040000.png",
+        "frames/shot-03-19060000.png",
+        "frames/shot-03-21959999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-04",
+      "status": "pending",
+      "observations": "叶形象征插画与两条说明分区；不代表菌丝解剖结构。",
+      "evidence": [
+        "frames/shot-04-21960000.png",
+        "frames/shot-04-26395000.png",
+        "frames/shot-04-30829999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-05",
+      "status": "pending",
+      "observations": "氮素转运与协同作用用步骤表达，未绘制假运输模拟。",
+      "evidence": [
+        "frames/shot-05-30830000.png",
+        "frames/shot-05-37405000.png",
+        "frames/shot-05-43979999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-06",
+      "status": "pending",
+      "observations": "微量元素按纵向卡片展示；元素名称保留完整。",
+      "evidence": [
+        "frames/shot-06-43980000.png",
+        "frames/shot-06-50470000.png",
+        "frames/shot-06-56959999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-07",
+      "status": "pending",
+      "observations": "吸收范围用大字说明；原稿长度/面积倍数疑点仅记QA，未绘制数值图。",
+      "evidence": [
+        "frames/shot-07-56960000.png",
+        "frames/shot-07-62040000.png",
+        "frames/shot-07-67119999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-08",
+      "status": "pending",
+      "observations": "土壤象征插画配根际范围说明，图片不作定量证据。",
+      "evidence": [
+        "frames/shot-08-67120000.png",
+        "frames/shot-08-70810000.png",
+        "frames/shot-08-74499999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-09",
+      "status": "pending",
+      "observations": "形态转化逐项呈现，强调下划线靠近实际字形。",
+      "evidence": [
+        "frames/shot-09-74500000.png",
+        "frames/shot-09-80320000.png",
+        "frames/shot-09-85859999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-10",
+      "status": "pending",
+      "observations": "两张卡片展示丛枝界面与真菌供养分；这是摘要页面，完整双向内容保留原声字幕。",
+      "evidence": [
+        "frames/shot-10-85860000.png",
+        "frames/shot-10-90585000.png",
+        "frames/shot-10-95309999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-11",
+      "status": "pending",
+      "observations": "大字概括交换效率，画面已去除“原稿”审核备注。",
+      "evidence": [
+        "frames/shot-11-95310000.png",
+        "frames/shot-11-99300000.png",
+        "frames/shot-11-103289999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-12",
+      "status": "pending",
+      "observations": "肥料利用、施用与成本用步骤卡片展示，无虚构百分比。",
+      "evidence": [
+        "frames/shot-12-103290000.png",
+        "frames/shot-12-107750000.png",
+        "frames/shot-12-111949999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-13",
+      "status": "pending",
+      "observations": "水滴象征环境主题，文字与图片错开，不是水质对照证据。",
+      "evidence": [
+        "frames/shot-13-111950000.png",
+        "frames/shot-13-115630000.png",
+        "frames/shot-13-119309999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-14",
+      "status": "pending",
+      "observations": "生态改善四项卡片逐条出现，不要求持续呼吸。",
+      "evidence": [
+        "frames/shot-14-119310000.png",
+        "frames/shot-14-122795000.png",
+        "frames/shot-14-126279999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-15",
+      "status": "pending",
+      "observations": "缠绕与粘合两项上下对照；下划线位于文字底部。",
+      "evidence": [
+        "frames/shot-15-126280000.png",
+        "frames/shot-15-129420000.png",
+        "frames/shot-15-132559999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-16",
+      "status": "pending",
+      "observations": "土壤颗粒象征插画配聚合与结构说明，不声称模拟真实形成。",
+      "evidence": [
+        "frames/shot-16-132560000.png",
+        "frames/shot-16-135800000.png",
+        "frames/shot-16-139039999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-17",
+      "status": "pending",
+      "observations": "群落协同用卡片逐条解释，有益/有害不使用虚构数量。",
+      "evidence": [
+        "frames/shot-17-139040000.png",
+        "frames/shot-17-144085000.png",
+        "frames/shot-17-149129999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-18",
+      "status": "pending",
+      "observations": "大字收束植物连接，末句强调农田平衡；不新增CTA。",
+      "evidence": [
+        "frames/shot-18-149130000.png",
+        "frames/shot-18-154615812.png",
+        "frames/shot-18-160101624.png"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,109 @@
+--- a/src/WeMediaForge.Application/Models/WebProcess/VibeProject.cs
++++ b/src/WeMediaForge.Application/Models/WebProcess/VibeProject.cs
+@@ -17,6 +17,7 @@
+     public string SceneFile { get; init; } = "";
+     public string? VoiceFile { get; init; }
+     public string? TimestampsFile { get; init; }
++    public string? ScriptFile { get; init; }
+     public string? SfxFile { get; init; }
+     public Dictionary<string, string> AssetHashes { get; init; } = new(StringComparer.Ordinal);
+ }
+--- a/src/WeMediaForge/Services/WebProcess/WebToVideoRenderService.cs
++++ b/src/WeMediaForge/Services/WebProcess/WebToVideoRenderService.cs
+@@ -41,6 +41,7 @@
+                 options.VoiceVolumePercent is < 0 or > 200 || options.SfxVolumePercent is < 0 or > 150)
+                 return WebToVideoRenderResult.Fail("帧率、编码或音量设置无效，请检查参数。");
+             var project = await VibeProjectReader.LoadAsync(options.HtmlFilePath, cancellationToken);
++            await VibeReleaseVerifier.VerifyAsync(project, cancellationToken);
+             if (project.Manifest.AssetHashes.Keys.Any(p => Equal(output, VibeProjectReader.ResolveAsset(project.Root,p))) ||
+                 Equal(output,Path.Combine(project.Root,VibeProjectReader.ManifestName)))
+                 return WebToVideoRenderResult.Fail("输出文件不能覆盖工程素材。");
+--- a/src/WeMediaForge.Infrastructure/Services/Executors/WebToVideoExecutor.cs
++++ b/src/WeMediaForge.Infrastructure/Services/Executors/WebToVideoExecutor.cs
+@@ -27,6 +27,7 @@
+                 html=candidates[0];
+             }
+             var project=await VibeProjectReader.LoadAsync(html,ct);
++            await VibeReleaseVerifier.VerifyAsync(project,ct);
+             var fpsString=parameters.GetValue<string>("FrameRate","20");
+             if(!int.TryParse(fpsString,NumberStyles.None,CultureInfo.InvariantCulture,out var fps) || fps is not(20 or 30 or 60))return Failure("请选择受支持的渲染帧率。");
+             var quality=parameters.GetValue<string>("QualityPreset","Standard") switch {
+--- a/src/WeMediaForge.Application/Helpers/VibeProjectReader.cs
++++ b/src/WeMediaForge.Application/Helpers/VibeProjectReader.cs
+@@ -28,7 +28,7 @@
+         if (string.IsNullOrWhiteSpace(manifest.Title) || manifest.Width is < 64 or > 3840 || manifest.Height is < 64 or > 3840 ||
+             manifest.Width % 2 != 0 || manifest.Height % 2 != 0 || manifest.DurationUs is <= 0 or > 7_200_000_000)
+             throw new InvalidDataException("工程标题、画幅或时长无效。");
+-        var required = new[] { manifest.HtmlFile, manifest.SceneFile, RuntimeFile, manifest.VoiceFile, manifest.TimestampsFile, manifest.SfxFile }.Where(p => p is not null).Cast<string>().ToArray();
++        var required = new[] { manifest.HtmlFile, manifest.SceneFile, RuntimeFile, manifest.VoiceFile, manifest.TimestampsFile, manifest.ScriptFile, manifest.SfxFile }.Where(p => p is not null).Cast<string>().ToArray();
+         foreach (var path in required)
+             if (!manifest.AssetHashes.ContainsKey(path)) throw new InvalidDataException("工程清单缺少文件校验信息，请重新打包。");
+         if (manifest.AssetHashes.Count > 2048) throw new InvalidDataException("工程素材过多。");
+--- /dev/null
++++ b/src/WeMediaForge.Application/Helpers/VibeReleaseVerifier.cs
+@@ -0,0 +1,65 @@
++using System.Security.Cryptography;
++using System.Text;
++using System.Text.Json;
++using WeMediaForge.Application.Models.WebProcess;
++
++namespace WeMediaForge.Application.Helpers;
++
++/// <summary>Export requires an externally trusted approval; draft preview remains available.</summary>
++public static class VibeReleaseVerifier
++{
++    public static async Task VerifyAsync(VibeProject project, CancellationToken ct = default)
++    {
++        var configured = Environment.GetEnvironmentVariable("VIBE_TRUST_STORE");
++        if (string.IsNullOrWhiteSpace(configured))
++            throw new InvalidDataException("尚未配置独立审核签发方，工程可预览但不能正式导出。");
++        var root = Path.GetFullPath(project.Root);
++        var trustPath = Path.GetFullPath(configured);
++        if (trustPath.StartsWith(root.TrimEnd(Path.DirectorySeparatorChar) + Path.DirectorySeparatorChar, StringComparison.OrdinalIgnoreCase))
++            throw new InvalidDataException("审核信任配置必须由工程之外的受控环境管理。");
++        if (project.Manifest.Width != 1080 || project.Manifest.Height != 1920)
++            throw new InvalidDataException("正式知识视频必须使用 1080×1920 标准画幅。");
++        using var trust = JsonDocument.Parse(await File.ReadAllTextAsync(trustPath, ct));
++        using var envelope = JsonDocument.Parse(await File.ReadAllTextAsync(Asset(root,"release.attestation.json"),ct));
++        var e = envelope.RootElement;
++        if (e.EnumerateObject().Count()!=4 || e.GetProperty("version").GetInt32()!=1 || trust.RootElement.GetProperty("version").GetInt32()!=1)
++            throw new InvalidDataException("不支持的审核凭证格式。");
++        var id=e.GetProperty("keyId").GetString()!;
++        var authority=trust.RootElement.GetProperty("keys").GetProperty(id);
++        using var key=RSA.Create();key.ImportFromPem(authority.GetProperty("publicKeyPem").GetString()!);
++        if (key.KeySize<3072 || Hex(SHA256.HashData(key.ExportSubjectPublicKeyInfo()))!=id)
++            throw new InvalidDataException("审核公钥身份无效。");
++        var payloadBytes=Convert.FromBase64String(e.GetProperty("payload").GetString()!);
++        if (!key.VerifyData(payloadBytes,Convert.FromBase64String(e.GetProperty("signature").GetString()!),HashAlgorithmName.SHA256,RSASignaturePadding.Pss))
++            throw new InvalidDataException("审核凭证签名无效。");
++        using var payload=JsonDocument.Parse(payloadBytes);var p=payload.RootElement;
++        var reviewer=authority.GetProperty("reviewerId").GetString();
++        if (p.GetProperty("version").GetInt32()!=1 || p.GetProperty("status").GetString()!="approved" ||
++            p.GetProperty("profile").GetString()!="knowledge-portrait-v1" || p.GetProperty("reviewerId").GetString()!=reviewer)
++            throw new InvalidDataException("审核凭证不适用于当前发布流程。");
++        await CheckHash(root,"vibe.project.json",p.GetProperty("manifestSha256").GetString()!,ct);
++        await CheckHash(root,"quality-plan.json",p.GetProperty("planSha256").GetString()!,ct);
++        await CheckHash(root,"quality-review.json",p.GetProperty("reviewSha256").GetString()!,ct);
++        using var plan=JsonDocument.Parse(await File.ReadAllTextAsync(Asset(root,"quality-plan.json"),ct));
++        using var review=JsonDocument.Parse(await File.ReadAllTextAsync(Asset(root,"quality-review.json"),ct));
++        if (plan.RootElement.GetProperty("authorId").GetString()==reviewer || review.RootElement.GetProperty("reviewer").GetString()!=reviewer ||
++            review.RootElement.GetProperty("status").GetString()!="passed" ||
++            review.RootElement.GetProperty("inputFingerprint").GetString()!=p.GetProperty("inputFingerprint").GetString() ||
++            review.RootElement.GetProperty("evidenceDigest").GetString()!=p.GetProperty("evidenceDigest").GetString())
++            throw new InvalidDataException("生成者与审核者未分离，或复核记录已过期。");
++        await CheckHash(root,"quality-evidence/index.json",p.GetProperty("evidenceDigest").GetString()!,ct);
++        using var index=JsonDocument.Parse(await File.ReadAllTextAsync(Asset(root,"quality-evidence/index.json"),ct));
++        if (index.RootElement.GetArrayLength()==0)throw new InvalidDataException("审核截图证据为空。");
++        foreach(var item in index.RootElement.EnumerateArray())
++            await CheckHash(root,"quality-evidence/"+item.GetProperty("file").GetString(),item.GetProperty("sha256").GetString()!,ct);
++    }
++
++    private static string Asset(string root,string name)=>VibeProjectReader.ResolveAsset(root,name);
++    private static string Hex(byte[] bytes)=>Convert.ToHexString(bytes).ToLowerInvariant();
++    private static async Task CheckHash(string root,string name,string expected,CancellationToken ct)
++    {
++        await using var stream=File.OpenRead(Asset(root,name));
++        if(Hex(await SHA256.HashDataAsync(stream,ct))!=expected)
++            throw new InvalidDataException("发布包或证据已更改："+name);
++    }
++}

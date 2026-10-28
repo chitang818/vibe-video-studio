@@ -1,0 +1,14 @@
+{
+  "status": "needs_review",
+  "durationSeconds": 160.101625,
+  "scenes": 18,
+  "captions": 144,
+  "screenshots": 303,
+  "automaticErrors": [],
+  "audioWarnings": [],
+  "runId": "6172433da3784878ada4873f85ad57f6",
+  "report": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\artifacts\\quality\\06aa974c1a4be636\\runs\\6172433da3784878ada4873f85ad57f6\\report.json",
+  "originalsByteIdentical": true,
+  "independentApproval": false,
+  "actualListening": "pending"
+}

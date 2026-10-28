@@ -1,0 +1,6 @@
+
+# Shared background-source fingerprints require stable bytes.
+assets/runtime/*.mjs text eol=lf
+assets/runtime/build_runtime.py text eol=lf
+assets/runtime/backgrounds/*.mjs text eol=lf
+assets/runtime/backgrounds/*.json text eol=lf

@@ -1,0 +1,25 @@
+{
+  "status": "needs_review",
+  "errors": [],
+  "report": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\artifacts\\quality\\4f864d18fbb04ead\\runs\\117f7ac01d964b519e06a5c68b8c9c44\\report.json",
+  "screenshots": 472,
+  "background": {
+    "preset": "bio-bubbles",
+    "visiblePixels": 6768,
+    "changedPixels": 10101
+  },
+  "regressions": "artifacts/regressions/ac3979f766f84d3fbabf514a9640109a/summary.json",
+  "tests": 118,
+  "runtimeVersion": "1.1.1",
+  "runtimeSha256": "c15aa650e10c8378ae7f69b11030c3b68ba4fb7d958da6360416d8aa7f571349",
+  "fixes": [
+    "Five deterministic background presets; bio-bubbles default, solid explicit",
+    "Real glyph horizontal/vertical centring; left alignment explicit",
+    "Outgoing exits before cut; incoming enters after cut; no double-page text",
+    "Vertical/default-centred entrances and aligned step markers",
+    "Skill/rules and real-pixel QA updated"
+  ],
+  "subjectiveListening": "pending",
+  "independentApproval": false,
+  "desktopExport": "not performed"
+}

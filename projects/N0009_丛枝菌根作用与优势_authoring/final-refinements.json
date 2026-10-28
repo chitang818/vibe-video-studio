@@ -1,0 +1,9 @@
+{
+  "version": 1,
+  "notes": [
+    "Carbon marker enters at 90.91s, nutrient-return arrow at 92.83s.",
+    "Exchange comparison uses opposing arrows.",
+    "Aggregate outline groups smaller clusters."
+  ],
+  "finalScene": "scene.json"
+}

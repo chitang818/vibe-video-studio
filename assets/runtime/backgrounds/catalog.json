@@ -1,0 +1,226 @@
+{
+  "version": 1,
+  "libraryVersion": "1.0.0",
+  "presets": [
+    {
+      "id": "bio-bubbles",
+      "version": "1.0.0",
+      "label": "生物光斑",
+      "subjects": [
+        "农业",
+        "生物",
+        "微生物"
+      ],
+      "recipe": {
+        "farCount": 36,
+        "midCount": 20,
+        "nearCount": 24,
+        "farCols": 6,
+        "farRows": 6,
+        "midCols": 5,
+        "midRows": 4,
+        "nearCols": 4,
+        "nearRows": 6,
+        "farRadius": 2,
+        "farRadiusRange": 4,
+        "midRadius": 14,
+        "midRadiusRange": 24,
+        "nearRadius": 42,
+        "nearRadiusRange": 44,
+        "farSpeed": 4,
+        "midSpeed": 9,
+        "nearSpeed": 16,
+        "nearOpacity": 0.2,
+        "midOpacity": 0.17,
+        "pulseAmount": 0.07,
+        "primary": "74,222,165",
+        "secondary": "78,185,219"
+      },
+      "qa": {
+        "dynamic": true,
+        "minVisiblePixels": 64,
+        "minChangedPixels": 64,
+        "columns": 4,
+        "rows": 6,
+        "minPixelsPerCell": 16,
+        "minCoveredCells": 20,
+        "regions": []
+      }
+    },
+    {
+      "id": "constellation",
+      "version": "1.0.0",
+      "label": "神经元网络",
+      "subjects": [
+        "AI",
+        "计算机",
+        "技术"
+      ],
+      "recipe": {
+        "count": 42,
+        "speedX": 11,
+        "speedY": 10,
+        "distance": 225,
+        "lineAlpha": 0.22,
+        "nodeRadius": 10,
+        "nodeAlpha": 0.65,
+        "pulseRadius": 8,
+        "pulseRate": 0.18,
+        "pulseEvery": 7
+      },
+      "qa": {
+        "dynamic": true,
+        "minVisiblePixels": 64,
+        "minChangedPixels": 64,
+        "columns": 2,
+        "rows": 2,
+        "minPixelsPerCell": 16,
+        "minCoveredCells": 4,
+        "regions": []
+      }
+    },
+    {
+      "id": "dna-spiral",
+      "version": "1.0.0",
+      "label": "双螺旋流光",
+      "subjects": [
+        "遗传",
+        "基因",
+        "生命科学"
+      ],
+      "recipe": {
+        "rows": 38,
+        "speed": 26,
+        "rotationRate": 0.42,
+        "amplitude": 0.25,
+        "lineAlpha": 0.16,
+        "glowAlpha": 0.45
+      },
+      "qa": {
+        "dynamic": true,
+        "minVisiblePixels": 64,
+        "minChangedPixels": 64,
+        "columns": 1,
+        "rows": 6,
+        "minPixelsPerCell": 16,
+        "minCoveredCells": 6,
+        "regions": [
+          {
+            "name": "left-strand",
+            "box": [
+              0.2,
+              0,
+              0.3,
+              1
+            ],
+            "minPixels": 64
+          },
+          {
+            "name": "right-strand",
+            "box": [
+              0.5,
+              0,
+              0.3,
+              1
+            ],
+            "minPixels": 64
+          }
+        ]
+      }
+    },
+    {
+      "id": "cyber-grid",
+      "version": "1.0.0",
+      "label": "赛博网格",
+      "subjects": [
+        "工业",
+        "芯片",
+        "制造"
+      ],
+      "recipe": {
+        "horizon": 0.48,
+        "columns": 12,
+        "rows": 16,
+        "speed": 0.06,
+        "lineAlpha": 0.22,
+        "depthAlpha": 0.24,
+        "glowAlpha": 0.13
+      },
+      "qa": {
+        "dynamic": true,
+        "minVisiblePixels": 64,
+        "minChangedPixels": 64,
+        "columns": 1,
+        "rows": 1,
+        "minPixelsPerCell": 16,
+        "minCoveredCells": 1,
+        "regions": [
+          {
+            "name": "perspective-grid",
+            "box": [
+              0,
+              0.48,
+              1,
+              0.52
+            ],
+            "minPixels": 64
+          },
+          {
+            "name": "upper-glow",
+            "box": [
+              0,
+              0,
+              1,
+              0.48
+            ],
+            "minPixels": 64
+          }
+        ]
+      }
+    },
+    {
+      "id": "aurora-dust",
+      "version": "1.0.0",
+      "label": "极光星尘",
+      "subjects": [
+        "历史",
+        "宇宙",
+        "商业"
+      ],
+      "recipe": {
+        "dustCount": 48,
+        "dustSpeed": 5,
+        "dustAlpha": 0.35,
+        "glowAlphaA": 0.22,
+        "glowAlphaB": 0.17
+      },
+      "qa": {
+        "dynamic": true,
+        "minVisiblePixels": 64,
+        "minChangedPixels": 64,
+        "columns": 2,
+        "rows": 2,
+        "minPixelsPerCell": 16,
+        "minCoveredCells": 4,
+        "regions": []
+      }
+    },
+    {
+      "id": "solid",
+      "version": "1.0.0",
+      "label": "纯色（显式选择）",
+      "subjects": [],
+      "recipe": {},
+      "qa": {
+        "dynamic": false,
+        "minVisiblePixels": 0,
+        "minChangedPixels": 0,
+        "columns": 1,
+        "rows": 1,
+        "minPixelsPerCell": 16,
+        "minCoveredCells": 0,
+        "regions": []
+      }
+    }
+  ]
+}

@@ -4,6 +4,7 @@
     python scripts/doctor.py
 """
 import importlib.util
+import importlib.metadata
 import os
 import py_compile
 import shutil
@@ -21,12 +22,23 @@ if sys.platform == "win32":
 PROJECT_ROOT = Path(__file__).resolve().parent.parent
 
 
+def check_dependencies():
+    mismatches=[]
+    for line in (PROJECT_ROOT/'requirements.lock.txt').read_text(encoding='utf-8').splitlines():
+        if not line or line.startswith('#'):continue
+        name,expected=line.split('==',1)
+        try:actual=importlib.metadata.version(name)
+        except importlib.metadata.PackageNotFoundError:actual='missing'
+        if actual!=expected:mismatches.append(f'{name}: expected {expected}, got {actual}')
+    return not mismatches, '; '.join(mismatches) if mismatches else '依赖版本与已测锁文件一致', '请使用 requirements.txt 安装已测基线；升级需重新跑回归'
+
+
 def check_python():
     v = sys.version_info
     ver_str = f"{v.major}.{v.minor}.{v.micro}"
-    ok = v.major == 3 and v.minor >= 10
+    ok = v.major == 3 and v.minor >= 11
     msg = f"Python 版本: {ver_str} ({sys.executable})"
-    return ok, msg, "建议使用 Python 3.10 或更高版本"
+    return ok, msg, "需要 Python 3.11+（hashlib.file_digest）；基线为 Python 3.13"
 
 
 def check_ffmpeg():
@@ -98,8 +110,13 @@ def check_structure():
         ".agents/rules/vibe-rules.md",
         ".agents/skills/vibe-knowledge-video/SKILL.md",
         "scripts",
-        "inputs",
-        "output",
+        "projects",
+        "assets/runtime/scene.mjs",
+        "assets/runtime/audio.mjs",
+        "references/fast-project.md",
+        "references/quality-contract.md",
+        "scripts/quality_gate.py",
+        "scripts/quality_browser.py",
     ]
     missing = []
     for p in required_paths:
@@ -107,12 +124,7 @@ def check_structure():
             missing.append(p)
 
     # 关键模板与资产：支持根目录或 Skill 封装目录自适应检测
-    resource_checks = [
-        ("skeleton.html 模板", ["template/skeleton.html", ".agents/skills/vibe-knowledge-video/templates/skeleton.html"]),
-        ("motions.css 动效库", ["assets/motions/motions.css", ".agents/skills/vibe-knowledge-video/assets/motions/motions.css"]),
-        ("themes.css 主题库", ["assets/themes/themes.css", ".agents/skills/vibe-knowledge-video/assets/themes/themes.css"]),
-        ("sfx_presets.json 音效表", ["assets/sounds/sfx_presets.json", ".agents/skills/vibe-knowledge-video/assets/sounds/sfx_presets.json"]),
-    ]
+    resource_checks = [("sfx_presets.json 音效表", ["assets/sounds/sfx_presets.json", ".agents/skills/vibe-knowledge-video/assets/sounds/sfx_presets.json"])]
     for label, candidates in resource_checks:
         if not any((PROJECT_ROOT / c).exists() for c in candidates):
             missing.append(label)
@@ -122,7 +134,7 @@ def check_structure():
     return True, "项目基础目录架构与资源资产完整", ""
 
 
-def run_diagnostics():
+def run_diagnostics(legacy=False):
     print("=" * 60)
     print(" VIBE Video Studio 运行环境与工程诊断")
     print(f" 工作根目录: {PROJECT_ROOT}")
@@ -130,12 +142,15 @@ def run_diagnostics():
 
     checks = [
         ("Python 解释器", check_python),
-        ("FFmpeg 音视频编码器", check_ffmpeg),
-        ("FFprobe 媒体探针", check_ffprobe),
+        ("依赖版本基线", check_dependencies),
         ("Playwright 无头录制环境", check_playwright),
         ("项目目录结构", check_structure),
         ("工具链脚本语法", check_scripts),
     ]
+    if legacy:
+        checks.extend([("FFmpeg 音视频编码器", check_ffmpeg), ("FFprobe 媒体探针", check_ffprobe)])
+    else:
+        print('模式：高速 Canvas 制作/QA；本机 FFmpeg 不是此模式的前置条件。')
 
     all_pass = True
     for name, fn in checks:
@@ -150,7 +165,7 @@ def run_diagnostics():
 
     print("\n" + "=" * 60)
     if all_pass:
-        print(" 全项检测通过！您的环境已具备完整的 VIBE 视频制作与渲染能力。")
+        print(" 所选模式环境检查通过；作品质量与 WeMediaForge 实际导出需分别验收。")
     else:
         print(" 检测到部分环境或项目配置未就绪，请按上述提示修复。")
     print("=" * 60)

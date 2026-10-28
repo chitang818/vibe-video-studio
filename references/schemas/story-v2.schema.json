@@ -1,0 +1,290 @@
+{
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 48
+    },
+    "titleMode": {
+      "type": "string",
+      "enum": [
+        "shown",
+        "hidden"
+      ]
+    },
+    "titleLines": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 24
+      },
+      "minItems": 1,
+      "maxItems": 2
+    },
+    "authorId": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 20000
+    },
+    "version": {
+      "type": "integer",
+      "enum": [
+        2
+      ]
+    },
+    "theme": {
+      "type": "string",
+      "enum": [
+        "teal-editorial"
+      ]
+    },
+    "assetPolicy": {
+      "type": "string",
+      "enum": [
+        "local",
+        "search",
+        "generate",
+        "mixed"
+      ]
+    },
+    "assets": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "[A-Za-z][A-Za-z0-9-]{0,63}"
+          },
+          "source": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "focusX": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          },
+          "focusY": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": [
+          "id",
+          "source"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 0,
+      "maxItems": 100
+    },
+    "protectedTerms": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1,
+        "maxLength": 100
+      },
+      "maxItems": 200
+    },
+    "scenes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "[A-Za-z][A-Za-z0-9-]{0,63}"
+          },
+          "layout": {
+            "type": "string",
+            "enum": [
+              "statement",
+              "hero-image",
+              "image-text",
+              "cards",
+              "comparison",
+              "steps"
+            ]
+          },
+          "heading": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 16
+          },
+          "anchor": {
+            "type": "object",
+            "properties": {
+              "quote": {
+                "type": "string",
+                "minLength": 1,
+                "maxLength": 20000
+              },
+              "occurrence": {
+                "type": "integer",
+                "minimum": 1
+              }
+            },
+            "required": [
+              "quote"
+            ],
+            "additionalProperties": false
+          },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 48
+                },
+                "anchor": {
+                  "type": "object",
+                  "properties": {
+                    "quote": {
+                      "type": "string",
+                      "minLength": 1,
+                      "maxLength": 20000
+                    },
+                    "occurrence": {
+                      "type": "integer",
+                      "minimum": 1
+                    }
+                  },
+                  "required": [
+                    "quote"
+                  ],
+                  "additionalProperties": false
+                },
+                "entrance": {
+                  "type": "string",
+                  "enum": [
+                    "fade-up",
+                    "slide-left",
+                    "slide-right",
+                    "zoom"
+                  ]
+                },
+                "emphasis": {
+                  "type": "object",
+                  "properties": {
+                    "kind": {
+                      "type": "string",
+                      "enum": [
+                        "color",
+                        "marker",
+                        "underline"
+                      ]
+                    },
+                    "anchor": {
+                      "type": "object",
+                      "properties": {
+                        "quote": {
+                          "type": "string",
+                          "minLength": 1,
+                          "maxLength": 20000
+                        },
+                        "occurrence": {
+                          "type": "integer",
+                          "minimum": 1
+                        }
+                      },
+                      "required": [
+                        "quote"
+                      ],
+                      "additionalProperties": false
+                    }
+                  },
+                  "required": [
+                    "kind",
+                    "anchor"
+                  ],
+                  "additionalProperties": false
+                }
+              },
+              "required": [
+                "text",
+                "anchor"
+              ],
+              "additionalProperties": false
+            },
+            "minItems": 1,
+            "maxItems": 4
+          },
+          "image": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 100
+          },
+          "imageFit": {
+            "type": "string",
+            "enum": [
+              "contain",
+              "cover"
+            ]
+          },
+          "imageZoom": {
+            "type": "boolean"
+          },
+          "transition": {
+            "type": "string",
+            "enum": [
+              "fade",
+              "push"
+            ]
+          },
+          "imageNote": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 200
+          }
+        },
+        "required": [
+          "id",
+          "layout",
+          "heading",
+          "items"
+        ],
+        "additionalProperties": false
+      },
+      "minItems": 1,
+      "maxItems": 1000
+    },
+    "backgroundPreset": {
+      "type": "string",
+      "enum": [
+        "bio-bubbles",
+        "constellation",
+        "dna-spiral",
+        "cyber-grid",
+        "aurora-dust",
+        "solid"
+      ]
+    },
+    "contentAlign": {
+      "type": "string",
+      "enum": [
+        "center",
+        "left"
+      ]
+    },
+    "backgroundTemplateVersion": {
+      "type": "string",
+      "pattern": "\\d+\\.\\d+\\.\\d+"
+    }
+  },
+  "required": [
+    "version",
+    "title",
+    "authorId",
+    "scenes"
+  ],
+  "additionalProperties": false
+}

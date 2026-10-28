@@ -70,3 +70,7 @@ _qa_bounds.txt
 _render_log.txt
 *_out.txt
 audit_*.txt
+
+# Reproducible audit evidence and immutable release copies are local artifacts.
+artifacts/
+releases/

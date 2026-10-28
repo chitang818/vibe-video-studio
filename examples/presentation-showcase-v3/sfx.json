@@ -1,0 +1,100 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "timeUs": 6680000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 15040000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 21960000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 30830000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 43980000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 56960000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 67120000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 74500000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 85860000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 86700000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 0.4
+    },
+    {
+      "timeUs": 95310000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 103290000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 111950000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 119310000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 126280000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 132560000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 139040000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 149130000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 0.5
+    },
+    {
+      "timeUs": 157090000,
+      "source": "assets/sounds/chime.wav",
+      "gain": 0.5
+    }
+  ]
+}

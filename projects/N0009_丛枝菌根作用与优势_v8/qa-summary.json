@@ -1,0 +1,81 @@
+{
+  "status": "needs_review",
+  "errors": [],
+  "audioWarnings": [],
+  "progressControls": [
+    {
+      "viewport": "320x640",
+      "boxes": {
+        "#controls": {
+          "x": 8,
+          "y": 570,
+          "width": 304,
+          "height": 62
+        },
+        "#seek": {
+          "x": 97,
+          "y": 579,
+          "width": 120,
+          "height": 44
+        },
+        "#time": {
+          "x": 225,
+          "y": 594,
+          "width": 78,
+          "height": 14
+        },
+        "button": {
+          "x": 17,
+          "y": 579,
+          "width": 72,
+          "height": 44
+        },
+        "canvas": {
+          "x": 1.375,
+          "y": 0,
+          "width": 317.25,
+          "height": 564
+        }
+      }
+    },
+    {
+      "viewport": "440x956",
+      "boxes": {
+        "#controls": {
+          "x": 8,
+          "y": 886,
+          "width": 424,
+          "height": 62
+        },
+        "#seek": {
+          "x": 97,
+          "y": 895,
+          "width": 240,
+          "height": 44
+        },
+        "#time": {
+          "x": 345,
+          "y": 910,
+          "width": 78,
+          "height": 14
+        },
+        "button": {
+          "x": 17,
+          "y": 895,
+          "width": 72,
+          "height": 44
+        },
+        "canvas": {
+          "x": 0,
+          "y": 48.890625,
+          "width": 440,
+          "height": 782.21875
+        }
+      }
+    }
+  ],
+  "tests": 86,
+  "sharedRuntimeUnchanged": true,
+  "report": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\artifacts\\quality\\69dc051fc82395de\\runs\\2856a625da46438db09a038390b39f16\\report.json",
+  "independentApproval": false
+}

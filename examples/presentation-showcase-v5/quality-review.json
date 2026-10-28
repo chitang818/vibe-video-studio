@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "status": "pending",
+  "reviewer": "",
+  "inputFingerprint": "889c6b646b329a944015f9cc3a5be6192cdbc5358a10da0c97e3a6506517d865",
+  "evidenceDigest": "b01fc6a21d9fc44b645dbcdf3555afbc726a0e2020ee5583317942ad521dca36",
+  "checks": {
+    "scientificMeaning": {
+      "status": "pending",
+      "observations": "图文自检保留待复核。原稿以菌丝长度对比根表面积的量纲疑点未改原声字幕，未增加倍数图。象征插画不代表显微结构。"
+    },
+    "narrationSync": {
+      "status": "pending",
+      "observations": "切点与事件来自原字，源文件逐字节一致；实际逐句听音待复核。"
+    },
+    "semanticCaptions": {
+      "status": "pending",
+      "observations": "沿用已编排的原字意群，自动身份/数字/标点检查通过；自然断句仍需独立核对。"
+    },
+    "visualRhythm": {
+      "status": "pending",
+      "observations": "已查看全部18页入场、中段、终态联系表；事件真实像素变化已检查。截图采样不代表完整连续播放的独立观感批准。"
+    },
+    "backgroundQuality": {
+      "status": "pending",
+      "observations": "默认纯色深青绿，无装饰粒子；图文页用原创象征插画。主题质量待独立审阅。"
+    },
+    "mobileReadability": {
+      "status": "pending",
+      "observations": "已看440px图文与步骤手机截图，自动检查320/440控件、字形、安全区通过；独立手机阅读复核待完成。"
+    },
+    "soundMix": {
+      "status": "pending",
+      "observations": "实际声源/混音信号存在，自动声音警告0；没有完成主观听音，不填听感通过。"
+    },
+    "ending": {
+      "status": "pending",
+      "observations": "末页回扣原稿农田养分平衡，尾音检查通过；主观结尾节奏待复核。"
+    }
+  },
+  "scenes": [
+    {
+      "sceneId": "shot-01",
+      "status": "pending",
+      "observations": "六类版式标准样片：statement；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-01-0.png",
+        "frames/shot-01-980000.png",
+        "frames/shot-01-6679999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-02",
+      "status": "pending",
+      "observations": "六类版式标准样片：hero-image；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-02-6680000.png",
+        "frames/shot-02-7780000.png",
+        "frames/shot-02-15039999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-03",
+      "status": "pending",
+      "observations": "六类版式标准样片：image-text；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-03-15040000.png",
+        "frames/shot-03-15940000.png",
+        "frames/shot-03-21959999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-04",
+      "status": "pending",
+      "observations": "六类版式标准样片：cards；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-04-21960000.png",
+        "frames/shot-04-24780000.png",
+        "frames/shot-04-30829999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-05",
+      "status": "pending",
+      "observations": "六类版式标准样片：comparison；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-05-30830000.png",
+        "frames/shot-05-33450000.png",
+        "frames/shot-05-43979999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-06",
+      "status": "pending",
+      "observations": "六类版式标准样片：steps；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-06-43980000.png",
+        "frames/shot-06-49520000.png",
+        "frames/shot-06-56959999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-07",
+      "status": "pending",
+      "observations": "六类版式标准样片：statement；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-07-56960000.png",
+        "frames/shot-07-60260000.png",
+        "frames/shot-07-67119999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-08",
+      "status": "pending",
+      "observations": "六类版式标准样片：hero-image；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-08-67120000.png",
+        "frames/shot-08-68740000.png",
+        "frames/shot-08-74499999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-09",
+      "status": "pending",
+      "observations": "六类版式标准样片：image-text；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-09-74500000.png",
+        "frames/shot-09-77400000.png",
+        "frames/shot-09-85859999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-10",
+      "status": "pending",
+      "observations": "六类版式标准样片：cards；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-10-85860000.png",
+        "frames/shot-10-89890000.png",
+        "frames/shot-10-95309999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-11",
+      "status": "pending",
+      "observations": "六类版式标准样片：comparison；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-11-95310000.png",
+        "frames/shot-11-97090000.png",
+        "frames/shot-11-103289999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-12",
+      "status": "pending",
+      "observations": "六类版式标准样片：steps；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-12-103290000.png",
+        "frames/shot-12-107620000.png",
+        "frames/shot-12-111949999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-13",
+      "status": "pending",
+      "observations": "六类版式标准样片：statement；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-13-111950000.png",
+        "frames/shot-13-112770000.png",
+        "frames/shot-13-119309999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-14",
+      "status": "pending",
+      "observations": "六类版式标准样片：hero-image；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-14-119310000.png",
+        "frames/shot-14-120450000.png",
+        "frames/shot-14-126279999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-15",
+      "status": "pending",
+      "observations": "六类版式标准样片：image-text；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-15-126280000.png",
+        "frames/shot-15-129060000.png",
+        "frames/shot-15-132559999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-16",
+      "status": "pending",
+      "observations": "六类版式标准样片：cards；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-16-132560000.png",
+        "frames/shot-16-135340000.png",
+        "frames/shot-16-139039999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-17",
+      "status": "pending",
+      "observations": "六类版式标准样片：comparison；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-17-139040000.png",
+        "frames/shot-17-140820000.png",
+        "frames/shot-17-149129999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-18",
+      "status": "pending",
+      "observations": "六类版式标准样片：steps；已看入场/中段/终态联系表。此样片验证版式，象征配图不构成科学审核。",
+      "evidence": [
+        "frames/shot-18-149130000.png",
+        "frames/shot-18-154070000.png",
+        "frames/shot-18-160101624.png"
+      ]
+    }
+  ]
+}

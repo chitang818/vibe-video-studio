@@ -1,0 +1,87 @@
+{
+  "status": "needs_review",
+  "errors": [],
+  "profile": "presentation-portrait-v1",
+  "report": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\artifacts\\quality\\d171aed9df2ea4d6\\runs\\e89d4bca25a6435baa18723d432efae2\\report.json",
+  "screenshots": 384,
+  "observedEvents": 69,
+  "audioWarnings": [],
+  "progressControls": [
+    {
+      "viewport": "320x640",
+      "boxes": {
+        "#controls": {
+          "x": 8,
+          "y": 570,
+          "width": 304,
+          "height": 62
+        },
+        "#seek": {
+          "x": 97,
+          "y": 579,
+          "width": 120,
+          "height": 44
+        },
+        "#time": {
+          "x": 225,
+          "y": 594,
+          "width": 78,
+          "height": 14
+        },
+        "button": {
+          "x": 17,
+          "y": 579,
+          "width": 72,
+          "height": 44
+        },
+        "canvas": {
+          "x": 1.375,
+          "y": 0,
+          "width": 317.25,
+          "height": 564
+        }
+      }
+    },
+    {
+      "viewport": "440x956",
+      "boxes": {
+        "#controls": {
+          "x": 8,
+          "y": 886,
+          "width": 424,
+          "height": 62
+        },
+        "#seek": {
+          "x": 97,
+          "y": 895,
+          "width": 240,
+          "height": 44
+        },
+        "#time": {
+          "x": 345,
+          "y": 910,
+          "width": 78,
+          "height": 14
+        },
+        "button": {
+          "x": 17,
+          "y": 895,
+          "width": 72,
+          "height": 44
+        },
+        "canvas": {
+          "x": 0,
+          "y": 48.890625,
+          "width": 440,
+          "height": 782.21875
+        }
+      }
+    }
+  ],
+  "regressions": "artifacts\\regressions\\811ab253967a4afdb04e72c10e4fa2d6\\summary.json",
+  "tests": 110,
+  "externalAcquisition": "Not called; local/search/generate importer validated with controlled fixtures",
+  "independentApproval": false,
+  "subjectiveListening": "pending",
+  "contactSheets": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\artifacts\\presentation-upgrade\\final"
+}

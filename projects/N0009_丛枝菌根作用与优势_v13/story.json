@@ -1,0 +1,809 @@
+{
+  "version": 2,
+  "title": "丛枝菌根作用与优势",
+  "authorId": "n0009-presentation-author",
+  "theme": "teal-editorial",
+  "assetPolicy": "local",
+  "assets": [
+    {
+      "id": "leaf",
+      "source": "assets/images/leaf.png",
+      "focusX": 0.5,
+      "focusY": 0.5
+    },
+    {
+      "id": "water",
+      "source": "assets/images/water.png",
+      "focusX": 0.5,
+      "focusY": 0.5
+    },
+    {
+      "id": "soil",
+      "source": "assets/images/soil.png",
+      "focusX": 0.5,
+      "focusY": 0.5
+    }
+  ],
+  "scenes": [
+    {
+      "id": "shot-01",
+      "layout": "cards",
+      "heading": "回顾：菌剂与菌根",
+      "anchor": {
+        "quote": "上一期我们介绍了",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "真菌类菌剂的分类",
+          "anchor": {
+            "quote": "我们介绍了",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "肥料类菌剂中的菌根",
+          "anchor": {
+            "quote": "和肥料类菌剂",
+            "occurrence": 1
+          },
+          "entrance": "slide-left"
+        },
+        {
+          "text": "连接上期基本特性",
+          "anchor": {
+            "quote": "基本特性",
+            "occurrence": 1
+          },
+          "entrance": "slide-right",
+          "emphasis": {
+            "kind": "color",
+            "anchor": {
+              "quote": "基本特性",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "push",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-02",
+      "layout": "statement",
+      "heading": "这期看机制与应用",
+      "anchor": {
+        "quote": "这一期我们着重讲一下",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "从吸收机制开始",
+          "anchor": {
+            "quote": "着重讲一下",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "再看实际应用优势",
+          "anchor": {
+            "quote": "是如何促进植物",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "marker",
+            "anchor": {
+              "quote": "是如何促进植物",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-03",
+      "layout": "steps",
+      "heading": "磷为何难被吸收",
+      "anchor": {
+        "quote": "一、强化磷元素的吸收",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "磷素吸收是重点",
+          "anchor": {
+            "quote": "强化磷元素",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "磷被土壤颗粒固定",
+          "anchor": {
+            "quote": "被土壤颗粒固定",
+            "occurrence": 1
+          },
+          "entrance": "slide-left"
+        },
+        {
+          "text": "移动性差",
+          "anchor": {
+            "quote": "移动性差",
+            "occurrence": 1
+          },
+          "entrance": "slide-right"
+        },
+        {
+          "text": "根系难以直接获取",
+          "anchor": {
+            "quote": "难以被植物吸收",
+            "occurrence": 1
+          },
+          "entrance": "zoom",
+          "emphasis": {
+            "kind": "underline",
+            "anchor": {
+              "quote": "难以被植物吸收",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-04",
+      "layout": "image-text",
+      "heading": "菌丝延伸，磷素转运",
+      "anchor": {
+        "quote": "丛枝菌根的根外菌丝可以延伸",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "菌丝向根外延伸",
+          "anchor": {
+            "quote": "根外菌丝可以",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "提升植物磷素供应",
+          "anchor": {
+            "quote": "提升植物磷素",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "color",
+            "anchor": {
+              "quote": "提升植物磷素",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "push",
+      "imageNote": "项目原创象征插画，不代表显微结构或定量证据",
+      "image": "leaf",
+      "imageFit": "cover",
+      "imageZoom": true
+    },
+    {
+      "id": "shot-05",
+      "layout": "steps",
+      "heading": "氮素转运与微生物协同",
+      "anchor": {
+        "quote": "二、辅助氮元素的吸收",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "菌丝转运无机氮",
+          "anchor": {
+            "quote": "丛枝菌根的菌丝可以转运",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "与固氮微生物协同",
+          "anchor": {
+            "quote": "同时还能和土壤",
+            "occurrence": 1
+          },
+          "entrance": "slide-left"
+        },
+        {
+          "text": "帮助植物获取氮素",
+          "anchor": {
+            "quote": "帮助植物更高效",
+            "occurrence": 1
+          },
+          "entrance": "slide-right"
+        },
+        {
+          "text": "减少氮肥流失浪费",
+          "anchor": {
+            "quote": "减少氮肥的",
+            "occurrence": 1
+          },
+          "entrance": "zoom",
+          "emphasis": {
+            "kind": "marker",
+            "anchor": {
+              "quote": "减少氮肥的",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-06",
+      "layout": "cards",
+      "heading": "不止大量元素",
+      "anchor": {
+        "quote": "三、帮助微量元素的吸收",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "还关注微量元素",
+          "anchor": {
+            "quote": "除了大量元素",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "锌、铜、铁等元素",
+          "anchor": {
+            "quote": "土壤中的锌",
+            "occurrence": 1
+          },
+          "entrance": "slide-left"
+        },
+        {
+          "text": "减少缺素症状",
+          "anchor": {
+            "quote": "减少作物缺素",
+            "occurrence": 1
+          },
+          "entrance": "slide-right"
+        },
+        {
+          "text": "关注贫瘠土壤条件",
+          "anchor": {
+            "quote": "在贫瘠土壤中",
+            "occurrence": 1
+          },
+          "entrance": "zoom",
+          "emphasis": {
+            "kind": "underline",
+            "anchor": {
+              "quote": "在贫瘠土壤中",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-07",
+      "layout": "statement",
+      "heading": "菌丝向根外拓展",
+      "anchor": {
+        "quote": "丛枝菌根促进养分吸收的原因",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "拓展养分吸收面积",
+          "anchor": {
+            "quote": "主要是菌丝拓展",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "菌丝拓展吸收范围",
+          "anchor": {
+            "quote": "数十倍甚至上百倍",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "color",
+            "anchor": {
+              "quote": "数十倍甚至上百倍",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "push",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-08",
+      "layout": "hero-image",
+      "heading": "从根际走向周边土壤",
+      "anchor": {
+        "quote": "让植物根系的养分吸收范围",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "从根际附近开始",
+          "anchor": {
+            "quote": "养分吸收范围",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "提升养分获取能力",
+          "anchor": {
+            "quote": "大幅提升了养分",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "marker",
+            "anchor": {
+              "quote": "大幅提升了养分",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "项目原创象征插画，不代表显微结构或定量证据",
+      "image": "soil",
+      "imageFit": "cover",
+      "imageZoom": true
+    },
+    {
+      "id": "shot-09",
+      "layout": "steps",
+      "heading": "养分形态转化",
+      "anchor": {
+        "quote": "同时，丛枝菌根共生过程中",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "共生过程分泌有机酸",
+          "anchor": {
+            "quote": "分泌一些有机酸",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "作用于固定矿质养分",
+          "anchor": {
+            "quote": "被固定的矿质养分",
+            "occurrence": 1
+          },
+          "entrance": "slide-left"
+        },
+        {
+          "text": "转为可吸收利用形态",
+          "anchor": {
+            "quote": "可以吸收利用的形态",
+            "occurrence": 1
+          },
+          "entrance": "slide-right"
+        },
+        {
+          "text": "提高养分利用率",
+          "anchor": {
+            "quote": "提升土壤养分",
+            "occurrence": 1
+          },
+          "entrance": "zoom",
+          "emphasis": {
+            "kind": "underline",
+            "anchor": {
+              "quote": "提升土壤养分",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-10",
+      "layout": "comparison",
+      "heading": "根内丛枝：双向交换",
+      "anchor": {
+        "quote": "根内形成的丛枝结构",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "丛枝扩大交换界面",
+          "anchor": {
+            "quote": "丛枝结构拥有",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "真菌向植物供养分",
+          "anchor": {
+            "quote": "真菌将吸收的养分",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "color",
+            "anchor": {
+              "quote": "真菌将吸收的养分",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "push",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-11",
+      "layout": "statement",
+      "heading": "从交换机制到应用",
+      "anchor": {
+        "quote": "双向交换效率远高于",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "双向交换效率更高",
+          "anchor": {
+            "quote": "远高于普通吸附交换",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "进一步看实际应用",
+          "anchor": {
+            "quote": "实际的应用优势",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "marker",
+            "anchor": {
+              "quote": "实际的应用优势",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-12",
+      "layout": "steps",
+      "heading": "肥料利用与生产成本",
+      "anchor": {
+        "quote": "首先是刚才讲到的",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "促进养分高效利用",
+          "anchor": {
+            "quote": "促进养分的高效利用",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "提升磷肥利用率",
+          "anchor": {
+            "quote": "提升磷肥的利用率",
+            "occurrence": 1
+          },
+          "entrance": "slide-left"
+        },
+        {
+          "text": "减少化肥施用量",
+          "anchor": {
+            "quote": "减少化肥的施用量",
+            "occurrence": 1
+          },
+          "entrance": "slide-right"
+        },
+        {
+          "text": "降低生产成本",
+          "anchor": {
+            "quote": "降低农业生产成本",
+            "occurrence": 1
+          },
+          "entrance": "zoom",
+          "emphasis": {
+            "kind": "underline",
+            "anchor": {
+              "quote": "降低农业生产成本",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-13",
+      "layout": "image-text",
+      "heading": "减少流失，关注水体",
+      "anchor": {
+        "quote": "同时减少养分淋失",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "减少养分淋失",
+          "anchor": {
+            "quote": "减少养分淋失",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "转向土壤生态改善",
+          "anchor": {
+            "quote": "土壤生态的改善",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "color",
+            "anchor": {
+              "quote": "土壤生态的改善",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "push",
+      "imageNote": "项目原创象征插画，不代表显微结构或定量证据",
+      "image": "water",
+      "imageFit": "cover",
+      "imageZoom": true
+    },
+    {
+      "id": "shot-14",
+      "layout": "cards",
+      "heading": "土壤生态的多个层面",
+      "anchor": {
+        "quote": "能够促进土壤团聚体形成",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "促进团聚体形成",
+          "anchor": {
+            "quote": "土壤团聚体形成",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "提升土壤固碳能力",
+          "anchor": {
+            "quote": "提升土壤固碳能力",
+            "occurrence": 1
+          },
+          "entrance": "slide-left"
+        },
+        {
+          "text": "优化微生物群落",
+          "anchor": {
+            "quote": "优化土壤微生物群落",
+            "occurrence": 1
+          },
+          "entrance": "slide-right"
+        },
+        {
+          "text": "构建菌丝网络",
+          "anchor": {
+            "quote": "构建土壤菌丝网络",
+            "occurrence": 1
+          },
+          "entrance": "zoom",
+          "emphasis": {
+            "kind": "marker",
+            "anchor": {
+              "quote": "构建土壤菌丝网络",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-15",
+      "layout": "comparison",
+      "heading": "缠绕与粘合共同作用",
+      "anchor": {
+        "quote": "这些应用优势根本的原因",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "菌丝形成物理缠绕",
+          "anchor": {
+            "quote": "菌丝的物理缠绕作用",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "分泌粘合物质",
+          "anchor": {
+            "quote": "菌丝分泌的粘合物质",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "underline",
+            "anchor": {
+              "quote": "菌丝分泌的粘合物质",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-16",
+      "layout": "image-text",
+      "heading": "微团聚体聚合",
+      "anchor": {
+        "quote": "可以促进土壤微团聚体",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "微团聚体发生聚合",
+          "anchor": {
+            "quote": "微团聚体聚合",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "降低板结风险",
+          "anchor": {
+            "quote": "降低土壤板结的风险",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "color",
+            "anchor": {
+              "quote": "降低土壤板结的风险",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "push",
+      "imageNote": "项目原创象征插画，不代表显微结构或定量证据",
+      "image": "soil",
+      "imageFit": "cover",
+      "imageZoom": true
+    },
+    {
+      "id": "shot-17",
+      "layout": "cards",
+      "heading": "根际群落的协同",
+      "anchor": {
+        "quote": "同时会和根际的有益微生物",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "根际微生物协同",
+          "anchor": {
+            "quote": "有益微生物产生协同",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "有益微生物定殖繁殖",
+          "anchor": {
+            "quote": "促进有益微生物",
+            "occurrence": 1
+          },
+          "entrance": "slide-left"
+        },
+        {
+          "text": "抑制有害微生物生长",
+          "anchor": {
+            "quote": "抑制有害微生物",
+            "occurrence": 1
+          },
+          "entrance": "slide-right"
+        },
+        {
+          "text": "维持群落健康稳定",
+          "anchor": {
+            "quote": "维持根际微生物群落",
+            "occurrence": 1
+          },
+          "entrance": "zoom",
+          "emphasis": {
+            "kind": "marker",
+            "anchor": {
+              "quote": "维持根际微生物群落",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    },
+    {
+      "id": "shot-18",
+      "layout": "statement",
+      "heading": "地下共同菌丝网络",
+      "anchor": {
+        "quote": "然后，丛枝菌根的菌丝",
+        "occurrence": 1
+      },
+      "items": [
+        {
+          "text": "连接不同植物根系",
+          "anchor": {
+            "quote": "连接不同植物",
+            "occurrence": 1
+          },
+          "entrance": "fade-up"
+        },
+        {
+          "text": "维持农田养分平衡",
+          "anchor": {
+            "quote": "养分平衡",
+            "occurrence": 1
+          },
+          "entrance": "slide-left",
+          "emphasis": {
+            "kind": "underline",
+            "anchor": {
+              "quote": "养分平衡",
+              "occurrence": 1
+            }
+          }
+        }
+      ],
+      "transition": "fade",
+      "imageNote": "文字承担本页重点；不补无关机制图"
+    }
+  ]
+}

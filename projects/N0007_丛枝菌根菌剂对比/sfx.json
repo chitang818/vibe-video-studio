@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "events": [
+    {
+      "timeUs": 10000000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 25400000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 40450000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 54500000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 81600000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 99100000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 112000000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 125900000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 137450000,
+      "source": "assets/sounds/whoosh.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 1500000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 15500000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 34300000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 49100000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 69100000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 87400000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 100600000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 119200000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 127500000,
+      "source": "assets/sounds/ding.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 800000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 11200000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 26500000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 41500000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 56000000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 83000000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 101000000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 113500000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 127000000,
+      "source": "assets/sounds/pop.wav",
+      "gain": 1
+    },
+    {
+      "timeUs": 138000000,
+      "source": "assets/sounds/chime.wav",
+      "gain": 1
+    }
+  ]
+}

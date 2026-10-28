@@ -1,0 +1,1 @@
+Original code-drawn symbolic illustrations by VIBE Studio. Permission: original project artwork. Not microscopy, quantitative data or a scientifically exact anatomical diagram. Rebuild: python -m scripts.build_presentation_examples --out <new-authoring-directory>.

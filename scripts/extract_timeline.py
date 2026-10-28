@@ -24,13 +24,15 @@ if sys.platform == "win32":
         pass
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0,str(ROOT_DIR))
+from scripts.text_contract import clean,normalized_tokens,quote_at
 SFX_PRESETS_PATH = ROOT_DIR / "assets" / "sounds" / "sfx_presets.json"
 
 STRIP_RE = re.compile(r'[^\w\s%~\-\u4e00-\u9fff]', re.UNICODE)
 
 
 def clean_text(s: str) -> str:
-    return STRIP_RE.sub('', s)
+    return clean(s)
 
 
 def build_timeline_index(timestamp_items):
@@ -45,11 +47,8 @@ def build_timeline_index(timestamp_items):
     clean_chars = []
     orig_indices = []
 
-    for orig_idx, ch in enumerate(chars):
-        cleaned_ch = clean_text(ch)
-        for c in cleaned_ch:
-            clean_chars.append(c)
-            orig_indices.append(orig_idx)
+    for c,orig_idx in normalized_tokens([(c,i) for i,text in enumerate(chars) for c in text]):
+        clean_chars.append(c);orig_indices.append(orig_idx)
 
     text_clean = ''.join(clean_chars)
     return {
@@ -58,18 +57,23 @@ def build_timeline_index(timestamp_items):
         'end_times': end_times,
         'text_clean': text_clean,
         'orig_indices': orig_indices,
+        'rows':timestamp_items,
     }
 
 
-def find_keyword(index_data, keyword: str):
+def find_keyword(index_data, keyword: str, occurrence=1):
     cleaned_kw = clean_text(keyword)
     if not cleaned_kw:
         return None
 
     text_clean = index_data['text_clean']
-    pos = text_clean.find(cleaned_kw)
-    if pos < 0:
+    candidates=[];search=0
+    while (pos:=text_clean.find(cleaned_kw,search))>=0:
+        if quote_at(index_data['rows'],index_data['orig_indices'][pos],keyword):candidates.append(pos)
+        search=pos+1
+    if type(occurrence)!=int or not 1<=occurrence<=len(candidates):
         return None
+    pos=candidates[occurrence-1]
 
     raw_start_idx = index_data['orig_indices'][pos]
     raw_end_idx = index_data['orig_indices'][pos + len(cleaned_kw) - 1]
@@ -83,6 +87,7 @@ def find_keyword(index_data, keyword: str):
         'start_time': start_time,
         'end_time': end_time,
         'matched_char': index_data['chars'][raw_start_idx],
+        'match_count':len(candidates),'occurrence':occurrence,
     }
 
 
@@ -137,8 +142,8 @@ def process_keywords(ts_path: str, kw_path: str, out_path: str = None, sfx_path:
 
             res = find_keyword(index_data, key)
             if res:
-                t = round(res['start_time'], 2)
-                row = f"{tag} | {key} | t={t:.2f}s (end={res['end_time']:.2f}s) | idx={res['start_idx']}"
+                t = round(res['start_time']*1e6)/1e6
+                row = f"{tag} | {key} | t={t:.6f}s (end={res['end_time']:.6f}s) | idx={res['start_idx']} | matches={res['match_count']} | occurrence={res['occurrence']}"
                 
                 # 语义特征智能匹配
                 tag_lower = tag.lower()
@@ -159,6 +164,9 @@ def process_keywords(ts_path: str, kw_path: str, out_path: str = None, sfx_path:
                 row = f"{tag} | {key} | NOT FOUND"
             print(row)
             out_lines.append(row)
+
+    if any(' | NOT FOUND' in line for line in out_lines):
+        raise ValueError('Timeline contains missing keywords; no partial timeline or SFX output was written')
 
     if not out_path:
         out_path = kw_path + '_out.txt'

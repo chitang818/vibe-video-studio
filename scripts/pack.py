@@ -21,11 +21,12 @@ if sys.platform == "win32":
         pass
 
 ROOT_DIR = Path(__file__).resolve().parent.parent
+sys.path.insert(0,str(ROOT_DIR))
 PROJECTS_DIR = ROOT_DIR / "projects"
 TEMP_DIR = ROOT_DIR / "temp"
 
 
-def scan_and_bundle(target_path, out_dir=None, voice_override=None, timestamps_override=None, sfx_override=None, script_override=None):
+def _legacy_scan_and_bundle(target_path, out_dir=None, voice_override=None, timestamps_override=None, sfx_override=None, script_override=None):
     target = Path(target_path).resolve()
     if not target.exists():
         print(f"❌ 错误：指定的目标路径不存在: {target}")
@@ -163,6 +164,22 @@ def scan_and_bundle(target_path, out_dir=None, voice_override=None, timestamps_o
     print("=" * 80 + "\n")
 
     return is_ready
+
+
+def scan_and_bundle(target_path, out_dir=None, voice_override=None, timestamps_override=None, sfx_override=None, script_override=None):
+    from scripts.quality_gate import run_gate
+    target=Path(target_path).resolve();root=target if target.is_dir() else target.parent
+    if not (root/'vibe.project.json').is_file():
+        print('LEGACY/INCOMPATIBLE: ordinary HTML is not a release-ready Canvas project. Use vibe.py fast-build.')
+        return False
+    if any((voice_override,timestamps_override,sfx_override,script_override)):
+        raise ValueError('Do not mutate packaged assets; build a new version')
+    report=run_gate(root,release=True)
+    if report['status']!='release_passed':return False
+    from scripts.release import publish
+    destination=Path(out_dir) if out_dir else ROOT_DIR/'releases'/(root.name+'-'+report['inputFingerprint'][:12])
+    print('Released package: '+str(publish(root,report,destination)))
+    return True
 
 
 def main():

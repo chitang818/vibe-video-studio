@@ -1,0 +1,912 @@
+{
+  "version": 1,
+  "profile": "presentation-portrait-v1",
+  "authorId": "n0009-presentation-author",
+  "facts": [],
+  "background": {
+    "implementation": "solid teal presentation theme; no decorative particles",
+    "rationale": "动态演示以内容和阅读停留为主，不使用无关机制图"
+  },
+  "scenes": [
+    {
+      "sceneId": "shot-01",
+      "purpose": "回顾：菌剂与菌根",
+      "visualIntent": "动态演示版式：statement",
+      "visualFamily": "statement",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 480000,
+          "quote": "我们介绍了",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：真菌类菌剂的分类"
+        },
+        {
+          "timeUs": 5920000,
+          "quote": "基本特性",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：连接上期基本特性"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-02",
+      "purpose": "这期看机制与应用",
+      "visualIntent": "动态演示版式：hero-image",
+      "visualFamily": "hero-image",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [
+          "picture"
+        ],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 7280000,
+          "quote": "着重讲一下",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：从吸收机制开始"
+        },
+        {
+          "timeUs": 12680000,
+          "quote": "是如何促进植物",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：再看实际应用优势"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：原创象征插画"
+    },
+    {
+      "sceneId": "shot-03",
+      "purpose": "磷为何难被吸收",
+      "visualIntent": "动态演示版式：image-text",
+      "visualFamily": "image-text",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [
+          "picture"
+        ],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 15440000,
+          "quote": "强化磷元素",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：磷素吸收是重点"
+        },
+        {
+          "timeUs": 20680000,
+          "quote": "难以被植物吸收",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：根系难以直接获取"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：原创象征插画"
+    },
+    {
+      "sceneId": "shot-04",
+      "purpose": "菌丝延伸，磷素转运",
+      "visualIntent": "动态演示版式：cards",
+      "visualFamily": "cards",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2",
+          "item-3",
+          "item-4"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "card-2",
+          "card-3",
+          "card-4"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 22720000,
+          "quote": "根外菌丝可以",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：菌丝向根外延伸"
+        },
+        {
+          "timeUs": 24280000,
+          "quote": "更大范围",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：扩大探索范围"
+        },
+        {
+          "timeUs": 26000000,
+          "quote": "难溶性磷",
+          "nodeIds": [
+            "item-3"
+          ],
+          "meaning": "展示讲解内容：难溶性磷转运过程"
+        },
+        {
+          "timeUs": 28910000,
+          "quote": "提升植物磷素",
+          "nodeIds": [
+            "item-4"
+          ],
+          "meaning": "展示讲解内容：提升植物磷素供应"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-05",
+      "purpose": "氮素转运与微生物协同",
+      "visualIntent": "动态演示版式：comparison",
+      "visualFamily": "comparison",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "card-2"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 32950000,
+          "quote": "丛枝菌根的菌丝可以转运",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：菌丝转运无机氮"
+        },
+        {
+          "timeUs": 42180000,
+          "quote": "减少氮肥的",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：减少氮肥流失浪费"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-06",
+      "purpose": "不止大量元素",
+      "visualIntent": "动态演示版式：steps",
+      "visualFamily": "steps",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2",
+          "item-3",
+          "item-4"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "bullet-1",
+          "card-2",
+          "bullet-2",
+          "card-3",
+          "bullet-3",
+          "card-4",
+          "bullet-4"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 45940000,
+          "quote": "除了大量元素",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：还关注微量元素"
+        },
+        {
+          "timeUs": 49020000,
+          "quote": "土壤中的锌",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：锌、铜、铁等元素"
+        },
+        {
+          "timeUs": 52080000,
+          "quote": "减少作物缺素",
+          "nodeIds": [
+            "item-3"
+          ],
+          "meaning": "展示讲解内容：减少缺素症状"
+        },
+        {
+          "timeUs": 54080000,
+          "quote": "在贫瘠土壤中",
+          "nodeIds": [
+            "item-4"
+          ],
+          "meaning": "展示讲解内容：关注贫瘠土壤条件"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-07",
+      "purpose": "菌丝向根外拓展",
+      "visualIntent": "动态演示版式：statement",
+      "visualFamily": "statement",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 59760000,
+          "quote": "主要是菌丝拓展",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：拓展养分吸收面积"
+        },
+        {
+          "timeUs": 65440000,
+          "quote": "数十倍甚至上百倍",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：原稿倍数依据待核对"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-08",
+      "purpose": "从根际走向周边土壤",
+      "visualIntent": "动态演示版式：hero-image",
+      "visualFamily": "hero-image",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [
+          "picture"
+        ],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 68240000,
+          "quote": "养分吸收范围",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：从根际附近开始"
+        },
+        {
+          "timeUs": 72420000,
+          "quote": "大幅提升了养分",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：提升养分获取能力"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：原创象征插画"
+    },
+    {
+      "sceneId": "shot-09",
+      "purpose": "养分形态转化",
+      "visualIntent": "动态演示版式：image-text",
+      "visualFamily": "image-text",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [
+          "picture"
+        ],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 76900000,
+          "quote": "分泌一些有机酸",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：共生过程分泌有机酸"
+        },
+        {
+          "timeUs": 84260000,
+          "quote": "提升土壤养分",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：提高养分利用率"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：原创象征插画"
+    },
+    {
+      "sceneId": "shot-10",
+      "purpose": "根内丛枝：双向交换",
+      "visualIntent": "动态演示版式：cards",
+      "visualFamily": "cards",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2",
+          "item-3",
+          "item-4"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "card-2",
+          "card-3",
+          "card-4"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 86700000,
+          "quote": "丛枝结构拥有",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：丛枝扩大交换界面"
+        },
+        {
+          "timeUs": 89390000,
+          "quote": "植物将光合作用",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：植物向真菌供碳"
+        },
+        {
+          "timeUs": 90910000,
+          "quote": "碳水化合物传递",
+          "nodeIds": [
+            "item-3"
+          ],
+          "meaning": "展示讲解内容：传递碳水化合物"
+        },
+        {
+          "timeUs": 92830000,
+          "quote": "真菌将吸收的养分",
+          "nodeIds": [
+            "item-4"
+          ],
+          "meaning": "展示讲解内容：真菌向植物供养分"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-11",
+      "purpose": "从交换机制到应用",
+      "visualIntent": "动态演示版式：comparison",
+      "visualFamily": "comparison",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "card-2"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 96590000,
+          "quote": "远高于普通吸附交换",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：原稿对比：吸附交换"
+        },
+        {
+          "timeUs": 101810000,
+          "quote": "实际的应用优势",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：进一步看实际应用"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-12",
+      "purpose": "肥料利用与生产成本",
+      "visualIntent": "动态演示版式：steps",
+      "visualFamily": "steps",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2",
+          "item-3",
+          "item-4"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "bullet-1",
+          "card-2",
+          "bullet-2",
+          "card-3",
+          "bullet-3",
+          "card-4",
+          "bullet-4"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 104490000,
+          "quote": "促进养分的高效利用",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：促进养分高效利用"
+        },
+        {
+          "timeUs": 107250000,
+          "quote": "提升磷肥的利用率",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：提升磷肥利用率"
+        },
+        {
+          "timeUs": 108810000,
+          "quote": "减少化肥的施用量",
+          "nodeIds": [
+            "item-3"
+          ],
+          "meaning": "展示讲解内容：减少化肥施用量"
+        },
+        {
+          "timeUs": 110550000,
+          "quote": "降低农业生产成本",
+          "nodeIds": [
+            "item-4"
+          ],
+          "meaning": "展示讲解内容：降低生产成本"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-13",
+      "purpose": "减少流失，关注水体",
+      "visualIntent": "动态演示版式：statement",
+      "visualFamily": "statement",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 112270000,
+          "quote": "减少养分淋失",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：减少养分淋失"
+        },
+        {
+          "timeUs": 117830000,
+          "quote": "土壤生态的改善",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：转向土壤生态改善"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-14",
+      "purpose": "土壤生态的多个层面",
+      "visualIntent": "动态演示版式：hero-image",
+      "visualFamily": "hero-image",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [
+          "picture"
+        ],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 119950000,
+          "quote": "土壤团聚体形成",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：促进团聚体形成"
+        },
+        {
+          "timeUs": 124470000,
+          "quote": "构建土壤菌丝网络",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：构建菌丝网络"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：原创象征插画"
+    },
+    {
+      "sceneId": "shot-15",
+      "purpose": "缠绕与粘合共同作用",
+      "visualIntent": "动态演示版式：image-text",
+      "visualFamily": "image-text",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [
+          "picture"
+        ],
+        "panel": [
+          "title-panel",
+          "section-rule"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 128560000,
+          "quote": "菌丝的物理缠绕作用",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：菌丝形成物理缠绕"
+        },
+        {
+          "timeUs": 130680000,
+          "quote": "菌丝分泌的粘合物质",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：分泌粘合物质"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：原创象征插画"
+    },
+    {
+      "sceneId": "shot-16",
+      "purpose": "微团聚体聚合",
+      "visualIntent": "动态演示版式：cards",
+      "visualFamily": "cards",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2",
+          "item-3",
+          "item-4"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "card-2",
+          "card-3",
+          "card-4"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 133480000,
+          "quote": "微团聚体聚合",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：微团聚体发生聚合"
+        },
+        {
+          "timeUs": 134840000,
+          "quote": "大团聚体",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：形成大团聚体"
+        },
+        {
+          "timeUs": 135680000,
+          "quote": "改善土壤的物理结构",
+          "nodeIds": [
+            "item-3"
+          ],
+          "meaning": "展示讲解内容：改善土壤物理结构"
+        },
+        {
+          "timeUs": 137360000,
+          "quote": "降低土壤板结的风险",
+          "nodeIds": [
+            "item-4"
+          ],
+          "meaning": "展示讲解内容：降低板结风险"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-17",
+      "purpose": "根际群落的协同",
+      "visualIntent": "动态演示版式：comparison",
+      "visualFamily": "comparison",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "card-2"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 140320000,
+          "quote": "有益微生物产生协同",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：根际微生物协同"
+        },
+        {
+          "timeUs": 146570000,
+          "quote": "维持根际微生物群落",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：维持群落健康稳定"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    },
+    {
+      "sceneId": "shot-18",
+      "purpose": "地下共同菌丝网络",
+      "visualIntent": "动态演示版式：steps",
+      "visualFamily": "steps",
+      "roles": {
+        "title": [
+          "title-1"
+        ],
+        "content": [
+          "heading",
+          "item-1",
+          "item-2",
+          "item-3",
+          "item-4"
+        ],
+        "graphic": [],
+        "panel": [
+          "title-panel",
+          "section-rule",
+          "card-1",
+          "bullet-1",
+          "card-2",
+          "bullet-2",
+          "card-3",
+          "bullet-3",
+          "card-4",
+          "bullet-4"
+        ]
+      },
+      "beats": [
+        {
+          "timeUs": 151170000,
+          "quote": "连接不同植物",
+          "nodeIds": [
+            "item-1"
+          ],
+          "meaning": "展示讲解内容：连接不同植物根系"
+        },
+        {
+          "timeUs": 153570000,
+          "quote": "地下共同菌丝网络",
+          "nodeIds": [
+            "item-2"
+          ],
+          "meaning": "展示讲解内容：形成共同菌丝网络"
+        },
+        {
+          "timeUs": 157090000,
+          "quote": "转移分配",
+          "nodeIds": [
+            "item-3"
+          ],
+          "meaning": "展示讲解内容：养分转移与分配"
+        },
+        {
+          "timeUs": 159250000,
+          "quote": "养分平衡",
+          "nodeIds": [
+            "item-4"
+          ],
+          "meaning": "展示讲解内容：回扣农田养分平衡"
+        }
+      ],
+      "intentionalOverlaps": [],
+      "imageNote": "标准版式样片：文字主视觉"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "runtimeVersion": "1.0.0",
+  "runtimeSha256": "6d4b6f4fcdfc956c8f0947c45831626c4fc6c95178690b87d93f8fd2de7903e7",
+  "title": "N0008_丛枝菌根真菌科普",
+  "width": 1080,
+  "height": 1920,
+  "durationUs": 114777625,
+  "htmlFile": "index.html",
+  "sceneFile": "scene.json",
+  "voiceFile": "assets/voice.wav",
+  "timestampsFile": "assets/char_timestamps.json",
+  "sfxFile": "sfx.json",
+  "assetHashes": {
+    "assets/char_timestamps.json": "c644c9c50992292e771b3a65660387a615a6b7e2d2556611a699a0900453b24e",
+    "assets/sounds/chime.wav": "6c04c8c9d2927c1bde042088ebdbe600b622682ccf1e86f9a1548e97d7024dfb",
+    "assets/sounds/click.wav": "386b77829a2bc84fc974972c7f2577acd4d3978d06ef7ce046e09471ac94888a",
+    "assets/sounds/ding.wav": "29fd7343740f64bd8c7a770272428494778b75bf33895013b17131685725ef87",
+    "assets/sounds/whoosh.wav": "5f4cf5684e5c1907a717b5dabcfcb55f2f31481ed0b532fa81516a3d2b2eb7e3",
+    "assets/voice.wav": "2b3ddeb0a8eaf1dc16e2855d6e3e7ec766c0412c8d9a0b0fa346c893c6a981df",
+    "index.html": "842b068dad6c48c29b13fe23d9daacf3df6766805d65d7212c6695771f9733c9",
+    "scene.json": "cdd31da6d6c0d83ee6b53875b58581a50bb31efcfb1b7163253731f7e0b334f0",
+    "sfx.json": "08dadf91503c45a46e718e2c65edcae567bcd62f004238d10afa407c3d2eaa88",
+    "vibe-runtime/audio.mjs": "67754e8f20b60bb642595552547ccd7fe9682952f31fbe6a2c49a047ad4439f6",
+    "vibe-runtime/scene.mjs": "6d4b6f4fcdfc956c8f0947c45831626c4fc6c95178690b87d93f8fd2de7903e7",
+    "script.txt": "f3bcc7a8cce8244b403f65ee65efd2c34953bdd6b3b61b853e3f56f21d3fa7a6",
+    "timeline.txt": "0eca3045d55f69d27c2ee3956008fe8a50a801d9c97fa993c51f68d66345a3c7"
+  }
+}

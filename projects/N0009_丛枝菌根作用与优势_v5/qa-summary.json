@@ -1,0 +1,21 @@
+{
+  "status": "needs_review",
+  "runId": "fdda3d8a2208449f8843b816db9f75f2",
+  "errors": [],
+  "screenshots": 303,
+  "audioWarnings": [],
+  "devHud": {
+    "top": 0.03198034437297751,
+    "left": 0.039985795454545454,
+    "bottom": 0.056749630458231795,
+    "right": 0.22737926136363637,
+    "font": 0.022
+  },
+  "hudPreviewOnly": true,
+  "regressionTests": 75,
+  "sceneDataUnchangedFromV4": true,
+  "sharedRuntimeUnchanged": true,
+  "actualListening": "pending",
+  "independentApproval": false,
+  "report": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\artifacts\\quality\\c032a8b4935da45d\\runs\\fdda3d8a2208449f8843b816db9f75f2\\report.json"
+}

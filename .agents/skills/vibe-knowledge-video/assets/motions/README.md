@@ -1,3 +1,5 @@
+> 历史DOM/CSS资产；默认story v2不加载这些执行文件。当前主题/动效由编译器与共享Canvas实现，见[制作入口](../../../../../references/presentation-authoring.md)。不要直接复制到新网页。
+
 # 动效库（motions）
 
 > 动效是 **CSS keyframes / JS 片段**（不是图片视频）。

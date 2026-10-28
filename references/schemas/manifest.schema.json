@@ -1,0 +1,96 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "schemaVersion": {
+      "type": "integer",
+      "enum": [
+        1
+      ]
+    },
+    "runtimeVersion": {
+      "type": "string",
+      "enum": [
+        "1.2.0"
+      ]
+    },
+    "runtimeSha256": {
+      "type": "string",
+      "pattern": "[0-9a-f]{64}"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1,
+      "maxLength": 2000
+    },
+    "width": {
+      "type": "integer",
+      "minimum": 64,
+      "maximum": 3840
+    },
+    "height": {
+      "type": "integer",
+      "minimum": 64,
+      "maximum": 3840
+    },
+    "durationUs": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 7200000000
+    },
+    "htmlFile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sceneFile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sfxFile": {
+      "type": "string",
+      "minLength": 1
+    },
+    "voiceFile": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "timestampsFile": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "scriptFile": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "assetHashes": {
+      "type": "object",
+      "properties": {},
+      "additionalProperties": {
+        "type": "string",
+        "pattern": "[0-9a-f]{64}"
+      }
+    }
+  },
+  "required": [
+    "schemaVersion",
+    "runtimeVersion",
+    "runtimeSha256",
+    "title",
+    "width",
+    "height",
+    "durationUs",
+    "htmlFile",
+    "sceneFile",
+    "sfxFile",
+    "voiceFile",
+    "timestampsFile",
+    "assetHashes"
+  ]
+}

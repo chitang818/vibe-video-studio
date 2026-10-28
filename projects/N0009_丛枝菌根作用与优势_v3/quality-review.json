@@ -1,0 +1,151 @@
+{
+  "version": 1,
+  "status": "pending",
+  "reviewer": "",
+  "inputFingerprint": "",
+  "evidenceDigest": "",
+  "checks": {
+    "scientificMeaning": {
+      "status": "pending",
+      "observations": ""
+    },
+    "narrationSync": {
+      "status": "pending",
+      "observations": ""
+    },
+    "semanticCaptions": {
+      "status": "pending",
+      "observations": ""
+    },
+    "visualRhythm": {
+      "status": "pending",
+      "observations": ""
+    },
+    "backgroundQuality": {
+      "status": "pending",
+      "observations": ""
+    },
+    "mobileReadability": {
+      "status": "pending",
+      "observations": ""
+    },
+    "soundMix": {
+      "status": "pending",
+      "observations": ""
+    },
+    "ending": {
+      "status": "pending",
+      "observations": ""
+    }
+  },
+  "scenes": [
+    {
+      "sceneId": "shot-01",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-02",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-03",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-04",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-05",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-06",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-07",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-08",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-09",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-10",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-11",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-12",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-13",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-14",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-15",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-16",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-17",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    },
+    {
+      "sceneId": "shot-18",
+      "status": "pending",
+      "observations": "",
+      "evidence": []
+    }
+  ]
+}

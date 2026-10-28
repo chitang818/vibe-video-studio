@@ -22,22 +22,51 @@ ROOT_DIR = Path(__file__).resolve().parent
 SCRIPTS_DIR = ROOT_DIR / "scripts"
 
 
+def run_fast_build(args):
+    from scripts.build_fast_project import build
+    build(args)
+
+
 def run_pack(args):
-    from scripts.pack import scan_and_bundle
-    success = scan_and_bundle(
-        args.target,
-        out_dir=args.out,
-        voice_override=args.voice,
-        timestamps_override=args.timestamps,
-        sfx_override=args.sfx,
-        script_override=args.script,
-    )
-    sys.exit(0 if success else 1)
+    from scripts.quality_gate import run_gate
+    target = Path(args.target).resolve()
+    if not target.is_dir():
+        target = target.parent
+    if not (target / "vibe.project.json").is_file():
+        raise SystemExit("旧版网页不能导入新版软件，请按 references/fast-project.md 使用 fast-build 重新制作。")
+    if any(getattr(args, name, None) for name in ("voice", "timestamps", "sfx", "script")):
+        raise SystemExit("高速工程不支持就地覆盖素材，请使用 fast-build 生成新版本。")
+    result = run_gate(target, release=True)
+    if result['status'] != 'release_passed':
+        raise SystemExit(1)
+    from scripts.release import publish
+    destination=Path(args.out) if args.out else ROOT_DIR/'releases'/(target.name+'-'+result['inputFingerprint'][:12])
+    print('已生成独立发布目录：'+str(publish(target,result,destination)))
+
+
+def fast_project_folder(value):
+    target = Path(value).resolve()
+    folder = target if target.is_dir() else target.parent
+    return folder if (folder/'vibe.project.json').is_file() else None
+
+
+def check_fast_project(value, legacy=False):
+    folder = fast_project_folder(value)
+    if folder:
+        from scripts.quality_gate import run_gate
+        result = run_gate(folder)
+        if result['status'] == 'blocked':
+            raise SystemExit(1)
+        print('自动检查通过；视觉、语义与听音仍需复核，正式交付必须执行 pack。')
+        return True
+    if not legacy:
+        raise SystemExit('目标不是完整 Canvas 高速工程；历史网页检查必须显式使用 --legacy，不代表正式交付。')
+    return False
 
 
 def run_doctor(args):
     from scripts.doctor import run_diagnostics
-    success = run_diagnostics()
+    success = run_diagnostics(legacy=args.legacy)
     sys.exit(0 if success else 1)
 
 
@@ -47,6 +76,8 @@ def run_timeline(args):
 
 
 def run_playcheck(args):
+    if check_fast_project(args.html,getattr(args,'legacy',False)):
+        return
     cmd = [sys.executable, str(SCRIPTS_DIR / "playcheck.py"), args.html]
     if args.extra:
         cmd.append(args.extra)
@@ -54,6 +85,8 @@ def run_playcheck(args):
 
 
 def run_qa(args):
+    if check_fast_project(args.html,getattr(args,'legacy',False)):
+        return
     cmd = [sys.executable, str(SCRIPTS_DIR / "qa_bounds.py"), args.html]
     if args.probes:
         cmd.append(args.probes)
@@ -61,10 +94,73 @@ def run_qa(args):
 
 
 def run_audit(args):
+    if check_fast_project(args.html,getattr(args,'legacy',False)):
+        return
     cmd = [sys.executable, str(SCRIPTS_DIR / "audit.py"), args.html]
     if args.probes:
         cmd.extend(["--probes", args.probes])
     subprocess.run(cmd, check=True)
+
+
+def run_quality_init(args):
+    from scripts.quality_gate import initialize
+    initialize(args.project)
+
+
+def run_context(args):
+    from scripts.contracts import load_profile
+    from scripts.components import KINDS,COMPONENT_VERSION
+    print(json.dumps(dict(profile=load_profile('presentation-portrait-v1'),legacyProfile=load_profile(),backgrounds=[dict(id=e['id'],version=e['version'],label=e['label'],subjects=e['subjects']) for e in __import__('scripts.background_library',fromlist=['catalog']).catalog()],presentationLayouts=__import__('scripts.presentation',fromlist=['LAYOUTS']).LAYOUTS,componentVersion=COMPONENT_VERSION,components=__import__('scripts.presentation',fromlist=['LAYOUTS']).LAYOUTS,legacyComponents=KINDS,
+        requiredReads=['AGENTS.md','.agents/skills/vibe-knowledge-video/SKILL.md','.agents/rules/vibe-rules.md','references/fast-project.md','references/quality-contract.md','references/rule-migration.md','references/checklist.md','references/presentation-authoring.md','references/background-library.md'],
+        workflow=['compile','audit','independent review and signed attestation','pack'],
+        releaseTrustConfigured=bool(os.environ.get('VIBE_TRUST_STORE'))),ensure_ascii=False,indent=2))
+
+
+def run_compile(args):
+    import tempfile
+    from types import SimpleNamespace
+    from scripts.components import compile_story
+    from scripts.text_contract import strict_loads
+    from scripts.build_fast_project import build,preset_wave
+    import wave
+    with wave.open(str(args.voice)) as wav:
+        duration=round(wav.getnframes()/wav.getframerate()*1e6)
+    story=strict_loads(args.story.read_text(encoding='utf-8-sig'))
+    rows=strict_loads(args.timestamps.read_text(encoding='utf-8-sig'))
+    scene,plan=compile_story(story,rows,duration)
+    with tempfile.TemporaryDirectory(prefix='vibe-compile-') as temp:
+        work=Path(temp)
+        if story.get('version')==2:
+            import shutil
+            from scripts.media_assets import validate_registry
+            entries=validate_registry(args.story.parent,story.get('assets',[]),story.get('assetPolicy','local'))
+            used={n['source'] for sh in scene['scenes'] for n in sh['nodes'] if n['type']=='image'}
+            entries=[e for e in entries if e['source'] in used]
+            if entries:
+                for asset in entries:
+                    dest=work/asset['source'];dest.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(args.story.parent/asset['source'],dest)
+                (work/'assets/media-registry.json').write_text(json.dumps(dict(version=1,assets=entries),ensure_ascii=False,indent=2),encoding='utf-8')
+        (work/'story.json').write_text(json.dumps(story,ensure_ascii=False,indent=2),encoding='utf-8')
+        (work/'scene.json').write_text(json.dumps(scene,ensure_ascii=False,indent=2),encoding='utf-8')
+        events=[]
+        for kind in ['click','whoosh','chime','ding']:
+            path=work/f'assets/sounds/{kind}.wav';path.parent.mkdir(parents=True,exist_ok=True);preset_wave(path,kind)
+        for s in plan['scenes']:
+            for beat in (s['beats'] if story.get('version')!=2 else []):events.append(dict(timeUs=beat['timeUs'],source='assets/sounds/click.wav',gain=.5))
+        for s in scene['scenes'][1:]:events.append(dict(timeUs=s['startUs'],source='assets/sounds/whoosh.wav',gain=.5))
+        ending=[b for b in plan['scenes'][-1]['beats'] if b['timeUs']+1200000<=duration]
+        if not ending:raise ValueError('Ending needs an original-word chime anchor with room for its complete tail')
+        events.append(dict(timeUs=ending[-1]['timeUs'],source='assets/sounds/chime.wav',gain=.5))
+        emphasis=plan['scenes'][len(plan['scenes'])//2]['beats'][0]['timeUs']
+        events=[e for e in events if not (e['timeUs']==emphasis and e['source'].endswith('/click.wav'))]
+        events.append(dict(timeUs=emphasis,source='assets/sounds/ding.wav',gain=.4))
+        (work/'sfx.json').write_text(json.dumps(dict(version=1,events=sorted(events,key=lambda e:e['timeUs']))),encoding='utf-8')
+        build(SimpleNamespace(scene=work/'scene.json',out=args.out,runtime=ROOT_DIR/'assets/runtime',title=story['title'],
+            width=1080,height=1920,duration_us=None,voice=args.voice,timestamps=args.timestamps,script=args.script,
+            caption_groups=args.caption_groups,sfx=work/'sfx.json',skip_browser_audit=False))
+    (args.out/'quality-plan.json').write_text(json.dumps(plan,ensure_ascii=False,indent=2),encoding='utf-8')
+    from scripts.quality_gate import initialize
+    initialize(args.out)
 
 
 def run_storyboard(args):
@@ -93,17 +189,8 @@ def run_preview(args):
 
 
 def run_bg(args):
-    import webbrowser
-    gallery_path = ROOT_DIR / "output" / "background_gallery.html"
-    if not gallery_path.exists():
-        gallery_path = ROOT_DIR / "template" / "background_gallery.html"
-    if not gallery_path.exists():
-        print(f"❌ 错误：找不到背景画廊文件: {gallery_path}")
-        sys.exit(1)
-    file_url = gallery_path.as_uri()
-    print(f"🎨 正在打开 VIBE 背景动效画廊:\n   {file_url}")
-    print("💡 提示：在画廊中可实时预览 5 种高品质粒子背景动效，一键切换颜色调色板并复制内联代码。")
-    webbrowser.open(file_url)
+    from scripts.background_library import run
+    args.gallery=True;args.check=False;run(args)
 
 
 def run_clean(args):
@@ -145,7 +232,15 @@ def run_clean(args):
     execute_clean(targets_dirs, targets_files, dry_run=args.dry_run)
 
 
+def reject_fast_legacy_render(html):
+    target = Path(html).resolve()
+    folder = target if target.is_dir() else target.parent
+    if (folder / "vibe.project.json").is_file():
+        raise SystemExit("高速工程请导入 WeMediaForge 网页处理页面导出，旧截图命令不支持此格式。")
+
+
 def run_render(args):
+    reject_fast_legacy_render(args.html)
     cmd = [
         sys.executable,
         str(SCRIPTS_DIR / "render.py"),
@@ -182,6 +277,7 @@ def run_verify(args):
 
 
 def run_pipeline(args):
+    reject_fast_legacy_render(args.html)
     html = os.path.abspath(args.html)
     voice = os.path.abspath(args.voice)
     output = os.path.abspath(args.output)
@@ -263,7 +359,39 @@ def main():
     subparsers = parser.add_subparsers(dest="subcommand", help="可用子命令")
 
     # doctor
+    p_fast = subparsers.add_parser("fast-build", help="生成并检查可导入软件的高速 Canvas 工程")
+    for name in ("scene", "out"):
+        p_fast.add_argument("--"+name, type=Path, required=True)
+    p_fast.add_argument("--title", required=True)
+    p_fast.add_argument("--runtime", type=Path, default=ROOT_DIR/"assets/runtime")
+    p_fast.add_argument("--width", type=int, default=1080)
+    p_fast.add_argument("--height", type=int, default=1920)
+    p_fast.add_argument("--duration-us", type=int)
+    for name in ("voice", "timestamps", "sfx", "script", "caption-groups"):
+        p_fast.add_argument("--"+name, type=Path)
+    p_fast.add_argument("--skip-browser-audit", action="store_true", help="仅受控测试可跳过，不可作为正式交付")
+    p_fast.set_defaults(func=run_fast_build)
+
+    p_init = subparsers.add_parser('quality-init', help='生成待填写的制作计划与复核模板，不覆盖已有文件')
+    p_init.add_argument('project', type=Path)
+    p_init.set_defaults(func=run_quality_init)
+
+    p_context=subparsers.add_parser('context',help='输出跨 Agent 共用的制作能力、标准和流程')
+    p_context.set_defaults(func=run_context)
+    p_compile=subparsers.add_parser('compile',help='从结构化分镜编译标准组件与固定网页')
+    for name in ('story','voice','timestamps','script','caption-groups','out'):
+        p_compile.add_argument('--'+name,type=Path,required=True)
+    p_compile.set_defaults(func=run_compile)
+
+    p_media=subparsers.add_parser('asset-import',help='登记Agent取得的本地、搜图或生成图片')
+    p_media.add_argument('--source',type=Path,required=True);p_media.add_argument('--root',type=Path,required=True)
+    p_media.add_argument('--id',required=True);p_media.add_argument('--kind',choices=['local','search','generate'],default='local')
+    p_media.add_argument('--origin',required=True);p_media.add_argument('--license',required=True)
+    p_media.add_argument('--focus-x',type=float,default=.5);p_media.add_argument('--focus-y',type=float,default=.5)
+    p_media.set_defaults(func=lambda a:print(json.dumps(__import__('scripts.media_assets',fromlist=['import_image']).import_image(a.source,a.root,a.id,a.kind,a.origin,a.license,(a.focus_x,a.focus_y)),ensure_ascii=False)))
+
     p_doc = subparsers.add_parser("doctor", help="诊断运行环境（Python、Playwright、FFmpeg 等）")
+    p_doc.add_argument('--legacy', action='store_true', help='另检查历史 MP4 工具需要的 FFmpeg/FFprobe')
     p_doc.set_defaults(func=run_doctor)
 
     # pack
@@ -296,18 +424,21 @@ def main():
     # playcheck
     p_play = subparsers.add_parser("check", help="播放验证（检查场景切换、章节名与字幕推进）")
     p_play.add_argument("html", help="HTML 动画页文件路径")
+    p_play.add_argument('--legacy',action='store_true',help='仅维护历史 DOM 网页，不是正式交付门禁')
     p_play.add_argument("--extra", help="额外探针时刻，逗号分隔 (如: 1.5,4.2)", default=None)
     p_play.set_defaults(func=run_playcheck)
 
     # qa
     p_qa = subparsers.add_parser("qa", help="四边安全区与三区边界合规扫描")
     p_qa.add_argument("html", help="HTML 动画页文件路径")
+    p_qa.add_argument('--legacy',action='store_true',help='仅维护历史 DOM 网页，不是正式交付门禁')
     p_qa.add_argument("--probes", help="探针检测时刻列表，逗号分隔", default=None)
     p_qa.set_defaults(func=run_qa)
 
     # audit (全维度质量复核与图数碰撞检测门禁)
-    p_audit = subparsers.add_parser("audit", help="全维度质量复核与图数碰撞检测门禁 (安全区/图数解耦/字号/黄金3秒)")
+    p_audit = subparsers.add_parser("audit", help="自动质量检查与证据生成（不能替代独立复核）")
     p_audit.add_argument("html", help="HTML 动画页文件路径")
+    p_audit.add_argument('--legacy',action='store_true',help='仅维护历史 DOM 网页，不是正式交付门禁')
     p_audit.add_argument("--probes", help="探针检测时刻列表，逗号分隔 (可选)", default=None)
     p_audit.set_defaults(func=run_audit)
 
@@ -318,7 +449,13 @@ def main():
 
     # bg (背景动效画廊交互预览)
     p_bg = subparsers.add_parser("bg", help="打开高品质背景动效交互画廊（生物光斑/双螺旋/赛博网格/极光等）")
+    p_bg.add_argument('--out',type=Path)
     p_bg.set_defaults(func=run_bg)
+    p_backgrounds=subparsers.add_parser('backgrounds',help='查看、校验或预览版本锁定的背景模板库')
+    mode=p_backgrounds.add_mutually_exclusive_group()
+    mode.add_argument('--check',action='store_true');mode.add_argument('--gallery',action='store_true');mode.add_argument('--audit',action='store_true')
+    p_backgrounds.add_argument('--out',type=Path)
+    p_backgrounds.set_defaults(func=lambda a:__import__('scripts.background_library',fromlist=['run']).run(a))
 
     # render
     p_ren = subparsers.add_parser("render", help="Playwright 逐帧无头截图录制")

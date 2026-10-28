@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "status": "pending",
+  "reviewer": "",
+  "inputFingerprint": "e4f22cb9a9bc1b1de5f29d4ffd7d20b8f1fa18eaf86fd55f1878ebc82a359da8",
+  "evidenceDigest": "6e22f299abf3e3fff09c963429b3882623a354537c10f2c44093bcd957d9b105",
+  "checks": {
+    "scientificMeaning": {
+      "status": "pending",
+      "observations": "原稿长度与面积倍数比较疑点保留原声字幕；没有增加定量图。图片为象征插画，科学语义待复核。"
+    },
+    "narrationSync": {
+      "status": "pending",
+      "observations": ""
+    },
+    "semanticCaptions": {
+      "status": "pending",
+      "observations": ""
+    },
+    "visualRhythm": {
+      "status": "pending",
+      "observations": "已查看全部18页阅读状态联系表及前三页代表帧，背景光斑可见，文字居中，第二页无第一页残留；切点前后像素回归通过。连续全片主观观感仍待独立复核。"
+    },
+    "backgroundQuality": {
+      "status": "pending",
+      "observations": "五种共享预设已生成对照截图并查看；本片bio-bubbles由实际renderAt采样验证6768可见像素、10101变化像素（270x480缩图），不以背景冒充正文推进。"
+    },
+    "mobileReadability": {
+      "status": "pending",
+      "observations": "真实字形水平/垂直中心和原有320/440控件检查通过；独立手机阅读体验仍待复核。"
+    },
+    "soundMix": {
+      "status": "pending",
+      "observations": "声源/输出信号与声音统计通过，未实际听音，保留pending。"
+    },
+    "ending": {
+      "status": "pending",
+      "observations": ""
+    }
+  },
+  "scenes": [
+    {
+      "sceneId": "shot-01",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-01-0.png",
+        "frames/shot-01-3105000.png",
+        "frames/shot-01-6679999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-02",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-02-6680000.png",
+        "frames/shot-02-10860000.png",
+        "frames/shot-02-15039999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-03",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-03-15040000.png",
+        "frames/shot-03-19060000.png",
+        "frames/shot-03-21959999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-04",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-04-21960000.png",
+        "frames/shot-04-26395000.png",
+        "frames/shot-04-30829999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-05",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-05-30830000.png",
+        "frames/shot-05-37405000.png",
+        "frames/shot-05-43979999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-06",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-06-43980000.png",
+        "frames/shot-06-50470000.png",
+        "frames/shot-06-56959999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-07",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-07-56960000.png",
+        "frames/shot-07-62040000.png",
+        "frames/shot-07-67119999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-08",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-08-67120000.png",
+        "frames/shot-08-70810000.png",
+        "frames/shot-08-74499999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-09",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-09-74500000.png",
+        "frames/shot-09-80320000.png",
+        "frames/shot-09-85859999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-10",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-10-85860000.png",
+        "frames/shot-10-90585000.png",
+        "frames/shot-10-95309999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-11",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-11-95310000.png",
+        "frames/shot-11-99300000.png",
+        "frames/shot-11-103289999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-12",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-12-103290000.png",
+        "frames/shot-12-107750000.png",
+        "frames/shot-12-111949999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-13",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-13-111950000.png",
+        "frames/shot-13-115630000.png",
+        "frames/shot-13-119309999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-14",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-14-119310000.png",
+        "frames/shot-14-122795000.png",
+        "frames/shot-14-126279999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-15",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-15-126280000.png",
+        "frames/shot-15-129420000.png",
+        "frames/shot-15-132559999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-16",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-16-132560000.png",
+        "frames/shot-16-135800000.png",
+        "frames/shot-16-139039999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-17",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-17-139040000.png",
+        "frames/shot-17-144085000.png",
+        "frames/shot-17-149129999.png"
+      ]
+    },
+    {
+      "sceneId": "shot-18",
+      "status": "pending",
+      "observations": "已在18页联系表查看本页居中及背景；自动墨迹/动态背景/入场与转场检查通过，独立视觉与听感待复核。",
+      "evidence": [
+        "frames/shot-18-149130000.png",
+        "frames/shot-18-151670000.png",
+        "frames/shot-18-160101624.png"
+      ]
+    }
+  ]
+}

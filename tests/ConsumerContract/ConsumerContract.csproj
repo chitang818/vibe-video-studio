@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings><Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <ConsumerModelsRoot Condition="'$(WeMediaForgeRoot)' != ''">$(WeMediaForgeRoot)/src/WeMediaForge.Application/Models/WebProcess</ConsumerModelsRoot>
+    <ConsumerHelpersRoot Condition="'$(WeMediaForgeRoot)' != ''">$(WeMediaForgeRoot)/src/WeMediaForge.Application/Helpers</ConsumerHelpersRoot>
+    <ConsumerModelsRoot Condition="'$(ConsumerModelsRoot)' == ''">../../integrations/WeMediaForge</ConsumerModelsRoot>
+    <ConsumerHelpersRoot Condition="'$(ConsumerHelpersRoot)' == ''">../../integrations/WeMediaForge</ConsumerHelpersRoot>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(ConsumerModelsRoot)/VibeProject.cs" Link="VibeProject.cs" />
+    <Compile Include="$(ConsumerHelpersRoot)/VibeProjectReader.cs" Link="VibeProjectReader.cs" />
+    <Compile Include="$(ConsumerHelpersRoot)/VibeReleaseVerifier.cs" Link="VibeReleaseVerifier.cs" />
+    <Compile Include="$(ConsumerModelsRoot)/VibeSoundEvent.cs" Link="VibeSoundEvent.cs" />
+  </ItemGroup>
+</Project>

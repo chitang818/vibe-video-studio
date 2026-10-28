@@ -1,0 +1,14 @@
+{
+  "status": "needs_review",
+  "runtimeVersion": "1.0.1",
+  "runtimeSha256": "833f0d9df2f50ed4f5d752f82bb77619a0546a5d08e7a32a383c1c3fc4a6feba",
+  "automaticErrors": [],
+  "textNodesChecked": 101,
+  "glyphMismatchPixels": 0,
+  "screenshots": 303,
+  "audioWarnings": [],
+  "tests": 84,
+  "independentApproval": false,
+  "actualListening": "pending",
+  "report": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\artifacts\\quality\\0fc47d5cf2dc6ad9\\runs\\54f0e358037a4591aec422eb20ab5e91\\report.json"
+}

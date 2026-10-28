@@ -1,3 +1,5 @@
+> 历史DOM/CSS资产；默认story v2不加载这些执行文件。当前主题/动效由编译器与共享Canvas实现，见[制作入口](../../../../../references/presentation-authoring.md)。不要直接复制到新网页。
+
 # 配色主题库（themes）
 
 > 主题 = 一组 CSS 变量（`:root` 层），**换风格只换变量、不重写结构**。

@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "runtimeVersion": "1.0.0",
+  "runtimeSha256": "6d4b6f4fcdfc956c8f0947c45831626c4fc6c95178690b87d93f8fd2de7903e7",
+  "title": "N0007_丛枝菌根菌剂对比",
+  "width": 1080,
+  "height": 1920,
+  "durationUs": 141943562,
+  "htmlFile": "index.html",
+  "sceneFile": "scene.json",
+  "voiceFile": "assets/voice.wav",
+  "timestampsFile": "assets/char_timestamps.json",
+  "sfxFile": "sfx.json",
+  "assetHashes": {
+    "assets/char_timestamps.json": "94e876c73df52f283a77a2ab1d767e66d0e833c8b49d9d2119d1557fd4fc3ec7",
+    "assets/sounds/chime.wav": "6c04c8c9d2927c1bde042088ebdbe600b622682ccf1e86f9a1548e97d7024dfb",
+    "assets/sounds/click.wav": "386b77829a2bc84fc974972c7f2577acd4d3978d06ef7ce046e09471ac94888a",
+    "assets/sounds/ding.wav": "29fd7343740f64bd8c7a770272428494778b75bf33895013b17131685725ef87",
+    "assets/sounds/pop.wav": "ddea6b97853078f6f284467140f87ee93b7fee377fda80d5ac0bcd85ddfa5aaf",
+    "assets/sounds/whoosh.wav": "5f4cf5684e5c1907a717b5dabcfcb55f2f31481ed0b532fa81516a3d2b2eb7e3",
+    "assets/voice.wav": "f58e77276c1bf111b44a22e82624e33e09abbbadb1371ec5e70661e252e6f9cd",
+    "index.html": "19faee180db2b607567771d3009116a3e3e4c173461d101761197d1ed2f245a6",
+    "scene.json": "7f2a3f7d06dbbfaf09712fbfb10bc9194261e4eb31350e7087c9039f513149e6",
+    "sfx.json": "0d03aa863622f09dd4776c4fff64811104dac626ba7e01d29765c50f51c4a6ac",
+    "vibe-runtime/audio.mjs": "67754e8f20b60bb642595552547ccd7fe9682952f31fbe6a2c49a047ad4439f6",
+    "vibe-runtime/scene.mjs": "6d4b6f4fcdfc956c8f0947c45831626c4fc6c95178690b87d93f8fd2de7903e7"
+  }
+}

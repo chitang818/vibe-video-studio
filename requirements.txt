@@ -1,6 +1,8 @@
 # Vibe Video Studio Python Dependencies
-playwright>=1.40.0
+-r requirements.lock.txt
 
-# Note: System FFmpeg & FFprobe are required.
+# FFmpeg/FFprobe are only required for historical screenshot/MP4 commands.
 # Windows: winget install Gyan.FFmpeg or choco install ffmpeg
 # After pip install, run: playwright install chromium
+
+Pillow==11.1.0
