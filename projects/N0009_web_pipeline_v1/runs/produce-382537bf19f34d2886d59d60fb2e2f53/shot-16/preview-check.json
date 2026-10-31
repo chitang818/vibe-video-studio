@@ -1,0 +1,11 @@
+{
+  "status": "automated_pass",
+  "sampleTimesUs": [
+    600000,
+    1520000,
+    3240000,
+    5400000,
+    6280000
+  ],
+  "scope": "renderer preparation and sampled seek; composition, sound and independent review separate"
+}

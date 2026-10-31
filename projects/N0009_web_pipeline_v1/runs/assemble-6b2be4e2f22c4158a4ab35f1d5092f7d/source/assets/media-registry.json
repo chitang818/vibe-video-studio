@@ -1,0 +1,53 @@
+{
+  "version": 1,
+  "assets": [
+    {
+      "id": "local-leaf",
+      "source": "assets/images/local-leaf.png",
+      "kind": "local",
+      "origin": "VIBE original symbolic artwork from preserved N0009 assets",
+      "licenseStatus": "original",
+      "width": 1200,
+      "height": 760,
+      "sha256": "8ab3602bf056f3856c9c5d3e952b198b1df5fc68fd21530d8f7f682d51ec01b6",
+      "focusX": 0.5,
+      "focusY": 0.5
+    },
+    {
+      "id": "local-soil",
+      "source": "assets/images/local-soil.png",
+      "kind": "local",
+      "origin": "VIBE original symbolic artwork from preserved N0009 assets",
+      "licenseStatus": "original",
+      "width": 1200,
+      "height": 760,
+      "sha256": "dc9aa61fc5b4c677be7b73e13e1b78e2894555c32a6a73f98e095fda58d2c683",
+      "focusX": 0.5,
+      "focusY": 0.5
+    },
+    {
+      "id": "water-cutout",
+      "source": "assets/images/water-cutout.png",
+      "kind": "local",
+      "origin": "Original code-drawn conceptual SVG; transparent; not microscopy; SVG assets/sources/water-cutout.svg SHA256=ff8a878e105e795a49b1502528f616eb7aec50cb5c37795c70a60524d877132c",
+      "licenseStatus": "original",
+      "width": 800,
+      "height": 640,
+      "sha256": "76582caba0a96495bdd29e05f0217d4693cae0c0e9cf52045e69ccc2069900ce",
+      "focusX": 0.5,
+      "focusY": 0.5
+    },
+    {
+      "id": "soil-cutout",
+      "source": "assets/images/soil-cutout.png",
+      "kind": "local",
+      "origin": "Original code-drawn conceptual SVG; transparent; not microscopy; SVG assets/sources/soil-cutout.svg SHA256=19fd9e18417afa1190900ff1e3b008095acf02d5d9946e449b3a8e214f6ae56a",
+      "licenseStatus": "original",
+      "width": 800,
+      "height": 640,
+      "sha256": "2a02d42c03cbc202953ff060ae848721716ea15f7ab83194fceebcd0752f1e77",
+      "focusX": 0.5,
+      "focusY": 0.5
+    }
+  ]
+}

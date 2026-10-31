@@ -12,7 +12,8 @@
       "type": "string",
       "enum": [
         "knowledge-portrait-v1",
-        "presentation-portrait-v1"
+        "presentation-portrait-v1",
+        "web-video-v1"
       ]
     },
     "authorId": {

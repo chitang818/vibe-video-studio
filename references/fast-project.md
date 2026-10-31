@@ -1,5 +1,7 @@
 # 高速 Canvas 工程协议与制作边界
 
+默认创作入口现为[pipeline分阶段制作](web-video-workflow.md)：保持同一protocol-1/runtime-1.2.0和固定播放器，组装消费已制作的场景描述；旧compile入口继续可用。新模式不受六类版式限制，实际可用元素及语义槽位由pipeline capabilities列出。
+
 当前共享运行时为 protocol-1 / runtime-1.2.0；镜像不允许在 Studio 单端修改。新制作流程见 [质量契约](quality-contract.md)，数值以 [正式 Profile](quality-profile.json) 为准。旧 DOM/CSS 截图导出与 pack 就绪判断不适用。
 
 - 原文案、配音和字时间戳保留原件。场景/节点/音效事件从原字锚定；时间统一整数微秒；场景连续覆盖完整 WAV 帧时长。

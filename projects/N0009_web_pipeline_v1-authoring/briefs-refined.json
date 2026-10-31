@@ -1,0 +1,694 @@
+{
+  "version": 1,
+  "briefs": [
+    {
+      "shotId": "shot-01",
+      "focus": "理解“回顾：菌剂与菌根”的核心信息",
+      "composition": "无底板文字建立三个回顾层级",
+      "rationale": "先定位菌剂与菌根，再承接基本特性",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "回顾：菌剂与菌根",
+          "form": "text"
+        },
+        {
+          "slot": "row-one",
+          "label": "真菌类菌剂的分类",
+          "form": "text"
+        },
+        {
+          "slot": "row-two",
+          "label": "肥料类菌剂中的菌根",
+          "form": "text"
+        },
+        {
+          "slot": "row-three",
+          "label": "连接上期基本特性",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-02",
+      "focus": "理解“这期看机制与应用”的核心信息",
+      "composition": "大字主视觉与短解释；不使用内容底板",
+      "rationale": "以阅读层级突出本镜观点",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "这期看机制与应用",
+          "form": "text"
+        },
+        {
+          "slot": "hero",
+          "label": "从吸收机制开始",
+          "form": "text"
+        },
+        {
+          "slot": "hero-label",
+          "label": "再看实际应用优势",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-03",
+      "focus": "理解“磷为何难被吸收”的核心信息",
+      "composition": "四个独立文字节拍纵向展开，无矩形底板",
+      "rationale": "困难与成因按原声顺序展开",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "磷为何难被吸收",
+          "form": "text"
+        },
+        {
+          "slot": "row-one",
+          "label": "磷素吸收是重点",
+          "form": "text"
+        },
+        {
+          "slot": "row-two",
+          "label": "磷被土壤颗粒固定",
+          "form": "text"
+        },
+        {
+          "slot": "row-three",
+          "label": "移动性差",
+          "form": "text"
+        },
+        {
+          "slot": "row-four",
+          "label": "根系难以直接获取",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-04",
+      "focus": "理解“菌丝延伸，磷素转运”的核心信息",
+      "composition": "一张本地象征插画与两条短说明",
+      "rationale": "图片帮助建立视觉变化，不冒充显微证据",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [
+        "取得并登记本镜素材：local-leaf"
+      ],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "菌丝延伸，磷素转运",
+          "form": "text"
+        },
+        {
+          "slot": "image-top",
+          "label": "local-leaf",
+          "form": "image"
+        },
+        {
+          "slot": "caption-one",
+          "label": "菌丝向根外延伸",
+          "form": "text"
+        },
+        {
+          "slot": "caption-two",
+          "label": "提升植物磷素供应",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-05",
+      "focus": "理解“氮素转运与微生物协同”的核心信息",
+      "composition": "左右运输关系与上下补充信息",
+      "rationale": "明确运输至植物，不画真菌给固氮菌供氮的错误箭头",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "氮素转运与微生物协同",
+          "form": "text"
+        },
+        {
+          "slot": "top-note",
+          "label": "与固氮微生物协同",
+          "form": "text"
+        },
+        {
+          "slot": "left",
+          "label": "菌丝转运无机氮",
+          "form": "text"
+        },
+        {
+          "slot": "right",
+          "label": "植物获得氮素",
+          "form": "text"
+        },
+        {
+          "slot": "connector",
+          "label": "关系箭头",
+          "form": "shape"
+        },
+        {
+          "slot": "caption-two",
+          "label": "减少氮肥流失浪费",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-06",
+      "focus": "理解“不止大量元素”的核心信息",
+      "composition": "左右短标签与上下作用说明",
+      "rationale": "并列信息采用空间分组",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "不止大量元素",
+          "form": "text"
+        },
+        {
+          "slot": "left",
+          "label": "还关注微量元素",
+          "form": "text"
+        },
+        {
+          "slot": "right",
+          "label": "锌、铜、铁等",
+          "form": "text"
+        },
+        {
+          "slot": "caption-one",
+          "label": "减少缺素症状",
+          "form": "text"
+        },
+        {
+          "slot": "caption-two",
+          "label": "关注贫瘠土壤条件",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-07",
+      "focus": "理解“菌丝向根外拓展”的核心信息",
+      "composition": "核心观点放大，下方保留短结论",
+      "rationale": "原声倍数不转成无依据定量面积图",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "菌丝向根外拓展",
+          "form": "text"
+        },
+        {
+          "slot": "hero",
+          "label": "拓展养分吸收面积",
+          "form": "text"
+        },
+        {
+          "slot": "hero-label",
+          "label": "菌丝拓展吸收范围",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-08",
+      "focus": "理解“从根际走向周边土壤”的核心信息",
+      "composition": "本地土壤示意图片置上，两条短说明置下",
+      "rationale": "象征插画仅表示土壤语境",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [
+        "取得并登记本镜素材：local-soil"
+      ],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "从根际走向周边土壤",
+          "form": "text"
+        },
+        {
+          "slot": "image-top",
+          "label": "local-soil",
+          "form": "image"
+        },
+        {
+          "slot": "caption-one",
+          "label": "从根际附近开始",
+          "form": "text"
+        },
+        {
+          "slot": "caption-two",
+          "label": "提升养分获取能力",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-09",
+      "focus": "理解“养分形态转化”的核心信息",
+      "composition": "固定养分与可利用形态两端，箭头连接",
+      "rationale": "有机酸在上方解释，利用率结论位于下方",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "养分形态转化",
+          "form": "text"
+        },
+        {
+          "slot": "top-note",
+          "label": "共生过程分泌有机酸",
+          "form": "text"
+        },
+        {
+          "slot": "left",
+          "label": "固定矿质养分",
+          "form": "text"
+        },
+        {
+          "slot": "right",
+          "label": "可吸收利用形态",
+          "form": "text"
+        },
+        {
+          "slot": "connector",
+          "label": "关系箭头",
+          "form": "shape"
+        },
+        {
+          "slot": "caption-two",
+          "label": "提高养分利用率",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-10",
+      "focus": "理解“根内丛枝：双向交换”的核心信息",
+      "composition": "两段文字以主次层级解释交换界面",
+      "rationale": "保留原文核心，不虚构双向运输图的细节",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "根内丛枝：双向交换",
+          "form": "text"
+        },
+        {
+          "slot": "hero",
+          "label": "丛枝扩大交换界面",
+          "form": "text"
+        },
+        {
+          "slot": "hero-label",
+          "label": "真菌向植物供养分",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-11",
+      "focus": "理解“从交换机制到应用”的核心信息",
+      "composition": "大字观点加短承接语",
+      "rationale": "从机制过渡到应用，减少画面承载",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "从交换机制到应用",
+          "form": "text"
+        },
+        {
+          "slot": "hero",
+          "label": "双向交换效率更高",
+          "form": "text"
+        },
+        {
+          "slot": "hero-label",
+          "label": "进一步看实际应用",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-12",
+      "focus": "理解“肥料利用与生产成本”的核心信息",
+      "composition": "四条无底板文字顺序展示",
+      "rationale": "每条收益对应真实口播，不编造节省比例",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "肥料利用与生产成本",
+          "form": "text"
+        },
+        {
+          "slot": "row-one",
+          "label": "促进养分高效利用",
+          "form": "text"
+        },
+        {
+          "slot": "row-two",
+          "label": "提升磷肥利用率",
+          "form": "text"
+        },
+        {
+          "slot": "row-three",
+          "label": "减少化肥施用量",
+          "form": "text"
+        },
+        {
+          "slot": "row-four",
+          "label": "降低生产成本",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-13",
+      "focus": "理解“减少流失，关注水体”的核心信息",
+      "composition": "透明水滴SVG栅格图配原生文字与轻入场",
+      "rationale": "素材背景透明，与动态底层自然融合",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [
+        "取得并登记本镜素材：water-cutout"
+      ],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "减少流失，关注水体",
+          "form": "text"
+        },
+        {
+          "slot": "hero-art",
+          "label": "water-cutout",
+          "form": "image"
+        },
+        {
+          "slot": "caption-one",
+          "label": "减少养分淋失",
+          "form": "text"
+        },
+        {
+          "slot": "caption-two",
+          "label": "转向土壤生态改善",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-14",
+      "focus": "理解“土壤生态的多个层面”的核心信息",
+      "composition": "两组空间标签及底部结论",
+      "rationale": "将生态层面的并列关系分组",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "土壤生态的多个层面",
+          "form": "text"
+        },
+        {
+          "slot": "left",
+          "label": "促进团聚体形成",
+          "form": "text"
+        },
+        {
+          "slot": "right",
+          "label": "提升固碳能力",
+          "form": "text"
+        },
+        {
+          "slot": "caption-one",
+          "label": "优化微生物群落",
+          "form": "text"
+        },
+        {
+          "slot": "caption-two",
+          "label": "构建菌丝网络",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-15",
+      "focus": "理解“缠绕与粘合共同作用”的核心信息",
+      "composition": "左右呈现物理缠绕与粘合作用",
+      "rationale": "并列共同作用，不误画单向因果",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "缠绕与粘合共同作用",
+          "form": "text"
+        },
+        {
+          "slot": "left",
+          "label": "菌丝物理缠绕",
+          "form": "text"
+        },
+        {
+          "slot": "right",
+          "label": "分泌粘合物质",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-16",
+      "focus": "理解“微团聚体聚合”的核心信息",
+      "composition": "透明SVG土粒簇与两条解释文字",
+      "rationale": "静态概念示意，不模拟真实聚合或显微结构",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [
+        "取得并登记本镜素材：soil-cutout"
+      ],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "微团聚体聚合",
+          "form": "text"
+        },
+        {
+          "slot": "hero-art",
+          "label": "soil-cutout",
+          "form": "image"
+        },
+        {
+          "slot": "caption-one",
+          "label": "微团聚体发生聚合",
+          "form": "text"
+        },
+        {
+          "slot": "caption-two",
+          "label": "降低板结风险",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-17",
+      "focus": "理解“根际群落的协同”的核心信息",
+      "composition": "两组作用标签和两条结论",
+      "rationale": "区分促进有益与抑制有害，不使用统一卡片",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "根际群落的协同",
+          "form": "text"
+        },
+        {
+          "slot": "left",
+          "label": "根际微生物协同",
+          "form": "text"
+        },
+        {
+          "slot": "right",
+          "label": "促进有益微生物",
+          "form": "text"
+        },
+        {
+          "slot": "caption-one",
+          "label": "抑制有害微生物生长",
+          "form": "text"
+        },
+        {
+          "slot": "caption-two",
+          "label": "维持群落健康稳定",
+          "form": "text"
+        }
+      ]
+    },
+    {
+      "shotId": "shot-18",
+      "focus": "理解“地下共同菌丝网络”的核心信息",
+      "composition": "大字连接观点与农田平衡结语",
+      "rationale": "结尾跟随原声，不新增CTA",
+      "opening": "按原文事件进入章节重点，保留标题及题材背景",
+      "development": "各元素随对应原词依次呈现；重点与辅助信息使用不同层级",
+      "ending": "保留结论供阅读并自然衔接下一段原声",
+      "continuity": "继承青绿主题、金色辅助强调和共用字幕位置；本镜构图服务内容关系",
+      "constraints": [
+        "不新增原文以外的数据、结论或口播",
+        "象征素材不能充当显微结构证据"
+      ],
+      "assetRequests": [],
+      "sketch": [
+        {
+          "slot": "heading",
+          "label": "地下共同菌丝网络",
+          "form": "text"
+        },
+        {
+          "slot": "hero",
+          "label": "连接不同植物根系",
+          "form": "text"
+        },
+        {
+          "slot": "hero-label",
+          "label": "维持农田养分平衡",
+          "form": "text"
+        }
+      ]
+    }
+  ]
+}

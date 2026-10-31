@@ -1,5 +1,7 @@
 # DOM → Canvas 规则保留清单
 
+2026-10-28新增网页视频分阶段模式web-video-v1：默认入口为pipeline，分镜/视觉说明/实现/组装独立产物与四个阶段Skill；六类版式仅保留旧story v2路径。原声/原文/字时间、字形/安全区/净空、字幕、背景、HUD/控件、原件/历史保留与独立批准要求继续执行。分镜4–20秒改为编排提示，新模式物理预算1–120秒、事件间隔≤20秒；旧Profile不改。素材允许受限SVG转PNG和透明位图，同镜可组合；未实测搜图/生图或桌面导出不得宣称通过。详见web-video-workflow.md。
+
 本表核对规则是否有去向，不代表全部视觉能力已实现。基线为原版规则、旧 skeleton、checklist、technical-details、prompt-template 和 audit。[原规则快照](../artifacts/rule-migration-20261027/legacy-rules.md)及[Git/SHA256记录](../artifacts/rule-migration-20261027/baseline.json)可追溯。现行数值只认Profile；当前默认presentation Profile version=5、模板=6、编译组件=5；旧knowledge Profile version=4保留历史模式要求。
 
 | 原要求 | 对照结果与处理 | 执行/验证位置 |

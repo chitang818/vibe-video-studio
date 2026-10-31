@@ -1,0 +1,168 @@
+{
+  "scene": {
+    "id": "shot-17",
+    "startUs": 139040000,
+    "endUs": 149130000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 1280000,
+        "entrance": "fade-up",
+        "text": "根际群落的协同",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 130,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 1280000,
+        "entrance": "slide-right",
+        "text": "根际微生物协同",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 610,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 3570000,
+        "entrance": "slide-left",
+        "text": "有益微生物定殖繁殖",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-3",
+        "type": "text",
+        "x": 150,
+        "y": 1090,
+        "width": 780,
+        "height": 110,
+        "enterUs": 5730000,
+        "entrance": "fade-up",
+        "text": "抑制有害微生物生长",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-4",
+        "type": "text",
+        "x": 150,
+        "y": 1300,
+        "width": 780,
+        "height": 110,
+        "enterUs": 7530000,
+        "entrance": "fade-up",
+        "text": "维持群落健康稳定",
+        "size": 46,
+        "color": "#ebc86d",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-17",
+    "purpose": "根际群落的协同",
+    "visualIntent": "两组作用标签和两条结论",
+    "visualFamily": "群落协同",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 140320000,
+        "quote": "有益微生物产生协同",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：根际微生物协同"
+      },
+      {
+        "timeUs": 140320000,
+        "quote": "有益微生物产生协同",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：根际微生物协同"
+      },
+      {
+        "timeUs": 142610000,
+        "quote": "促进有益微生物",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：有益微生物定殖繁殖"
+      },
+      {
+        "timeUs": 144770000,
+        "quote": "抑制有害微生物",
+        "nodeIds": [
+          "point-3"
+        ],
+        "meaning": "展示原声对应信息：抑制有害微生物生长"
+      },
+      {
+        "timeUs": 146570000,
+        "quote": "维持根际微生物群落",
+        "nodeIds": [
+          "point-4"
+        ],
+        "meaning": "展示原声对应信息：维持群落健康稳定"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "区分促进有益与抑制有害，不使用统一卡片"
+  },
+  "facts": [],
+  "sourceSpan": [
+    801,
+    859
+  ],
+  "localPreviewOriginUs": 139040000
+}

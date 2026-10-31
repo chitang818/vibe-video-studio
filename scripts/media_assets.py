@@ -1,6 +1,7 @@
 """Import agent-acquired local/search/generated images without provider credentials."""
 import argparse
 import hashlib
+import hashlib
 import json
 import re
 import shutil
@@ -23,6 +24,19 @@ def inspect_image(path):
 
 def import_image(source, root, asset_id, kind='local', origin='', license_status='', focus=(.5,.5)):
     root=Path(root).resolve();source=Path(source).resolve()
+    if source.suffix.lower()=='.svg':
+        if not origin or not license_status:raise ValueError('Record original SVG provenance and permission')
+        import tempfile
+        from scripts.pipeline_svg import rasterize
+        from scripts.build_fast_project import asset_path
+        with tempfile.TemporaryDirectory(prefix='vibe-svg-') as temp:
+            png=Path(temp)/'image.png';rasterize(source,png)
+            original=f'assets/sources/{asset_id}.svg'
+            target=asset_path(root,original)
+            if target.exists():raise ValueError('Original SVG already exists; choose a new asset ID')
+            entry=import_image(png,root,asset_id,kind,origin+'; SVG '+original+' SHA256='+hashlib.sha256(source.read_bytes()).hexdigest(),license_status,focus)
+            target.parent.mkdir(parents=True,exist_ok=True);shutil.copyfile(source,target)
+            return entry
     if not re.fullmatch('[A-Za-z][A-Za-z0-9-]{0,63}',asset_id):raise ValueError('Invalid asset ID')
     if kind not in ('local','search','generate'):raise ValueError('Unknown acquisition kind')
     if not origin or not license_status:raise ValueError('Record source/generation provenance and license status')

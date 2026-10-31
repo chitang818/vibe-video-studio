@@ -1,0 +1,120 @@
+{
+  "scene": {
+    "id": "shot-10",
+    "startUs": 85860000,
+    "endUs": 95310000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 840000,
+        "entrance": "fade-up",
+        "text": "根内丛枝：双向交换",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 650,
+        "width": 780,
+        "height": 240,
+        "enterUs": 840000,
+        "entrance": "zoom",
+        "text": "丛枝扩大交换界面",
+        "size": 76,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 1060,
+        "width": 780,
+        "height": 110,
+        "enterUs": 6970000,
+        "entrance": "fade-up",
+        "text": "真菌向植物供养分",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-10",
+    "purpose": "根内丛枝：双向交换",
+    "visualIntent": "两段文字以主次层级解释交换界面",
+    "visualFamily": "交换界面",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 86700000,
+        "quote": "丛枝结构拥有",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：丛枝扩大交换界面"
+      },
+      {
+        "timeUs": 86700000,
+        "quote": "丛枝结构拥有",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：丛枝扩大交换界面"
+      },
+      {
+        "timeUs": 92830000,
+        "quote": "真菌将吸收的养分",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：真菌向植物供养分"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "保留原文核心，不虚构双向运输图的细节"
+  },
+  "facts": [],
+  "sourceSpan": [
+    490,
+    544
+  ],
+  "localPreviewOriginUs": 85860000
+}

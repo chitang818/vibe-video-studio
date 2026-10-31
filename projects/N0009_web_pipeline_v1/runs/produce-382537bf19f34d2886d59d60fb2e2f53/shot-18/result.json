@@ -1,0 +1,120 @@
+{
+  "scene": {
+    "id": "shot-18",
+    "startUs": 149130000,
+    "endUs": 160101625,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 2040000,
+        "entrance": "fade-up",
+        "text": "地下共同菌丝网络",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 650,
+        "width": 780,
+        "height": 240,
+        "enterUs": 2040000,
+        "entrance": "zoom",
+        "text": "连接不同植物根系",
+        "size": 76,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 1060,
+        "width": 780,
+        "height": 110,
+        "enterUs": 10120000,
+        "entrance": "fade-up",
+        "text": "维持农田养分平衡",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-18",
+    "purpose": "地下共同菌丝网络",
+    "visualIntent": "大字连接观点与农田平衡结语",
+    "visualFamily": "结尾回扣",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 151170000,
+        "quote": "连接不同植物",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：连接不同植物根系"
+      },
+      {
+        "timeUs": 151170000,
+        "quote": "连接不同植物",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：连接不同植物根系"
+      },
+      {
+        "timeUs": 159250000,
+        "quote": "养分平衡",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：维持农田养分平衡"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "结尾跟随原声，不新增CTA"
+  },
+  "facts": [],
+  "sourceSpan": [
+    859,
+    923
+  ],
+  "localPreviewOriginUs": 149130000
+}

@@ -1,0 +1,144 @@
+{
+  "scene": {
+    "id": "shot-01",
+    "startUs": 0,
+    "endUs": 6680000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 480000,
+        "entrance": "fade-up",
+        "text": "回顾：菌剂与菌根",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 650,
+        "width": 780,
+        "height": 130,
+        "enterUs": 480000,
+        "entrance": "fade-up",
+        "text": "真菌类菌剂的分类",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 870,
+        "width": 780,
+        "height": 130,
+        "enterUs": 2880000,
+        "entrance": "fade-up",
+        "text": "肥料类菌剂中的菌根",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-3",
+        "type": "text",
+        "x": 150,
+        "y": 1090,
+        "width": 780,
+        "height": 130,
+        "enterUs": 5920000,
+        "entrance": "fade-up",
+        "text": "连接上期基本特性",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-01",
+    "purpose": "回顾：菌剂与菌根",
+    "visualIntent": "无底板文字建立三个回顾层级",
+    "visualFamily": "回顾定位",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2",
+        "point-3"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 480000,
+        "quote": "我们介绍了",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：真菌类菌剂的分类"
+      },
+      {
+        "timeUs": 480000,
+        "quote": "我们介绍了",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：真菌类菌剂的分类"
+      },
+      {
+        "timeUs": 2880000,
+        "quote": "和肥料类菌剂",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：肥料类菌剂中的菌根"
+      },
+      {
+        "timeUs": 5920000,
+        "quote": "基本特性",
+        "nodeIds": [
+          "point-3"
+        ],
+        "meaning": "展示原声对应信息：连接上期基本特性"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "先定位菌剂与菌根，再承接基本特性"
+  },
+  "facts": [],
+  "sourceSpan": [
+    0,
+    38
+  ],
+  "localPreviewOriginUs": 0
+}

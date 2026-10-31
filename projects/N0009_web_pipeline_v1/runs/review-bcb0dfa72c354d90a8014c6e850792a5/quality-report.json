@@ -1,0 +1,7152 @@
+{
+  "version": 2,
+  "project": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\projects\\N0009_web_pipeline_v1\\runs\\assemble-6b2be4e2f22c4158a4ab35f1d5092f7d\\project",
+  "status": "needs_review",
+  "scope": "automated checks; semantic/visual/listening review is separate",
+  "errors": [],
+  "screenshots": [
+    {
+      "file": "frames/shot-01-0.png",
+      "sha256": "8e0bf29a7f4e3d08fed078c69672fa94074e9cca46ed4cc1c3b92de7ae5fe71f",
+      "sceneId": "shot-01",
+      "timeUs": 0,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-1.png",
+      "sha256": "eefb56d94db82062b3500c9480af5971cabe907f4d3adf1cef90ad5789a82de0",
+      "sceneId": "shot-01",
+      "timeUs": 1,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-50000.png",
+      "sha256": "8a731ade6de45395d77552d8f84699b28c4eb0237025c3fb47e050ad98ee6a1d",
+      "sceneId": "shot-01",
+      "timeUs": 50000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-120000.png",
+      "sha256": "74c6d15d65f790e0752728c46fb43fe88310f4c0e6b5b02d52bee8475b87bffe",
+      "sceneId": "shot-01",
+      "timeUs": 120000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-225000.png",
+      "sha256": "bfec11bcb5abd2928424ac594e55ce886d2573dda5368011f5d19f12f197df4c",
+      "sceneId": "shot-01",
+      "timeUs": 225000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-240000.png",
+      "sha256": "50d4e70a63de1a7ea331ce0593f6f32f510814b7cd32d2f58b95bf9a8a49c471",
+      "sceneId": "shot-01",
+      "timeUs": 240000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-479999.png",
+      "sha256": "6ec26b2adb049544ff5964e4e9f4d9c753a33e9c113b7538ea7cdb313b35bcc1",
+      "sceneId": "shot-01",
+      "timeUs": 479999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-480001.png",
+      "sha256": "1b43c25cae23e14cac623bf0a6b65a94e36f849b652853a25411c48e3f12a1ae",
+      "sceneId": "shot-01",
+      "timeUs": 480001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-500000.png",
+      "sha256": "22bb010c360735f721d56b447fdeebd745326646861ad5776de350afd4345206",
+      "sceneId": "shot-01",
+      "timeUs": 500000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-705000.png",
+      "sha256": "ea9a87f1ea1b7f162ca5a73ba82eb45f9a0e4c8fe705be2322dd2947a91e9c10",
+      "sceneId": "shot-01",
+      "timeUs": 705000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-980000.png",
+      "sha256": "2aaec27bafb218bc936fd15032ac01370edb851b544f3c208dc437e2acd29b71",
+      "sceneId": "shot-01",
+      "timeUs": 980000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-2879999.png",
+      "sha256": "555c9612409f31f9cb8c165f050c6b032993b3cbe843be6ab15fa5f058f1027d",
+      "sceneId": "shot-01",
+      "timeUs": 2879999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-2880001.png",
+      "sha256": "f1667a42a29c263bb908aee95d4af6881a52e28e69f60521b17d72c2bf5ed230",
+      "sceneId": "shot-01",
+      "timeUs": 2880001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-3105000.png",
+      "sha256": "1ff6554be06725ae0d7e10190ded8c5063a47893ab9514f6c4eaa3a64407c63d",
+      "sceneId": "shot-01",
+      "timeUs": 3105000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-3340000.png",
+      "sha256": "7e2926ff521afc4fd32a4958261ec1beb7a43227077a409d695a858141e2126c",
+      "sceneId": "shot-01",
+      "timeUs": 3340000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-3380000.png",
+      "sha256": "c96d35b178a43d1b9244db8f2d4ddb3d7d575cadfb102e36978465edb4f8761c",
+      "sceneId": "shot-01",
+      "timeUs": 3380000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-5919999.png",
+      "sha256": "41ddf239119d6d4b5cd4670c5f5e8d3b9abd75726d1a19ffaea359e693badbb9",
+      "sceneId": "shot-01",
+      "timeUs": 5919999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-5920001.png",
+      "sha256": "79ffe1ec4dc7744bbd0ab54166c39542b5f8bdb18e5732d0ed806ea6eec2bdbe",
+      "sceneId": "shot-01",
+      "timeUs": 5920001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-6145000.png",
+      "sha256": "44d999d4a51e201581bca908dd0f99d54f34b7a1072965a7d7cb2e6facdc8f7d",
+      "sceneId": "shot-01",
+      "timeUs": 6145000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-6420000.png",
+      "sha256": "b04407b8c8e8b9f56fc2d2559bb586f23fa052a7b2a685f0585dc57a1d951eab",
+      "sceneId": "shot-01",
+      "timeUs": 6420000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-6520000.png",
+      "sha256": "130422570fcecc84e5f93b73c16eba231187ad41cd2fbc9344c8ecb2974a08c4",
+      "sceneId": "shot-01",
+      "timeUs": 6520000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-6600000.png",
+      "sha256": "931e09e5e48911ecb48b7556b841d2c504af1cf655a47d9369d1c3252bb5c85c",
+      "sceneId": "shot-01",
+      "timeUs": 6600000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-6679999.png",
+      "sha256": "9bb6e454f1690ba4be6657deb06b1c35ba7074ab7c1a01d97c221cc23c351272",
+      "sceneId": "shot-01",
+      "timeUs": 6679999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-6680000.png",
+      "sha256": "ee0a1ba64a393760e8cd237a86436f68adbc56a9ef9b310907bc0485108eecfb",
+      "sceneId": "shot-02",
+      "timeUs": 6680000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-6680001.png",
+      "sha256": "e5d55d1baeb60ad28e78f3ec741810a01acd17c3ba3649e5608e98260ec46d54",
+      "sceneId": "shot-02",
+      "timeUs": 6680001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-6730000.png",
+      "sha256": "ce9992f5d9ebadf9e5f363c71f26f606f63ff9f351e076ddd5801c4ff077b5fa",
+      "sceneId": "shot-02",
+      "timeUs": 6730000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-6800000.png",
+      "sha256": "40d17b0f9ba6093f30dabb04e8405899534ed8ee66751cd21c4f6fcd175091af",
+      "sceneId": "shot-02",
+      "timeUs": 6800000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-6905000.png",
+      "sha256": "6d1c9d218a71838500d60f2efc7a8dd7c9580b02407d7f461cbc4643cfd57a27",
+      "sceneId": "shot-02",
+      "timeUs": 6905000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-6920000.png",
+      "sha256": "09ac5a11775a6fb685f9526a4ebd959d0ef31b56beff3bdcda80ba3013c2b99a",
+      "sceneId": "shot-02",
+      "timeUs": 6920000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-7180000.png",
+      "sha256": "885b1a32b3db797acaac9418380fd7ceba40f0a25ec680b5a5dd2a574ef05468",
+      "sceneId": "shot-02",
+      "timeUs": 7180000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-7279999.png",
+      "sha256": "7101873862bd91fe27c521b4b9a99fdf8ad4dce6a14437613b6fd6165462e6e0",
+      "sceneId": "shot-02",
+      "timeUs": 7279999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-7280001.png",
+      "sha256": "965730884f1c6980dfc6803f701bc3b06f874d6236ecf07e72d141283c109360",
+      "sceneId": "shot-02",
+      "timeUs": 7280001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-7505000.png",
+      "sha256": "a1e2a9da92663cd5c27323a287308d1efb6a281e52ee6acf736ddc31df035796",
+      "sceneId": "shot-02",
+      "timeUs": 7505000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-7780000.png",
+      "sha256": "9d9804173292a7f786b6f107f3d2afd907de33dd7dbc033130925662590d1be2",
+      "sceneId": "shot-02",
+      "timeUs": 7780000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-10860000.png",
+      "sha256": "7b2764102fd0edffe4f3a7b79e2c5c51aebbb12c87c604c1cf615d4a09206ad5",
+      "sceneId": "shot-02",
+      "timeUs": 10860000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-12679999.png",
+      "sha256": "5104ba0b18128d3e45d3e6e0e86a47fb8a3aa58b6afc08753247e79a07a39cf1",
+      "sceneId": "shot-02",
+      "timeUs": 12679999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-12680001.png",
+      "sha256": "2df1cefedb2bf19aeb2cbad020d070d668cacd047a00fd3ab55ab91afa8b9b1b",
+      "sceneId": "shot-02",
+      "timeUs": 12680001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-12905000.png",
+      "sha256": "d94306c871187b875b3be86ae885d17260878d595bbd4b7337c2a49d677d546c",
+      "sceneId": "shot-02",
+      "timeUs": 12905000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-13180000.png",
+      "sha256": "2a6a76b951c5602685885d42f95046afe5bc0833159828b6439cf721871577df",
+      "sceneId": "shot-02",
+      "timeUs": 13180000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-14880000.png",
+      "sha256": "5a7669ae70d5812ba0ba986aeff1e05d6742ee21736399543063fb02d1ec0578",
+      "sceneId": "shot-02",
+      "timeUs": 14880000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-14960000.png",
+      "sha256": "17557dec1e13d06b4d0940bf5bd29dd4eefe35dc34fe9af82b6d0c5628de7b95",
+      "sceneId": "shot-02",
+      "timeUs": 14960000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-02-15039999.png",
+      "sha256": "ce256463dedfc39ed0d802ce5d17bb9f28f84cf9cadd7cf8f7fb8dd5aded509d",
+      "sceneId": "shot-02",
+      "timeUs": 15039999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15040000.png",
+      "sha256": "24a1dd9d39fff9e9b4f504f1434554b95b183ce6e9653b24831584d130b3964f",
+      "sceneId": "shot-03",
+      "timeUs": 15040000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15040001.png",
+      "sha256": "fc937b457452a0295953b3cde03d6019988cf4ba948f059f8ae3e2cb241fdfe2",
+      "sceneId": "shot-03",
+      "timeUs": 15040001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15090000.png",
+      "sha256": "b860bcdfdf35c22ac2f0cbb2064e6f3ac7fe9daf8b872eab3862bf09fea58772",
+      "sceneId": "shot-03",
+      "timeUs": 15090000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15160000.png",
+      "sha256": "858d7fb280c900f3b16b83be0e5c577a7ace07578b77fe1d66add537d99eeff0",
+      "sceneId": "shot-03",
+      "timeUs": 15160000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15265000.png",
+      "sha256": "dbddc4b55bc7a6250b8064594e4f734b536c8b42de28de6eea4fab07d59c6000",
+      "sceneId": "shot-03",
+      "timeUs": 15265000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15280000.png",
+      "sha256": "105266671f05ac39bff5be25f2d6af22e922951517dd9889b077d919f4be16c8",
+      "sceneId": "shot-03",
+      "timeUs": 15280000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15439999.png",
+      "sha256": "b040e76d81d2d9e2b2097538f5666f084ca46d896951b1288f414ffb9335ff00",
+      "sceneId": "shot-03",
+      "timeUs": 15439999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15440001.png",
+      "sha256": "7b9a3bc21d4789c8aa51cd699c8d74f4b36f279d5bbb94c1bf6cfcc269c4093a",
+      "sceneId": "shot-03",
+      "timeUs": 15440001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15540000.png",
+      "sha256": "c900d73bd9bd115b25b26b53dc4f19f19f87a9ab7d00491f4ec3850d2070ad24",
+      "sceneId": "shot-03",
+      "timeUs": 15540000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15665000.png",
+      "sha256": "264727de977f88580e9255d84d82358f008d5cc9be02dfd3d6f0dc4a623463ab",
+      "sceneId": "shot-03",
+      "timeUs": 15665000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-15940000.png",
+      "sha256": "219fae39dc0db1f9c4ef76c7502b2d47201d5108e247c2d0c30d5ddcfb711939",
+      "sceneId": "shot-03",
+      "timeUs": 15940000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-18500000.png",
+      "sha256": "b5e6aaa3279c27dd2193ef70fc37222c9845ae54a5d5bdc7c14c6527d5fc512e",
+      "sceneId": "shot-03",
+      "timeUs": 18500000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-18559999.png",
+      "sha256": "c155b817a5d56aae0cdecf0988129972173cbdef430500a5ffde1da0a80d86af",
+      "sceneId": "shot-03",
+      "timeUs": 18559999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-18560001.png",
+      "sha256": "ae32ad313906a270e4c77d9590cf40e7baa3b92008369b51fda7ba73e21cc13e",
+      "sceneId": "shot-03",
+      "timeUs": 18560001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-18785000.png",
+      "sha256": "438bb378192e6322703c4d0e0cec95f54d5876baa7b5d19113ba51221e0d9d56",
+      "sceneId": "shot-03",
+      "timeUs": 18785000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-19060000.png",
+      "sha256": "86f58e5eb51b05157113bf101aab1b29153eb6e2d4e894bf34e4f43567690c81",
+      "sceneId": "shot-03",
+      "timeUs": 19060000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-19959999.png",
+      "sha256": "3af9afe1a4c129706628ad9f13ddfefc442fa2d3383a4833e09d225db40df42c",
+      "sceneId": "shot-03",
+      "timeUs": 19959999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-19960001.png",
+      "sha256": "c6a17839ff7b03e47b90d2b25bb3855317cf6e0e773c075ca7bbfd09a15d20ba",
+      "sceneId": "shot-03",
+      "timeUs": 19960001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-20185000.png",
+      "sha256": "6d4d07705c9b82cb075ea8f67c8eed44b20f8da45be0b66d3d46d6cfe9b2842c",
+      "sceneId": "shot-03",
+      "timeUs": 20185000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-20460000.png",
+      "sha256": "30112a836188ba0e68fe492db5e38cc3396abb7a96a666ba22fe763c09f23ced",
+      "sceneId": "shot-03",
+      "timeUs": 20460000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-20679999.png",
+      "sha256": "c745188db8d2787e08650c95be2501119acaa66908b73629fc1a2fcccc7af5b0",
+      "sceneId": "shot-03",
+      "timeUs": 20679999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-20680001.png",
+      "sha256": "0af26c02730e660512465a7e7446b1685effb05a533a801d35cfac62d4dba58d",
+      "sceneId": "shot-03",
+      "timeUs": 20680001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-20905000.png",
+      "sha256": "f835bb962e469186b80e3a59224e70c3ecc9c0f2cc05701a804fc34aa8ffff72",
+      "sceneId": "shot-03",
+      "timeUs": 20905000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-21180000.png",
+      "sha256": "c10f269f3cba59f3804388417467be795137e900cd68b6a1efa5047cddd72a74",
+      "sceneId": "shot-03",
+      "timeUs": 21180000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-21800000.png",
+      "sha256": "46f8c32f5180bf1c6ef2e2808dac680efffed3a48d98def36a7357b21b738e51",
+      "sceneId": "shot-03",
+      "timeUs": 21800000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-21880000.png",
+      "sha256": "712f5836d277272612df30fdcdff837cfcf0ec02b3335c5936975f38a683a599",
+      "sceneId": "shot-03",
+      "timeUs": 21880000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-03-21959999.png",
+      "sha256": "c03459308af57acfbc7672648993cadbcfa0b30329c04bcf2548498b5e5a82ca",
+      "sceneId": "shot-03",
+      "timeUs": 21959999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-21960000.png",
+      "sha256": "27d11cb46217294dba17f485d0c154a3d1aaed09dce024e6e9e083c6622eb15a",
+      "sceneId": "shot-04",
+      "timeUs": 21960000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-21960001.png",
+      "sha256": "cb74cd01175ef56c904d279d6bd358e4e38c7e953b8ff7c309bad90bb9ceac78",
+      "sceneId": "shot-04",
+      "timeUs": 21960001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-22010000.png",
+      "sha256": "4181cb1397f735ab35528bb16ec8f1ba4ced22e5d5b861987738f40ab8b4ce2f",
+      "sceneId": "shot-04",
+      "timeUs": 22010000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-22080000.png",
+      "sha256": "0d7cbd52da9b1ea3a1347275baec9a7325c6d4f576c509b99460a3210ad32fc5",
+      "sceneId": "shot-04",
+      "timeUs": 22080000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-22185000.png",
+      "sha256": "58d1c83b3f6522e66c5dab124759df448e8cf68e78792b976b304329120b8377",
+      "sceneId": "shot-04",
+      "timeUs": 22185000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-22200000.png",
+      "sha256": "3c0b2aa70cd6fe52901d43d6ca17af960acbf27ac71d5b215701337547167807",
+      "sceneId": "shot-04",
+      "timeUs": 22200000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-22460000.png",
+      "sha256": "0249221819ce9d57e50c5482a172ea811810e731472a7551d0e43c9ff372e22b",
+      "sceneId": "shot-04",
+      "timeUs": 22460000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-22719999.png",
+      "sha256": "5b72bb6d5c95768c2cd71d87cd25c2cdfa818feede05e60828c1423f01178a20",
+      "sceneId": "shot-04",
+      "timeUs": 22719999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-22720001.png",
+      "sha256": "4dcc95f80e8274bd66fe27a5b21249bf18c9cb973fefd9bd8c994944bcd3941a",
+      "sceneId": "shot-04",
+      "timeUs": 22720001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-22945000.png",
+      "sha256": "6b0cec0247da2aef84ca4b978460c4960b0cbe6ec7599425971fe6f930c410e3",
+      "sceneId": "shot-04",
+      "timeUs": 22945000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-23220000.png",
+      "sha256": "c4ca88bdb2239cea52fe4a600fa8a57509231b6bf88f28d66f7171ac13185ca5",
+      "sceneId": "shot-04",
+      "timeUs": 23220000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-26395000.png",
+      "sha256": "409dd661f1fc4697178e94b76f9569caee18df312e93dce951bb0ad7063e0e73",
+      "sceneId": "shot-04",
+      "timeUs": 26395000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-28909999.png",
+      "sha256": "ddedcb2c8c49b930bdd062c14173cead7bd61d06c5f2588dea63a43b89441cde",
+      "sceneId": "shot-04",
+      "timeUs": 28909999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-28910001.png",
+      "sha256": "05fa06e4dbf7d45d859083b3085b89d6a920819e189fa246ceb03102b818ba2c",
+      "sceneId": "shot-04",
+      "timeUs": 28910001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-29135000.png",
+      "sha256": "d14d6cb29034d2f9a47f166f2aa170eecac61c2f82ae3394a9ef1fec900da12f",
+      "sceneId": "shot-04",
+      "timeUs": 29135000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-29410000.png",
+      "sha256": "288eec3d9b971de2ba9a8367570f9e97b27db578132b2f249e15f8bd0f4103cb",
+      "sceneId": "shot-04",
+      "timeUs": 29410000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-30670000.png",
+      "sha256": "14dbc48b05baa795ae6ea0cb87206f3ce0b3c215eb864f3bf716018d4687d437",
+      "sceneId": "shot-04",
+      "timeUs": 30670000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-30750000.png",
+      "sha256": "4fc3afef6141b4256f3c804b3daa4bc96886ee2e220eae22e55651a7f53d1743",
+      "sceneId": "shot-04",
+      "timeUs": 30750000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-04-30829999.png",
+      "sha256": "d21387d0b33576f5326b071ac0f29ae4d14374fa94fb3ed756caf94563021e06",
+      "sceneId": "shot-04",
+      "timeUs": 30829999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-30830000.png",
+      "sha256": "be2a8c5a1e04fd16289b097099f52df11880e35ee96c35cc4238e07c5a1d7009",
+      "sceneId": "shot-05",
+      "timeUs": 30830000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-30830001.png",
+      "sha256": "6978b017a3eb6fd58d2b39e1b08b04736e4dfbd6dadfff529f62bb9e206b48d3",
+      "sceneId": "shot-05",
+      "timeUs": 30830001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-30880000.png",
+      "sha256": "e7f01610558f6d463d7bf34a2ff8a240d8d1f9edb8a36dcf21bcd44ce7fdf514",
+      "sceneId": "shot-05",
+      "timeUs": 30880000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-30950000.png",
+      "sha256": "db31c05cf5901d77ac1fc8f1a1ec431eb4d6bb2296b54404bf40cc3173615d1a",
+      "sceneId": "shot-05",
+      "timeUs": 30950000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-31055000.png",
+      "sha256": "1a08aeab2cb7dc354d16b806c96eaf99420118be538b71f77c13a8a66388ff4e",
+      "sceneId": "shot-05",
+      "timeUs": 31055000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-31070000.png",
+      "sha256": "b6cebbe58e9b376b48f5f0a77f5d07addaa2e9da42a1bd3a514b0d4b0d6e2752",
+      "sceneId": "shot-05",
+      "timeUs": 31070000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-31330000.png",
+      "sha256": "421046276a7bc1fea2bf36958a048a0fddb68190272bac14d8e52df9831cfcec",
+      "sceneId": "shot-05",
+      "timeUs": 31330000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-32949999.png",
+      "sha256": "f1c6a00b4a805557ffbaa7f4269f503c04df888c04f93ee7fa5312841994fb10",
+      "sceneId": "shot-05",
+      "timeUs": 32949999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-32950001.png",
+      "sha256": "a45bd19c63213f57296e4d9859e4ac1fbcbe22907eb64e5b627b02a1ee43d93a",
+      "sceneId": "shot-05",
+      "timeUs": 32950001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-33175000.png",
+      "sha256": "3cc3d58d5ce24004a2f06bb6361046f51c4bd8ba6e2438c40183452b02e5a2f5",
+      "sceneId": "shot-05",
+      "timeUs": 33175000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-33450000.png",
+      "sha256": "2e6cea55e1febb3deba880a304153598950945e9f7bc42544815f92df8dc9b56",
+      "sceneId": "shot-05",
+      "timeUs": 33450000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-36469999.png",
+      "sha256": "e20a477c58376dfb1214b76d5f56108dc85d05498f603b9b4e49da100f80b900",
+      "sceneId": "shot-05",
+      "timeUs": 36469999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-36470001.png",
+      "sha256": "cb04d5a9d77620f53c9fdbc285d1dbf1fffdfdfe43a74f27098d2316d8e2e252",
+      "sceneId": "shot-05",
+      "timeUs": 36470001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-36695000.png",
+      "sha256": "bf735e9b98b841cb6797ee2a172f3ee36ac99b3c43679a35d4c1822eab0161c6",
+      "sceneId": "shot-05",
+      "timeUs": 36695000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-36970000.png",
+      "sha256": "2ebf4aa732f7a41cd07a131ea2d48642a9f7ed2ee521a44bc6d94f5b78f9f8f5",
+      "sceneId": "shot-05",
+      "timeUs": 36970000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-37405000.png",
+      "sha256": "28462901f86ba43d92383b511a3b0aebaa358c7454f238fbe2065fe88dde09d8",
+      "sceneId": "shot-05",
+      "timeUs": 37405000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-39659999.png",
+      "sha256": "9a49d70cdb8e51e2be3c78e10d89816377ed3e2ae661f8af4c01d6309c45bd76",
+      "sceneId": "shot-05",
+      "timeUs": 39659999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-39660001.png",
+      "sha256": "21170a625bbc67aa4b7fbe31038c82f43bf438d2b22b32a1b81169ea02870054",
+      "sceneId": "shot-05",
+      "timeUs": 39660001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-39885000.png",
+      "sha256": "6cb362d0e2eada31e2077523c951782739ff5c539b4ef3999e7efa2c368aa3cf",
+      "sceneId": "shot-05",
+      "timeUs": 39885000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-40160000.png",
+      "sha256": "da7ae4b95fa53ddae142dbdfb37f25eda81511f69a3e0169c1a056542ccf8509",
+      "sceneId": "shot-05",
+      "timeUs": 40160000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-42179999.png",
+      "sha256": "9a4a9aa64b0ac5d39fb92a7931b7cd320b7e314837adbc16ee76fab6f7efd5be",
+      "sceneId": "shot-05",
+      "timeUs": 42179999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-42180001.png",
+      "sha256": "4cd86e579a919dc851d1a36b8b0eaae8331728f1f59040f48531c4d7a5897575",
+      "sceneId": "shot-05",
+      "timeUs": 42180001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-42405000.png",
+      "sha256": "78c0885645fc51b9739705fc69fb4c3ee85f5d093109fdc51a3ad7dbd53ec80b",
+      "sceneId": "shot-05",
+      "timeUs": 42405000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-42680000.png",
+      "sha256": "f6d294dc48fa8387b2c6f6af478114569e6e7243f64ac685c865b724704fe615",
+      "sceneId": "shot-05",
+      "timeUs": 42680000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-43820000.png",
+      "sha256": "8c6710a1209967d164209da83032ed520fc9d388ff16928a2c85f148d584ba34",
+      "sceneId": "shot-05",
+      "timeUs": 43820000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-43900000.png",
+      "sha256": "40acc352d2a14c82ef2aaa54706b44170e5f55710d2d2129daa2e979eddba42a",
+      "sceneId": "shot-05",
+      "timeUs": 43900000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-05-43979999.png",
+      "sha256": "9a7d3c6fd736758394991baec8f6aceb41ca3a2d107595464c74306bb2b92010",
+      "sceneId": "shot-05",
+      "timeUs": 43979999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-43980000.png",
+      "sha256": "cefe3723480ded774bbc4057f0e96f65c0c609e1571b883bbefd5a64cf227072",
+      "sceneId": "shot-06",
+      "timeUs": 43980000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-43980001.png",
+      "sha256": "b297d4bbaaeb8444a41328bb29fd42f92693ea434aa441188864dca2000f20af",
+      "sceneId": "shot-06",
+      "timeUs": 43980001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-44030000.png",
+      "sha256": "cf9ebc9d1aa2a1078d660dfe2e831ca2fa0eed3057e3b6fb0bf6aad2a05aca06",
+      "sceneId": "shot-06",
+      "timeUs": 44030000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-44100000.png",
+      "sha256": "caa32dc98463e7734a5ef2cc6b9425df8ce71228fd3af05fe6bdc05db0bc810e",
+      "sceneId": "shot-06",
+      "timeUs": 44100000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-44205000.png",
+      "sha256": "d8eebeb1ea10a6c82772218a9468d6292b95387fb70e7816c6b068afd2c7cc80",
+      "sceneId": "shot-06",
+      "timeUs": 44205000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-44220000.png",
+      "sha256": "790abb2ba3bdb222155fa076bdc45e858c09f2270aeffa3fdf8024b8fbc9132e",
+      "sceneId": "shot-06",
+      "timeUs": 44220000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-44480000.png",
+      "sha256": "1c2c6bd52dbdeb0e1585a2b0920bd31eb3f34e3087537944d12669aeead3e6d2",
+      "sceneId": "shot-06",
+      "timeUs": 44480000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-45939999.png",
+      "sha256": "1a4aa5f7abd850f81f3c18428d19cab6508c6754ff5991b991291e137edcf4d0",
+      "sceneId": "shot-06",
+      "timeUs": 45939999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-45940001.png",
+      "sha256": "c1f762724a042ff102fb340df6424d2d3639d90b504c9ac14b5bfd166ff930d1",
+      "sceneId": "shot-06",
+      "timeUs": 45940001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-46165000.png",
+      "sha256": "fc725042969ee7069da5ae46f738730b735aa64f0545c1f688093d1a34f2d7e8",
+      "sceneId": "shot-06",
+      "timeUs": 46165000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-46440000.png",
+      "sha256": "d21b33d6e62f88eb421c5c5f7c5f377372676ef55eb309c6df47600fc8ef64c7",
+      "sceneId": "shot-06",
+      "timeUs": 46440000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-49019999.png",
+      "sha256": "244b96c7cd231f24659b4a3775b704a35b545f0e5da41efdb6f6a71ceff934ff",
+      "sceneId": "shot-06",
+      "timeUs": 49019999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-49020001.png",
+      "sha256": "6e829821244281a0ac198ed92919917fce93a4f2a53ab3954d9e8fc56e93f3b5",
+      "sceneId": "shot-06",
+      "timeUs": 49020001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-49245000.png",
+      "sha256": "a4270d2f834362993100f1fdd54c1adb86378e5a5c2852a375a3290268b4dbd8",
+      "sceneId": "shot-06",
+      "timeUs": 49245000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-49520000.png",
+      "sha256": "9a2b061fb90b54988755bc0d5b3ad47d6edf2afaf3308cfd9295b47928690717",
+      "sceneId": "shot-06",
+      "timeUs": 49520000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-50470000.png",
+      "sha256": "63eaa2090782759c423e91c1bb7f7674bee2fd15067261037a1b7b2e5c15cf5f",
+      "sceneId": "shot-06",
+      "timeUs": 50470000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-52079999.png",
+      "sha256": "b2b22fc465a91e1bbd561609b7641824efe54380113e178847a82e11637e8010",
+      "sceneId": "shot-06",
+      "timeUs": 52079999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-52080001.png",
+      "sha256": "60ff96fc0eac7f9a23d2c58d6c58df91f134b32a6837ef11b00d50f15bae51c8",
+      "sceneId": "shot-06",
+      "timeUs": 52080001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-52305000.png",
+      "sha256": "cf80d066c2f65f15b823f5c61bee70e94bf4f1bac4ac69f2ba6561a785acc9e8",
+      "sceneId": "shot-06",
+      "timeUs": 52305000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-52580000.png",
+      "sha256": "9e3c340491725d55ee0ee044dfb1ed65397056e35991758bf701cc94e19e1baf",
+      "sceneId": "shot-06",
+      "timeUs": 52580000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-54079999.png",
+      "sha256": "5c16eedb79e3677c4660fb6a4e208aafc862767f9d34d6e3e86f54df3acfcaa4",
+      "sceneId": "shot-06",
+      "timeUs": 54079999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-54080001.png",
+      "sha256": "ec555cafd632d5951add395b33d4d4ba2815d5dfdfcb2c086d6a33beb6886632",
+      "sceneId": "shot-06",
+      "timeUs": 54080001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-54305000.png",
+      "sha256": "89137ee7ff27b1f4684bb35a41f1c83442c7a344a52e94d3a053b3b6dbc4b029",
+      "sceneId": "shot-06",
+      "timeUs": 54305000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-54580000.png",
+      "sha256": "28406f0b7a4751adbf41635e7732d756b60049dcbdc9135e797c7ca87b65b2a9",
+      "sceneId": "shot-06",
+      "timeUs": 54580000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-56800000.png",
+      "sha256": "93cbde21577597ce1836ed3dcbd75427b1f76bb04e76f93a9de1a2eff9e97718",
+      "sceneId": "shot-06",
+      "timeUs": 56800000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-56880000.png",
+      "sha256": "d34531be934fb5b35c130579f538c127d043e26b4debe479cdb8bb49a8281a0e",
+      "sceneId": "shot-06",
+      "timeUs": 56880000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-06-56959999.png",
+      "sha256": "9628ad46fee0b2fa344a3ac50d93237ba5c18c87af47f12208ba066cfda7f07d",
+      "sceneId": "shot-06",
+      "timeUs": 56959999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-56960000.png",
+      "sha256": "f95e8678aa60c5d349bbae63bcff8a4957d5cff4ef256313d90374fe3360fade",
+      "sceneId": "shot-07",
+      "timeUs": 56960000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-56960001.png",
+      "sha256": "e0fdfe0159cd633c83dcc0ccd303b2f5977361f24782cc14c795ddf40e6ddee0",
+      "sceneId": "shot-07",
+      "timeUs": 56960001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-57010000.png",
+      "sha256": "67e65617d7d759ab70d0fe2038c0c6b95615f65702a08715aba0efaa02fc09a6",
+      "sceneId": "shot-07",
+      "timeUs": 57010000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-57080000.png",
+      "sha256": "fd447f3adc49dc7d84e46e6e679a40e67a62aef8d34a4520b1fc96279945954c",
+      "sceneId": "shot-07",
+      "timeUs": 57080000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-57185000.png",
+      "sha256": "3b1987dc548e1aa9d4a6b5c3d9cdf3d7e5949bea3f6690684998c4da95ad360f",
+      "sceneId": "shot-07",
+      "timeUs": 57185000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-57200000.png",
+      "sha256": "9808896274d8c844be3ae3d919978e50d08642e59a6a33d8174a9daa4a761da1",
+      "sceneId": "shot-07",
+      "timeUs": 57200000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-57460000.png",
+      "sha256": "af16a6ab99f139d594bd4b0b7a322e867b421fda23c781e2e7d39f44d49a9a21",
+      "sceneId": "shot-07",
+      "timeUs": 57460000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-59759999.png",
+      "sha256": "50b9f7c4cff407529e6966f748ca2165c304c46d574b353a6c729ddbb8bc22f5",
+      "sceneId": "shot-07",
+      "timeUs": 59759999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-59760001.png",
+      "sha256": "93d4accc62a326aceacdf6d8dc2b1bae275ec8eb13dda016ece5674441d9b96c",
+      "sceneId": "shot-07",
+      "timeUs": 59760001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-59985000.png",
+      "sha256": "c12db9bc964cab720317e561fc25eb0e093a34432c2c0a3402644b7af24f7ea7",
+      "sceneId": "shot-07",
+      "timeUs": 59985000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-60260000.png",
+      "sha256": "bef6beda763e510af22fb90c2cc339bbba42f9b9a57ee40c7afa742183668218",
+      "sceneId": "shot-07",
+      "timeUs": 60260000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-62040000.png",
+      "sha256": "d8cfd1d5cf7264deecadaf985596565099786b6cd55b751f01232d7bbd3e03b2",
+      "sceneId": "shot-07",
+      "timeUs": 62040000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-65439999.png",
+      "sha256": "182eb8d79ef4717c91fbdcc4827d518ce27980492234fe8711cdd5c58d86ee0f",
+      "sceneId": "shot-07",
+      "timeUs": 65439999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-65440001.png",
+      "sha256": "7b134e59732b779c3b95b1e7e5099c9ca5d55ecd3c5b675bed502e835ba83bdf",
+      "sceneId": "shot-07",
+      "timeUs": 65440001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-65665000.png",
+      "sha256": "1bdc5017193ac50bd1bf8f26034a2d71ff5a9ffbffe51408f76d4aca22c1b40f",
+      "sceneId": "shot-07",
+      "timeUs": 65665000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-65940000.png",
+      "sha256": "34adf098701bd5e8bc75deef1eedc46d68c436981f6cd41454ab312e906fd5bf",
+      "sceneId": "shot-07",
+      "timeUs": 65940000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-66960000.png",
+      "sha256": "c906d9dcaf6a1464363b6a46105e72a1301d6b68885bc1d7ee93d6b7d147cf88",
+      "sceneId": "shot-07",
+      "timeUs": 66960000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-67040000.png",
+      "sha256": "23a3db8e5741c0ce60ffcfbeffab8ab17ed4544511f4a6f1295c1ddff220fcb3",
+      "sceneId": "shot-07",
+      "timeUs": 67040000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-07-67119999.png",
+      "sha256": "63dbce9961bebc38294a1cb2436946f26e9aa5fc90a263ba2bab1661c5c41642",
+      "sceneId": "shot-07",
+      "timeUs": 67119999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-67120000.png",
+      "sha256": "17fd8331ba0444fafb774b563a190656886fb5bf40942ccb880467c15392e91a",
+      "sceneId": "shot-08",
+      "timeUs": 67120000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-67120001.png",
+      "sha256": "91a211550453ff0f68de9e36663c3e4ccbd9cd5b5c000d83c1a0bcd034e57fbd",
+      "sceneId": "shot-08",
+      "timeUs": 67120001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-67170000.png",
+      "sha256": "32ed0dc4a050429701ba91fd2dec46a5c3dd25afa2c5d923734e6a7e9c6ad442",
+      "sceneId": "shot-08",
+      "timeUs": 67170000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-67240000.png",
+      "sha256": "f4569c4792e54e1be652badb343ba2e2a1df09805ed12d5bb07534e5bc6cbfdd",
+      "sceneId": "shot-08",
+      "timeUs": 67240000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-67345000.png",
+      "sha256": "2c91a1978c3e3ee3c4ec2326ea9dd1370d1047a8f35a183cef13a092dfcb6333",
+      "sceneId": "shot-08",
+      "timeUs": 67345000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-67360000.png",
+      "sha256": "f2f0774b6303f85e293858e6f05142dd47795c54b1aa2dc573a914c7dc788d1b",
+      "sceneId": "shot-08",
+      "timeUs": 67360000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-67620000.png",
+      "sha256": "3296603a0a4154ba7c3e7b98b2a0f0acd1b8180b71de71733db68443cef5c97c",
+      "sceneId": "shot-08",
+      "timeUs": 67620000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-68239999.png",
+      "sha256": "e7e3c2a53b1fb3b20702515b28319fa42ffeea4d6d31c6647acf3d41024cccad",
+      "sceneId": "shot-08",
+      "timeUs": 68239999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-68240001.png",
+      "sha256": "ac8ef999ebb0af947c31e4f6d4367dbc1acdd6ab0686ea0d6584a4b126e459a8",
+      "sceneId": "shot-08",
+      "timeUs": 68240001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-68465000.png",
+      "sha256": "c2ade54d3388d720d9c6db7784d6fca6476ca33e2499d69ad645ef4a3e8aaff8",
+      "sceneId": "shot-08",
+      "timeUs": 68465000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-68740000.png",
+      "sha256": "ba98ca1c5d9f6ba59eae5985b394afbf13531e2125af9721227ff3d01d3b495f",
+      "sceneId": "shot-08",
+      "timeUs": 68740000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-70810000.png",
+      "sha256": "f95635bee95090ec09a4c5636f340c50b59728f059101d001b963c4014899202",
+      "sceneId": "shot-08",
+      "timeUs": 70810000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-72419999.png",
+      "sha256": "a74afad970ce2c830c8bc3fb98b8b1a4a9d9569459734cfb0732144328fa62ab",
+      "sceneId": "shot-08",
+      "timeUs": 72419999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-72420001.png",
+      "sha256": "0f4a44f38fa242709209e7965a519dac89aad35365eda1e326eb4a50cea80349",
+      "sceneId": "shot-08",
+      "timeUs": 72420001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-72645000.png",
+      "sha256": "9fe7fba2e53e9d9a1ca5eddaed74bd826ab1c53c0ae635ef78316ea3a50c9399",
+      "sceneId": "shot-08",
+      "timeUs": 72645000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-72920000.png",
+      "sha256": "fed2e6deebd71553d966a7909ca52cfefe3cf0efb1160d74241bbed80c9d4106",
+      "sceneId": "shot-08",
+      "timeUs": 72920000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-74340000.png",
+      "sha256": "f21fce0b5847c97698b4e5c46efcd5375241ad8f3680fc57c3007f9b1d8dd53d",
+      "sceneId": "shot-08",
+      "timeUs": 74340000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-74420000.png",
+      "sha256": "75d11c9453bc40a7c019e731fa955ce71eaac15351fb80edc152b1e8b3385b22",
+      "sceneId": "shot-08",
+      "timeUs": 74420000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-08-74499999.png",
+      "sha256": "56be301f145e611cf96d18d7755c13749043e6326c3a070e580f1c02babf323d",
+      "sceneId": "shot-08",
+      "timeUs": 74499999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-74500000.png",
+      "sha256": "d3da79d8760c2932e6848cab9a4cf7dfa0f8e898474ecc614f80927d1d3de63f",
+      "sceneId": "shot-09",
+      "timeUs": 74500000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-74500001.png",
+      "sha256": "2d1dc3e6d241a360e8a8fdcaf2d499f908e0ca347a7ccd184d2a2cf2efea08c4",
+      "sceneId": "shot-09",
+      "timeUs": 74500001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-74550000.png",
+      "sha256": "ffeb3f0236c8f3fbffaf1ef70f2619b18ca264b0c2be71bbb7a94177567d09c3",
+      "sceneId": "shot-09",
+      "timeUs": 74550000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-74620000.png",
+      "sha256": "b06fb982403c4d6ca0532a3c56d6dfe1d5f47eb4b1f8544bb82d47f5865fabd3",
+      "sceneId": "shot-09",
+      "timeUs": 74620000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-74725000.png",
+      "sha256": "438afec28e2b98f903d0c45eaebedf30c94e056ee407148b6138a83fe8ee094a",
+      "sceneId": "shot-09",
+      "timeUs": 74725000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-74740000.png",
+      "sha256": "cf8594f411f97ee50ed538201be45f1ec1219b05c5dacfbd99d4d9298bc32ec1",
+      "sceneId": "shot-09",
+      "timeUs": 74740000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-75000000.png",
+      "sha256": "48ac17295b7818c9da391c4790bde8350913fd0744655e351b9029d74ba752a4",
+      "sceneId": "shot-09",
+      "timeUs": 75000000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-76899999.png",
+      "sha256": "b4d975563c43ebea792d7c946dae8b2c2caef494be485155d2659489223e9ca6",
+      "sceneId": "shot-09",
+      "timeUs": 76899999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-76900001.png",
+      "sha256": "5e77ece4cb3d043ca48ec6c63dadd95f82d4d2b1ea4b0a06494c2e3811c1a266",
+      "sceneId": "shot-09",
+      "timeUs": 76900001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-77125000.png",
+      "sha256": "37e28066dbd51af2f1d782fd721208d7a6b89d7faaf001ef32e4e8f43a48c2c8",
+      "sceneId": "shot-09",
+      "timeUs": 77125000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-77400000.png",
+      "sha256": "e397551db52218bff12f43a81cf49de8568390620099f281e9c5dbbf2218d7e0",
+      "sceneId": "shot-09",
+      "timeUs": 77400000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-79819999.png",
+      "sha256": "d2757b33cda163a646cedbb86e7fb33e60ce585051c1eb342454aaf165dd7ed3",
+      "sceneId": "shot-09",
+      "timeUs": 79819999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-79820001.png",
+      "sha256": "ce298d9ac7878642ca5e558b25fea06b462b6383bc54ee3e4cb584eeeb8ed701",
+      "sceneId": "shot-09",
+      "timeUs": 79820001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-80045000.png",
+      "sha256": "501c7ab2b430955e3cef195838de7b0887498579ce3c99860d80e82dfd1d1000",
+      "sceneId": "shot-09",
+      "timeUs": 80045000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-80180000.png",
+      "sha256": "5dd4166a62ceadffe857b2d0529c8acac746e65371ca2c2bd74b2ba87b6712d1",
+      "sceneId": "shot-09",
+      "timeUs": 80180000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-80320000.png",
+      "sha256": "dde7688858f1ec6583d5dbae2935814bf9e7a5546ee0104d8b51c6ce11cb08ac",
+      "sceneId": "shot-09",
+      "timeUs": 80320000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-82699999.png",
+      "sha256": "8fe7ec8fee974e196cc681c9fa1c4694553d97fde4c82ddb70899a7c6fa76232",
+      "sceneId": "shot-09",
+      "timeUs": 82699999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-82700001.png",
+      "sha256": "fc6f24115e02e8cfbebc9d9a166a016667479de0a96f491a5337dd7b66a420d5",
+      "sceneId": "shot-09",
+      "timeUs": 82700001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-82925000.png",
+      "sha256": "224a1958b93ac24a4b40346c0402f486b4428c19d2e7f0b9f6fcdb51a939a0d7",
+      "sceneId": "shot-09",
+      "timeUs": 82925000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-83200000.png",
+      "sha256": "23cb2074a3761395ac0032e63a0d8c3cbf9f1ca00b12ee70d8a3b08157925cdf",
+      "sceneId": "shot-09",
+      "timeUs": 83200000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-84259999.png",
+      "sha256": "1c4d3a6e4bed607386fd5abb8810fc9cfccfb265a23cb7b0b60507fbd274a375",
+      "sceneId": "shot-09",
+      "timeUs": 84259999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-84260001.png",
+      "sha256": "5ca3902cf8efb16f40e89af6047330b7c1b53d5d3bde8175303ce0d8649b8e8f",
+      "sceneId": "shot-09",
+      "timeUs": 84260001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-84485000.png",
+      "sha256": "4a41449a3da6864b31a344624bd364fe5724f2c63df16e336c8a46b8cecebfa5",
+      "sceneId": "shot-09",
+      "timeUs": 84485000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-84760000.png",
+      "sha256": "1f9a521218b6fb74a015ff35a548c9b9a5de0ad08bb2fbc9872ba13aec49a62f",
+      "sceneId": "shot-09",
+      "timeUs": 84760000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-85700000.png",
+      "sha256": "bdbe766db100d95e3d486bae1cd9d4a6f5ddff00a0eccc74d513ef3c5da061e9",
+      "sceneId": "shot-09",
+      "timeUs": 85700000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-85780000.png",
+      "sha256": "1644351ea6d0c3f5a181d0f18f499a5c36d86972db5b27e48b212ec88c05727e",
+      "sceneId": "shot-09",
+      "timeUs": 85780000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-09-85859999.png",
+      "sha256": "4ede9871c28c26dd6d468b0772776e419616eecb5da783b5b91d44b9c7093c18",
+      "sceneId": "shot-09",
+      "timeUs": 85859999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-85860000.png",
+      "sha256": "47dc85ecc7238b2e60f50bcb754dd46655625ceb835806801efbf566e939c5a2",
+      "sceneId": "shot-10",
+      "timeUs": 85860000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-85860001.png",
+      "sha256": "570bb875eda5daa6ef731dc44c312452ebd3713277f953540d17d5fcfdae6f20",
+      "sceneId": "shot-10",
+      "timeUs": 85860001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-85910000.png",
+      "sha256": "a0a952ae33e10561632e9bbfdc205b691d6d329fdc94cf015bf520c9e5c35db0",
+      "sceneId": "shot-10",
+      "timeUs": 85910000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-85980000.png",
+      "sha256": "2e92f17b5451e4007357229350c0f4f3f43d0247ee2679eacd3d2ca09382ffbb",
+      "sceneId": "shot-10",
+      "timeUs": 85980000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-86085000.png",
+      "sha256": "1ce8ef97dc16c9d3ac161958eefc2e66005955e167122efde2957cbf223af9f1",
+      "sceneId": "shot-10",
+      "timeUs": 86085000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-86100000.png",
+      "sha256": "0c8f57a0e3951e26447e61d1c240f16d62ccf85220d3f45546633f7391816a57",
+      "sceneId": "shot-10",
+      "timeUs": 86100000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-86360000.png",
+      "sha256": "41dba54bd7f21f80aad45e518f581764b0e71c1f67f5132322994811f8a32b55",
+      "sceneId": "shot-10",
+      "timeUs": 86360000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-86699999.png",
+      "sha256": "fedb094dcdf6220d30e29434460fefb87d0f0292639e6eccae95e8f9755f8f58",
+      "sceneId": "shot-10",
+      "timeUs": 86699999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-86700001.png",
+      "sha256": "537f8ee2584048d945bd986a3b40e0c82035126621ae354a3d454940788c91ff",
+      "sceneId": "shot-10",
+      "timeUs": 86700001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-86925000.png",
+      "sha256": "571eb0bc5e400c36231f20baec8bd7436fb53667f67e1a89a8223517376bc0f2",
+      "sceneId": "shot-10",
+      "timeUs": 86925000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-87200000.png",
+      "sha256": "2a34cd98b5616d6fd4027bce5f4eb78702111130781796e68ecb994564c1f141",
+      "sceneId": "shot-10",
+      "timeUs": 87200000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-90585000.png",
+      "sha256": "a959b06b56d3fa1f8000836015adfd2eb649d28329e5b4e0df8b7bed9987f415",
+      "sceneId": "shot-10",
+      "timeUs": 90585000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-92829999.png",
+      "sha256": "2c05c2c73914dc34038b61627145c3d39a60ea587480828e37d96231fc2b73bf",
+      "sceneId": "shot-10",
+      "timeUs": 92829999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-92830001.png",
+      "sha256": "a1814762e8924bfdefe3cfaf0142317db95cb0b35d11e0ee50febb8cf706a142",
+      "sceneId": "shot-10",
+      "timeUs": 92830001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-93055000.png",
+      "sha256": "65592bc84b8b1d40033f67693e2ba702daf5436bc523a6e643417455b69896f1",
+      "sceneId": "shot-10",
+      "timeUs": 93055000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-93330000.png",
+      "sha256": "af605917fc5a82e3eadaf3fe99038d0c360711693add07f5696a1a4f791319ce",
+      "sceneId": "shot-10",
+      "timeUs": 93330000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-95150000.png",
+      "sha256": "88c29156197146d281e5d538d8720a5b730e35d5990276ce43ba70c8572d3a78",
+      "sceneId": "shot-10",
+      "timeUs": 95150000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-95230000.png",
+      "sha256": "3586b65737809b9a3df57d6a5cf2c4af2a31a9570c95d5d8275a422cb40cb42f",
+      "sceneId": "shot-10",
+      "timeUs": 95230000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-10-95309999.png",
+      "sha256": "f3afdb79fd04afc80e736e3c6e97e228dfdf6e7211902c12becd39fa243468b7",
+      "sceneId": "shot-10",
+      "timeUs": 95309999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-95310000.png",
+      "sha256": "738bf2c357915c979f157842aecdb4738609852ab913e75c3ff212b2ee6582c3",
+      "sceneId": "shot-11",
+      "timeUs": 95310000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-95310001.png",
+      "sha256": "c79937ae0ce0ba5791be5fed9d1fddd00991ebdadb772fff7f397373e145d837",
+      "sceneId": "shot-11",
+      "timeUs": 95310001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-95360000.png",
+      "sha256": "d304d6ce086082a4d19e78d3a2a99e038533ed53b0e82057b7545a170dbe9107",
+      "sceneId": "shot-11",
+      "timeUs": 95360000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-95430000.png",
+      "sha256": "370e39786bd66abcfd81817d51a788f49bd8b486b82afbddda529ca777ec9705",
+      "sceneId": "shot-11",
+      "timeUs": 95430000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-95535000.png",
+      "sha256": "b843c5b5783e26c340fc1c46e8171b11c7470a59c7a640fef4f59bcd8ca1509e",
+      "sceneId": "shot-11",
+      "timeUs": 95535000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-95550000.png",
+      "sha256": "60db15224f9f4807df66f75cb9164638a6c5013e800f387e4b003f2fce189867",
+      "sceneId": "shot-11",
+      "timeUs": 95550000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-95810000.png",
+      "sha256": "f0f892cd046548ce0303fdf4e6cd0a5162ec030db8af985963102a9519236053",
+      "sceneId": "shot-11",
+      "timeUs": 95810000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-96589999.png",
+      "sha256": "2a06f7e5ee52a59e1d85b48feea8b0a01763012d46a1ef4d67245d175d7bbb07",
+      "sceneId": "shot-11",
+      "timeUs": 96589999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-96590001.png",
+      "sha256": "552888c8bb077ec83a3dc158a03e7328b6bc22f0d774f0c63152b06e9fc5f756",
+      "sceneId": "shot-11",
+      "timeUs": 96590001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-96815000.png",
+      "sha256": "c4b1207de8cdb7b78642a3c146496223f82f3eb1831ea0394cb3943efbe9032a",
+      "sceneId": "shot-11",
+      "timeUs": 96815000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-97090000.png",
+      "sha256": "33c8416f6e86adfd1c072e16e9f6789b5a89ca92a4b9900c28d00d8c6830cf96",
+      "sceneId": "shot-11",
+      "timeUs": 97090000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-99300000.png",
+      "sha256": "dc6a4898e3676ecd56660b443d7d4dbb0249e4648f3a1160aae45b99475a255c",
+      "sceneId": "shot-11",
+      "timeUs": 99300000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-101809999.png",
+      "sha256": "ec8d12c5c1657e3e9ca9b32c1345db702150b4f52f791d2772c40c734c3dba6c",
+      "sceneId": "shot-11",
+      "timeUs": 101809999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-101810001.png",
+      "sha256": "d336bda7a027572230711c818ffac93d70671b847bb6d1eee3e7d0dc060b6838",
+      "sceneId": "shot-11",
+      "timeUs": 101810001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-102035000.png",
+      "sha256": "5b3393afef7a2bd6ace2f8012ab6b2a87e79d300c14f35d6e802554983faf594",
+      "sceneId": "shot-11",
+      "timeUs": 102035000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-102310000.png",
+      "sha256": "ad8c2aa2befed6f6e912d5dfb4d95564f3666f4eb0ac61c3f294fcfc7e27cf9e",
+      "sceneId": "shot-11",
+      "timeUs": 102310000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-103130000.png",
+      "sha256": "a1c1c18ed538891aa7c1e69aeff6220a27e81b78915a64b3f4c3228746b86844",
+      "sceneId": "shot-11",
+      "timeUs": 103130000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-103210000.png",
+      "sha256": "2fb2bed1d9a62d5c4e512b4bc9082d5a1943d4bf4ee626f85d8c80fb143dd878",
+      "sceneId": "shot-11",
+      "timeUs": 103210000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-11-103289999.png",
+      "sha256": "3f9e765056344c826866ab2949db672202d442a3d052c3a9aad43302155ab181",
+      "sceneId": "shot-11",
+      "timeUs": 103289999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-103290000.png",
+      "sha256": "f70ab19f5236385268444dd83f6018c9d420075ece881dc901229e2666712deb",
+      "sceneId": "shot-12",
+      "timeUs": 103290000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-103290001.png",
+      "sha256": "4cc052928eefb8203652b26a5017e959de38780ff50ac7f028768823068ea752",
+      "sceneId": "shot-12",
+      "timeUs": 103290001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-103340000.png",
+      "sha256": "1bb923650361627c5866e4be5fdfb5b05371df3d8524cb658a15d4c6d63fb6da",
+      "sceneId": "shot-12",
+      "timeUs": 103340000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-103410000.png",
+      "sha256": "a1d3282fafb1ff16fc963ebecbcba4a3a6c6f187c8e96768a6eb64cd549b7b23",
+      "sceneId": "shot-12",
+      "timeUs": 103410000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-103515000.png",
+      "sha256": "79f73e218f069635f0d6751492750161546557f96fd0355bdcdb7b41670c45b8",
+      "sceneId": "shot-12",
+      "timeUs": 103515000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-103530000.png",
+      "sha256": "645d11fc70954d237f6da19657d1fbc6cac82e7e26b23a13cb341275b2e159f6",
+      "sceneId": "shot-12",
+      "timeUs": 103530000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-103790000.png",
+      "sha256": "bb0bca4e32ce0f5053778cdeacc2db49279ca6c4b0bb0864faa68bce9ea2ab11",
+      "sceneId": "shot-12",
+      "timeUs": 103790000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-104489999.png",
+      "sha256": "b76e1596012df75b8590900c8b0ea0c7e9f199e33c936a3d8e5ed3154b0bcf59",
+      "sceneId": "shot-12",
+      "timeUs": 104489999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-104490001.png",
+      "sha256": "294a513132de89b3cf38e970548801cc6bf77fb00f1f2acd0b91f4311bf050ab",
+      "sceneId": "shot-12",
+      "timeUs": 104490001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-104715000.png",
+      "sha256": "4d427ba7e7c2692f22ac37c8ff5710acef222fb0cfa8817c3d5ebcf4c9fbcd7a",
+      "sceneId": "shot-12",
+      "timeUs": 104715000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-104990000.png",
+      "sha256": "551fbac11f34b811b7675fe7b69ea274acbeea462eecb5d896c1eb554f56fbdc",
+      "sceneId": "shot-12",
+      "timeUs": 104990000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-107249999.png",
+      "sha256": "9c754e665bc1a32fc25e8b0a427dd0fd460b75867a42b1ccc2ce4b0337db15da",
+      "sceneId": "shot-12",
+      "timeUs": 107249999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-107250001.png",
+      "sha256": "5d5a8dbecf3ecd08aca5811981d2f21d6cc7befae483d8520ee65185f6e12f3a",
+      "sceneId": "shot-12",
+      "timeUs": 107250001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-107475000.png",
+      "sha256": "925a33e74089853b57c55f12e9053581e550aaad5a01848ef24d363a41740c44",
+      "sceneId": "shot-12",
+      "timeUs": 107475000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-107620000.png",
+      "sha256": "5b5ca826077807462fbc70cae30fbdd0840398ed878d8e28ab6f6a139c778c6a",
+      "sceneId": "shot-12",
+      "timeUs": 107620000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-107750000.png",
+      "sha256": "3eccb7805f393d01365ce53054743456fba96ce9a21e22c0abccd1f79db76053",
+      "sceneId": "shot-12",
+      "timeUs": 107750000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-108809999.png",
+      "sha256": "b31aefd37d9bbb13464919232f6e92136ad29f373356b96ceb52eb5b122f8878",
+      "sceneId": "shot-12",
+      "timeUs": 108809999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-108810001.png",
+      "sha256": "7f6fc2ada7deb54340fc393c0ca77432260db44d25fb11b29bedee3fa33ff6c4",
+      "sceneId": "shot-12",
+      "timeUs": 108810001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-109035000.png",
+      "sha256": "6438466b7b5cfaadbc6e3ca07a6006840ef4ca05669f3103a795655edd5a5ac6",
+      "sceneId": "shot-12",
+      "timeUs": 109035000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-109310000.png",
+      "sha256": "8d16f1c50d9484a7caf2bd3d200dacf0630ccd10ffbf2d5bbc92b94f5288f120",
+      "sceneId": "shot-12",
+      "timeUs": 109310000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-110549999.png",
+      "sha256": "ea3547d24a9d8250bdef04023c6720bfea96c7e1a8f49ff70ce99f5489c99dab",
+      "sceneId": "shot-12",
+      "timeUs": 110549999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-110550001.png",
+      "sha256": "1072369ce976e8bca733f41998753187456a8ed4ebf1f5c110ec459a6b815e40",
+      "sceneId": "shot-12",
+      "timeUs": 110550001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-110775000.png",
+      "sha256": "f45cf5c9402d1a2751c5639f8711f8f7465157f3df2d46f1a7f3ede42305e401",
+      "sceneId": "shot-12",
+      "timeUs": 110775000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-111050000.png",
+      "sha256": "00ce5715d8f8ade48907bcbc196413c872f59569b2c3b06a5f9910c20805f130",
+      "sceneId": "shot-12",
+      "timeUs": 111050000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-111790000.png",
+      "sha256": "d4c171ecb61b856bcecb1ee6043ce166163b6ebc4ff09bc09d3077847bad367c",
+      "sceneId": "shot-12",
+      "timeUs": 111790000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-111870000.png",
+      "sha256": "c61939cef3df09f43ba412fd1fed2f74ed1b88b526bc67847302bee4543fe4e7",
+      "sceneId": "shot-12",
+      "timeUs": 111870000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-12-111949999.png",
+      "sha256": "b8f5fdcd138cb78f25c6eb71a852a6faaa8b64e3b2b088d31ef165bfb84d62cb",
+      "sceneId": "shot-12",
+      "timeUs": 111949999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-111950000.png",
+      "sha256": "0112f2339eb8bbf2c79aa0360c390d574c8a4f14ba93ea969a8ab456cf49f1ef",
+      "sceneId": "shot-13",
+      "timeUs": 111950000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-111950001.png",
+      "sha256": "84a24baff336fe975d3e6ba02692c63e19e3f1af86913859b507d932d570b4ce",
+      "sceneId": "shot-13",
+      "timeUs": 111950001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112000000.png",
+      "sha256": "1547bff9031e54213b0e861ab2049e4b7e8cd8e1efc5df57dd628dc7f6374f71",
+      "sceneId": "shot-13",
+      "timeUs": 112000000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112070000.png",
+      "sha256": "721bf9934bed2b51b642e0307ffe58b697ac3ebefc9aa71ab7dae4f374c9b9f8",
+      "sceneId": "shot-13",
+      "timeUs": 112070000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112175000.png",
+      "sha256": "380921ff300cd089c5a97a95263ff3acde49c0e79932dd952ab2404a9245c16e",
+      "sceneId": "shot-13",
+      "timeUs": 112175000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112190000.png",
+      "sha256": "f61a07ec0a6b4a2fbfc7e5dd2313a724b7c341e364ae854bac59d9799c33c524",
+      "sceneId": "shot-13",
+      "timeUs": 112190000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112269999.png",
+      "sha256": "5e5818b274d356f4e7108b8072472e8b8187ae173068257a986b02c8aa5e3ce9",
+      "sceneId": "shot-13",
+      "timeUs": 112269999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112270001.png",
+      "sha256": "f1551f18ed935e49058a1944d6e29e5fcfa791688e56d98263fd6f1843373f5f",
+      "sceneId": "shot-13",
+      "timeUs": 112270001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112450000.png",
+      "sha256": "3fb6edfc5dd14d924c89314b974a53a5a856f75f9d12ddcf0a5c50113bc3e45b",
+      "sceneId": "shot-13",
+      "timeUs": 112450000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112495000.png",
+      "sha256": "9262424a9752bbab451c613253ad222a944e1c45a6440745312bf2c76b8cbeff",
+      "sceneId": "shot-13",
+      "timeUs": 112495000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-112770000.png",
+      "sha256": "c5add9358d81517862db9d54f5fd8abb551128927e75ed083c783a7ef544ee11",
+      "sceneId": "shot-13",
+      "timeUs": 112770000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-115630000.png",
+      "sha256": "d810436ede5aaf6c886cf5942c373b5dc6f84c66f7c9c562a2efcb4795e55512",
+      "sceneId": "shot-13",
+      "timeUs": 115630000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-117829999.png",
+      "sha256": "540fc4060009bc7553b2d61704526ecb1c07312746fbebc22e2393ee5ef2f317",
+      "sceneId": "shot-13",
+      "timeUs": 117829999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-117830001.png",
+      "sha256": "6f1303fbaca7d88848fd8560f91edcc0396e140183807e65e9a50ed820693181",
+      "sceneId": "shot-13",
+      "timeUs": 117830001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-118055000.png",
+      "sha256": "3fba00ba7d0921c2a69846930aa9e312e4920f4d7a306f3015a35373d1485109",
+      "sceneId": "shot-13",
+      "timeUs": 118055000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-118330000.png",
+      "sha256": "24f9d3c58db34448cb6b986b80a22ec2e3e5efd056bb85f8100bdc32f7a542ed",
+      "sceneId": "shot-13",
+      "timeUs": 118330000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-119150000.png",
+      "sha256": "92ccfef61637cd8ca44379dcee41043cafd9f430e9854138c42538aad8edce94",
+      "sceneId": "shot-13",
+      "timeUs": 119150000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-119230000.png",
+      "sha256": "bf599550a43584e1314939a124f46a2ce64bd140006bc5118888dbc98672ca0c",
+      "sceneId": "shot-13",
+      "timeUs": 119230000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-13-119309999.png",
+      "sha256": "f6b6635a47a76955375323114328a2fe0328af2606e36be0da68fd03e435748a",
+      "sceneId": "shot-13",
+      "timeUs": 119309999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119310000.png",
+      "sha256": "3e674212b5de953837bba2a0351ee40abae4de638bbead7aff2abb729c0127a2",
+      "sceneId": "shot-14",
+      "timeUs": 119310000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119310001.png",
+      "sha256": "54729d2f3384612933d059840b1671c4577bf1d93d47cc8cca498ae0433bcb3c",
+      "sceneId": "shot-14",
+      "timeUs": 119310001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119360000.png",
+      "sha256": "8a929038e997996fece64e7430ee518c866c814eae063b57d4c6b6b31a543369",
+      "sceneId": "shot-14",
+      "timeUs": 119360000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119430000.png",
+      "sha256": "c159b93facfa38e9d28f2e5916a5081bcaf5cfdd15db5169b025bbb9609aa8ef",
+      "sceneId": "shot-14",
+      "timeUs": 119430000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119535000.png",
+      "sha256": "d6bf205775a73cff4667cfb5318fd667d2954cb459865061106d3676de2de1d5",
+      "sceneId": "shot-14",
+      "timeUs": 119535000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119550000.png",
+      "sha256": "fdab0ff8b9c9e5a0334d6c19982e79174b76e044c52b73a4085564a5eb467cba",
+      "sceneId": "shot-14",
+      "timeUs": 119550000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119810000.png",
+      "sha256": "023889a70c5c808c03f90baf4cc5032f6cf161d453a45c33af7d133127c6bd59",
+      "sceneId": "shot-14",
+      "timeUs": 119810000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119949999.png",
+      "sha256": "4c6dfb7080346d0fed47417d7a474cdbe27373e6511a6f7b3c428b891910d622",
+      "sceneId": "shot-14",
+      "timeUs": 119949999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-119950001.png",
+      "sha256": "f425f1fd50363b357fd679fffd51a9842467d2c35f80da11dda8f1012f805c25",
+      "sceneId": "shot-14",
+      "timeUs": 119950001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-120175000.png",
+      "sha256": "c344127eba6a8c5ec8bfddde0c130e8c762719b2d4196450c0b5f46aaae9e4b3",
+      "sceneId": "shot-14",
+      "timeUs": 120175000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-120450000.png",
+      "sha256": "cb899e67c0b9868ba8a145738489dcab3b0666ae8227a33aa418c4b0f81216b0",
+      "sceneId": "shot-14",
+      "timeUs": 120450000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-121309999.png",
+      "sha256": "80af79a0abbd710200f96d387803d5900d50ce7835b2ace3d6ac036734d7689b",
+      "sceneId": "shot-14",
+      "timeUs": 121309999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-121310001.png",
+      "sha256": "218964b31031b4c7d6f4bcdc1a99580aa1eb988de8ab850c2a90c66be946ec65",
+      "sceneId": "shot-14",
+      "timeUs": 121310001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-121535000.png",
+      "sha256": "3ad60c54de684ad8a2ef1e54762a346de2e8fcfe146aa012b2e207014c805ae1",
+      "sceneId": "shot-14",
+      "timeUs": 121535000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-121810000.png",
+      "sha256": "59cec39065a3666e804cff2bc69789e23fe3c41935808145fe56e31a66211ec3",
+      "sceneId": "shot-14",
+      "timeUs": 121810000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-122795000.png",
+      "sha256": "2c5712461fcfcf29d05bc2ec4ac53a05e8acabea6862cfac309168b8fd9482d0",
+      "sceneId": "shot-14",
+      "timeUs": 122795000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-122869999.png",
+      "sha256": "57a3cad44a02042d8e6ac865d0e9ab03d5369df2a50ecf98b8bfebeeed1151e3",
+      "sceneId": "shot-14",
+      "timeUs": 122869999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-122870001.png",
+      "sha256": "f448244884449d9d6ef6685dffc7e97edc8dbc5645fa9873f76c00dd7f93592c",
+      "sceneId": "shot-14",
+      "timeUs": 122870001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-123095000.png",
+      "sha256": "ab07157a46d584801050de2dcee651479c2f6e1bc1a81c19566becdad0fbe288",
+      "sceneId": "shot-14",
+      "timeUs": 123095000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-123370000.png",
+      "sha256": "30bfdd192ccca84ad4eb28d92f56292530233e942d5992c71dd82efaf47c2556",
+      "sceneId": "shot-14",
+      "timeUs": 123370000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-124469999.png",
+      "sha256": "53596a8d9833a3cbc00b6f1cf90139f3533a0ddc9642822eedd7ebad0353a049",
+      "sceneId": "shot-14",
+      "timeUs": 124469999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-124470001.png",
+      "sha256": "703a2c5560dee3101523ca0402750076ba759034a8f02a3275f1f5f5859bc570",
+      "sceneId": "shot-14",
+      "timeUs": 124470001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-124695000.png",
+      "sha256": "eb06369a575c64a915d3701fd092de90bb40674871ddfd0afc90540a2eb8c51e",
+      "sceneId": "shot-14",
+      "timeUs": 124695000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-124970000.png",
+      "sha256": "2a798d9227cb41c268126d8cb37a2d42728b449cb12da4fbedfe5fba3b5547f9",
+      "sceneId": "shot-14",
+      "timeUs": 124970000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-126120000.png",
+      "sha256": "3a7c7b71191f4a8ef93162638e0a4451095a31469b95c93e30478dd44d415634",
+      "sceneId": "shot-14",
+      "timeUs": 126120000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-126200000.png",
+      "sha256": "ff9487db6870afa898fb1ec5d3f28dacd26a6adfaab86aa76856662bfd2ffa6c",
+      "sceneId": "shot-14",
+      "timeUs": 126200000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-14-126279999.png",
+      "sha256": "e3a54b74bc87c3328243e1fe782ec32f9e68875b95acb1ca9e2f204a3184c1a0",
+      "sceneId": "shot-14",
+      "timeUs": 126279999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-126280000.png",
+      "sha256": "bdf161cb93d429de66acf1ac938c11bd024310a32b625e888674db39a33a3375",
+      "sceneId": "shot-15",
+      "timeUs": 126280000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-126280001.png",
+      "sha256": "db4ef37ac8f5618b1c77bfc0d3e2b81cc296fedba94f798a58071082f9ae6f36",
+      "sceneId": "shot-15",
+      "timeUs": 126280001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-126330000.png",
+      "sha256": "41731f08924737dd2891ed28b2ebe9922f3340aa2b206ef31f3d56ded47852c3",
+      "sceneId": "shot-15",
+      "timeUs": 126330000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-126400000.png",
+      "sha256": "636e60f2de148398c485f99da1db09309dd5f7e9b9a94a7ff212142b2458e44d",
+      "sceneId": "shot-15",
+      "timeUs": 126400000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-126505000.png",
+      "sha256": "589a49f8815a87129e090d351ed7e7740d0eacf94406893f98cc9c9d5bebf7c0",
+      "sceneId": "shot-15",
+      "timeUs": 126505000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-126520000.png",
+      "sha256": "986827395135e88dc54ccfe04dc2dd96a1150b6d7ec6fd966725fcc4d685e768",
+      "sceneId": "shot-15",
+      "timeUs": 126520000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-126780000.png",
+      "sha256": "b8ec8b160036b826371fe381dc23ce7beb6df92ec201a6b792b4a7f41cf401d3",
+      "sceneId": "shot-15",
+      "timeUs": 126780000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-128559999.png",
+      "sha256": "edf2d880131c67feffa7a6fa69f4c026e09f86f6acd315dff502bc4b64ea8220",
+      "sceneId": "shot-15",
+      "timeUs": 128559999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-128560001.png",
+      "sha256": "c722c30214faab52857e7ec7a5f748bfe001c83d24fc5ad73acecbd6695406a9",
+      "sceneId": "shot-15",
+      "timeUs": 128560001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-128785000.png",
+      "sha256": "39e10117a2d638831026cf64fc3ec1080ae495c1c598b1d3ca8c3cf7e7ac45c2",
+      "sceneId": "shot-15",
+      "timeUs": 128785000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-129060000.png",
+      "sha256": "224ecb02ddf0355ff683652b250c3e5126eaf2b15caecea3e09a60be9b6f0ec9",
+      "sceneId": "shot-15",
+      "timeUs": 129060000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-129420000.png",
+      "sha256": "c5146483a1a10617e31acbeae2c5cb1da4916169ba3fbe604b60788464a406c9",
+      "sceneId": "shot-15",
+      "timeUs": 129420000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-130679999.png",
+      "sha256": "9d44b727038d34ec33b054a46789d5aef83040725a254ee0c86057efaa135d90",
+      "sceneId": "shot-15",
+      "timeUs": 130679999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-130680001.png",
+      "sha256": "a190b85e79c6f631d5c004355c9f06d6468c4081f7f07e427c225ed944297352",
+      "sceneId": "shot-15",
+      "timeUs": 130680001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-130905000.png",
+      "sha256": "5dafe84d800575d874d86e85079546c8529c15fe2bdba96c7118a576c6656827",
+      "sceneId": "shot-15",
+      "timeUs": 130905000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-131180000.png",
+      "sha256": "1beff78845cc129a9ffe4cf89b7f3f7bb91a8f6286ff2b322924529b5387d48e",
+      "sceneId": "shot-15",
+      "timeUs": 131180000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-132400000.png",
+      "sha256": "373a8e3d00faef7535e2ce21ae01bd44d3f8cc17f0674928dd50336707c5b64a",
+      "sceneId": "shot-15",
+      "timeUs": 132400000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-132480000.png",
+      "sha256": "6b61372d009e405648700859df27053169cfe1fda26a3329f7d28413e4313d0a",
+      "sceneId": "shot-15",
+      "timeUs": 132480000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-15-132559999.png",
+      "sha256": "c9bfeee3443aca0cc542aa21c3d9d16afd8de1b1d38676f1fe5bb0e6ad1375fd",
+      "sceneId": "shot-15",
+      "timeUs": 132559999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-132560000.png",
+      "sha256": "a4c8260234a7ea5c93482a6e0dc17475366c0dbac58bdf4be28c008217122d24",
+      "sceneId": "shot-16",
+      "timeUs": 132560000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-132560001.png",
+      "sha256": "46eea1e2608f1f8cc2c022319a3a4f0c628176d468ee0a08923dbeb5c62d524e",
+      "sceneId": "shot-16",
+      "timeUs": 132560001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-132610000.png",
+      "sha256": "72d341a1d41171a6ab8b76ff5f7d15303531ec9e0def7122bdb3b9b793653fa1",
+      "sceneId": "shot-16",
+      "timeUs": 132610000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-132680000.png",
+      "sha256": "c953b0bdf2de0ac2448bc172d3752f7f671866b5c0b45eba11177fa6fadd7721",
+      "sceneId": "shot-16",
+      "timeUs": 132680000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-132785000.png",
+      "sha256": "e1cde90a809ede56d550ec9ac51b09d8fd0d01f2b4ba8f74c0d39cf21ffc93ae",
+      "sceneId": "shot-16",
+      "timeUs": 132785000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-132800000.png",
+      "sha256": "ae73ac203691f27c05d1980d719c73cbc317518d49201433f6fb3f1cabceb205",
+      "sceneId": "shot-16",
+      "timeUs": 132800000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-133060000.png",
+      "sha256": "45ca7f33b8c92bbe9f8ff33f8f0962c7956536f5fbc52961507088e399907013",
+      "sceneId": "shot-16",
+      "timeUs": 133060000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-133479999.png",
+      "sha256": "f6a490b0c645d616e68528abe6e668a66c82c25138e507d0c3f237606152b1e0",
+      "sceneId": "shot-16",
+      "timeUs": 133479999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-133480001.png",
+      "sha256": "be8f69a8effc9611f79b4e23350e80b75b2305fe9cd289c73b05278e7484345a",
+      "sceneId": "shot-16",
+      "timeUs": 133480001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-133705000.png",
+      "sha256": "a9ad0326d25fdc8b8fee9f192f6b9dd41e896f5b2fcc06c5fd11c7842df797b7",
+      "sceneId": "shot-16",
+      "timeUs": 133705000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-133980000.png",
+      "sha256": "e9002c2866a78266fb29ad126ef8acb32162c0d31c133c30ba7ed3b46cdd5cf3",
+      "sceneId": "shot-16",
+      "timeUs": 133980000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-135800000.png",
+      "sha256": "56075688fff4763a52f9d44f686939b242fa5da61f90d608916e1f304e5cfb06",
+      "sceneId": "shot-16",
+      "timeUs": 135800000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-137359999.png",
+      "sha256": "d55b2818b345869d8a16c541f911a0cbd5956aef496f078a5290327089db3e4b",
+      "sceneId": "shot-16",
+      "timeUs": 137359999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-137360001.png",
+      "sha256": "950f4878203fa0c98f38ae443c4d9ad2247e9858ad067bdc3f415ab1050ad1fc",
+      "sceneId": "shot-16",
+      "timeUs": 137360001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-137585000.png",
+      "sha256": "ee6c6b603cab4c191ac6c012ed3deb5d1b9b0fc107a5c2eb1a5d15641a5ba9d3",
+      "sceneId": "shot-16",
+      "timeUs": 137585000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-137860000.png",
+      "sha256": "6baf1f1b24b2d4ebb37abb9435775e34de07a4971d1256deb43a22c30086fbfc",
+      "sceneId": "shot-16",
+      "timeUs": 137860000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-138880000.png",
+      "sha256": "cb8b101c6bc27bc61854ec68b0e697873ed41eed2310ddf13dc312a544122c12",
+      "sceneId": "shot-16",
+      "timeUs": 138880000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-138960000.png",
+      "sha256": "07a4b1988a9e4482c9261b2d3d9db17c8a9941c738799a3964cc1c021cf55e7b",
+      "sceneId": "shot-16",
+      "timeUs": 138960000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-16-139039999.png",
+      "sha256": "93e667bc1f915b8d1ef7265f1c83bb91ad8a32853f857d8ff77649c9c18ce9c7",
+      "sceneId": "shot-16",
+      "timeUs": 139039999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-139040000.png",
+      "sha256": "b886ccc5bd207d92c6d7bc6bc9f4bf6f9ce5141fb6206d9c07bbd69f5d88201f",
+      "sceneId": "shot-17",
+      "timeUs": 139040000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-139040001.png",
+      "sha256": "8f581037a8a705b63b719603865b6c1d75814b111ab68c113160311c95826bd1",
+      "sceneId": "shot-17",
+      "timeUs": 139040001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-139090000.png",
+      "sha256": "9dde3becc19196e97e5d47a10a87875908770c7e83360420cd8b896bd966ffdd",
+      "sceneId": "shot-17",
+      "timeUs": 139090000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-139160000.png",
+      "sha256": "b9b0916988b8d8ab6cad257ad9a7843ac20858365085c98c427c79c0eebc0f34",
+      "sceneId": "shot-17",
+      "timeUs": 139160000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-139265000.png",
+      "sha256": "1de5ea0dcb75b6473631eb49e3761e83b9445eb3388ae10be6715851b96fec49",
+      "sceneId": "shot-17",
+      "timeUs": 139265000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-139280000.png",
+      "sha256": "f5ecdab879c869bc6bf16c3de868178b29e0cbdbbe21d6369367585429ab9d07",
+      "sceneId": "shot-17",
+      "timeUs": 139280000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-139540000.png",
+      "sha256": "e16ad87799e597e8a01d1301760298b603db645cf3ef558ab221e3cceab6299e",
+      "sceneId": "shot-17",
+      "timeUs": 139540000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-140319999.png",
+      "sha256": "042442cbf9dc05284d039212b2dbe1e5562a0310b6baa01a1d0bfd300b8ed7de",
+      "sceneId": "shot-17",
+      "timeUs": 140319999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-140320001.png",
+      "sha256": "0aab310a30a258176895fe7f03a92e278aa88b4786aca658171c6446604f06eb",
+      "sceneId": "shot-17",
+      "timeUs": 140320001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-140545000.png",
+      "sha256": "5664b06192a5239e8750dba69f596dd63e03ec79c7cb19856c741dc1d4b85afd",
+      "sceneId": "shot-17",
+      "timeUs": 140545000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-140820000.png",
+      "sha256": "2f8d5ccb1b5df623fd520e07071cfdebeb8447ebacca356837f3a86c4ffcfa9c",
+      "sceneId": "shot-17",
+      "timeUs": 140820000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-142609999.png",
+      "sha256": "fd5320416eb94242293415837492738f27d9a869bbb20ec82817a6a2670df2e1",
+      "sceneId": "shot-17",
+      "timeUs": 142609999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-142610001.png",
+      "sha256": "4845b6c9a59cbbdee028bb6f8e7004c87302a0be341813e7757e378f4f94479d",
+      "sceneId": "shot-17",
+      "timeUs": 142610001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-142835000.png",
+      "sha256": "b946ab924f4a498df32f2af0bbcf7be39f1fad782c65e11ccc68fa72f12039e9",
+      "sceneId": "shot-17",
+      "timeUs": 142835000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-143110000.png",
+      "sha256": "4ebbe46a258e694d2702ec17975c42f9affaf9e4d81216cad3e33bc2c0c4478d",
+      "sceneId": "shot-17",
+      "timeUs": 143110000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-144085000.png",
+      "sha256": "e482f049d824e096c5d2b72c916d08d86c470922bac18e62dd30081801999eb6",
+      "sceneId": "shot-17",
+      "timeUs": 144085000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-144769999.png",
+      "sha256": "c5958521ef1ed85f6cd1002e26538d4f981e1bb85b2f54642467a940203377e5",
+      "sceneId": "shot-17",
+      "timeUs": 144769999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-144770001.png",
+      "sha256": "0995c8d7f5cfd73fec590ea228ef7ded587412a5ab3141b6f758f7a4558c53b7",
+      "sceneId": "shot-17",
+      "timeUs": 144770001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-144995000.png",
+      "sha256": "7b798088840e042c265a011917a99d95693a1908abf418d4e905cd77b89c59c3",
+      "sceneId": "shot-17",
+      "timeUs": 144995000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-145270000.png",
+      "sha256": "065976cf242f4693c4419e43dd32d2da79ddf2f7462163040aeb066e25d5c767",
+      "sceneId": "shot-17",
+      "timeUs": 145270000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-146569999.png",
+      "sha256": "f346f3ce6a4b4b3c188b1b7124a9749ad93ebf6af4c73fe0781c27c605708609",
+      "sceneId": "shot-17",
+      "timeUs": 146569999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-146570001.png",
+      "sha256": "39150c3162f38b927513d11c7094602ea33a5c416a02ba6bcc6bd4553e3de2bd",
+      "sceneId": "shot-17",
+      "timeUs": 146570001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-146795000.png",
+      "sha256": "fec6374b423c30eb55380bdd31cc9b7d5152050ea16a992b40ea64bc590dcf1c",
+      "sceneId": "shot-17",
+      "timeUs": 146795000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-147070000.png",
+      "sha256": "5ba675c8382bb2ee85aa254cdc76a45c2e8e212101d51b0e437aa9146dbd535b",
+      "sceneId": "shot-17",
+      "timeUs": 147070000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-148970000.png",
+      "sha256": "be964610759e1cb29baf28ccc9b102c198e2a8671c095828236d5cfd9fedeec5",
+      "sceneId": "shot-17",
+      "timeUs": 148970000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-149050000.png",
+      "sha256": "c4896c4bc9db6ff992ac1de0d57dd221efaae038d6929f8009492e284d167275",
+      "sceneId": "shot-17",
+      "timeUs": 149050000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-17-149129999.png",
+      "sha256": "c6a20f8883144835ec60e2118b330813838e883a264555a9b25667109367d5a9",
+      "sceneId": "shot-17",
+      "timeUs": 149129999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-149130000.png",
+      "sha256": "e51c3ebb57d2615c59c2b31ceeb7a636987bfbef6087a3fd7a752569e69a89d0",
+      "sceneId": "shot-18",
+      "timeUs": 149130000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-149130001.png",
+      "sha256": "59b12c163a6cd702b42785fa90d67daa6f2cfae7101f83999480cfa1381e025f",
+      "sceneId": "shot-18",
+      "timeUs": 149130001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-149180000.png",
+      "sha256": "8427b70c66db402df493445d50ade1986349f54548f7949981acf6bf6d0a0da8",
+      "sceneId": "shot-18",
+      "timeUs": 149180000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-149250000.png",
+      "sha256": "e4117aee0ade24bc1c7c3027524567ee48ea44012b81243ed58ae29de5e3d729",
+      "sceneId": "shot-18",
+      "timeUs": 149250000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-149355000.png",
+      "sha256": "15e53cc1f0d01c5b1109eb3ab2c966742dc5213ab9c5af57ff5bfaa51101cdda",
+      "sceneId": "shot-18",
+      "timeUs": 149355000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-149370000.png",
+      "sha256": "e7716e48ff160d1b0e75d2ceaf1fa147d179baaded535e3ccdcdd78f9e86e36d",
+      "sceneId": "shot-18",
+      "timeUs": 149370000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-149630000.png",
+      "sha256": "5635a518ada12458cd3f1fdb1f92d9baedc55d8e440998f374393043a4e442a9",
+      "sceneId": "shot-18",
+      "timeUs": 149630000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-151169999.png",
+      "sha256": "51cf168e6f4a3c8fd72b76d30677da31dd3e70971b8052c7adfe78fc2843a315",
+      "sceneId": "shot-18",
+      "timeUs": 151169999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-151170001.png",
+      "sha256": "403bc555dfb96ae2163deb36d4f3d42d90c91cf6958592b5aeb2e297995d10df",
+      "sceneId": "shot-18",
+      "timeUs": 151170001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-151395000.png",
+      "sha256": "ecd05e4c76150e2f946c90bea11b3071cae8b9a0474d05a6b8a9356cb7823a85",
+      "sceneId": "shot-18",
+      "timeUs": 151395000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-151670000.png",
+      "sha256": "5f4534637c0b2657fb01ffb318ac3b6e3fd829cf935aabcb5e1714f709157b94",
+      "sceneId": "shot-18",
+      "timeUs": 151670000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-154615812.png",
+      "sha256": "3b3ee97b5a9b307a0e52f34c0e58ab8b0470708a42b45176f18693714986b60b",
+      "sceneId": "shot-18",
+      "timeUs": 154615812,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-159249999.png",
+      "sha256": "4fe1be2a19b0a4d6811e0699894613a01a4b61fcbc26ff7aa09215f03c7ecde3",
+      "sceneId": "shot-18",
+      "timeUs": 159249999,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-159250001.png",
+      "sha256": "94603b26a785b658455e5b351dbc5c832997568af43f41678e68cb6c8d6a734c",
+      "sceneId": "shot-18",
+      "timeUs": 159250001,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-159475000.png",
+      "sha256": "77687703d5ea03e9b01c7d6b6a02fb62486e600f8ef9a06b730217d5d82387ed",
+      "sceneId": "shot-18",
+      "timeUs": 159475000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-159750000.png",
+      "sha256": "b39d65f767581f345e84bad88d7c1c682cf49584df7051875e9ca742e4ac8f08",
+      "sceneId": "shot-18",
+      "timeUs": 159750000,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-18-160101624.png",
+      "sha256": "11bd014807f058f5c14318fc0a1c3063ce1aa1c81b21eb47ac2dc7922bc595ea",
+      "sceneId": "shot-18",
+      "timeUs": 160101624,
+      "viewport": "1080x1920"
+    },
+    {
+      "file": "frames/shot-01-mobile.png",
+      "sha256": "cc7f6de91ef114c4238d393c4c28643cea5f84f64d9e702de9572eff605942f5",
+      "sceneId": "shot-01",
+      "timeUs": 1000000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-02-mobile.png",
+      "sha256": "e619d3c3a241aba0f675b6fdb21d8411fa4c5c4623f61cb00fd92259fd874189",
+      "sceneId": "shot-02",
+      "timeUs": 7680000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-03-mobile.png",
+      "sha256": "12db0a79f9965bae61f859b5248d557c1f6553ce966963196ab4166786455efe",
+      "sceneId": "shot-03",
+      "timeUs": 16040000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-04-mobile.png",
+      "sha256": "76195ea4aea2772eedb4a83f51e81887fac5f356d4b5c99b258b85194b5a046c",
+      "sceneId": "shot-04",
+      "timeUs": 22960000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-05-mobile.png",
+      "sha256": "78b87a87f2703a6941dac42e91e7f06d54c0d33ee8229efe7fb45c1f1262538c",
+      "sceneId": "shot-05",
+      "timeUs": 31830000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-06-mobile.png",
+      "sha256": "7fb908c684c693c51269abf1a1968cc2c26b5d7171c9cf22c8b98b8747e7db69",
+      "sceneId": "shot-06",
+      "timeUs": 44980000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-07-mobile.png",
+      "sha256": "f12f9b51d8ade85b3a6c3f9696503b448381ca9d00b30ea494261ebe7c5f6e6d",
+      "sceneId": "shot-07",
+      "timeUs": 57960000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-08-mobile.png",
+      "sha256": "7ab4f2497f2ed61575e3c87525e9ea5ece1f82031c0f9fbde03873d242240933",
+      "sceneId": "shot-08",
+      "timeUs": 68120000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-09-mobile.png",
+      "sha256": "1692063258ef6927b4fd09edd26c9d71cc625444bcc0bceffdc037711b3b22e0",
+      "sceneId": "shot-09",
+      "timeUs": 75500000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-10-mobile.png",
+      "sha256": "da5bdf2078bd4f08f0226ae8a7135d9218debd808e1d4267fa8d2f47ac6321c0",
+      "sceneId": "shot-10",
+      "timeUs": 86860000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-11-mobile.png",
+      "sha256": "6f0bcac7f79e4b39c112d72e64940951ba5e216248bfb4fed9eac8b3a668af25",
+      "sceneId": "shot-11",
+      "timeUs": 96310000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-12-mobile.png",
+      "sha256": "ac07a50b657c2e8d2d5614aec554e82684c4c297e4a80dfec55a202ad1077813",
+      "sceneId": "shot-12",
+      "timeUs": 104290000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-13-mobile.png",
+      "sha256": "8322a21453a113b86b7aeac1dffac785e4708a29820c36fd90addcfbd9988e9b",
+      "sceneId": "shot-13",
+      "timeUs": 112950000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-14-mobile.png",
+      "sha256": "5296b2ab20d36f80e92e55ffed11679dc1a1e4dfaa0a164929b6435ca7b39252",
+      "sceneId": "shot-14",
+      "timeUs": 120310000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-15-mobile.png",
+      "sha256": "c37f82a028c7dba90dd63b6b4ba7a5d2fcffa19775b18a648c556ef90c65302b",
+      "sceneId": "shot-15",
+      "timeUs": 127280000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-16-mobile.png",
+      "sha256": "14e0fc7b46511a62162a8da0435e91fa1a1db682a25716a66fe9cbcc35adfdf2",
+      "sceneId": "shot-16",
+      "timeUs": 133560000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-17-mobile.png",
+      "sha256": "6506556b26e715dff1400da627aac8eaaf64708008ddbe91ed553dfb101f50fa",
+      "sceneId": "shot-17",
+      "timeUs": 140040000,
+      "viewport": "440x956"
+    },
+    {
+      "file": "frames/shot-18-mobile.png",
+      "sha256": "0814b05e8b428dee0bfc93e13c9b6fa8003c7f65b069ecf7f990064118a9231e",
+      "sceneId": "shot-18",
+      "timeUs": 150130000,
+      "viewport": "440x956"
+    }
+  ],
+  "reviewCriteria": {
+    "scientificMeaning": "pending",
+    "narrationSync": "pending",
+    "semanticCaptions": "pending",
+    "visualRhythm": "pending",
+    "backgroundQuality": "pending",
+    "mobileReadability": "pending",
+    "soundMix": "pending",
+    "ending": "pending"
+  },
+  "capabilityNotes": [
+    "Dynamic presentation; reading holds are intentional. Chapter HUD and controls are preview-only. External image acquisition and subjective listening need actual evidence."
+  ],
+  "evidenceRoot": "D:\\003-AI_coding\\0000chitang_coding\\vibe-video-studio\\artifacts\\quality\\96005e6d528bf75a\\runs\\b9f11e44259645a29c8c8cb43bff785d",
+  "inputFingerprint": "0267f65a4b73d2e8a322dc19ba1ab00d3ef44798b7dd5973f47c9c3778ec09f6",
+  "profile": "web-video-v1",
+  "compositionWarnings": [],
+  "audioAssets": {
+    "assets/sounds/whoosh.wav": {
+      "durationUs": 450000,
+      "rms": 0.016543877664926328,
+      "peak": 0.07952880859375,
+      "windows": [
+        {
+          "rms": 0.016543877664926328,
+          "peak": 0.07952880859375
+        }
+      ],
+      "rate": 48000,
+      "channels": 1
+    },
+    "assets/voice.wav": {
+      "durationUs": 160101625,
+      "rms": 0.0423055496382998,
+      "peak": 0.583953857421875,
+      "windows": [
+        {
+          "rms": 0.03859403599822417,
+          "peak": 0.217926025390625
+        },
+        {
+          "rms": 0.034123625005666666,
+          "peak": 0.14398193359375
+        },
+        {
+          "rms": 0.02164439513957425,
+          "peak": 0.1641845703125
+        },
+        {
+          "rms": 0.07795488347594148,
+          "peak": 0.54681396484375
+        },
+        {
+          "rms": 0.034168003402979465,
+          "peak": 0.196563720703125
+        },
+        {
+          "rms": 0.03861777632092169,
+          "peak": 0.16473388671875
+        },
+        {
+          "rms": 0.030639667549925233,
+          "peak": 0.20281982421875
+        },
+        {
+          "rms": 0.047480200816067956,
+          "peak": 0.24798583984375
+        },
+        {
+          "rms": 0.03458289055081597,
+          "peak": 0.192901611328125
+        },
+        {
+          "rms": 0.05773763369993929,
+          "peak": 0.368865966796875
+        },
+        {
+          "rms": 0.03645411024752275,
+          "peak": 0.253265380859375
+        },
+        {
+          "rms": 0.027914194220966266,
+          "peak": 0.149993896484375
+        },
+        {
+          "rms": 0.057412367815453766,
+          "peak": 0.240936279296875
+        },
+        {
+          "rms": 0.02983218230437246,
+          "peak": 0.2078857421875
+        },
+        {
+          "rms": 0.019638333577344225,
+          "peak": 0.139892578125
+        },
+        {
+          "rms": 0.06166456101119572,
+          "peak": 0.506622314453125
+        },
+        {
+          "rms": 0.036473135146001666,
+          "peak": 0.265167236328125
+        },
+        {
+          "rms": 0.0707641485244494,
+          "peak": 0.5040283203125
+        },
+        {
+          "rms": 0.036861993235883156,
+          "peak": 0.27606201171875
+        },
+        {
+          "rms": 0.032256742246477364,
+          "peak": 0.296142578125
+        },
+        {
+          "rms": 0.051734272831093255,
+          "peak": 0.281280517578125
+        },
+        {
+          "rms": 0.024216404885916795,
+          "peak": 0.16888427734375
+        },
+        {
+          "rms": 0.06752466353193748,
+          "peak": 0.34356689453125
+        },
+        {
+          "rms": 0.03059032525505293,
+          "peak": 0.13995361328125
+        },
+        {
+          "rms": 0.03892573438765164,
+          "peak": 0.323394775390625
+        },
+        {
+          "rms": 0.07126901985060378,
+          "peak": 0.501861572265625
+        },
+        {
+          "rms": 0.035725745422398175,
+          "peak": 0.2532958984375
+        },
+        {
+          "rms": 0.032878162173140574,
+          "peak": 0.173309326171875
+        },
+        {
+          "rms": 0.014426506593386193,
+          "peak": 0.10076904296875
+        },
+        {
+          "rms": 0.040313321116659626,
+          "peak": 0.21435546875
+        },
+        {
+          "rms": 0.04774294217658699,
+          "peak": 0.38458251953125
+        },
+        {
+          "rms": 0.048660491216199205,
+          "peak": 0.557769775390625
+        },
+        {
+          "rms": 0.02785894030865947,
+          "peak": 0.183837890625
+        },
+        {
+          "rms": 0.05578602752894728,
+          "peak": 0.293243408203125
+        },
+        {
+          "rms": 0.04006612324675149,
+          "peak": 0.27410888671875
+        },
+        {
+          "rms": 0.039836275728931676,
+          "peak": 0.2872314453125
+        },
+        {
+          "rms": 0.05025429810997787,
+          "peak": 0.3699951171875
+        },
+        {
+          "rms": 0.051739813412859166,
+          "peak": 0.367889404296875
+        },
+        {
+          "rms": 0.03117330648452782,
+          "peak": 0.161407470703125
+        },
+        {
+          "rms": 0.04949801024101171,
+          "peak": 0.44207763671875
+        },
+        {
+          "rms": 0.052259665593674814,
+          "peak": 0.291748046875
+        },
+        {
+          "rms": 0.029346942401383618,
+          "peak": 0.225616455078125
+        },
+        {
+          "rms": 0.057728573579803,
+          "peak": 0.484527587890625
+        },
+        {
+          "rms": 0.03287223034594766,
+          "peak": 0.304412841796875
+        },
+        {
+          "rms": 0.046906396423277055,
+          "peak": 0.238067626953125
+        },
+        {
+          "rms": 0.02240573755341082,
+          "peak": 0.14056396484375
+        },
+        {
+          "rms": 0.05143495763857538,
+          "peak": 0.5439453125
+        },
+        {
+          "rms": 0.06394913280484678,
+          "peak": 0.418365478515625
+        },
+        {
+          "rms": 0.03574456288601474,
+          "peak": 0.24151611328125
+        },
+        {
+          "rms": 0.03189432780296698,
+          "peak": 0.219085693359375
+        },
+        {
+          "rms": 0.024182744756103793,
+          "peak": 0.2066650390625
+        },
+        {
+          "rms": 0.024657516625734188,
+          "peak": 0.238189697265625
+        },
+        {
+          "rms": 0.045178911949961036,
+          "peak": 0.2872314453125
+        },
+        {
+          "rms": 0.020129780492384675,
+          "peak": 0.1177978515625
+        },
+        {
+          "rms": 0.05391269364039709,
+          "peak": 0.396759033203125
+        },
+        {
+          "rms": 0.03677564377357997,
+          "peak": 0.300537109375
+        },
+        {
+          "rms": 0.02375467521222937,
+          "peak": 0.193878173828125
+        },
+        {
+          "rms": 0.050118040816151684,
+          "peak": 0.223114013671875
+        },
+        {
+          "rms": 0.029748789826705178,
+          "peak": 0.19677734375
+        },
+        {
+          "rms": 0.03805518832285384,
+          "peak": 0.31488037109375
+        },
+        {
+          "rms": 0.03805297941475206,
+          "peak": 0.226776123046875
+        },
+        {
+          "rms": 0.029954960458367944,
+          "peak": 0.310882568359375
+        },
+        {
+          "rms": 0.054713139467610895,
+          "peak": 0.416656494140625
+        },
+        {
+          "rms": 0.032184191936424314,
+          "peak": 0.286529541015625
+        },
+        {
+          "rms": 0.056482025487625924,
+          "peak": 0.470489501953125
+        },
+        {
+          "rms": 0.027735646404041883,
+          "peak": 0.1640625
+        },
+        {
+          "rms": 0.029991763310259694,
+          "peak": 0.2391357421875
+        },
+        {
+          "rms": 0.05037538434212771,
+          "peak": 0.247955322265625
+        },
+        {
+          "rms": 0.035619668581898044,
+          "peak": 0.24951171875
+        },
+        {
+          "rms": 0.04550728320575772,
+          "peak": 0.239959716796875
+        },
+        {
+          "rms": 0.04693085825959483,
+          "peak": 0.242218017578125
+        },
+        {
+          "rms": 0.031177271561097602,
+          "peak": 0.244842529296875
+        },
+        {
+          "rms": 0.04905699036095136,
+          "peak": 0.481475830078125
+        },
+        {
+          "rms": 0.037077439777133556,
+          "peak": 0.25860595703125
+        },
+        {
+          "rms": 0.03241223675305426,
+          "peak": 0.190765380859375
+        },
+        {
+          "rms": 0.04451649307276146,
+          "peak": 0.201171875
+        },
+        {
+          "rms": 0.037260568554414564,
+          "peak": 0.2236328125
+        },
+        {
+          "rms": 0.04558496766248271,
+          "peak": 0.288543701171875
+        },
+        {
+          "rms": 0.059756655307273344,
+          "peak": 0.385009765625
+        },
+        {
+          "rms": 0.05602289747949436,
+          "peak": 0.3475341796875
+        },
+        {
+          "rms": 0.04245118496923484,
+          "peak": 0.30584716796875
+        },
+        {
+          "rms": 0.0545035923207829,
+          "peak": 0.583953857421875
+        },
+        {
+          "rms": 0.040628353901601154,
+          "peak": 0.250152587890625
+        },
+        {
+          "rms": 0.03181250154154558,
+          "peak": 0.208465576171875
+        },
+        {
+          "rms": 0.05083804518386594,
+          "peak": 0.42706298828125
+        },
+        {
+          "rms": 0.03934773170369778,
+          "peak": 0.4508056640625
+        },
+        {
+          "rms": 0.053037982677154386,
+          "peak": 0.333221435546875
+        },
+        {
+          "rms": 0.03498667097565218,
+          "peak": 0.1727294921875
+        },
+        {
+          "rms": 0.03762587593809157,
+          "peak": 0.341064453125
+        },
+        {
+          "rms": 0.06765402600703709,
+          "peak": 0.411346435546875
+        },
+        {
+          "rms": 0.04076226734580237,
+          "peak": 0.200347900390625
+        },
+        {
+          "rms": 0.02467534172620945,
+          "peak": 0.128387451171875
+        },
+        {
+          "rms": 0.035416126699161166,
+          "peak": 0.1771240234375
+        },
+        {
+          "rms": 0.049152670232128236,
+          "peak": 0.335845947265625
+        },
+        {
+          "rms": 0.02324138187416674,
+          "peak": 0.15899658203125
+        },
+        {
+          "rms": 0.055324965264450104,
+          "peak": 0.4097900390625
+        },
+        {
+          "rms": 0.045146744117576514,
+          "peak": 0.212738037109375
+        },
+        {
+          "rms": 0.0157575329096548,
+          "peak": 0.09326171875
+        },
+        {
+          "rms": 0.04423249383410497,
+          "peak": 0.378326416015625
+        },
+        {
+          "rms": 0.036070851572294886,
+          "peak": 0.21728515625
+        },
+        {
+          "rms": 0.06709350644697358,
+          "peak": 0.359832763671875
+        },
+        {
+          "rms": 0.06217848654483854,
+          "peak": 0.3668212890625
+        },
+        {
+          "rms": 0.03253735626372223,
+          "peak": 0.159942626953125
+        },
+        {
+          "rms": 0.04649759624243369,
+          "peak": 0.3040771484375
+        },
+        {
+          "rms": 0.029842057526880905,
+          "peak": 0.209930419921875
+        },
+        {
+          "rms": 0.02674276326489297,
+          "peak": 0.164215087890625
+        },
+        {
+          "rms": 0.035920835104024336,
+          "peak": 0.198883056640625
+        },
+        {
+          "rms": 0.03183482960224224,
+          "peak": 0.22052001953125
+        },
+        {
+          "rms": 0.028099158118825476,
+          "peak": 0.12158203125
+        },
+        {
+          "rms": 0.03290190739962486,
+          "peak": 0.24639892578125
+        },
+        {
+          "rms": 0.05482092036639411,
+          "peak": 0.363800048828125
+        },
+        {
+          "rms": 0.034482358062522235,
+          "peak": 0.2745361328125
+        },
+        {
+          "rms": 0.03841564765062213,
+          "peak": 0.282379150390625
+        },
+        {
+          "rms": 0.028479064251737272,
+          "peak": 0.227203369140625
+        },
+        {
+          "rms": 0.04698929139200344,
+          "peak": 0.314361572265625
+        },
+        {
+          "rms": 0.017686232975990653,
+          "peak": 0.103240966796875
+        },
+        {
+          "rms": 0.03277239754549145,
+          "peak": 0.237335205078125
+        },
+        {
+          "rms": 0.07790820196655192,
+          "peak": 0.5706787109375
+        },
+        {
+          "rms": 0.031476975469699596,
+          "peak": 0.327972412109375
+        },
+        {
+          "rms": 0.04778807481596749,
+          "peak": 0.25592041015625
+        },
+        {
+          "rms": 0.03584500086412052,
+          "peak": 0.3983154296875
+        },
+        {
+          "rms": 0.03911080833481367,
+          "peak": 0.401031494140625
+        },
+        {
+          "rms": 0.03806295050116745,
+          "peak": 0.268646240234375
+        },
+        {
+          "rms": 0.06262054517861186,
+          "peak": 0.460357666015625
+        },
+        {
+          "rms": 0.04301369707662022,
+          "peak": 0.20819091796875
+        },
+        {
+          "rms": 0.034828041192512954,
+          "peak": 0.236053466796875
+        },
+        {
+          "rms": 0.04491244238124802,
+          "peak": 0.19610595703125
+        },
+        {
+          "rms": 0.03866582964867942,
+          "peak": 0.329071044921875
+        },
+        {
+          "rms": 0.03815899982291022,
+          "peak": 0.382537841796875
+        },
+        {
+          "rms": 0.06200236945514576,
+          "peak": 0.478973388671875
+        },
+        {
+          "rms": 0.03991731301522887,
+          "peak": 0.315704345703125
+        },
+        {
+          "rms": 0.033759185421643245,
+          "peak": 0.180816650390625
+        },
+        {
+          "rms": 0.03708940775578234,
+          "peak": 0.203826904296875
+        },
+        {
+          "rms": 0.05170691704872536,
+          "peak": 0.380096435546875
+        },
+        {
+          "rms": 0.03294205088331996,
+          "peak": 0.376434326171875
+        },
+        {
+          "rms": 0.043936998960451536,
+          "peak": 0.4715576171875
+        },
+        {
+          "rms": 0.042493689316610066,
+          "peak": 0.335174560546875
+        },
+        {
+          "rms": 0.043633595889433704,
+          "peak": 0.362701416015625
+        },
+        {
+          "rms": 0.024930191858979305,
+          "peak": 0.235260009765625
+        },
+        {
+          "rms": 0.05208170556701213,
+          "peak": 0.284820556640625
+        },
+        {
+          "rms": 0.036779771751631794,
+          "peak": 0.19189453125
+        },
+        {
+          "rms": 0.020159933290577272,
+          "peak": 0.1068115234375
+        },
+        {
+          "rms": 0.040071223700283466,
+          "peak": 0.221435546875
+        },
+        {
+          "rms": 0.041525902117047014,
+          "peak": 0.239013671875
+        },
+        {
+          "rms": 0.023382358921002253,
+          "peak": 0.14129638671875
+        },
+        {
+          "rms": 0.03394686700669905,
+          "peak": 0.2664794921875
+        },
+        {
+          "rms": 0.027561689599559847,
+          "peak": 0.148834228515625
+        },
+        {
+          "rms": 0.048679888246795686,
+          "peak": 0.34637451171875
+        },
+        {
+          "rms": 0.0345415081909357,
+          "peak": 0.218048095703125
+        },
+        {
+          "rms": 0.03867517963758097,
+          "peak": 0.18548583984375
+        },
+        {
+          "rms": 0.04159797199981483,
+          "peak": 0.190765380859375
+        },
+        {
+          "rms": 0.03485008289694328,
+          "peak": 0.23370361328125
+        },
+        {
+          "rms": 0.025713624152805054,
+          "peak": 0.09552001953125
+        },
+        {
+          "rms": 0.04246635577060653,
+          "peak": 0.33770751953125
+        },
+        {
+          "rms": 0.02830974765425336,
+          "peak": 0.16522216796875
+        },
+        {
+          "rms": 0.05281789013700601,
+          "peak": 0.403106689453125
+        },
+        {
+          "rms": 0.03882549240970394,
+          "peak": 0.361175537109375
+        },
+        {
+          "rms": 0.03955936124904668,
+          "peak": 0.224517822265625
+        },
+        {
+          "rms": 0.045023886704327346,
+          "peak": 0.251708984375
+        },
+        {
+          "rms": 0.021086289162020422,
+          "peak": 0.204864501953125
+        },
+        {
+          "rms": 5.351490965514331e-06,
+          "peak": 3.0517578125e-05
+        }
+      ],
+      "rate": 16000,
+      "channels": 1
+    },
+    "assets/sounds/chime.wav": {
+      "durationUs": 1200000,
+      "rms": 0.025413777523599496,
+      "peak": 0.186309814453125,
+      "windows": [
+        {
+          "rms": 0.027835616938672866,
+          "peak": 0.186309814453125
+        },
+        {
+          "rms": 0.0010260001615044123,
+          "peak": 0.00323486328125
+        }
+      ],
+      "rate": 48000,
+      "channels": 1
+    },
+    "assets/sounds/ding.wav": {
+      "durationUs": 500000,
+      "rms": 0.04119979562347918,
+      "peak": 0.202056884765625,
+      "windows": [
+        {
+          "rms": 0.04119979562347918,
+          "peak": 0.202056884765625
+        }
+      ],
+      "rate": 48000,
+      "channels": 1
+    }
+  },
+  "audioWarnings": [],
+  "audioLevels": [
+    {
+      "kind": "output",
+      "rms": 0.0026055528172396272
+    },
+    {
+      "kind": "voice",
+      "rms": 0.0026055528172396272
+    },
+    {
+      "kind": "output",
+      "rms": 0.0294903995911508
+    },
+    {
+      "kind": "voice",
+      "rms": 0.0294903995911508
+    },
+    {
+      "kind": "output",
+      "rms": 0.05452089945880267
+    },
+    {
+      "kind": "voice",
+      "rms": 0.05452089945880267
+    },
+    {
+      "kind": "output",
+      "rms": 0.032523832132326576
+    },
+    {
+      "kind": "voice",
+      "rms": 0.03452675028912304
+    },
+    {
+      "kind": "output",
+      "rms": 0.051623881168826324
+    },
+    {
+      "kind": "voice",
+      "rms": 0.051623881168826324
+    },
+    {
+      "kind": "output",
+      "rms": 0.031087912942377886
+    },
+    {
+      "kind": "voice",
+      "rms": 0.031087912942377886
+    },
+    {
+      "kind": "output",
+      "rms": 0.01133463136910265
+    },
+    {
+      "kind": "voice",
+      "rms": 0.01133463136910265
+    },
+    {
+      "kind": "output",
+      "rms": 0.04741941291991745
+    },
+    {
+      "kind": "voice",
+      "rms": 0.046911098050899235
+    },
+    {
+      "kind": "output",
+      "rms": 0.06093060629286667
+    },
+    {
+      "kind": "voice",
+      "rms": 0.06093060629286667
+    },
+    {
+      "kind": "output",
+      "rms": 0.03931126515408348
+    },
+    {
+      "kind": "voice",
+      "rms": 0.03931126515408348
+    },
+    {
+      "kind": "output",
+      "rms": 0.03891804878233967
+    },
+    {
+      "kind": "voice",
+      "rms": 0.03891804878233967
+    },
+    {
+      "kind": "output",
+      "rms": 0.02607010347507794
+    },
+    {
+      "kind": "voice",
+      "rms": 0.02607010347507794
+    },
+    {
+      "kind": "output",
+      "rms": 0.07651190279528985
+    },
+    {
+      "kind": "voice",
+      "rms": 0.07651190279528985
+    },
+    {
+      "kind": "output",
+      "rms": 0.039355276556463134
+    },
+    {
+      "kind": "voice",
+      "rms": 0.039355276556463134
+    },
+    {
+      "kind": "output",
+      "rms": 0.00860883880220403
+    },
+    {
+      "kind": "voice",
+      "rms": 0.00860883880220403
+    },
+    {
+      "kind": "output",
+      "rms": 0.012212156174470277
+    },
+    {
+      "kind": "voice",
+      "rms": 0.012212156174470277
+    }
+  ],
+  "environment": {
+    "python": "3.13.14 (tags/v3.13.14:fd17997, Jun 10 2026, 13:03:48) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "win32",
+    "playwright": "1.63.0",
+    "browser": "153.0.8010.12",
+    "fontSha256": "d79c55e68b1131eea0cc1c47be4f572d964f28c682e143db2ad09c1e4cb07a3f",
+    "fontFamily": "Microsoft YaHei"
+  },
+  "observedMotion": [
+    {
+      "sceneId": "shot-01",
+      "maxFrozenUs": 2000000,
+      "events": [
+        {
+          "timeUs": 480000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 975
+        },
+        {
+          "timeUs": 480000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 747
+        },
+        {
+          "timeUs": 2880000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 885
+        },
+        {
+          "timeUs": 5920000,
+          "nodeIds": [
+            "point-3"
+          ],
+          "changedPixels": 708
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-02",
+      "maxFrozenUs": 4500000,
+      "events": [
+        {
+          "timeUs": 7280000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 1007
+        },
+        {
+          "timeUs": 7280000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 1578
+        },
+        {
+          "timeUs": 12680000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 764
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-03",
+      "maxFrozenUs": 2500000,
+      "events": [
+        {
+          "timeUs": 15440000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 898
+        },
+        {
+          "timeUs": 15440000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 687
+        },
+        {
+          "timeUs": 18560000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 804
+        },
+        {
+          "timeUs": 19960000,
+          "nodeIds": [
+            "point-3"
+          ],
+          "changedPixels": 394
+        },
+        {
+          "timeUs": 20680000,
+          "nodeIds": [
+            "point-4"
+          ],
+          "changedPixels": 765
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-04",
+      "maxFrozenUs": 5000000,
+      "events": [
+        {
+          "timeUs": 22720000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 1057
+        },
+        {
+          "timeUs": 22720000,
+          "nodeIds": [
+            "illustration"
+          ],
+          "changedPixels": 17430
+        },
+        {
+          "timeUs": 22720000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 675
+        },
+        {
+          "timeUs": 28910000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 760
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-05",
+      "maxFrozenUs": 2500000,
+      "events": [
+        {
+          "timeUs": 32950000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 1253
+        },
+        {
+          "timeUs": 32950000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 682
+        },
+        {
+          "timeUs": 36470000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 756
+        },
+        {
+          "timeUs": 39660000,
+          "nodeIds": [
+            "point-3"
+          ],
+          "changedPixels": 605
+        },
+        {
+          "timeUs": 39660000,
+          "nodeIds": [
+            "relationship-arrow"
+          ],
+          "changedPixels": 114
+        },
+        {
+          "timeUs": 42180000,
+          "nodeIds": [
+            "point-4"
+          ],
+          "changedPixels": 760
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-06",
+      "maxFrozenUs": 2500000,
+      "events": [
+        {
+          "timeUs": 45940000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 636
+        },
+        {
+          "timeUs": 45940000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 654
+        },
+        {
+          "timeUs": 49020000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 588
+        },
+        {
+          "timeUs": 52080000,
+          "nodeIds": [
+            "point-3"
+          ],
+          "changedPixels": 559
+        },
+        {
+          "timeUs": 54080000,
+          "nodeIds": [
+            "point-4"
+          ],
+          "changedPixels": 708
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-07",
+      "maxFrozenUs": 4500000,
+      "events": [
+        {
+          "timeUs": 59760000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 921
+        },
+        {
+          "timeUs": 59760000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 1883
+        },
+        {
+          "timeUs": 65440000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 783
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-08",
+      "maxFrozenUs": 3000000,
+      "events": [
+        {
+          "timeUs": 68240000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 1082
+        },
+        {
+          "timeUs": 68240000,
+          "nodeIds": [
+            "illustration"
+          ],
+          "changedPixels": 17430
+        },
+        {
+          "timeUs": 68240000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 653
+        },
+        {
+          "timeUs": 72420000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 725
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-09",
+      "maxFrozenUs": 2000000,
+      "events": [
+        {
+          "timeUs": 76900000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 715
+        },
+        {
+          "timeUs": 76900000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 833
+        },
+        {
+          "timeUs": 79820000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 533
+        },
+        {
+          "timeUs": 82700000,
+          "nodeIds": [
+            "point-3"
+          ],
+          "changedPixels": 642
+        },
+        {
+          "timeUs": 82700000,
+          "nodeIds": [
+            "relationship-arrow"
+          ],
+          "changedPixels": 114
+        },
+        {
+          "timeUs": 84260000,
+          "nodeIds": [
+            "point-4"
+          ],
+          "changedPixels": 639
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-10",
+      "maxFrozenUs": 5000000,
+      "events": [
+        {
+          "timeUs": 86700000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 999
+        },
+        {
+          "timeUs": 86700000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 1707
+        },
+        {
+          "timeUs": 92830000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 754
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-11",
+      "maxFrozenUs": 4500000,
+      "events": [
+        {
+          "timeUs": 96590000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 995
+        },
+        {
+          "timeUs": 96590000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 1882
+        },
+        {
+          "timeUs": 101810000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 664
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-12",
+      "maxFrozenUs": 1500000,
+      "events": [
+        {
+          "timeUs": 104490000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 1029
+        },
+        {
+          "timeUs": 104490000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 756
+        },
+        {
+          "timeUs": 107250000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 678
+        },
+        {
+          "timeUs": 108810000,
+          "nodeIds": [
+            "point-3"
+          ],
+          "changedPixels": 650
+        },
+        {
+          "timeUs": 110550000,
+          "nodeIds": [
+            "point-4"
+          ],
+          "changedPixels": 509
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-13",
+      "maxFrozenUs": 4500000,
+      "events": [
+        {
+          "timeUs": 112270000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 956
+        },
+        {
+          "timeUs": 112270000,
+          "nodeIds": [
+            "transparent-subject"
+          ],
+          "changedPixels": 3419
+        },
+        {
+          "timeUs": 112270000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 516
+        },
+        {
+          "timeUs": 117830000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 716
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-14",
+      "maxFrozenUs": 1000000,
+      "events": [
+        {
+          "timeUs": 119950000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 1015
+        },
+        {
+          "timeUs": 119950000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 676
+        },
+        {
+          "timeUs": 121310000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 733
+        },
+        {
+          "timeUs": 122870000,
+          "nodeIds": [
+            "point-3"
+          ],
+          "changedPixels": 684
+        },
+        {
+          "timeUs": 124470000,
+          "nodeIds": [
+            "point-4"
+          ],
+          "changedPixels": 601
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-15",
+      "maxFrozenUs": 1500000,
+      "events": [
+        {
+          "timeUs": 128560000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 1103
+        },
+        {
+          "timeUs": 128560000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 803
+        },
+        {
+          "timeUs": 130680000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 558
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-16",
+      "maxFrozenUs": 3000000,
+      "events": [
+        {
+          "timeUs": 133480000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 788
+        },
+        {
+          "timeUs": 133480000,
+          "nodeIds": [
+            "transparent-subject"
+          ],
+          "changedPixels": 3539
+        },
+        {
+          "timeUs": 133480000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 787
+        },
+        {
+          "timeUs": 137360000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 590
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-17",
+      "maxFrozenUs": 2000000,
+      "events": [
+        {
+          "timeUs": 140320000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 951
+        },
+        {
+          "timeUs": 140320000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 689
+        },
+        {
+          "timeUs": 142610000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 884
+        },
+        {
+          "timeUs": 144770000,
+          "nodeIds": [
+            "point-3"
+          ],
+          "changedPixels": 852
+        },
+        {
+          "timeUs": 146570000,
+          "nodeIds": [
+            "point-4"
+          ],
+          "changedPixels": 807
+        }
+      ]
+    },
+    {
+      "sceneId": "shot-18",
+      "maxFrozenUs": 7500000,
+      "events": [
+        {
+          "timeUs": 151170000,
+          "nodeIds": [
+            "heading"
+          ],
+          "changedPixels": 995
+        },
+        {
+          "timeUs": 151170000,
+          "nodeIds": [
+            "point-1"
+          ],
+          "changedPixels": 1893
+        },
+        {
+          "timeUs": 159250000,
+          "nodeIds": [
+            "point-2"
+          ],
+          "changedPixels": 717
+        }
+      ]
+    }
+  ],
+  "backgroundProbe": {
+    "preset": "bio-bubbles",
+    "visiblePixels": 11943,
+    "changedPixels": 19065,
+    "columns": 4,
+    "rows": 6,
+    "coverage": [
+      {
+        "timeUs": 0,
+        "coveredCells": 24,
+        "cellPixels": [
+          574,
+          634,
+          461,
+          496,
+          280,
+          414,
+          388,
+          682,
+          651,
+          438,
+          353,
+          452,
+          265,
+          556,
+          670,
+          396,
+          528,
+          446,
+          231,
+          412,
+          615,
+          673,
+          562,
+          766
+        ],
+        "regions": []
+      },
+      {
+        "timeUs": 4000000,
+        "coveredCells": 24,
+        "cellPixels": [
+          496,
+          619,
+          422,
+          617,
+          353,
+          454,
+          512,
+          519,
+          494,
+          358,
+          406,
+          562,
+          303,
+          614,
+          672,
+          480,
+          456,
+          400,
+          206,
+          319,
+          710,
+          573,
+          597,
+          729
+        ],
+        "regions": []
+      },
+      {
+        "timeUs": 80050812,
+        "coveredCells": 24,
+        "cellPixels": [
+          451,
+          437,
+          224,
+          357,
+          687,
+          596,
+          580,
+          800,
+          509,
+          387,
+          358,
+          570,
+          322,
+          428,
+          504,
+          638,
+          568,
+          552,
+          547,
+          570,
+          271,
+          628,
+          595,
+          342
+        ],
+        "regions": []
+      }
+    ]
+  },
+  "geometry": [
+    {
+      "sceneId": "shot-01",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-01",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "回顾：菌剂与菌根"
+      ],
+      "inkRects": [
+        {
+          "x": 195.5,
+          "y": 23,
+          "width": 429,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 325,
+        "y": 453,
+        "width": 429,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-01",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 650,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "真菌类菌剂的分类"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 42,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 692,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-01",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 870,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "肥料类菌剂中的菌根"
+      ],
+      "inkRects": [
+        {
+          "x": 183,
+          "y": 42,
+          "width": 414,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 333,
+        "y": 912,
+        "width": 414,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-01",
+      "id": "point-3",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "连接上期基本特性"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 42,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1132,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-02",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-02",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "这期看机制与应用"
+      ],
+      "inkRects": [
+        {
+          "x": 195.5,
+          "y": 23,
+          "width": 429,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 326,
+        "y": 453,
+        "width": 428,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-02",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 650,
+      "width": 780,
+      "height": 240,
+      "lines": [
+        "从吸收机制开始"
+      ],
+      "inkRects": [
+        {
+          "x": 124,
+          "y": 82.5,
+          "width": 532,
+          "height": 75
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 274,
+        "y": 733,
+        "width": 532,
+        "height": 75
+      }
+    },
+    {
+      "sceneId": "shot-02",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1060,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "再看实际应用优势"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 32,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1092,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-03",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-03",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "磷为何难被吸收"
+      ],
+      "inkRects": [
+        {
+          "x": 221,
+          "y": 23,
+          "width": 378,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 351,
+        "y": 453,
+        "width": 378,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-03",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 650,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "磷素吸收是重点"
+      ],
+      "inkRects": [
+        {
+          "x": 229,
+          "y": 42,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 379,
+        "y": 692,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-03",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 870,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "磷被土壤颗粒固定"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 42,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 912,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-03",
+      "id": "point-3",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "移动性差"
+      ],
+      "inkRects": [
+        {
+          "x": 298,
+          "y": 42,
+          "width": 184,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 448,
+        "y": 1132,
+        "width": 184,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-03",
+      "id": "point-4",
+      "type": "text",
+      "x": 150,
+      "y": 1310,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "根系难以直接获取"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 42,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1352,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-04",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-04",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "菌丝延伸，磷素转运"
+      ],
+      "inkRects": [
+        {
+          "x": 167,
+          "y": 23,
+          "width": 486,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 297,
+        "y": 453,
+        "width": 486,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-04",
+      "id": "illustration",
+      "type": "image",
+      "x": 150,
+      "y": 600,
+      "width": 780,
+      "height": 420
+    },
+    {
+      "sceneId": "shot-04",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "菌丝向根外延伸"
+      ],
+      "inkRects": [
+        {
+          "x": 230,
+          "y": 32,
+          "width": 320,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 380,
+        "y": 1122,
+        "width": 320,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-04",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "提升植物磷素供应"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 32,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1332,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-05",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-05",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "氮素转运与微生物协同"
+      ],
+      "inkRects": [
+        {
+          "x": 141,
+          "y": 23,
+          "width": 538,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 271,
+        "y": 453,
+        "width": 538,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-05",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 590,
+      "width": 780,
+      "height": 90,
+      "lines": [
+        "与固氮微生物协同"
+      ],
+      "inkRects": [
+        {
+          "x": 207.5,
+          "y": 22,
+          "width": 365,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 357,
+        "y": 612,
+        "width": 366,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-05",
+      "id": "point-1",
+      "type": "text",
+      "x": 130,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "菌丝转运无机氮"
+      ],
+      "inkRects": [
+        {
+          "x": 9,
+          "y": 57,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 139,
+        "y": 787,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-05",
+      "id": "point-3",
+      "type": "text",
+      "x": 610,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "植物获得氮素"
+      ],
+      "inkRects": [
+        {
+          "x": 32,
+          "y": 57,
+          "width": 276,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 642,
+        "y": 787,
+        "width": 276,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-05",
+      "id": "relationship-arrow",
+      "type": "path",
+      "x": 500,
+      "y": 775,
+      "width": 80,
+      "height": 60,
+      "paintedPixels": 1728,
+      "actual": {
+        "x": 500,
+        "y": 775,
+        "width": 80,
+        "height": 60
+      },
+      "outsideDeclared": false,
+      "clipped": false
+    },
+    {
+      "sceneId": "shot-05",
+      "id": "point-4",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "减少氮肥流失浪费"
+      ],
+      "inkRects": [
+        {
+          "x": 206.5,
+          "y": 32,
+          "width": 367,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1332,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-06",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-06",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "不止大量元素"
+      ],
+      "inkRects": [
+        {
+          "x": 248,
+          "y": 23,
+          "width": 324,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 378,
+        "y": 453,
+        "width": 324,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-06",
+      "id": "point-1",
+      "type": "text",
+      "x": 130,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "还关注微量元素"
+      ],
+      "inkRects": [
+        {
+          "x": 9,
+          "y": 57,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 139,
+        "y": 787,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-06",
+      "id": "point-2",
+      "type": "text",
+      "x": 610,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "锌、铜、铁等元",
+        "素"
+      ],
+      "inkRects": [
+        {
+          "x": 9,
+          "y": 25.950000000000003,
+          "width": 322,
+          "height": 46
+        },
+        {
+          "x": 147,
+          "y": 88.05000000000001,
+          "width": 46,
+          "height": 45
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 619,
+        "y": 756,
+        "width": 322,
+        "height": 107
+      }
+    },
+    {
+      "sceneId": "shot-06",
+      "id": "point-3",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "减少缺素症状"
+      ],
+      "inkRects": [
+        {
+          "x": 252,
+          "y": 32,
+          "width": 276,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 402,
+        "y": 1122,
+        "width": 276,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-06",
+      "id": "point-4",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "关注贫瘠土壤条件"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 32,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1332,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-07",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-07",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "菌丝向根外拓展"
+      ],
+      "inkRects": [
+        {
+          "x": 221.5,
+          "y": 23,
+          "width": 377,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 352,
+        "y": 453,
+        "width": 377,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-07",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 650,
+      "width": 780,
+      "height": 240,
+      "lines": [
+        "拓展养分吸收面积"
+      ],
+      "inkRects": [
+        {
+          "x": 86,
+          "y": 82.5,
+          "width": 608,
+          "height": 75
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 236,
+        "y": 733,
+        "width": 608,
+        "height": 75
+      }
+    },
+    {
+      "sceneId": "shot-07",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1060,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "菌丝拓展吸收范围"
+      ],
+      "inkRects": [
+        {
+          "x": 207,
+          "y": 32,
+          "width": 366,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 357,
+        "y": 1092,
+        "width": 366,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-08",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-08",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "从根际走向周边土壤"
+      ],
+      "inkRects": [
+        {
+          "x": 167,
+          "y": 23,
+          "width": 486,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 297,
+        "y": 453,
+        "width": 486,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-08",
+      "id": "illustration",
+      "type": "image",
+      "x": 150,
+      "y": 600,
+      "width": 780,
+      "height": 420
+    },
+    {
+      "sceneId": "shot-08",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "从根际附近开始"
+      ],
+      "inkRects": [
+        {
+          "x": 228.5,
+          "y": 32,
+          "width": 323,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 378,
+        "y": 1122,
+        "width": 323,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-08",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "提升养分获取能力"
+      ],
+      "inkRects": [
+        {
+          "x": 207,
+          "y": 32,
+          "width": 366,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 357,
+        "y": 1332,
+        "width": 366,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-09",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-09",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "养分形态转化"
+      ],
+      "inkRects": [
+        {
+          "x": 248,
+          "y": 23,
+          "width": 324,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 378,
+        "y": 453,
+        "width": 324,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-09",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 590,
+      "width": 780,
+      "height": 90,
+      "lines": [
+        "共生过程分泌有机酸"
+      ],
+      "inkRects": [
+        {
+          "x": 182.5,
+          "y": 22,
+          "width": 415,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 333,
+        "y": 612,
+        "width": 414,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-09",
+      "id": "point-2",
+      "type": "text",
+      "x": 130,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "固定矿质养分"
+      ],
+      "inkRects": [
+        {
+          "x": 33,
+          "y": 57,
+          "width": 274,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 163,
+        "y": 787,
+        "width": 274,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-09",
+      "id": "point-3",
+      "type": "text",
+      "x": 610,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "可吸收利用形态"
+      ],
+      "inkRects": [
+        {
+          "x": 9,
+          "y": 57,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 619,
+        "y": 787,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-09",
+      "id": "relationship-arrow",
+      "type": "path",
+      "x": 500,
+      "y": 775,
+      "width": 80,
+      "height": 60,
+      "paintedPixels": 1728,
+      "actual": {
+        "x": 500,
+        "y": 775,
+        "width": 80,
+        "height": 60
+      },
+      "outsideDeclared": false,
+      "clipped": false
+    },
+    {
+      "sceneId": "shot-09",
+      "id": "point-4",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "提高养分利用率"
+      ],
+      "inkRects": [
+        {
+          "x": 229,
+          "y": 32,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 379,
+        "y": 1332,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-10",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-10",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "根内丛枝：双向交换"
+      ],
+      "inkRects": [
+        {
+          "x": 167,
+          "y": 23,
+          "width": 486,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 297,
+        "y": 453,
+        "width": 486,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-10",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 650,
+      "width": 780,
+      "height": 240,
+      "lines": [
+        "丛枝扩大交换界面"
+      ],
+      "inkRects": [
+        {
+          "x": 86.5,
+          "y": 82.5,
+          "width": 607,
+          "height": 75
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 237,
+        "y": 733,
+        "width": 606,
+        "height": 75
+      }
+    },
+    {
+      "sceneId": "shot-10",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1060,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "真菌向植物供养分"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 32,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1092,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-11",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-11",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "从交换机制到应用"
+      ],
+      "inkRects": [
+        {
+          "x": 195.5,
+          "y": 23,
+          "width": 429,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 325,
+        "y": 453,
+        "width": 429,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-11",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 650,
+      "width": 780,
+      "height": 240,
+      "lines": [
+        "双向交换效率更高"
+      ],
+      "inkRects": [
+        {
+          "x": 86.5,
+          "y": 82.5,
+          "width": 607,
+          "height": 75
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 237,
+        "y": 733,
+        "width": 607,
+        "height": 75
+      }
+    },
+    {
+      "sceneId": "shot-11",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1060,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "进一步看实际应用"
+      ],
+      "inkRects": [
+        {
+          "x": 207.5,
+          "y": 32,
+          "width": 365,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 357,
+        "y": 1092,
+        "width": 366,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-12",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-12",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "肥料利用与生产成本"
+      ],
+      "inkRects": [
+        {
+          "x": 167,
+          "y": 23,
+          "width": 486,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 297,
+        "y": 453,
+        "width": 486,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-12",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 650,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "促进养分高效利用"
+      ],
+      "inkRects": [
+        {
+          "x": 207.5,
+          "y": 42,
+          "width": 365,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 358,
+        "y": 692,
+        "width": 365,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-12",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 870,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "提升磷肥利用率"
+      ],
+      "inkRects": [
+        {
+          "x": 229,
+          "y": 42,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 379,
+        "y": 912,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-12",
+      "id": "point-3",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "减少化肥施用量"
+      ],
+      "inkRects": [
+        {
+          "x": 229,
+          "y": 42,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 379,
+        "y": 1132,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-12",
+      "id": "point-4",
+      "type": "text",
+      "x": 150,
+      "y": 1310,
+      "width": 780,
+      "height": 130,
+      "lines": [
+        "降低生产成本"
+      ],
+      "inkRects": [
+        {
+          "x": 253,
+          "y": 42,
+          "width": 274,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 403,
+        "y": 1352,
+        "width": 274,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-13",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-13",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "减少流失，关注水体"
+      ],
+      "inkRects": [
+        {
+          "x": 167,
+          "y": 23,
+          "width": 486,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 297,
+        "y": 453,
+        "width": 486,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-13",
+      "id": "transparent-subject",
+      "type": "image",
+      "x": 290,
+      "y": 630,
+      "width": 500,
+      "height": 360
+    },
+    {
+      "sceneId": "shot-13",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "减少养分淋失"
+      ],
+      "inkRects": [
+        {
+          "x": 252,
+          "y": 32,
+          "width": 276,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 402,
+        "y": 1122,
+        "width": 276,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-13",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "转向土壤生态改善"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 32,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1332,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-14",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-14",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "土壤生态的多个层面"
+      ],
+      "inkRects": [
+        {
+          "x": 168,
+          "y": 23,
+          "width": 484,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 298,
+        "y": 453,
+        "width": 484,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-14",
+      "id": "point-1",
+      "type": "text",
+      "x": 130,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "促进团聚体形成"
+      ],
+      "inkRects": [
+        {
+          "x": 9,
+          "y": 57,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 139,
+        "y": 787,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-14",
+      "id": "point-2",
+      "type": "text",
+      "x": 610,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "提升土壤固碳能",
+        "力"
+      ],
+      "inkRects": [
+        {
+          "x": 9,
+          "y": 25.950000000000003,
+          "width": 322,
+          "height": 46
+        },
+        {
+          "x": 148,
+          "y": 88.05000000000001,
+          "width": 44,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 619,
+        "y": 756,
+        "width": 322,
+        "height": 108
+      }
+    },
+    {
+      "sceneId": "shot-14",
+      "id": "point-3",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "优化微生物群落"
+      ],
+      "inkRects": [
+        {
+          "x": 229,
+          "y": 32,
+          "width": 322,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 379,
+        "y": 1122,
+        "width": 322,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-14",
+      "id": "point-4",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "构建菌丝网络"
+      ],
+      "inkRects": [
+        {
+          "x": 252,
+          "y": 32,
+          "width": 276,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 402,
+        "y": 1332,
+        "width": 276,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-15",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-15",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "缠绕与粘合共同作用"
+      ],
+      "inkRects": [
+        {
+          "x": 168.5,
+          "y": 23,
+          "width": 483,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 298,
+        "y": 453,
+        "width": 483,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-15",
+      "id": "point-1",
+      "type": "text",
+      "x": 130,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "菌丝形成物理缠",
+        "绕"
+      ],
+      "inkRects": [
+        {
+          "x": 9,
+          "y": 25.950000000000003,
+          "width": 322,
+          "height": 46
+        },
+        {
+          "x": 147,
+          "y": 88.05000000000001,
+          "width": 46,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 139,
+        "y": 756,
+        "width": 322,
+        "height": 108
+      }
+    },
+    {
+      "sceneId": "shot-15",
+      "id": "point-2",
+      "type": "text",
+      "x": 610,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "分泌粘合物质"
+      ],
+      "inkRects": [
+        {
+          "x": 32,
+          "y": 57,
+          "width": 276,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 642,
+        "y": 787,
+        "width": 276,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-16",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-16",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "微团聚体聚合"
+      ],
+      "inkRects": [
+        {
+          "x": 247.5,
+          "y": 23,
+          "width": 325,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 378,
+        "y": 454,
+        "width": 324,
+        "height": 53
+      }
+    },
+    {
+      "sceneId": "shot-16",
+      "id": "transparent-subject",
+      "type": "image",
+      "x": 290,
+      "y": 630,
+      "width": 500,
+      "height": 360
+    },
+    {
+      "sceneId": "shot-16",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "微团聚体发生聚合"
+      ],
+      "inkRects": [
+        {
+          "x": 205.5,
+          "y": 32,
+          "width": 369,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1122,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-16",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "降低板结风险"
+      ],
+      "inkRects": [
+        {
+          "x": 253,
+          "y": 32,
+          "width": 274,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 403,
+        "y": 1332,
+        "width": 274,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-17",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-17",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "根际群落的协同"
+      ],
+      "inkRects": [
+        {
+          "x": 222,
+          "y": 23,
+          "width": 376,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 352,
+        "y": 453,
+        "width": 376,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-17",
+      "id": "point-1",
+      "type": "text",
+      "x": 130,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "根际微生物协同"
+      ],
+      "inkRects": [
+        {
+          "x": 10,
+          "y": 57,
+          "width": 320,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 140,
+        "y": 787,
+        "width": 320,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-17",
+      "id": "point-2",
+      "type": "text",
+      "x": 610,
+      "y": 730,
+      "width": 340,
+      "height": 160,
+      "lines": [
+        "有益微生物定殖",
+        "繁殖"
+      ],
+      "inkRects": [
+        {
+          "x": 9,
+          "y": 25.950000000000003,
+          "width": 322,
+          "height": 46
+        },
+        {
+          "x": 124,
+          "y": 88.05000000000001,
+          "width": 92,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 619,
+        "y": 756,
+        "width": 322,
+        "height": 108
+      }
+    },
+    {
+      "sceneId": "shot-17",
+      "id": "point-3",
+      "type": "text",
+      "x": 150,
+      "y": 1090,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "抑制有害微生物生长"
+      ],
+      "inkRects": [
+        {
+          "x": 183,
+          "y": 32,
+          "width": 414,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 333,
+        "y": 1122,
+        "width": 414,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-17",
+      "id": "point-4",
+      "type": "text",
+      "x": 150,
+      "y": 1300,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "维持群落健康稳定"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 32,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1332,
+        "width": 368,
+        "height": 46
+      }
+    },
+    {
+      "sceneId": "shot-18",
+      "id": "work-title-0",
+      "type": "text",
+      "x": 130,
+      "y": 220,
+      "width": 820,
+      "height": 72,
+      "lines": [
+        "丛枝菌根作用与优势"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 12,
+          "width": 432,
+          "height": 48
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 232,
+        "width": 432,
+        "height": 48
+      }
+    },
+    {
+      "sceneId": "shot-18",
+      "id": "heading",
+      "type": "text",
+      "x": 130,
+      "y": 430,
+      "width": 820,
+      "height": 100,
+      "lines": [
+        "地下共同菌丝网络"
+      ],
+      "inkRects": [
+        {
+          "x": 194,
+          "y": 23,
+          "width": 432,
+          "height": 54
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 324,
+        "y": 453,
+        "width": 432,
+        "height": 54
+      }
+    },
+    {
+      "sceneId": "shot-18",
+      "id": "point-1",
+      "type": "text",
+      "x": 150,
+      "y": 650,
+      "width": 780,
+      "height": 240,
+      "lines": [
+        "连接不同植物根系"
+      ],
+      "inkRects": [
+        {
+          "x": 87,
+          "y": 82.5,
+          "width": 606,
+          "height": 75
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 237,
+        "y": 733,
+        "width": 606,
+        "height": 75
+      }
+    },
+    {
+      "sceneId": "shot-18",
+      "id": "point-2",
+      "type": "text",
+      "x": 150,
+      "y": 1060,
+      "width": 780,
+      "height": 110,
+      "lines": [
+        "维持农田养分平衡"
+      ],
+      "inkRects": [
+        {
+          "x": 206,
+          "y": 32,
+          "width": 368,
+          "height": 46
+        }
+      ],
+      "glyphMismatchPixels": 0,
+      "glyphClipped": false,
+      "actual": {
+        "x": 356,
+        "y": 1092,
+        "width": 368,
+        "height": 46
+      }
+    }
+  ],
+  "browserVersion": "153.0.8010.12",
+  "devHud": {
+    "top": 0.03198034437297751,
+    "left": 0.039985795454545454,
+    "bottom": 0.056749630458231795,
+    "right": 0.22737926136363637,
+    "font": 0.022
+  },
+  "progressControls": [
+    {
+      "viewport": "320x640",
+      "boxes": {
+        "#controls": {
+          "x": 8,
+          "y": 570,
+          "width": 304,
+          "height": 62
+        },
+        "#seek": {
+          "x": 97,
+          "y": 579,
+          "width": 120,
+          "height": 44
+        },
+        "#time": {
+          "x": 225,
+          "y": 594,
+          "width": 78,
+          "height": 14
+        },
+        "button": {
+          "x": 17,
+          "y": 579,
+          "width": 72,
+          "height": 44
+        },
+        "canvas": {
+          "x": 1.375,
+          "y": 0,
+          "width": 317.25,
+          "height": 564
+        }
+      }
+    },
+    {
+      "viewport": "440x956",
+      "boxes": {
+        "#controls": {
+          "x": 8,
+          "y": 886,
+          "width": 424,
+          "height": 62
+        },
+        "#seek": {
+          "x": 97,
+          "y": 895,
+          "width": 240,
+          "height": 44
+        },
+        "#time": {
+          "x": 345,
+          "y": 910,
+          "width": 78,
+          "height": 14
+        },
+        "button": {
+          "x": 17,
+          "y": 895,
+          "width": 72,
+          "height": 44
+        },
+        "canvas": {
+          "x": 0,
+          "y": 48.890625,
+          "width": 440,
+          "height": 782.21875
+        }
+      }
+    }
+  ],
+  "limitations": [
+    "Screenshots are sampled, not every frame.",
+    "Signal probes do not prove speaker hardware or subjective listening quality.",
+    "Collision candidates use declared transformed boxes; intentional overlaps need explicit review.",
+    "Semantic meaning, narration fit and visual quality require recorded review."
+  ],
+  "evidenceDigest": "51a3f6b167cc0a7162ae3c5626fe3e6b26cd2cc79ff850edaec6d38a5045a8c0",
+  "runId": "b9f11e44259645a29c8c8cb43bff785d"
+}

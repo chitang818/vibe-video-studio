@@ -1,5 +1,7 @@
 # 跨 Agent 制作与正式发布契约（v2）
 
+默认网页视频制作采用[分阶段工作流](web-video-workflow.md)和[web-video-v1](web-video-profile.json)。stage ready只表示可验证产物就绪；镜头/视觉/素材/组装依赖变化后标stale，禁止组装失效产物。组装输出仍走本契约的完整自动检查、独立复核与签名发布，不能把过程看板当批准。旧compile/story/Profile路径继续维护。
+
 本文件替代此前将可编辑 passed JSON 视作正式批准的流程。[制作规则](../.agents/rules/vibe-rules.md)定义内容要求，[机器 Profile](quality-profile.json)定义可执行阈值，[高速协议](fast-project.md)定义运行时兼容性。
 
 ## 固定生产链路

@@ -1,0 +1,190 @@
+{
+  "scene": {
+    "id": "shot-05",
+    "startUs": 30830000,
+    "endUs": 43980000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 2120000,
+        "entrance": "fade-up",
+        "text": "氮素转运与微生物协同",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 590,
+        "width": 780,
+        "height": 90,
+        "enterUs": 5640000,
+        "entrance": "fade-up",
+        "text": "与固氮微生物协同",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 130,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 2120000,
+        "entrance": "slide-right",
+        "text": "菌丝转运无机氮",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-3",
+        "type": "text",
+        "x": 610,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 8830000,
+        "entrance": "slide-left",
+        "text": "植物获得氮素",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "relationship-arrow",
+        "type": "path",
+        "x": 500,
+        "y": 775,
+        "width": 80,
+        "height": 60,
+        "enterUs": 8830000,
+        "entrance": "fade-up",
+        "path": "M 0 22 L 48 22 L 48 0 L 80 30 L 48 60 L 48 38 L 0 38 Z",
+        "color": "#ebc86d"
+      },
+      {
+        "id": "point-4",
+        "type": "text",
+        "x": 150,
+        "y": 1300,
+        "width": 780,
+        "height": 110,
+        "enterUs": 11350000,
+        "entrance": "fade-up",
+        "text": "减少氮肥流失浪费",
+        "size": 46,
+        "color": "#ebc86d",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-05",
+    "purpose": "氮素转运与微生物协同",
+    "visualIntent": "左右运输关系与上下补充信息",
+    "visualFamily": "氮素运输",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-2",
+        "point-1",
+        "point-3",
+        "point-4"
+      ],
+      "graphic": [
+        "relationship-arrow"
+      ],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 32950000,
+        "quote": "丛枝菌根的菌丝可以转运",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：菌丝转运无机氮"
+      },
+      {
+        "timeUs": 32950000,
+        "quote": "丛枝菌根的菌丝可以转运",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：菌丝转运无机氮"
+      },
+      {
+        "timeUs": 36470000,
+        "quote": "同时还能和土壤",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：与固氮微生物协同"
+      },
+      {
+        "timeUs": 39660000,
+        "quote": "帮助植物更高效",
+        "nodeIds": [
+          "point-3"
+        ],
+        "meaning": "展示原声对应信息：帮助植物获取氮素"
+      },
+      {
+        "timeUs": 39660000,
+        "quote": "帮助植物更高效",
+        "nodeIds": [
+          "relationship-arrow"
+        ],
+        "meaning": "展示原声对应信息：帮助植物获取氮素"
+      },
+      {
+        "timeUs": 42180000,
+        "quote": "减少氮肥的",
+        "nodeIds": [
+          "point-4"
+        ],
+        "meaning": "展示原声对应信息：减少氮肥流失浪费"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "明确运输至植物，不画真菌给固氮菌供氮的错误箭头"
+  },
+  "facts": [],
+  "sourceSpan": [
+    176,
+    251
+  ],
+  "localPreviewOriginUs": 30830000
+}

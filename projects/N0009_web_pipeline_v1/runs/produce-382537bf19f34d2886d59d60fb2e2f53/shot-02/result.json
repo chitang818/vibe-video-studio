@@ -1,0 +1,120 @@
+{
+  "scene": {
+    "id": "shot-02",
+    "startUs": 6680000,
+    "endUs": 15040000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 600000,
+        "entrance": "fade-up",
+        "text": "这期看机制与应用",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 650,
+        "width": 780,
+        "height": 240,
+        "enterUs": 600000,
+        "entrance": "zoom",
+        "text": "从吸收机制开始",
+        "size": 76,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 1060,
+        "width": 780,
+        "height": 110,
+        "enterUs": 6000000,
+        "entrance": "fade-up",
+        "text": "再看实际应用优势",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-02",
+    "purpose": "这期看机制与应用",
+    "visualIntent": "大字主视觉与短解释；不使用内容底板",
+    "visualFamily": "重点表达",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 7280000,
+        "quote": "着重讲一下",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：从吸收机制开始"
+      },
+      {
+        "timeUs": 7280000,
+        "quote": "着重讲一下",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：从吸收机制开始"
+      },
+      {
+        "timeUs": 12680000,
+        "quote": "是如何促进植物",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：再看实际应用优势"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "以阅读层级突出本镜观点"
+  },
+  "facts": [],
+  "sourceSpan": [
+    38,
+    87
+  ],
+  "localPreviewOriginUs": 6680000
+}

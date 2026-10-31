@@ -1,0 +1,143 @@
+{
+  "scene": {
+    "id": "shot-13",
+    "startUs": 111950000,
+    "endUs": 119310000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 320000,
+        "entrance": "fade-up",
+        "text": "减少流失，关注水体",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "transparent-subject",
+        "type": "image",
+        "x": 290,
+        "y": 630,
+        "width": 500,
+        "height": 360,
+        "enterUs": 320000,
+        "entrance": "zoom",
+        "source": "assets/images/water-cutout.png",
+        "fit": "contain",
+        "radius": 0
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 1090,
+        "width": 780,
+        "height": 110,
+        "enterUs": 320000,
+        "entrance": "fade-up",
+        "text": "减少养分淋失",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 1300,
+        "width": 780,
+        "height": 110,
+        "enterUs": 5880000,
+        "entrance": "slide-right",
+        "text": "转向土壤生态改善",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-13",
+    "purpose": "减少流失，关注水体",
+    "visualIntent": "透明水滴SVG栅格图配原生文字与轻入场",
+    "visualFamily": "透明图混合",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2"
+      ],
+      "graphic": [
+        "transparent-subject"
+      ],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 112270000,
+        "quote": "减少养分淋失",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：减少养分淋失"
+      },
+      {
+        "timeUs": 112270000,
+        "quote": "减少养分淋失",
+        "nodeIds": [
+          "transparent-subject"
+        ],
+        "meaning": "展示原声对应信息：减少养分淋失"
+      },
+      {
+        "timeUs": 112270000,
+        "quote": "减少养分淋失",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：减少养分淋失"
+      },
+      {
+        "timeUs": 117830000,
+        "quote": "土壤生态的改善",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：转向土壤生态改善"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "素材背景透明，与动态底层自然融合"
+  },
+  "facts": [],
+  "sourceSpan": [
+    640,
+    685
+  ],
+  "localPreviewOriginUs": 111950000
+}

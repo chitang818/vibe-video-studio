@@ -8,7 +8,7 @@ ROOT = Path(__file__).resolve().parents[1]
 
 
 def load_profile(profile='knowledge-portrait-v1'):
-    files={'knowledge-portrait-v1':'quality-profile.json','presentation-portrait-v1':'presentation-profile.json'}
+    files={'knowledge-portrait-v1':'quality-profile.json','presentation-portrait-v1':'presentation-profile.json','web-video-v1':'web-video-profile.json'}
     if profile not in files:raise ValueError('Unknown production profile: '+str(profile))
     return strict_loads((ROOT/'references'/files[profile]).read_text(encoding='utf-8'))
 

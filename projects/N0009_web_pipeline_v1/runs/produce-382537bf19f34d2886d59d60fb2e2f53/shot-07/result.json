@@ -1,0 +1,120 @@
+{
+  "scene": {
+    "id": "shot-07",
+    "startUs": 56960000,
+    "endUs": 67120000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 2800000,
+        "entrance": "fade-up",
+        "text": "菌丝向根外拓展",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 650,
+        "width": 780,
+        "height": 240,
+        "enterUs": 2800000,
+        "entrance": "zoom",
+        "text": "拓展养分吸收面积",
+        "size": 76,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 1060,
+        "width": 780,
+        "height": 110,
+        "enterUs": 8480000,
+        "entrance": "fade-up",
+        "text": "菌丝拓展吸收范围",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-07",
+    "purpose": "菌丝向根外拓展",
+    "visualIntent": "核心观点放大，下方保留短结论",
+    "visualFamily": "范围重点",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 59760000,
+        "quote": "主要是菌丝拓展",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：拓展养分吸收面积"
+      },
+      {
+        "timeUs": 59760000,
+        "quote": "主要是菌丝拓展",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：拓展养分吸收面积"
+      },
+      {
+        "timeUs": 65440000,
+        "quote": "数十倍甚至上百倍",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：菌丝拓展吸收范围"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "原声倍数不转成无依据定量面积图"
+  },
+  "facts": [],
+  "sourceSpan": [
+    326,
+    381
+  ],
+  "localPreviewOriginUs": 56960000
+}

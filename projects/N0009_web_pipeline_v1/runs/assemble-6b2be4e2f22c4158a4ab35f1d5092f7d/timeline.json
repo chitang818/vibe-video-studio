@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "durationUs": 160101625,
+  "shots": [
+    {
+      "id": "shot-01",
+      "startUs": 0,
+      "endUs": 6680000
+    },
+    {
+      "id": "shot-02",
+      "startUs": 6680000,
+      "endUs": 15040000
+    },
+    {
+      "id": "shot-03",
+      "startUs": 15040000,
+      "endUs": 21960000
+    },
+    {
+      "id": "shot-04",
+      "startUs": 21960000,
+      "endUs": 30830000
+    },
+    {
+      "id": "shot-05",
+      "startUs": 30830000,
+      "endUs": 43980000
+    },
+    {
+      "id": "shot-06",
+      "startUs": 43980000,
+      "endUs": 56960000
+    },
+    {
+      "id": "shot-07",
+      "startUs": 56960000,
+      "endUs": 67120000
+    },
+    {
+      "id": "shot-08",
+      "startUs": 67120000,
+      "endUs": 74500000
+    },
+    {
+      "id": "shot-09",
+      "startUs": 74500000,
+      "endUs": 85860000
+    },
+    {
+      "id": "shot-10",
+      "startUs": 85860000,
+      "endUs": 95310000
+    },
+    {
+      "id": "shot-11",
+      "startUs": 95310000,
+      "endUs": 103290000
+    },
+    {
+      "id": "shot-12",
+      "startUs": 103290000,
+      "endUs": 111950000
+    },
+    {
+      "id": "shot-13",
+      "startUs": 111950000,
+      "endUs": 119310000
+    },
+    {
+      "id": "shot-14",
+      "startUs": 119310000,
+      "endUs": 126280000
+    },
+    {
+      "id": "shot-15",
+      "startUs": 126280000,
+      "endUs": 132560000
+    },
+    {
+      "id": "shot-16",
+      "startUs": 132560000,
+      "endUs": 139040000
+    },
+    {
+      "id": "shot-17",
+      "startUs": 139040000,
+      "endUs": 149130000
+    },
+    {
+      "id": "shot-18",
+      "startUs": 149130000,
+      "endUs": 160101625
+    }
+  ]
+}

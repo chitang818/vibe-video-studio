@@ -7,7 +7,7 @@ from html import escape
 TEMPLATE_VERSION = 6
 
 
-def render_html(root, scene, width, height, duration, voice_file, sound_track, runtime, title='VIBE'):
+def render_html(root, scene, width, height, duration, voice_file, sound_track, runtime, title='VIBE', preview_window=None):
     js = (runtime/'scene.mjs').read_text(encoding='utf-8')
     js = re.sub(r'(?m)^export ', '', js)
     js += '\n' + re.sub(r'(?m)^export ', '', (runtime/'audio.mjs').read_text(encoding='utf-8'))
@@ -47,6 +47,16 @@ audio.addEventListener('ended',()=>{completed=true;player.pause();updateProgress
 button.onclick=async()=>{try{if(completed){completed=false;player.seek(0);}await player.toggle();playing=config.voiceUrl?!audio.paused:!playing;updateButton();}catch(e){document.querySelector('output').textContent=e.message;}};
 document.addEventListener('keydown',e=>{if(e.code==='Space'&&!e.repeat&&!(e.target instanceof HTMLInputElement)){e.preventDefault();button.click();}});
 return true;});window.__vibe_ready.catch(e=>{document.querySelector('output').textContent=e.message;});'''
+    if preview_window:
+        origin=preview_window['originUs'];total=preview_window['totalDurationUs']
+        if type(origin)!=int or type(total)!=int or not 0<=origin<origin+duration<=total:raise ValueError('Invalid single-shot preview window')
+        player=player.replace("prepareScene(document.querySelector('canvas'),data,config)",f"prepareScene(document.querySelector('canvas'),data,{{...config,durationUs:{total}}})")
+        player=player.replace('r.renderAt(t);updateHud(t);',f'r.renderAt(t+{origin});updateHud(t);')
+        player=player.replace('function updateHud(t){',f'function updateHud(t){{t+={origin};')
+        player=player.replace('updateProgress(t);}',f'updateProgress(t-{origin});}}')
+        player=player.replace('r.layoutAt(Math.round(t*1e6))',f'r.layoutAt(Math.round(t*1e6)+{origin})')
+        player=player.replace("hud.textContent='第 '+(lo+1)+' / '+data.scenes.length+' 节';",f"hud.textContent='第 {preview_window['shotIndex']+1} / {preview_window['shotCount']} 节';")
+        player=player.replace('return true;});','seekTo(0);return true;});')
     player = player.replace('SCENE_DATA', data).replace('PROJECT_CONFIG', settings)
     # Local file media routed into Web Audio can be CORS-silenced in Chromium.
     # Keep the WAV for host export; embed the exact same bytes for file:// preview.

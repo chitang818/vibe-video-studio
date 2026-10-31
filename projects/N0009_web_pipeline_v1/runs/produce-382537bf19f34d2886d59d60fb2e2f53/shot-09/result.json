@@ -1,0 +1,190 @@
+{
+  "scene": {
+    "id": "shot-09",
+    "startUs": 74500000,
+    "endUs": 85860000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 2400000,
+        "entrance": "fade-up",
+        "text": "养分形态转化",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 590,
+        "width": 780,
+        "height": 90,
+        "enterUs": 2400000,
+        "entrance": "fade-up",
+        "text": "共生过程分泌有机酸",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 130,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 5320000,
+        "entrance": "slide-right",
+        "text": "固定矿质养分",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-3",
+        "type": "text",
+        "x": 610,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 8200000,
+        "entrance": "slide-left",
+        "text": "可吸收利用形态",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "relationship-arrow",
+        "type": "path",
+        "x": 500,
+        "y": 775,
+        "width": 80,
+        "height": 60,
+        "enterUs": 8200000,
+        "entrance": "fade-up",
+        "path": "M 0 22 L 48 22 L 48 0 L 80 30 L 48 60 L 48 38 L 0 38 Z",
+        "color": "#ebc86d"
+      },
+      {
+        "id": "point-4",
+        "type": "text",
+        "x": 150,
+        "y": 1300,
+        "width": 780,
+        "height": 110,
+        "enterUs": 9760000,
+        "entrance": "fade-up",
+        "text": "提高养分利用率",
+        "size": 46,
+        "color": "#ebc86d",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-09",
+    "purpose": "养分形态转化",
+    "visualIntent": "固定养分与可利用形态两端，箭头连接",
+    "visualFamily": "形态转化",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4"
+      ],
+      "graphic": [
+        "relationship-arrow"
+      ],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 76900000,
+        "quote": "分泌一些有机酸",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：共生过程分泌有机酸"
+      },
+      {
+        "timeUs": 76900000,
+        "quote": "分泌一些有机酸",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：共生过程分泌有机酸"
+      },
+      {
+        "timeUs": 79820000,
+        "quote": "被固定的矿质养分",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：作用于固定矿质养分"
+      },
+      {
+        "timeUs": 82700000,
+        "quote": "可以吸收利用的形态",
+        "nodeIds": [
+          "point-3"
+        ],
+        "meaning": "展示原声对应信息：转为可吸收利用形态"
+      },
+      {
+        "timeUs": 82700000,
+        "quote": "可以吸收利用的形态",
+        "nodeIds": [
+          "relationship-arrow"
+        ],
+        "meaning": "展示原声对应信息：转为可吸收利用形态"
+      },
+      {
+        "timeUs": 84260000,
+        "quote": "提升土壤养分",
+        "nodeIds": [
+          "point-4"
+        ],
+        "meaning": "展示原声对应信息：提高养分利用率"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "有机酸在上方解释，利用率结论位于下方"
+  },
+  "facts": [],
+  "sourceSpan": [
+    422,
+    490
+  ],
+  "localPreviewOriginUs": 74500000
+}

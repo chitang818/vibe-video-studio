@@ -1,0 +1,67 @@
+{
+  "version": 1,
+  "id": "web-video-v1",
+  "width": 1080,
+  "height": 1920,
+  "subtitleMin": 43,
+  "subtitleMax": 50,
+  "bodyMinRatio": 0.028,
+  "shotMinUs": 1000000,
+  "shotMaxUs": 120000000,
+  "maxBeatGapUs": 20000000,
+  "maxStaticUs": 20000000,
+  "hookFirstUs": 1000000,
+  "hookSecondUs": 4000000,
+  "roles": [
+    "title",
+    "content",
+    "graphic",
+    "panel"
+  ],
+  "fontFamily": "Microsoft YaHei",
+  "templateVersion": 6,
+  "compilerVersion": 5,
+  "maxAssets": 2048,
+  "maxSounds": 32,
+  "maxSoundEvents": 512,
+  "minimumVisiblePixels": 64,
+  "minimumContrast": 3.0,
+  "ringNumberClearancePx": 20,
+  "soundKinds": [
+    "whoosh",
+    "pop",
+    "ding",
+    "chime",
+    "click"
+  ],
+  "devHud": {
+    "topRatio": 0.032,
+    "leftRatio": 0.04,
+    "fontRatio": 0.022,
+    "previewOnly": true
+  },
+  "titleFonts": {
+    "short": [
+      0.04,
+      0.045
+    ],
+    "longFirst": [
+      0.038,
+      0.042
+    ],
+    "longSecond": [
+      0.032,
+      0.036
+    ]
+  },
+  "maxDecorativeLoops": 2,
+  "ringNumberFont": [
+    0.052,
+    0.058
+  ],
+  "backgroundLibraryVersion": "1.0.0",
+  "cardSpacing": {
+    "minimumGapPx": 32,
+    "preferredGapPx": 56
+  }
+}

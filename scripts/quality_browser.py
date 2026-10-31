@@ -107,7 +107,7 @@ MOTION = r'''async plan => {
      frozen=previous&&changed<16?frozen+500000:0;maxFrozen=Math.max(maxFrozen,frozen);previous=pixels;
    }
    const events=[];
-   if(plan.profile==='presentation-portrait-v1')for(const beat of p.beats){
+   if(['presentation-portrait-v1','web-video-v1'].includes(plan.profile))for(const beat of p.beats){
      const selected=nodes.filter(n=>beat.nodeIds.includes(n.id));
      const eventRenderer=await prepareScene(source,{background:{color:'#071d1b',particles:false},scenes:[{id:s.id,startUs:0,endUs:s.endUs-s.startUs,nodes:selected}]},{width:main.width,height:main.height,durationUs:s.endUs-s.startUs,assetBase:config.assetBase,inlineImages:config.inlineImages,safeArea:true});
      const t=beat.timeUs-s.startUs;
@@ -188,17 +188,17 @@ def inspect_browser(root, manifest, scene, plan, output):
             from scripts.background_library import preset as background_preset,background_errors
             background_entry=background_preset(scene['background']['preset']) if scene.get('background',{}).get('preset') else None
             background=page.evaluate(BACKGROUND_PROBE,background_entry['qa'] if background_entry else {})
-            if plan.get('profile')=='presentation-portrait-v1' and background_entry:
+            if plan.get('profile') in ('presentation-portrait-v1','web-video-v1') and background_entry:
                 for rule,detail in background_errors(background,background_entry):error(rule,detail)
             motion = page.evaluate(MOTION,plan)
             for sample in motion:
                 for event in sample.get('events',[]):
                     if event['changedPixels']<16:error('EVENT','Planned presentation event has no visible change: '+str(event['timeUs']),sample['sceneId'])
-                if plan.get('profile')!='presentation-portrait-v1' and sample['maxFrozenUs']>=2000000:
+                if plan.get('profile') not in ('presentation-portrait-v1','web-video-v1') and sample['maxFrozenUs']>=2000000:
                     error('MOTION','Content pixels remain static for >=2s in the isolated 0.5s sampling',sample['sceneId'])
             plans = {p.get('sceneId'): p for p in plan.get('scenes', [])}
             for g in geometry:
-                if plan.get('profile')=='presentation-portrait-v1' and g['type']=='text':
+                if plan.get('profile') in ('presentation-portrait-v1','web-video-v1') and g['type']=='text':
                     node=next(n for sh in scene['scenes'] if sh['id']==g['sceneId'] for n in sh['nodes'] if n['id']==g['id'])
                     ink=g.get('inkRects',[])
                     if node.get('align')=='center' and any(abs(b['x']+b['width']/2-node['width']/2)>1 for b in ink):error('ALIGNMENT','Actual line ink is not horizontally centred: '+g['id'],g['sceneId'])

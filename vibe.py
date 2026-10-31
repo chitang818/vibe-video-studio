@@ -110,9 +110,9 @@ def run_quality_init(args):
 def run_context(args):
     from scripts.contracts import load_profile
     from scripts.components import KINDS,COMPONENT_VERSION
-    print(json.dumps(dict(profile=load_profile('presentation-portrait-v1'),legacyProfile=load_profile(),backgrounds=[dict(id=e['id'],version=e['version'],label=e['label'],subjects=e['subjects']) for e in __import__('scripts.background_library',fromlist=['catalog']).catalog()],presentationLayouts=__import__('scripts.presentation',fromlist=['LAYOUTS']).LAYOUTS,componentVersion=COMPONENT_VERSION,components=__import__('scripts.presentation',fromlist=['LAYOUTS']).LAYOUTS,legacyComponents=KINDS,
-        requiredReads=['AGENTS.md','.agents/skills/vibe-knowledge-video/SKILL.md','.agents/rules/vibe-rules.md','references/fast-project.md','references/quality-contract.md','references/rule-migration.md','references/checklist.md','references/presentation-authoring.md','references/background-library.md'],
-        workflow=['compile','audit','independent review and signed attestation','pack'],
+    print(json.dumps(dict(profile=load_profile('web-video-v1'),legacyProfile=load_profile(),backgrounds=[dict(id=e['id'],version=e['version'],label=e['label'],subjects=e['subjects']) for e in __import__('scripts.background_library',fromlist=['catalog']).catalog()],presentationLayouts=__import__('scripts.presentation',fromlist=['LAYOUTS']).LAYOUTS,componentVersion=COMPONENT_VERSION,components=__import__('scripts.presentation',fromlist=['LAYOUTS']).LAYOUTS,legacyComponents=KINDS,
+        requiredReads=['references/web-video-workflow.md','AGENTS.md','.agents/skills/vibe-knowledge-video/SKILL.md','.agents/rules/vibe-rules.md','references/fast-project.md','references/quality-contract.md','references/rule-migration.md','references/checklist.md','references/presentation-authoring.md','references/background-library.md'],
+        workflow=['pipeline intake','pipeline segment','pipeline direct','pipeline produce','pipeline assemble','pipeline review','independent review and signed attestation','pack'],
         releaseTrustConfigured=bool(os.environ.get('VIBE_TRUST_STORE'))),ensure_ascii=False,indent=2))
 
 
@@ -352,6 +352,9 @@ def run_pipeline(args):
 
 
 def main():
+    if len(sys.argv)>2 and sys.argv[1]=='pipeline' and sys.argv[2] in ('intake','refresh','segment','direct','produce','assemble','review','inspect','run','compare','capabilities','--help','-h'):
+        from scripts.pipeline import main as pipeline_main
+        pipeline_main(sys.argv[2:]);return
     parser = argparse.ArgumentParser(
         prog="vibe",
         description="VIBE Video Studio 统一工具链 CLI：一站式搞定知识短视频录制与合成",
@@ -483,7 +486,7 @@ def main():
     p_ver.set_defaults(func=run_verify)
 
     # pipeline
-    p_pipe = subparsers.add_parser("pipeline", help="一键全流程交付流水线 (check -> qa -> render -> mux -> verify)")
+    p_pipe = subparsers.add_parser("pipeline", help="分阶段网页制作：pipeline --help；旧HTML/MP4位置参数继续兼容")
     p_pipe.add_argument("html", help="HTML 动画页文件路径")
     p_pipe.add_argument("voice", help="配音 WAV 文件路径")
     p_pipe.add_argument("output", help="最终 MP4 输出路径")

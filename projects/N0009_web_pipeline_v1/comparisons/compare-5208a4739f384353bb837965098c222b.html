@@ -1,0 +1,62 @@
+<!doctype html><meta charset="utf-8"><title>阶段差异</title><pre>--- runs/produce-6ca2289e5bdf4092a9b9394657e446e1/result.json
+
++++ runs/produce-76dde5a353aa4b06a1c708567f2f3207/result.json
+
+@@ -1,28 +1,46 @@
+
+ {
+   &quot;version&quot;: 1,
+   &quot;produced&quot;: [
+-    &quot;shot-13&quot;
++    &quot;shot-06&quot;,
++    &quot;shot-14&quot;,
++    &quot;shot-15&quot;,
++    &quot;shot-17&quot;
+   ],
+   &quot;reused&quot;: [
++    &quot;shot-01&quot;,
+     &quot;shot-02&quot;,
+-    &quot;shot-09&quot;
+-  ],
+-  &quot;remaining&quot;: [
+-    &quot;shot-01&quot;,
+     &quot;shot-03&quot;,
+     &quot;shot-04&quot;,
+     &quot;shot-05&quot;,
+-    &quot;shot-06&quot;,
+     &quot;shot-07&quot;,
+     &quot;shot-08&quot;,
++    &quot;shot-09&quot;,
+     &quot;shot-10&quot;,
+     &quot;shot-11&quot;,
+     &quot;shot-12&quot;,
+-    &quot;shot-14&quot;,
+-    &quot;shot-15&quot;,
++    &quot;shot-13&quot;,
+     &quot;shot-16&quot;,
+-    &quot;shot-17&quot;,
+     &quot;shot-18&quot;
+   ],
+-  &quot;warnings&quot;: []
++  &quot;remaining&quot;: [],
++  &quot;warnings&quot;: [
++    {
++      &quot;shotIds&quot;: [
++        &quot;shot-02&quot;,
++        &quot;shot-07&quot;,
++        &quot;shot-10&quot;,
++        &quot;shot-11&quot;,
++        &quot;shot-18&quot;
++      ],
++      &quot;detail&quot;: &quot;Actual composition geometry repeats; inspect rhythm rather than changing family labels&quot;
++    },
++    {
++      &quot;shotIds&quot;: [
++        &quot;shot-06&quot;,
++        &quot;shot-14&quot;,
++        &quot;shot-17&quot;
++      ],
++      &quot;detail&quot;: &quot;Actual composition geometry repeats; inspect rhythm rather than changing family labels&quot;
++    }
++  ]
+ }</pre>

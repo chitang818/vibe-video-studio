@@ -2,6 +2,8 @@
 
 输入原文案、WAV 和字时间戳，产出固定 Canvas 网页与可供 WeMediaForge 使用的工程。Agent 优先编写结构化分镜，组件编译器负责排版、节点、动效和播放器。
 
+新制作默认使用[分阶段网页视频工作流](references/web-video-workflow.md)：原件核验→语义分镜→视觉说明/草图→素材与单镜头→整片组装→检查。`python vibe.py pipeline --help`查看命令，过程入口保存在作者工程index.html。四个阶段Skill可逐步执行与指定镜头返工；不以PPT或六类版式限制表达。旧compile命令和历史作品保留。
+
 [项目入口](AGENTS.md) · [制作技能](.agents/skills/vibe-knowledge-video/SKILL.md) · [规则](.agents/rules/vibe-rules.md) · [质量契约](references/quality-contract.md) · [机器 Profile](references/quality-profile.json) · [第二阶段实施状态](references/cross-agent-implementation.md)
 
 ## 统一流程

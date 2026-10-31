@@ -1,0 +1,168 @@
+{
+  "scene": {
+    "id": "shot-06",
+    "startUs": 43980000,
+    "endUs": 56960000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 1960000,
+        "entrance": "fade-up",
+        "text": "不止大量元素",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 130,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 1960000,
+        "entrance": "slide-right",
+        "text": "还关注微量元素",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 610,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 5040000,
+        "entrance": "slide-left",
+        "text": "锌、铜、铁等",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-3",
+        "type": "text",
+        "x": 150,
+        "y": 1090,
+        "width": 780,
+        "height": 110,
+        "enterUs": 8100000,
+        "entrance": "fade-up",
+        "text": "减少缺素症状",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-4",
+        "type": "text",
+        "x": 150,
+        "y": 1300,
+        "width": 780,
+        "height": 110,
+        "enterUs": 10100000,
+        "entrance": "fade-up",
+        "text": "关注贫瘠土壤条件",
+        "size": 46,
+        "color": "#ebc86d",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-06",
+    "purpose": "不止大量元素",
+    "visualIntent": "左右短标签与上下作用说明",
+    "visualFamily": "微量元素",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 45940000,
+        "quote": "除了大量元素",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：还关注微量元素"
+      },
+      {
+        "timeUs": 45940000,
+        "quote": "除了大量元素",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：还关注微量元素"
+      },
+      {
+        "timeUs": 49020000,
+        "quote": "土壤中的锌",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：锌、铜、铁等元素"
+      },
+      {
+        "timeUs": 52080000,
+        "quote": "减少作物缺素",
+        "nodeIds": [
+          "point-3"
+        ],
+        "meaning": "展示原声对应信息：减少缺素症状"
+      },
+      {
+        "timeUs": 54080000,
+        "quote": "在贫瘠土壤中",
+        "nodeIds": [
+          "point-4"
+        ],
+        "meaning": "展示原声对应信息：关注贫瘠土壤条件"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "并列信息采用空间分组"
+  },
+  "facts": [],
+  "sourceSpan": [
+    251,
+    326
+  ],
+  "localPreviewOriginUs": 43980000
+}

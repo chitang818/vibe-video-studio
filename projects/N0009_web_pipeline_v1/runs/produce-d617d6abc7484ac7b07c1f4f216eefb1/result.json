@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "produced": [
+    "shot-13"
+  ],
+  "reused": [
+    "shot-02",
+    "shot-09"
+  ],
+  "remaining": [
+    "shot-01",
+    "shot-03",
+    "shot-04",
+    "shot-05",
+    "shot-06",
+    "shot-07",
+    "shot-08",
+    "shot-10",
+    "shot-11",
+    "shot-12",
+    "shot-14",
+    "shot-15",
+    "shot-16",
+    "shot-17",
+    "shot-18"
+  ],
+  "warnings": []
+}

@@ -59,6 +59,10 @@ def input_fingerprint(root):
         files['background-source:'+str(p.relative_to(ROOT))]=digest(p)
     for name in ('scripts/background_library.py','references/background-library.md'):
         files['policy:'+name]=digest(ROOT/name)
+    for name in ('pipeline.py','pipeline_contracts.py','pipeline_scene.py','pipeline_svg.py'):
+        files['policy:scripts/'+name]=digest(ROOT/'scripts'/name)
+    for name in ('web-video-profile.json','web-video-workflow.md'):
+        files['policy:references/'+name]=digest(ROOT/'references'/name)
     return hashlib.sha256(canonical(files).encode()).hexdigest()
 
 
@@ -90,7 +94,8 @@ def static_checks(manifest, scene, rows, plan):
 
     w, h, duration = manifest['width'], manifest['height'], manifest['durationUs']
     profile = load_profile(plan.get('profile','knowledge-portrait-v1') if isinstance(plan,dict) else 'knowledge-portrait-v1')
-    presentation=profile['id']=='presentation-portrait-v1'
+    web_video=profile['id']=='web-video-v1'
+    presentation=profile['id'] in ('presentation-portrait-v1','web-video-v1')
     if (w,h)!=(profile['width'],profile['height']):
         error('PROFILE','knowledge-portrait-v1 requires 1080x1920')
     if not profile['subtitleMin']<=scene.get('subtitleSize',w*.04)<=profile['subtitleMax']:
@@ -120,7 +125,7 @@ def static_checks(manifest, scene, rows, plan):
     if [p.get('sceneId') for p in planned] != scene_ids:
         error('PLAN', 'Plan must cover every scene exactly once, in order')
     plans = {p.get('sceneId'): p for p in planned}
-    if presentation:
+    if presentation and not web_video:
         from scripts.presentation import LAYOUTS
         if any(p.get('visualFamily') not in LAYOUTS or not p.get('imageNote') for p in planned):error('PLAN','Presentation pages need a real supported layout and an image decision')
     if presentation:
@@ -433,7 +438,7 @@ def _run_gate(root, release=False, browser=True, output=None, project_identity=N
                     raise ValueError('WAV and manifest duration differ')
         report['inputFingerprint'] = input_fingerprint(root)
         report['profile']=profile['id']
-        if profile['id']=='presentation-portrait-v1':
+        if profile['id'] in ('presentation-portrait-v1','web-video-v1'):
             report['compositionWarnings']=[dict(sceneId=b['sceneId'],detail='Three consecutive pages use the same layout; review pacing') for a,b,c in zip(plan['scenes'],plan['scenes'][1:],plan['scenes'][2:]) if a['visualFamily']==b['visualFamily']==c['visualFamily']]
             report['capabilityNotes']=['Dynamic presentation; reading holds are intentional. Chapter HUD and controls are preview-only. External image acquisition and subjective listening need actual evidence.']
             if any(n['type']=='image' for sh in scene['scenes'] for n in sh['nodes']):

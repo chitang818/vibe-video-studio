@@ -1,0 +1,143 @@
+{
+  "scene": {
+    "id": "shot-04",
+    "startUs": 21960000,
+    "endUs": 30830000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 760000,
+        "entrance": "fade-up",
+        "text": "菌丝延伸，磷素转运",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "illustration",
+        "type": "image",
+        "x": 150,
+        "y": 600,
+        "width": 780,
+        "height": 420,
+        "enterUs": 760000,
+        "entrance": "zoom",
+        "source": "assets/images/local-leaf.png",
+        "fit": "contain",
+        "radius": 0
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 1090,
+        "width": 780,
+        "height": 110,
+        "enterUs": 760000,
+        "entrance": "fade-up",
+        "text": "菌丝向根外延伸",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 1300,
+        "width": 780,
+        "height": 110,
+        "enterUs": 6950000,
+        "entrance": "slide-left",
+        "text": "提升植物磷素供应",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-04",
+    "purpose": "菌丝延伸，磷素转运",
+    "visualIntent": "一张本地象征插画与两条短说明",
+    "visualFamily": "外部配图",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2"
+      ],
+      "graphic": [
+        "illustration"
+      ],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 22720000,
+        "quote": "根外菌丝可以",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：菌丝向根外延伸"
+      },
+      {
+        "timeUs": 22720000,
+        "quote": "根外菌丝可以",
+        "nodeIds": [
+          "illustration"
+        ],
+        "meaning": "展示原声对应信息：菌丝向根外延伸"
+      },
+      {
+        "timeUs": 22720000,
+        "quote": "根外菌丝可以",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：菌丝向根外延伸"
+      },
+      {
+        "timeUs": 28910000,
+        "quote": "提升植物磷素",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：提升植物磷素供应"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "图片帮助建立视觉变化，不冒充显微证据"
+  },
+  "facts": [],
+  "sourceSpan": [
+    128,
+    176
+  ],
+  "localPreviewOriginUs": 21960000
+}

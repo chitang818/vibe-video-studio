@@ -1,0 +1,168 @@
+{
+  "scene": {
+    "id": "shot-12",
+    "startUs": 103290000,
+    "endUs": 111950000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 1200000,
+        "entrance": "fade-up",
+        "text": "肥料利用与生产成本",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 650,
+        "width": 780,
+        "height": 130,
+        "enterUs": 1200000,
+        "entrance": "fade-up",
+        "text": "促进养分高效利用",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 870,
+        "width": 780,
+        "height": 130,
+        "enterUs": 3960000,
+        "entrance": "slide-left",
+        "text": "提升磷肥利用率",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-3",
+        "type": "text",
+        "x": 150,
+        "y": 1090,
+        "width": 780,
+        "height": 130,
+        "enterUs": 5520000,
+        "entrance": "fade-up",
+        "text": "减少化肥施用量",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-4",
+        "type": "text",
+        "x": 150,
+        "y": 1310,
+        "width": 780,
+        "height": 130,
+        "enterUs": 7260000,
+        "entrance": "slide-left",
+        "text": "降低生产成本",
+        "size": 46,
+        "color": "#ebc86d",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-12",
+    "purpose": "肥料利用与生产成本",
+    "visualIntent": "四条无底板文字顺序展示",
+    "visualFamily": "应用收益",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 104490000,
+        "quote": "促进养分的高效利用",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：促进养分高效利用"
+      },
+      {
+        "timeUs": 104490000,
+        "quote": "促进养分的高效利用",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：促进养分高效利用"
+      },
+      {
+        "timeUs": 107250000,
+        "quote": "提升磷肥的利用率",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：提升磷肥利用率"
+      },
+      {
+        "timeUs": 108810000,
+        "quote": "减少化肥的施用量",
+        "nodeIds": [
+          "point-3"
+        ],
+        "meaning": "展示原声对应信息：减少化肥施用量"
+      },
+      {
+        "timeUs": 110550000,
+        "quote": "降低农业生产成本",
+        "nodeIds": [
+          "point-4"
+        ],
+        "meaning": "展示原声对应信息：降低生产成本"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "每条收益对应真实口播，不编造节省比例"
+  },
+  "facts": [],
+  "sourceSpan": [
+    590,
+    640
+  ],
+  "localPreviewOriginUs": 103290000
+}

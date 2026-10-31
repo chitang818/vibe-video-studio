@@ -1,0 +1,120 @@
+{
+  "scene": {
+    "id": "shot-11",
+    "startUs": 95310000,
+    "endUs": 103290000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 1280000,
+        "entrance": "fade-up",
+        "text": "从交换机制到应用",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 150,
+        "y": 650,
+        "width": 780,
+        "height": 240,
+        "enterUs": 1280000,
+        "entrance": "zoom",
+        "text": "双向交换效率更高",
+        "size": 76,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 150,
+        "y": 1060,
+        "width": 780,
+        "height": 110,
+        "enterUs": 6500000,
+        "entrance": "fade-up",
+        "text": "进一步看实际应用",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-11",
+    "purpose": "从交换机制到应用",
+    "visualIntent": "大字观点加短承接语",
+    "visualFamily": "应用转折",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 96590000,
+        "quote": "远高于普通吸附交换",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：双向交换效率更高"
+      },
+      {
+        "timeUs": 96590000,
+        "quote": "远高于普通吸附交换",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：双向交换效率更高"
+      },
+      {
+        "timeUs": 101810000,
+        "quote": "实际的应用优势",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：进一步看实际应用"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "从机制过渡到应用，减少画面承载"
+  },
+  "facts": [],
+  "sourceSpan": [
+    544,
+    590
+  ],
+  "localPreviewOriginUs": 95310000
+}

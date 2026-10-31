@@ -1,0 +1,120 @@
+{
+  "scene": {
+    "id": "shot-15",
+    "startUs": 126280000,
+    "endUs": 132560000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 2280000,
+        "entrance": "fade-up",
+        "text": "缠绕与粘合共同作用",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 130,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 2280000,
+        "entrance": "slide-right",
+        "text": "菌丝物理缠绕",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 610,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 4400000,
+        "entrance": "slide-left",
+        "text": "分泌粘合物质",
+        "size": 46,
+        "color": "#ebc86d",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-15",
+    "purpose": "缠绕与粘合共同作用",
+    "visualIntent": "左右呈现物理缠绕与粘合作用",
+    "visualFamily": "共同作用",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 128560000,
+        "quote": "菌丝的物理缠绕作用",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：菌丝形成物理缠绕"
+      },
+      {
+        "timeUs": 128560000,
+        "quote": "菌丝的物理缠绕作用",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：菌丝形成物理缠绕"
+      },
+      {
+        "timeUs": 130680000,
+        "quote": "菌丝分泌的粘合物质",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：分泌粘合物质"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "并列共同作用，不误画单向因果"
+  },
+  "facts": [],
+  "sourceSpan": [
+    726,
+    762
+  ],
+  "localPreviewOriginUs": 126280000
+}

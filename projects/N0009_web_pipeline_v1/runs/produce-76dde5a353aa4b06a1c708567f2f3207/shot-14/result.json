@@ -1,0 +1,168 @@
+{
+  "scene": {
+    "id": "shot-14",
+    "startUs": 119310000,
+    "endUs": 126280000,
+    "nodes": [
+      {
+        "id": "work-title-0",
+        "type": "text",
+        "x": 130,
+        "y": 220,
+        "width": 820,
+        "height": 72,
+        "text": "丛枝菌根作用与优势",
+        "size": 48,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "heading",
+        "type": "text",
+        "x": 130,
+        "y": 430,
+        "width": 820,
+        "height": 100,
+        "enterUs": 640000,
+        "entrance": "fade-up",
+        "text": "土壤生态的多个层面",
+        "size": 54,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-1",
+        "type": "text",
+        "x": 130,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 640000,
+        "entrance": "slide-right",
+        "text": "促进团聚体形成",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-2",
+        "type": "text",
+        "x": 610,
+        "y": 730,
+        "width": 340,
+        "height": 160,
+        "enterUs": 2000000,
+        "entrance": "slide-left",
+        "text": "提升固碳能力",
+        "size": 46,
+        "color": "#65efb5",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-3",
+        "type": "text",
+        "x": 150,
+        "y": 1090,
+        "width": 780,
+        "height": 110,
+        "enterUs": 3560000,
+        "entrance": "fade-up",
+        "text": "优化微生物群落",
+        "size": 46,
+        "color": "#eef9f3",
+        "align": "center",
+        "verticalAlign": "center"
+      },
+      {
+        "id": "point-4",
+        "type": "text",
+        "x": 150,
+        "y": 1300,
+        "width": 780,
+        "height": 110,
+        "enterUs": 5160000,
+        "entrance": "fade-up",
+        "text": "构建菌丝网络",
+        "size": 46,
+        "color": "#ebc86d",
+        "align": "center",
+        "verticalAlign": "center"
+      }
+    ],
+    "transition": "fade"
+  },
+  "plan": {
+    "sceneId": "shot-14",
+    "purpose": "土壤生态的多个层面",
+    "visualIntent": "两组空间标签及底部结论",
+    "visualFamily": "生态层面",
+    "roles": {
+      "title": [
+        "work-title-0"
+      ],
+      "content": [
+        "heading",
+        "point-1",
+        "point-2",
+        "point-3",
+        "point-4"
+      ],
+      "graphic": [],
+      "panel": []
+    },
+    "beats": [
+      {
+        "timeUs": 119950000,
+        "quote": "土壤团聚体形成",
+        "nodeIds": [
+          "heading"
+        ],
+        "meaning": "展示原声对应信息：促进团聚体形成"
+      },
+      {
+        "timeUs": 119950000,
+        "quote": "土壤团聚体形成",
+        "nodeIds": [
+          "point-1"
+        ],
+        "meaning": "展示原声对应信息：促进团聚体形成"
+      },
+      {
+        "timeUs": 121310000,
+        "quote": "提升土壤固碳能力",
+        "nodeIds": [
+          "point-2"
+        ],
+        "meaning": "展示原声对应信息：提升土壤固碳能力"
+      },
+      {
+        "timeUs": 122870000,
+        "quote": "优化土壤微生物群落",
+        "nodeIds": [
+          "point-3"
+        ],
+        "meaning": "展示原声对应信息：优化微生物群落"
+      },
+      {
+        "timeUs": 124470000,
+        "quote": "构建土壤菌丝网络",
+        "nodeIds": [
+          "point-4"
+        ],
+        "meaning": "展示原声对应信息：构建菌丝网络"
+      }
+    ],
+    "intentionalOverlaps": [],
+    "imageNote": "将生态层面的并列关系分组"
+  },
+  "facts": [],
+  "sourceSpan": [
+    685,
+    726
+  ],
+  "localPreviewOriginUs": 119310000
+}

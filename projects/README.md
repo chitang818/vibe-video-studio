@@ -16,3 +16,5 @@
 2026-10-28固定背景库接入：[N0009 v17](../previews/n0009-v17/index.html)，[背景画廊](../previews/background-library-v2/index.html)。保留v16画面，135项回归通过、自动0错误，仍为待独立审核草稿。
 
 2026-10-28卡片净空修复：[N0009 v18](../previews/n0009-v18/index.html)。默认56px、最低32px及CARD_SPACING门禁，138项回归通过；预览草稿。
+
+2026-10-28分阶段网页视频：[N0009制作过程](N0009_web_pipeline_v1/index.html) · [整片预览](../previews/n0009-web-v2/index.html)。18镜逐步产物、草图与单镜预览可追溯；旧作品保留，仍为预览草稿。
